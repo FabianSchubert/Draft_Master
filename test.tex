@@ -52,21 +52,21 @@ Obviously, the appropriate choice of $NO_0$ is crucial for the goal of achieving
 \subsection{Activity Analysis} \label{activ_analys}
 Fig. \ref{full_sim_plots_av} shows the resulting dynamics of the population activity, average $NO$ concentration at the neurons' positions and the average firing threshold. Roughly speaking, both homeostatic mechanisms managed to keep the population activity in the desired range of $3~Hz$. However, what might appear to be slightly faster and stronger random fluctuations in the upper three plots of Fig. \ref{full_sim_plots_av}, turn out to be very regular oscillations across all three parameters depicted in the closeup. While the oscillation amplitude undergoes a rather unpredictable time course, the frequency remains at a constant level of $\simeq 1Hz$. Although one might argue that regular oscillations of the $NO$ concentration are not of much concern in terms of the network's structure and behaviour, this is not true for the population activity.
 \begin{figure}
-\includegraphics[width=\textwidth]{../plots/diff_hom/rate_NO_th_compl.eps}
-\includegraphics[width=\textwidth]{../plots/diff_hom/rate_NO_th_closeup.eps}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/diff_hom/rate_NO_th_compl.eps}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/diff_hom/rate_NO_th_closeup.eps}
 \caption{Population activity, average $NO$ concentration (averaged over readouts at neurons' positions) and average firing threshold. Canonical homeostasis was used for $0-250s$ , diffusive for $250-500s$. Activity target was $3 ~Hz$.}
 \label{full_sim_plots_av}
 \end{figure}
 
 A first approach in comparing the network activity before and after altering the homeostatic mechanism is by means of the distribution of firing rates within the network. As Sweeney et al. point out, it has been experimentally observed that firing rates are rather heterogeneous, resulting in a broad distribution. In Fig. \ref{firing_rate_dist_comp} we compare our results for the firing distribution to the results by Sweeney et al.. 
 \begin{figure}
-\includegraphics[width=\textwidth]{../plots/firing_rate_dists/firing_rate_dist_compare.eps}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/firing_rate_dists/firing_rate_dist_compare.eps}
 \caption{Left: Simulation results by Sweeney et al.. Right: Simulation results for the SORN.}
 \label{firing_rate_dist_comp}
 \end{figure}
 We observed a similar tendency of broader firing rate distributions for the diffusive homeostasis, though we did not get as heavy tailed statistics. Sweeney et al. found a reciprocal relation between the broadness of the firing rate distribution and the threshold distribution. The strong oscillations of the threshold make it difficult to estimate the threshold distribution in our case. For the plot in Fig. \ref{thresh_dist_comp}, we calculated each neuron's time average threshold for the case of non-diffusive and diffusive homeostasis and used this as a basis for the distribution. In contrast to Sweeney et al., the statistics did not change significantly.
 \begin{figure}
-\includegraphics[width=\textwidth]{../plots/diff_hom/threshold_dist_compare.eps}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/diff_hom/threshold_dist_compare.eps}
 \caption{Comparison of threshold distributions observed by Sweeney et al. (left) and in the SORN (right).}
 \label{thresh_dist_comp}
 \end{figure}
@@ -75,14 +75,14 @@ We observed a similar tendency of broader firing rate distributions for the diff
 
 Another possibility of characterizing neural activity is to determine the distribution of interspike intervals (ISIs). Using non-diffusive homeostasis, one can observe a Poisson-like spiking behaviour with a stochastic refractory period, which is typically observed in cortical networks (Fig. . This is not what can be observed for the case of diffusive homeostasis: the ISI distribution reveals preference of interspike times in the range of $1s$, whereas interspike times in of $0.1-0.6s$ are less likely than a Poisson process would predict. This deviation matches the frequency of activity oscillations, see Fig. \ref{full_sim_plots_av}.
 \begin{figure}
-\includegraphics[width=\textwidth]{../plots/Spike_Stats/ISI_compare_SORN.eps}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/Spike_Stats/ISI_compare_SORN.eps}
 \caption{Top: log-plot of ISI-distribution of diff. and non-diff. homeostasis in the SORN. Bottom: CV-distribution for diff and non-diff. homeostasis.}
 \label{ISI_compare}
 \end{figure}
 
 As a whole, the oscillating activity imposes a undesirable regularity onto the network's activity, see also Fig. \ref{spike_sequence}. While this effect might be tolerable without any external input, it is likely that the oscillations will overlay and obscure network responses onto external drive, presumably making it unusable for any computational task.
 \begin{figure}
-\includegraphics[width=\textwidth]{../plots/Spike_Stats/spike_sequence.eps}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/Spike_Stats/spike_sequence.eps}
 \caption{A spike sequence of 10 randomly picked excitatory neurons of the SORN. At $t=250s$, the homeostatic mechanism is switched to the diffusive variant.}
 \label{spike_sequence}
 \end{figure}
@@ -111,12 +111,12 @@ Here, $\xi(t)$ represents standard gaussian noise, accounting for the fact that,
 
 To complete the expression, one has to find an appropriate description of the $r(\theta)$-relation. As a most simple approximation, we applied a linear regression to the data of the average threshold and the corresponding population activity, see Fig. \ref{thresh_r_linfit}. The constant $C$ in equation \eqref{simple_NO_dyn} is then proportional to the slope of the linear fit. In addition, $C$ is proportional to the amount of NO released per spike, proportional to the number of contributing neurons and antiproportional to the total area of the tissue. We can solve and integrate equations \eqref{Ca_dyn} and \eqref{nNOS_dyn} for a single spike, resulting in a total of $\tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / 3$. Therefore, $C=N_{neur}\cdot \tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / (3\cdot L^2)$ and $C\cdot r(\theta)=\theta \cdot \alpha \cdot N_{neur} \cdot \tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / (3\cdot L^2)$, where $\alpha$ is the slope of the linear fit and $L^2$ the area of the tissue.
 \begin{figure}
-\includegraphics[width=\textwidth]{../plots/diff_hom/thresh_r_linfit.eps}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/diff_hom/thresh_r_linfit.eps}
 \caption{Linear fit of the relation between the firing threshold (averaged over population) and the population activity. $R^2=0.99996$.}
 \label{thresh_r_linfit}
 \end{figure}
 \begin{figure}
-\includegraphics[width=\textwidth]{../plots/diff_hom/lin_model_osc.eps}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/diff_hom/lin_model_osc.eps}
 \caption{Simulation results for equations \eqref{simple_NO_dyn} and \eqref{simple_threshold_dyn}.}
 \label{lin_mod_osc}
 \end{figure}
@@ -155,7 +155,7 @@ S_\theta(\omega_{max}) &= \frac{\sigma^2}{\tau _\theta^2 r_g^2 \left(\frac{1}{4}
 Fig. \ref{power_spec_thresh_sim_vs_an} suggests that the theoretical result does not fully cover the dynamics of the simulation, but supports the observation of a sustained oscillation at a preferred frequency.
 
 \begin{figure}
-\includegraphics[width=\textwidth]{../plots/power_spec/power_spectrum3}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/power_spec/power_spectrum3}
 \caption{Power Spectrum of the firing threshold and analytic result of equation \eqref{power_spec_thresh_r_g}.}
 \label{power_spec_thresh_sim_vs_an}
 \end{figure}
@@ -238,7 +238,7 @@ Of course, equation \eqref{sweeney_self_consist_rate1} has to be rewritten accor
 Fig. \ref{dynamics_rate_threshold_dyn_mean_field_sweeney} depicts the resulting dynamics for $\alpha=0.4$ and $\alpha = 0.8$. Both predictions can be confirmed: All rates approach the same target rate of $3Hz$ and, apparently, thresholds move toward the same state for either choice of $\alpha$. A significant difference only exists within the dynamics leading to the steady state. Roughly, a smaller value of $\alpha$ leads to a faster relaxation. Though, changes in the dynamics appear to be more subtle than a simple rescaling in the time domain.
 
 \begin{figure}
-\includegraphics[width=\textwidth]{../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_comb}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_comb}
 \caption{Dynamics of rates and thresholds of excitatory population of 400 Neurons (see equations \eqref{dyn_rate_equation} and \eqref{diff_hom_simpl_sweeney}). For both values of $\alpha$, rates and thresholds approach the same steady state.}
 \label{dynamics_rate_threshold_dyn_mean_field_sweeney}
 \end{figure}
@@ -306,6 +306,10 @@ or, as an operator
 \hat{\psi}\mathbf{r} &= NO_0 \mathbf{n} \label{NO_equil_cond_interact_matrix_operator} \\
 \mathbf{n}&\equiv (1,1,...,1)
 \end{align}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{/home/fschubert/Master/plots/diff_rate_solve.png}
+\end{figure}
 
 
 
