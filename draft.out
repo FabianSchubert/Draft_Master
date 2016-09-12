@@ -6,4 +6,5 @@
 \BOOKMARK [1][-]{section.4}{The Firing Rate Distribution in the Network}{}% 6
 \BOOKMARK [2][-]{subsection.4.1}{Equilibrium in the full diffusive Model}{section.4}% 7
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Results for an Approximation of the Numerical Steady-State Solution}{subsection.4.1}% 8
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Mean-Field approximation for the Variance of Firing Rates}{subsection.4.1}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}{subsection.4.1}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Mean-Field Approximation for the Variance of Firing Rates}{subsection.4.1}% 10

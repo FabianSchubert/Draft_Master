@@ -335,9 +335,21 @@ To find an approximation for $NO_{source,num.}$, one can interpret this value as
 
 \begin{equation}
 NO_{source,num.} = \frac{1-h\sqrt{\frac{\lambda}{\pi D}} K_1\left( h\sqrt{\frac{\lambda}{\pi D}}\right) }{h^2 \lambda}
+\label{Numeric_Grid_Bessel_Approx}
 \end{equation} 
 
-\subsubsection{Mean-Field approximation for the Variance of Firing Rates}
+\subsubsection{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}
+
+\eqref{Numeric_Solution_Expression_Trick} and \eqref{Numeric_Grid_Bessel_Approx} can be used in \eqref{NO_euqil_cond_interact_matrix_operator_solve} for a more accurate description of the distance-dependent diffusive interaction.
+
+In addition, one needs to account for the boundary conditions used in the network simulation. We simulated the network with Von-Neumann boundary conditions (setting the flux through the boundary to zero) as well as periodic boundaries. Both types can be modelled by extending the neurons' population through spatially shifted and mirrored versions of the base population:
+
+\begin{itemize}
+\item Periodic boundary conditions are induced by copies of the neurons' positions shifted by $L\cdot (n_x,n_y)$, $n_x,n_y \in \mathbb{Z}$.
+\item Zero flux through the boundaries can be achieved by copied positions being shifted by $L\cdot (n_x,n_y)$, $n_x,n_y \in \mathbb{Z}$ \textit{and} mirrored in $x$($y$)-direction if $n_x$($n_y$) is odd.
+\end{itemize}
+
+\subsubsection{Mean-Field Approximation for the Variance of Firing Rates}
 
 Generally, Mean-Field approximations reduce the calculation of a full set of interacting entities (or particles, in the context of physics) to a single instance interacting with an effective mean of the entire field, especially ignoring the influence of the single instance onto the whole set of entities and thus the field itself.
 
@@ -359,7 +371,20 @@ Var[\nu] = \frac{Var[\sum \limits_{i} \nu_i \psi(d_i)]}{\psi_0^2}
 \label{variance_sample_neuron_firing_rate}
 \end{equation}
 
+As an approximation, one can now replace all $\nu_i$ by the mean activity, which has been forced to a certain value $\nu_0$:
 
+\begin{equation}
+Var[\nu] = \frac{\nu_0^2 \cdot Var[\sum \limits_{i} \psi(d_i)]}{\psi_0^2}
+\label{variance_sample_neuron_firing_rate_mean_act}
+\end{equation}
+
+The random individual neurons' positions are statistically independent, therefore one gets
+
+\begin{equation}
+Var[\nu] = \frac{\nu_0^2 \cdot N \cdot Var[\psi(d)]}{\psi_0^2}
+\label{variance_sample_neuron_firing_rate_mean_act_indep_positions}
+\end{equation}
+where $N$ is the number of neurons. One should note however that this expression only applies to the case of open boundaries. Furthermore, depending on the position of the "sample neuron" relative to the population, one can achieve different statistics for $\psi(d)$. The limit case, in which both remarks are of no relevance, is a population of a certain density spreading across a tissue of infinite size.
 
 
 \bibliography{test_base}
