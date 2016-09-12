@@ -325,29 +325,67 @@ An example of a distribution of rates acquired from this method is shown in fig.
 If one aims for an appropriate expression for the numerical steady-state solution of a single "point"-source with a constant influx, two things should be of importance: first, it should correctly predict the concentration at the location of the source and second, it should be close to the analytic result in regions further away from the source. One possibility is to use the following "trick" to overcome the divergence of the analytic solution at the origin:
 
 \begin{equation}
-NO_{approx.}(r) = \frac{1}{\sqrt{\frac{1}{NO_{source,num.}^2} + \frac{1}{NO(r)^2}}}
+NO_{approx.}(d) = \frac{1}{\sqrt{\frac{1}{NO_{source,num.}^2} + \frac{1}{NO(d)^2}}}
 \label{Numeric_Solution_Expression_Trick}
 \end{equation}
 
-At the pole $NO(0)$, $NO_{approx.}(0)$ then takes the value $NO_{source,num.}$. On the other hand, for larger values of $r$, the term $\frac{1}{NO_{source,num.}^2}$ becomes negligible compared to $ \frac{1}{NO(r)^2}$, thus $NO_{approx.}(r) \rightarrow NO(r)$ for $r \rightarrow \infty$.
+At the pole $NO(0)$, $NO_{approx.}(0)$ then takes the value $NO_{source,num.}$. On the other hand, for larger values of $r$, the term $\frac{1}{NO_{source,num.}^2}$ becomes negligible compared to $ \frac{1}{NO(d)^2}$, thus $NO_{approx.}(d) \rightarrow NO(d)$ for $d \rightarrow \infty$.
 
 To find an approximation for $NO_{source,num.}$, one can interpret this value as a mean of the analytic solution across the square area covered by the corresponding grid cell. As an additional simplification, we substitute the necessary integration over the square grid cell by a circular area of equal size around the source. This calculation yields
 
 \begin{equation}
-NO_{source,num.} = \frac{1-h\sqrt{\frac{\lambda}{\pi D}} K_1\left( h\sqrt{\frac{\lambda}{\pi D}}\right) }{h^2 \lambda}
+NO_{source,num.} =  r \cdot \frac{1-h\sqrt{\frac{\lambda}{\pi D}} K_1\left( h\sqrt{\frac{\lambda}{\pi D}}\right) }{h^2 \lambda} \equiv r \cdot \psi_{source,num.}
 \label{Numeric_Grid_Bessel_Approx}
-\end{equation} 
+\end{equation}
+with $r$ being the neuron's rate. Equivalently, one can then define
+\begin{equation}
+\psi_{approx.}(d) \equiv \frac{1}{\sqrt{\frac{1}{\psi_{source,num.}^2} + \frac{1}{\psi (d)^2}}}
+\end{equation}
 
 \subsubsection{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}
 
 \eqref{Numeric_Solution_Expression_Trick} and \eqref{Numeric_Grid_Bessel_Approx} can be used in \eqref{NO_euqil_cond_interact_matrix_operator_solve} for a more accurate description of the distance-dependent diffusive interaction.
 
-In addition, one needs to account for the boundary conditions used in the network simulation. We simulated the network with Von-Neumann boundary conditions (setting the flux through the boundary to zero) as well as periodic boundaries. Both types can be modelled by extending the neurons' population through spatially shifted and mirrored versions of the base population:
+In addition, one needs to account for the boundary conditions used in the network simulation. We simulated the network with Neumann boundary conditions (setting the flux through the boundary to zero) as well as periodic boundaries. Both types can be modelled by extending the neurons' population through spatially shifted and mirrored versions of the base population (see Figure \ref{Bound_Cond_Patches}):
 
 \begin{itemize}
 \item Periodic boundary conditions are induced by copies of the neurons' positions shifted by $L\cdot (n_x,n_y)$, $n_x,n_y \in \mathbb{Z}$.
 \item Zero flux through the boundaries can be achieved by copied positions being shifted by $L\cdot (n_x,n_y)$, $n_x,n_y \in \mathbb{Z}$ \textit{and} mirrored in $x$($y$)-direction if $n_x$($n_y$) is odd.
 \end{itemize}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{../../plots/Boundary_Cond_Sketch.png}
+\end{center}
+\caption{Sketch for patches of copied (and mirrored) positions for periodic (A) and Neumann (B) boundary conditions.}
+\label{Bound_Cond_Patches}
+\end{figure}
+
+The entries of the operator for periodic boundary conditions $\hat{\psi}_{per.}$ can now calculated by
+\begin{equation}
+\psi_{ij,per.} = \sum_{n_x,n_y \in \mathbb{Z}} \psi_{approx.} (d(\mathbf{x}_{neur,i},\mathbf{x}_{neur,i} + L \cdot (n_x,n_y)))
+\label{Psi_entries_periodic_bound}
+\end{equation}
+Note that the shift was applied to the second position. Theoretically, $n_x$,$n_y$ is iterated over all integers and in this case it is irrelevant whether to shift the first or the second position. For numerical calculations however, the shift was applied to the second position.
+
+For the Neumann boundary condition, one finds
+\begin{align}
+\psi_{ij,neum.} &= \sum_{n_x,n_y \in \mathbb{Z}} \psi_{approx.} \left( d(\mathbf{x}_{neur,i},M(\mathbf{x}_{neur,i}) + L \cdot (n_x,n_y)) \right) \label{Psi_entries_neumann_bound} \\
+M(\mathbf{x}) &\equiv  
+ \begin{pmatrix}
+  (-1)^{n_x} & 0\\
+  0 & (-1)^{n_y}
+ \end{pmatrix}
+\mathbf{x} + L \cdot (mod(\left| n_x\right|,2),mod(\left| n_y\right|,2)) \label{Mirror_Operator}
+\end{align}
+
+We compared the firing rate distributions acquired from the solution of the random matrix system and those of the full simulated network by means of its standard deviation and skewness.
+
+\begin{figure}
+\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/frequ_moments_compare.png}
+\caption{Standard deviation and skewness of firing rate distributions for the full spiking network (blue) and the solution of the random matrix model (orange) for Neumann (A,B) and periodic (C,D) boundary conditions.}
+\label{frequ_moments_compare}
+\end{figure}
 
 \subsubsection{Mean-Field Approximation for the Variance of Firing Rates}
 
