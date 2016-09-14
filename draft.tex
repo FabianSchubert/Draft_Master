@@ -380,12 +380,12 @@ M(\mathbf{x}) &\equiv
 \end{align}
 
 We compared the firing rate distributions acquired from the solution of the random matrix system and those of the full simulated network by means of its standard deviation and skewness.
-
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/firing_rate_dists/frequ_moments_compare.png}
 \caption{Standard deviation and skewness of firing rate distributions for the full spiking network (blue) and the solution of the random matrix model (orange) for Neumann (A,B) and periodic (C,D) boundary conditions.}
 \label{frequ_moments_compare}
 \end{figure}
+While the standard deviation appears to be better fitting the full network in the case of Neumann boundary conditions, the prediction of skewness is more accurate for periodic boundaries. In both versions, the standard deviation seems to be underestimated by the solution of the random matrix equation. This seems reasonable, considering the fact that a network of irregularly spiking neurons "naturally" provides a certain amount of firing rate variability and that during simulation, all plasticity mechanisms where kept in place (changes of presynaptic weights requires an adjustment of the internal threshold to maintain the desired firing rate). 
 
 \subsubsection{Mean-Field Approximation for the Variance of Firing Rates}
 
@@ -397,7 +397,6 @@ In the system presented here, a single neuron with a firing rate $\nu$ must fulf
 \nu =\frac{NO_0 - \sum \limits_{i} \nu_i \psi(d_i)}{\psi_0}
 \label{sample_neuron_firing_rate}
 \end{equation}
-
 where $i$ indexes over all "remaining" neurons and $d_i$ refers to the euclidean distance of the sample neuron to "field"-neuron $i$. $\psi_0$ is the factor that - multiplied with $\nu$ - yields the $NO$-concentration at the origin of the sample neuron.
 
 Depending on the constraints that one imposes onto the system, one might look for different properties to be extracted from this equation. Specifically, in the simulation protocol that has been used in all previous simulations, the average firing rate was forced to a certain value by means of adjusting the target concentration $NO_0$. A Mean-Field approximation for the average firing rate therefore is of no relevance in this particular case.
