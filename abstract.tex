@@ -1,0 +1,28 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{cite}
+\usepackage{hyperref}
+\title{Diffusive Homeostasis in a Recurrent Neural Network \\
+\begin{large}
+Spatially dependent Interaction as a Determinant of Neural Activity and Plasticity
+\end{large}
+}
+
+
+\begin{document}
+\maketitle
+\section{Abstract} \label{abstract}
+Based on the LIF-SORN-model proposed in \cite{SORN_Paper}, we attempt to replace the intrinsic homeostatic control system used in the original version by a mechanism based on the diffusion of a neurotransmitter across the nervous tissue. The model of diffusive homeostasis is adopted from a paper by Y. Sweeney et al. \cite{Sweeney_Paper} and models the tissue as a surface of square shape and a set of points on this surface, representing the positions of the neurons within the SORN. Excitatory neurons then act as a point-source of nitric oxide (NO), as well as as a sensor for the NO-concentration at each individual position. The production and sensing of NO forms the basis of a feedback loop: The individual NO-readout is fed into a comparator which causes an appropriate change within the internal firing threshold of the neuron, in turn altering the neuron's firing rate. The control system is then closed by linking the rate of NO-production to the neuron's firing rate.
+
+Key aspects of this thesis include an analysis of the stability of the homeostatic control, followed by a comparison of features of the original LIF-SORN and the diffusive variant. We expect to observe a preservation of non-random structural features that have been found in the original LIF-SORN while incorporating a stronger variance within neural activity (as reported by \cite{Sweeney_Paper}) which has previously been suppressed by a rigid single-cell homeostasis. In the face of possible \emph{new} features within the network's structure, we further clarify the - presumably indirect - causal relation between diffusive spatial interaction and synaptic topology. 
+
+
+\bibliography{test_base}
+\bibliographystyle{unsrt}
+\end{document} 

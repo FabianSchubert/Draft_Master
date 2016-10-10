@@ -94,20 +94,6 @@
   Url                      = {http://dx.doi.org/10.1113/jphysiol.1910.sp001389}
 }
 
-@Article{Markram_STP,
-  Title                    = {Differential signaling via the same axon of neocortical pyramidal neurons},
-  Author                   = {Markram, Henry and Wang, Yun and Tsodyks, Misha},
-  Journal                  = {Proceedings of the National Academy of Sciences},
-  Year                     = {1998},
-  Number                   = {9},
-  Pages                    = {5323-5328},
-  Volume                   = {95},
-
-  Abstract                 = {The nature of information stemming from a single neuron and conveyed simultaneously to several hundred target neurons is not known. Triple and quadruple neuron recordings revealed that each synaptic connection established by neocortical pyramidal neurons is potentially unique. Specifically, synaptic connections onto the same morphological class differed in the numbers and dendritic locations of synaptic contacts, their absolute synaptic strengths, as well as their rates of synaptic depression and recovery from depression. The same axon of a pyramidal neuron innervating another pyramidal neuron and an interneuron mediated frequency-dependent depression and facilitation, respectively, during high frequency discharges of presynaptic action potentials, suggesting that the different natures of the target neurons underlie qualitative differences in synaptic properties. Facilitating-type synaptic connections established by three pyramidal neurons of the same class onto a single interneuron, were all qualitatively similar with a combination of facilitation and depression mechanisms. The time courses of facilitation and depression, however, differed for these convergent connections, suggesting that different pre-postsynaptic interactions underlie quantitative differences in synaptic properties. Mathematical analysis of the transfer functions of frequency-dependent synapses revealed supra-linear, linear, and sub-linear signaling regimes in which mixtures of presynaptic rates, integrals of rates, and derivatives of rates are transferred to targets depending on the precise values of the synaptic parameters and the history of presynaptic action potential activity. Heterogeneity of synaptic transfer functions therefore allows multiple synaptic representations of the same presynaptic action potential train and suggests that these synaptic representations are regulated in a complex manner. It is therefore proposed that differential signaling is a key mechanism in neocortical information processing, which can be regulated by selective synaptic modifications.},
-  Eprint                   = {http://www.pnas.org/content/95/9/5323.full.pdf},
-  Url                      = {http://www.pnas.org/content/95/9/5323.abstract}
-}
-
 @Article{STP,
   Title                    = {Differential signaling via the same axon of neocortical pyramidal neurons},
   Author                   = {Markram, Henry and Wang, Yun and Tsodyks, Misha},

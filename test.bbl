@@ -1,0 +1,32 @@
+\begin{thebibliography}{1}
+
+\bibitem{SORN_Paper}
+Daniel Miner and Jochen Triesch.
+\newblock Plasticity-driven self-organization under topological constraints
+  accounts for non-random features of cortical synaptic wiring.
+\newblock {\em PLoS Computational Biology}, 2016.
+
+\bibitem{Sweeney_Paper}
+Jan Sweeney, Jeanette~Hellgren Kotaleski, and Matthias~H. Hennig.
+\newblock A diffusive homeostatic signal maintains neural heterogeneity and
+  responsiveness in cortical networks.
+\newblock {\em PLoS Computational Biology}, 2015.
+
+\bibitem{Theor_Neur_Dayan}
+Peter Dayan and L.F. Abbott.
+\newblock {\em Theoretical Neuroscience}.
+\newblock MIT Press, 2001.
+
+\bibitem{Bredt_Snyder_NO}
+D~S Bredt and S~H Snyder.
+\newblock Isolation of nitric oxide synthetase, a calmodulin-requiring enzyme.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  87(2):682--685, 1990.
+
+\bibitem{Hill_Equ}
+AV. Hill.
+\newblock The possible effects of the aggregation of the molecules of
+  haemoglobin on its dissociation curves.
+\newblock {\em The Journal of Physiology}, 40:iv---vii, 1910.
+
+\end{thebibliography}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{SORN_Paper}
 Daniel Miner and Jochen Triesch.
@@ -11,6 +11,38 @@ Jan Sweeney, Jeanette~Hellgren Kotaleski, and Matthias~H. Hennig.
 \newblock A diffusive homeostatic signal maintains neural heterogeneity and
   responsiveness in cortical networks.
 \newblock {\em PLoS Computational Biology}, 2015.
+
+\bibitem{Briansim}
+Romain Brette, Dan Goodman, and Marcel Stirnberg.
+\newblock The brian spiking neural network simulator (version 1.0) [computer
+  software].
+\newblock \url{http://www.briansimulator.org/}, 2016.
+
+\bibitem{Zhang_STDP}
+Li~I. Zhang, Li~I. Zhang, Huizhong~W. Tao, Christine~E. Holt, William~A.
+  Harris, and Mu-ming Poo.
+\newblock A critical window for cooperation and competition among developing
+  retinotectal synapses.
+\newblock {\em Nature}, 395:37--44, 1998.
+
+\bibitem{Bi_Poo_STDP}
+Guo-qiang Bi and Mu-ming Poo.
+\newblock Synaptic modifications in cultured hippocampal neurons: Dependence on
+  spike timing, synaptic strength, and postsynaptic cell type.
+\newblock {\em The Journal of Neuroscience}, 18(24):10464--10472, 1998.
+
+\bibitem{Froemke_STDP}
+Robert~C. Froemke, Mu-ming Poo, and Yang Dan.
+\newblock Spike-timing-dependent synaptic plasticity depends on dendritic
+  location.
+\newblock {\em Nature}, 434(7030):221--225, March 2005.
+
+\bibitem{Markram_STP}
+Henry Markram, Yun Wang, and Misha Tsodyks.
+\newblock Differential signaling via the same axon of neocortical pyramidal
+  neurons.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  95(9):5323--5328, 1998.
 
 \bibitem{Theor_Neur_Dayan}
 Peter Dayan and L.F. Abbott.

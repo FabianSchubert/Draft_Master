@@ -8,15 +8,117 @@
 \usepackage{epstopdf}
 \usepackage{cite}
 \usepackage{hyperref}
+\usepackage{caption}
+\captionsetup[table]{singlelinecheck=false}
+\title{Diffusive Homeostasis in a Recurrent Neural Network \\
+\begin{large}
+Spatially dependent Interaction as a Determinant of Neural Activity and Plasticity
+\end{large}
+}
+
 
 \begin{document}
-\section{Abstract} \label{abstract}
-Building on the LIF-SORN-model proposed in \cite{SORN_Paper}, we attempted to replace the intrinsic homeostatic control system used in the original version by a mechanism based on the diffusion of a neurotransmitter across the nervous tissue. The model of diffusive homeostasis was adopted from a paper by Y. Sweeney et al. \cite{Sweeney_Paper} and models the tissue as a surface of square shape and a set of points on this surface, representing the positions of the neurons within the SORN. The group of excitatory neurons then acted as a point-source of nitric oxide (NO), as well as as a sensor for the NO-concentration at each individual position. The production and sensing of NO forms the basis of an intrinsic feedback loop: The individual NO-readout is fed into a comparator which causes an appropriate change within the internal firing threshold of the neuron, in turn altering the neuron's firing rate. The control system is then closed by linking the rate of NO-production to the neuron's firing rate.
+\maketitle
 
-It should be mentioned that \cite{Sweeney_Paper} included all neurons into the homeostatic control. However, since we excluded inhibitory neurons from the original homeostatic control, we held this decision in the new model.
+\section{Abstract} \label{abstract}
+Based on the LIF-SORN-model proposed in \cite{SORN_Paper}, we attempted to replace the intrinsic homeostatic control system used in the original version by a mechanism based on the diffusion of a neurotransmitter across the nervous tissue. The model of diffusive homeostasis was adopted from a paper by Y. Sweeney et al. \cite{Sweeney_Paper} and models the tissue as a surface of square shape and a set of points on this surface, representing the neurons' positions within the SORN. The group of excitatory neurons then acted as a point-source of nitric oxide (NO), as well as as a sensor for the NO-concentration at each individual position. The production and sensing of NO forms the basis of a feedback loop: The individual NO-readout is fed into a comparator which causes an appropriate change within the internal firing threshold of the neuron, in turn altering the neuron's firing rate. The control system is then closed by linking the rate of NO-production to the neuron's firing rate.
+
+Key aspects of this thesis include an analysis of the stability of the homeostatic control, followed by a comparison of features of the original LIF-SORN and the Diffusive variant. We expect to observe a preservation of non-random features that have been found in the original LIF-SORN while incorporating a stronger variance within neural activity (as reported by \cite{Sweeney_Paper}) which has previously been suppressed by a rigid single-cell homeostasis. In the face of possible \emph{new} features within the network's structure, one should further clarify the - presumably indirect - causal relation between diffusive spatial interaction and synaptic topology. 
+
+
+
+
 
 \section{Methods} \label{methods}
-Network dynamics remained the same as in \cite{SORN_Paper}.
+\subsection{Network Simulation}
+
+The Neural Network was simulated with the code used in \cite{SORN_Paper}, which makes use of the BRIAN spiking neural network simulator \cite{Briansim}. Thus, all following explanations regarding the simulation of neurons and mechanisms of synaptic plasticity are based on the methods described in the aforementioned paper.
+
+Across a square area of 1000 $\times$ 1000 $\mu m$, 400 excitatory LIF neurons and 80 inhibitory LIF neurons where assigned random positions. Before the start of the simulation, all but recurrent excitatory synapses where randomly generated until a desired connection fraction was reached. The connection probability between two neurons was calculated from a distant dependent Gaussian function with a standard deviation of 200 $\mu m$. For exc. to inh. (EI) and inh. to exc. (IE) synapses, the connection fraction was set to 0.1, and 0.5 for recurrent inh. synapses (II). These connections where kept at a fixed connection strength throughout the simulation. Furthermore, all synapses where simulated with a fixed (distance independent) conduction delay. See table \ref{syn_conn_params} for a summary of parameters.
+
+Recurrent excitatory synapses where subject to a number of plastic mechanisms to be described in the following. 
+
+\begin{table}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{parameter} & \textbf{EE} & \textbf{EI} & \textbf{IE} & \textbf{II} \\ \hline
+connection fraction & $\rightarrow 0.1$ & $0.1$ & $0.1$ & $0.5$ \\ \hline
+initial connection strength & $0.0001 mV$ & $1.5 mV$ & $-1.5 mV$ & $-1.5 mV$ \\ \hline
+conduction delay & $1.5 ms$ & $0.5 ms$ & $1.0 ms$ & $1.0 ms$ \\
+\hline
+\end{tabular}
+\caption{Parameters of synaptic connections.}
+\label{syn_conn_params}
+\end{table}
+
+\subsubsection{Synaptic Plasticity}
+
+\textbf{Synaptic Growth:} At a rate of 1/sec, the random, distance dependent generation of new EE synapses was carried out n times, where n is taken from a normal distribution with mean 920 and standard deviation $\sqrt{920}$. This constant growth rate was tuned to achieve the desired target concentration of 0.1 (see \ref{syn_conn_params}).
+
+\textbf{Synaptic Pruning:} At the same rate of 1/sec, EE synapses below a threshold of 0.000001 mV where removed, thus being added again to the set of "potential" connections from which the growth process draws new connections. Especially, they were temporarily excluded from STDP (see below).
+
+\textbf{Spike Timing Dependent Plasticity:} An additive STDP rule was used as described e.g. in \cite{Zhang_STDP}. The change of weight between two neurons due to a pre- and postsynaptic spike (i $\rightarrow$ j) is defined as:
+\begin{align}
+\Delta w_{ji} &= \sum_k \sum_l W(t_j^l - t_i^k) \label{STDP_rule} \\
+W(\Delta t) &= A_{+} exp(-\Delta t / \tau_{+}), & \Delta t > 0 \label{STDP_pos} \\
+W(\Delta t) &= A_{-} exp(\Delta t / \tau_{-}), & \Delta t < 0 \label{STDP_neg}
+\end{align}
+Indexes k and l refer to the kth and lth pre- and postsynaptic spike respectively. Parameters where chosen to approximate data from \cite{Bi_Poo_STDP} and \cite{Froemke_STDP}, namely $\tau_{+} = 15 ms$, $A_{+} = 15 mV$, $\tau_{-} = 30 ms$ and $A_{-} = -7.5 mV$. However, for the sake of reduction of computational effort, we used the "nearest neighbor" approximation, only calculating the effect of the most recent pre-post pair of spikes for potentiation and post-pre pair for depression, yielding roughly the same value as the full summation due to the fast decay times $\tau_{+}$ and $\tau_{-}$ of the STDP-window.
+
+\textbf{Synaptic Normalization:} Among other, experiments have suggested rescaling of synapses among individual postsynaptic neurons as a form of activity regulation in the brain: While preserving ratios of weights, the mean incoming connectivity is multiplicatively adjusted. While this general mechanism has been confirmed in many experiments, results differ regarding the question whether the target connectivity is dynamically changing in order to preserve a certain postsynaptic firing rate (homeostatic synaptic scaling), or whether it remains constant, effectively enforcing a synaptic normalization. Though the latter does not directly enforce a fixed level of activity, one can argue that in a balanced recurrent network, synaptic normalization still reduces the probability of very high or low firing rates caused by an above- or below-average total synaptic input.
+
+We implemented synaptic normalization by calling a function once per sec., updating each $w_{ji}$ from neuron $i$ to neuron $j$ as follows:
+
+\begin{equation}
+w_{ji} \rightarrow w_{ji} \frac{w_{total}}{\sum_i w_{ji}}
+\label{Synnnorm}
+\end{equation}
+
+$w_{total}$ was set to different values for each of the four types of connections between the excitatory and inhibitory pool of neurons. Except for the dynamically populated EE-synapses, these values could be directly set in accordance with the previously given parameters of desired mean individual connection strength, size of the presynaptic population and connection fraction, by calculating $w_{total} = w_{mean} \cdot N_{presyn. pop}\cdot p_{connect}$. This yielded $w_{total,EI} = 60 mV$, $w_{total,IE} = -12 mV$, $w_{total,II} = -60 mV$. $w_{total,EE}$ was set to $40mV$,  corresponding to a mean synaptic weight of $1mV$, given a targeted EE-connection fraction of $0.1$ and a population of 400 excitatory neurons.
+
+\textbf{Short Term Plasticity:} As an additional stabilization of network activity, a short term plasticity (STP) mechanism acting on recurrent excitatory connections was implemented as presented in \cite{Markram_STP}. It modulates the effective synaptic weights by multiplying the value stored in the weight matrix $w_{ji}$ by two dynamic variables $x$ and $u$, $w^{effective}_{ji} = w_{ji}\cdot x \cdot u$, each synapse owning a pair $(x,u)$. The dynamics of these variables are given by:
+
+\begin{equation}
+\dot{x} = \frac{1-x}{\tau_d},\; \dot{u} = \frac{U-u}{\tau_f}
+\label{STP_dynamics1}
+\end{equation}
+Furthermore, each presynaptic spike causes a change of $x$ and $u$ by
+\begin{equation}
+x \rightarrow x - x\cdot u,\; u \rightarrow u + U(1-u)
+\label{STP_dynamics2}
+\end{equation}
+
+If no spikes arrive, the system rests at $x\cdot u = U$. Otherwise, depending on the choice of $\tau_d$ and $\tau_f$, one can achieve a weight modulation that is dominated by potentiation ($\tau_f \gg \tau_d$) or depression ($\tau_f \ll \tau_d$). As a rough approximation of the values that where experimentally observed \cite{Markram_STP}, we chose $U=0.04$, $\tau_d = 0.5s$ and $\tau_f = 2s$, giving it a tendency towards potentiation. However, one should keep in mind that for $U\in [0,1]$, $x\cdot u \in [0,1]$ always holds, thus the factor $x\cdot u$ has a generally diminishing effect. E.g., for our choice of variables, a poisson input with a constant rate achieves the best synaptic transmission at a rate of $\sim 4.5 Hz$, corresponding to $x\cdot u \approx 0.2$. "Potentiation" in this context refers to the fact that stronger input strengthens synaptic transmission \emph{compared} to close to zero incoming spikes.
+
+\subsubsection{Neuron Model}
+
+We used a leaky integrate-and-fire-model for all neurons in the network, whose dynamics are described by a stochastic differential equation:
+\begin{equation}
+dV = -\frac{V-E_l}{\tau_m}dt + \frac{\sigma}{\sqrt{\tau_m}}dW
+\end{equation}
+where $V$ is the membrane potential, $E_l$ is the equilibrium membrane potential, $\tau_m$ is the time constant of the membrane, $\sigma$ is the standard deviation of the noise term and $dW$ is the standard Wiener process. A neuron is said to spike when its membrane potential reaches the threshold voltage $V_t$. The voltage is then reset to $V_r$. A refractory period was not implemented. A presynaptic spike causes a simple (delayed, see Table \ref{syn_conn_params}) increment of the membrane potential of the postsynaptic neuron by $w^{effective}_{ji}$. Table \ref{LIF_neuron_params} summarizes the aforementioned set of parameters.
+\begin{table}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{parameter} & \textbf{exc. neur.} & \textbf{inh. neur.}\\ \hline
+$E_l$ & $-60 mV$ & $-60 mV$ \\ \hline
+$\tau_m$ & $20 ms$ & $20 ms$ \\ \hline
+$V_r$ & $-70 mV$ & $-60 mV$ \\ \hline
+$\sigma$ & $\sqrt{5} mV$ & $\sqrt{5} mV$ \\ \hline
+$V_t$ & subject to IP & $-58 mV$ \\ 
+\hline
+\end{tabular}
+\caption{Parameters of LIF neuron}
+\label{LIF_neuron_params}
+\end{table}   
+
+\subsubsection{Intrinsic Plasticity}
+
+
+
+
+
+\subsection{Simulation of Homeostasis}
 
 The original homeostatic control was described as an operation over discrete time steps $\Delta t$, carried out for each excitatory neuron:
 
