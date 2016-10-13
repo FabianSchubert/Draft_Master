@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.20)  10 OCT 2016 17:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.20)  13 OCT 2016 15:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -534,20 +534,20 @@ Package caption Info: hyperref package is loaded.
 ) (./draft.aux)
 \openout1 = `draft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -564,7 +564,7 @@ LaTeX Font Info:    ... okay on input line 20.
 \everyMPtoPDFconversion=\toks23
 )
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 20.
+Package hyperref Info: Link coloring OFF on input line 21.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -573,9 +573,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count118
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
 
 (./draft.out) (./draft.out)
 \@outlinefile=\write3
@@ -583,12 +583,12 @@ LaTeX Info: Redefining \nameref on input line 20.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 22.
+LaTeX Font Info:    Try loading font information for U+msa on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 22.
+LaTeX Font Info:    Try loading font information for U+msb on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -599,12 +599,23 @@ LaTeX Warning: No \author given.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (5.04825pt too wide) in paragraph at lines 68--69
+Overfull \hbox (5.04825pt too wide) in paragraph at lines 69--70
 []\OT1/cmr/bx/n/10 Synaptic Nor-mal-iza-tion: \OT1/cmr/m/n/10 Among other, ex-p
 er-i-ments have sug-gested rescal-
  []
 
-[2] [3] [4]
+[2] [3] [4] [5] [6]
+<../../plots/density_plots/density_plot.png, id=181, 331.7193pt x 295.8252pt>
+File: ../../plots/density_plots/density_plot.png Graphic file (type png)
+
+<use ../../plots/density_plots/density_plot.png>
+Package pdftex.def Info: ../../plots/density_plots/density_plot.png used on inp
+ut line 216.
+(pdftex.def)             Requested size: 241.49895pt x 215.3728pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 Package epstopdf Info: Source file: <../../plots/diff_hom/rate_NO_th_compl.eps>
 
 (epstopdf)                    date: 2016-04-12 18:52:29
@@ -615,17 +626,17 @@ converted-to.pdf>
 (epstopdf)                    size: 93156 bytes
 (epstopdf)             Command: <epstopdf --outfile=../../plots/diff_hom/rate_N
 O_th_compl-eps-converted-to.pdf ../../plots/diff_hom/rate_NO_th_compl.eps>
-(epstopdf)             \includegraphics on input line 157.
+(epstopdf)             \includegraphics on input line 230.
 Package epstopdf Info: Output file is already uptodate.
 
-<../../plots/diff_hom/rate_NO_th_compl-eps-converted-to.pdf, id=135, 1425.325pt
+<../../plots/diff_hom/rate_NO_th_compl-eps-converted-to.pdf, id=187, 1425.325pt
  x 781.92125pt>
 File: ../../plots/diff_hom/rate_NO_th_compl-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use ../../plots/diff_hom/rate_NO_th_compl-eps-converted-to.pdf>
 Package pdftex.def Info: ../../plots/diff_hom/rate_NO_th_compl-eps-converted-to
-.pdf used on input line 157.
+.pdf used on input line 230.
 (pdftex.def)             Requested size: 345.0pt x 189.2637pt.
 Package epstopdf Info: Source file: <../../plots/diff_hom/rate_NO_th_closeup.ep
 s>
@@ -637,19 +648,19 @@ s-converted-to.pdf>
 (epstopdf)                    size: 42795 bytes
 (epstopdf)             Command: <epstopdf --outfile=../../plots/diff_hom/rate_N
 O_th_closeup-eps-converted-to.pdf ../../plots/diff_hom/rate_NO_th_closeup.eps>
-(epstopdf)             \includegraphics on input line 158.
+(epstopdf)             \includegraphics on input line 231.
 Package epstopdf Info: Output file is already uptodate.
 
-<../../plots/diff_hom/rate_NO_th_closeup-eps-converted-to.pdf, id=136, 1425.325
+<../../plots/diff_hom/rate_NO_th_closeup-eps-converted-to.pdf, id=188, 1425.325
 pt x 781.92125pt>
 File: ../../plots/diff_hom/rate_NO_th_closeup-eps-converted-to.pdf Graphic file
  (type pdf)
 
 <use ../../plots/diff_hom/rate_NO_th_closeup-eps-converted-to.pdf>
 Package pdftex.def Info: ../../plots/diff_hom/rate_NO_th_closeup-eps-converted-
-to.pdf used on input line 158.
+to.pdf used on input line 231.
 (pdftex.def)             Requested size: 345.0pt x 189.2637pt.
- [5]
+ [7]
 Package epstopdf Info: Source file: <../../plots/firing_rate_dists/firing_rate_
 dist_compare.eps>
 (epstopdf)                    date: 2016-04-13 15:41:12
@@ -661,18 +672,18 @@ dist_compare-eps-converted-to.pdf>
 (epstopdf)             Command: <epstopdf --outfile=../../plots/firing_rate_dis
 ts/firing_rate_dist_compare-eps-converted-to.pdf ../../plots/firing_rate_dists/
 firing_rate_dist_compare.eps>
-(epstopdf)             \includegraphics on input line 165.
+(epstopdf)             \includegraphics on input line 238.
 Package epstopdf Info: Output file is already uptodate.
 
 <../../plots/firing_rate_dists/firing_rate_dist_compare-eps-converted-to.pdf, i
-d=152, 931.48pt x 625.33624pt>
+d=204, 931.48pt x 625.33624pt>
 File: ../../plots/firing_rate_dists/firing_rate_dist_compare-eps-converted-to.p
 df Graphic file (type pdf)
 
 <use ../../plots/firing_rate_dists/firing_rate_dist_compare-eps-converted-to.pd
 f>
 Package pdftex.def Info: ../../plots/firing_rate_dists/firing_rate_dist_compare
--eps-converted-to.pdf used on input line 165.
+-eps-converted-to.pdf used on input line 238.
 (pdftex.def)             Requested size: 345.0pt x 231.60933pt.
 Package epstopdf Info: Source file: <../../plots/diff_hom/threshold_dist_compar
 e.eps>
@@ -685,17 +696,17 @@ e-eps-converted-to.pdf>
 (epstopdf)             Command: <epstopdf --outfile=../../plots/diff_hom/thresh
 old_dist_compare-eps-converted-to.pdf ../../plots/diff_hom/threshold_dist_compa
 re.eps>
-(epstopdf)             \includegraphics on input line 171.
+(epstopdf)             \includegraphics on input line 244.
 Package epstopdf Info: Output file is already uptodate.
 
-<../../plots/diff_hom/threshold_dist_compare-eps-converted-to.pdf, id=154, 1087
+<../../plots/diff_hom/threshold_dist_compare-eps-converted-to.pdf, id=206, 1087
 .06125pt x 506.89375pt>
 File: ../../plots/diff_hom/threshold_dist_compare-eps-converted-to.pdf Graphic 
 file (type pdf)
 
 <use ../../plots/diff_hom/threshold_dist_compare-eps-converted-to.pdf>
 Package pdftex.def Info: ../../plots/diff_hom/threshold_dist_compare-eps-conver
-ted-to.pdf used on input line 171.
+ted-to.pdf used on input line 244.
 (pdftex.def)             Requested size: 345.0pt x 160.87123pt.
 Package epstopdf Info: Source file: <../../plots/Spike_Stats/ISI_compare_SORN.e
 ps>
@@ -708,18 +719,23 @@ ps-converted-to.pdf>
 (epstopdf)             Command: <epstopdf --outfile=../../plots/Spike_Stats/ISI
 _compare_SORN-eps-converted-to.pdf ../../plots/Spike_Stats/ISI_compare_SORN.eps
 >
-(epstopdf)             \includegraphics on input line 180.
+(epstopdf)             \includegraphics on input line 253.
 Package epstopdf Info: Output file is already uptodate.
 
-<../../plots/Spike_Stats/ISI_compare_SORN-eps-converted-to.pdf, id=156, 1081.03
+<../../plots/Spike_Stats/ISI_compare_SORN-eps-converted-to.pdf, id=208, 1081.03
 876pt x 666.49pt>
 File: ../../plots/Spike_Stats/ISI_compare_SORN-eps-converted-to.pdf Graphic fil
 e (type pdf)
 
 <use ../../plots/Spike_Stats/ISI_compare_SORN-eps-converted-to.pdf>
 Package pdftex.def Info: ../../plots/Spike_Stats/ISI_compare_SORN-eps-converted
--to.pdf used on input line 180.
+-to.pdf used on input line 253.
 (pdftex.def)             Requested size: 345.0pt x 212.70148pt.
+ [8 <../../plots/density_plots/density_plot.png>] [9 <../../plots/diff_hom/rate
+_NO_th_compl-eps-converted-to.pdf> <../../plots/diff_hom/rate_NO_th_closeup-eps
+-converted-to.pdf>] [10 <../../plots/firing_rate_dists/firing_rate_dist_compare
+-eps-converted-to.pdf> <../../plots/diff_hom/threshold_dist_compare-eps-convert
+ed-to.pdf>]
 Package epstopdf Info: Source file: <../../plots/Spike_Stats/spike_sequence.eps
 >
 (epstopdf)                    date: 2016-04-05 10:33:40
@@ -730,32 +746,28 @@ Package epstopdf Info: Source file: <../../plots/Spike_Stats/spike_sequence.eps
 (epstopdf)                    size: 28503 bytes
 (epstopdf)             Command: <epstopdf --outfile=../../plots/Spike_Stats/spi
 ke_sequence-eps-converted-to.pdf ../../plots/Spike_Stats/spike_sequence.eps>
-(epstopdf)             \includegraphics on input line 187.
+(epstopdf)             \includegraphics on input line 260.
 Package epstopdf Info: Output file is already uptodate.
 
-<../../plots/Spike_Stats/spike_sequence-eps-converted-to.pdf, id=158, 1457.445p
+<../../plots/Spike_Stats/spike_sequence-eps-converted-to.pdf, id=324, 1457.445p
 t x 356.33125pt>
 File: ../../plots/Spike_Stats/spike_sequence-eps-converted-to.pdf Graphic file 
 (type pdf)
 
 <use ../../plots/Spike_Stats/spike_sequence-eps-converted-to.pdf>
 Package pdftex.def Info: ../../plots/Spike_Stats/spike_sequence-eps-converted-t
-o.pdf used on input line 187.
+o.pdf used on input line 260.
 (pdftex.def)             Requested size: 345.0pt x 84.3468pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 199.
+ [11 <../../plots/Spike_Stats/ISI_compare_SORN-eps-converted-to.pdf> <../../plo
+ts/Spike_Stats/spike_sequence-eps-converted-to.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 272.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 199.
- [6] [7 <../../plots/diff_hom/rate_NO_th_compl-eps-converted-to.pdf> <../../plo
-ts/diff_hom/rate_NO_th_closeup-eps-converted-to.pdf>] [8 <../../plots/firing_ra
-te_dists/firing_rate_dist_compare-eps-converted-to.pdf> <../../plots/diff_hom/t
-hreshold_dist_compare-eps-converted-to.pdf>] [9 <../../plots/Spike_Stats/ISI_co
-mpare_SORN-eps-converted-to.pdf> <../../plots/Spike_Stats/spike_sequence-eps-co
-nverted-to.pdf>]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 272.
 Package epstopdf Info: Source file: <../../plots/diff_hom/thresh_r_linfit.eps>
 (epstopdf)                    date: 2016-07-07 11:58:16
 (epstopdf)                    size: 663179 bytes
@@ -765,16 +777,16 @@ onverted-to.pdf>
 (epstopdf)                    size: 226302 bytes
 (epstopdf)             Command: <epstopdf --outfile=../../plots/diff_hom/thresh
 _r_linfit-eps-converted-to.pdf ../../plots/diff_hom/thresh_r_linfit.eps>
-(epstopdf)             \includegraphics on input line 216.
+(epstopdf)             \includegraphics on input line 289.
 Package epstopdf Info: Output file is already uptodate.
 
-<../../plots/diff_hom/thresh_r_linfit-eps-converted-to.pdf, id=320, 1239.63126p
+<../../plots/diff_hom/thresh_r_linfit-eps-converted-to.pdf, id=372, 1239.63126p
 t x 947.54pt>
 File: ../../plots/diff_hom/thresh_r_linfit-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use ../../plots/diff_hom/thresh_r_linfit-eps-converted-to.pdf>
 Package pdftex.def Info: ../../plots/diff_hom/thresh_r_linfit-eps-converted-to.
-pdf used on input line 216.
+pdf used on input line 289.
 (pdftex.def)             Requested size: 345.0pt x 263.70451pt.
 Package epstopdf Info: Source file: <../../plots/diff_hom/lin_model_osc.eps>
 (epstopdf)                    date: 2016-04-15 11:33:32
@@ -785,20 +797,20 @@ verted-to.pdf>
 (epstopdf)                    size: 104376 bytes
 (epstopdf)             Command: <epstopdf --outfile=../../plots/diff_hom/lin_mo
 del_osc-eps-converted-to.pdf ../../plots/diff_hom/lin_model_osc.eps>
-(epstopdf)             \includegraphics on input line 221.
+(epstopdf)             \includegraphics on input line 294.
 Package epstopdf Info: Output file is already uptodate.
 
-<../../plots/diff_hom/lin_model_osc-eps-converted-to.pdf, id=321, 867.24pt x 56
+<../../plots/diff_hom/lin_model_osc-eps-converted-to.pdf, id=373, 867.24pt x 56
 5.11125pt>
 File: ../../plots/diff_hom/lin_model_osc-eps-converted-to.pdf Graphic file (typ
 e pdf)
  <use ../../plots/diff_hom/lin_model_osc-eps-converted-to.pdf>
 Package pdftex.def Info: ../../plots/diff_hom/lin_model_osc-eps-converted-to.pd
-f used on input line 221.
+f used on input line 294.
 (pdftex.def)             Requested size: 345.0pt x 224.80742pt.
 
-[10] [11 <../../plots/diff_hom/thresh_r_linfit-eps-converted-to.pdf> <../../plo
-ts/diff_hom/lin_model_osc-eps-converted-to.pdf>]
+[12] [13 <../../plots/diff_hom/thresh_r_linfit-eps-converted-to.pdf>] [14 <../.
+./plots/diff_hom/lin_model_osc-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <../../plots/power_spec/power_spectrum3.eps
 >
 (epstopdf)                    date: 2016-04-17 21:34:35
@@ -809,82 +821,81 @@ Package epstopdf Info: Source file: <../../plots/power_spec/power_spectrum3.eps
 (epstopdf)                    size: 15500 bytes
 (epstopdf)             Command: <epstopdf --outfile=../../plots/power_spec/powe
 r_spectrum3-eps-converted-to.pdf ../../plots/power_spec/power_spectrum3.eps>
-(epstopdf)             \includegraphics on input line 260.
+(epstopdf)             \includegraphics on input line 333.
 Package epstopdf Info: Output file is already uptodate.
 
-<../../plots/power_spec/power_spectrum3-eps-converted-to.pdf, id=379, 610.28pt 
+<../../plots/power_spec/power_spectrum3-eps-converted-to.pdf, id=443, 610.28pt 
 x 436.63126pt>
 File: ../../plots/power_spec/power_spectrum3-eps-converted-to.pdf Graphic file 
 (type pdf)
 
 <use ../../plots/power_spec/power_spectrum3-eps-converted-to.pdf>
 Package pdftex.def Info: ../../plots/power_spec/power_spectrum3-eps-converted-t
-o.pdf used on input line 260.
+o.pdf used on input line 333.
 (pdftex.def)             Requested size: 345.0pt x 246.84369pt.
- [12] [13 <../../plots/power_spec/power_spectrum3-eps-converted-to.pdf>] [14]
+ [15 <../../plots/power_spec/power_spectrum3-eps-converted-to.pdf>] [16]
 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_comb
-.png, id=433, 587.0733pt x 442.5333pt>
+.png, id=481, 587.0733pt x 442.5333pt>
 File: ../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha
 _comb.png Graphic file (type png)
 
 <use ../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_
 comb.png>
 Package pdftex.def Info: ../../plots/rate_threshold_simpl_hip_alpha/rate_thresh
-old_simpl_hip_alpha_comb.png used on input line 343.
+old_simpl_hip_alpha_comb.png used on input line 416.
 (pdftex.def)             Requested size: 345.0pt x 260.05925pt.
- [15 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha
-_comb.png>] [16]
-<../../plots/diff_rate_solve.png, id=465, 578.16pt x 433.62pt>
+ [17] [18 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_
+alpha_comb.png>] [19]
+<../../plots/diff_rate_solve.png, id=519, 578.16pt x 433.62pt>
 File: ../../plots/diff_rate_solve.png Graphic file (type png)
 
 <use ../../plots/diff_rate_solve.png>
-Package pdftex.def Info: ../../plots/diff_rate_solve.png used on input line 420
+Package pdftex.def Info: ../../plots/diff_rate_solve.png used on input line 493
 .
 (pdftex.def)             Requested size: 345.0pt x 258.74484pt.
- [17 <../../plots/diff_rate_solve.png>]
-<../../plots/Boundary_Cond_Sketch.png, id=482, 377.7312pt x 188.6247pt>
+ [20 <../../plots/diff_rate_solve.png>]
+<../../plots/Boundary_Cond_Sketch.png, id=533, 377.7312pt x 188.6247pt>
 File: ../../plots/Boundary_Cond_Sketch.png Graphic file (type png)
 
 <use ../../plots/Boundary_Cond_Sketch.png>
 Package pdftex.def Info: ../../plots/Boundary_Cond_Sketch.png used on input lin
-e 460.
+e 533.
 (pdftex.def)             Requested size: 172.5pt x 86.14096pt.
- [18]
-<../../plots/firing_rate_dists/frequ_moments_compare.png, id=494, 425.4294pt x 
+ [21 <../../plots/Boundary_Cond_Sketch.png>]
+<../../plots/firing_rate_dists/frequ_moments_compare.png, id=546, 425.4294pt x 
 341.5962pt>
 File: ../../plots/firing_rate_dists/frequ_moments_compare.png Graphic file (typ
 e png)
  <use ../../plots/firing_rate_dists/frequ_moments_compare.png>
 Package pdftex.def Info: ../../plots/firing_rate_dists/frequ_moments_compare.pn
-g used on input line 486.
+g used on input line 559.
 (pdftex.def)             Requested size: 345.0pt x 277.0302pt.
 
-[19 <../../plots/Boundary_Cond_Sketch.png>] [20 <../../plots/firing_rate_dists/
-frequ_moments_compare.png>]
-Overfull \hbox (3.11177pt too wide) in paragraph at lines 520--521
+[22 <../../plots/firing_rate_dists/frequ_moments_compare.png>]
+Overfull \hbox (3.11177pt too wide) in paragraph at lines 593--594
 []\OT1/cmr/m/n/10 The ran-dom in-di-vid-ual neu-rons' po-si-tions are sta-tis-t
 i-cally in-de-pen-dent, there-
  []
 
-(./draft.bbl [21])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 531.
- [22]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 531.
+(./draft.bbl [23] [24])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 604.
+ [25]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 604.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 531.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 531.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 604.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 604.
 Package rerunfilecheck Info: File `draft.out' has not changed.
-(rerunfilecheck)             Checksum: 874DAAD101B0D80540A9DF18D8D35C5B;1216.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 531.
+(rerunfilecheck)             Checksum: F4AF9D2A8AD5EE1168CA869F4474586D;1326.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 604.
  ) 
 Here is how much of TeX's memory you used:
- 7960 strings out of 493304
- 119911 string characters out of 6139871
- 215726 words of memory out of 5000000
- 11147 multiletter control sequences out of 15000+600000
+ 8010 strings out of 493304
+ 120874 string characters out of 6139871
+ 215877 words of memory out of 5000000
+ 11172 multiletter control sequences out of 15000+600000
  12636 words of font info for 49 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 42i,14n,38p,1053b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,14n,38p,1216b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -901,10 +912,10 @@ hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on draft.pdf (22 pages, 1528446 bytes).
+Output written on draft.pdf (25 pages, 1620096 bytes).
 PDF statistics:
- 610 PDF objects out of 1000 (max. 8388607)
- 403 compressed objects within 5 object streams
- 123 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 665 PDF objects out of 1000 (max. 8388607)
+ 459 compressed objects within 5 object streams
+ 146 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 

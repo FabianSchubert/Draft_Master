@@ -44,16 +44,65 @@ Henry Markram, Yun Wang, and Misha Tsodyks.
 \newblock {\em Proceedings of the National Academy of Sciences},
   95(9):5323--5328, 1998.
 
+\bibitem{Connors_Gutnick_Spike_Patterns}
+Barry~W. Connors and Michael~J. Gutnick.
+\newblock Intrinsic firing patterns of diverse neocortical neurons.
+\newblock {\em Trends in Neurosciences}, 13(3):99 -- 104, 1990.
+
+\bibitem{Benda_Herz_Spike_Frequ_Adaption}
+Jan Benda and Andreas V.~M. Herz.
+\newblock A universal model for spike-frequency adaption.
+\newblock {\em Neural Computation}, 15(11):2523--2564, 2003.
+
+\bibitem{Desai_IP}
+Niraj~S. Desai, Lana~C. Rutherford, and Gina~G. Turrigiano.
+\newblock Plasticity in the intrinsic excitability of cortical pyramidal
+  neurons.
+\newblock {\em Nature Neuroscience}, 2:515--520, 1999.
+
+\bibitem{Izhikevich_Dynsys}
+Eugene~M. Izhikevich.
+\newblock {\em Dynamical Systems in Neuroscience - The Geometry of Excitability
+  and Bursting}.
+\newblock The MIT Press, 2007.
+
+\bibitem{NOS_Mammals}
+Richard~G. Knowles and Salvador Moncada.
+\newblock Nitrix oxide synthases in mammals.
+\newblock {\em Biochemical Journal}, 298(Pt 2):249--258, 1994.
+
+\bibitem{Knowles_Ca_nNOS}
+Richard~G. Knowles, Miriam Palacios, Richard M.~J. Palmer, and Salvador
+  Moncada.
+\newblock Foneurons of nitric oxide from l-arginine in the central nervous
+  system: A transduction mechanism for stimulation of the soluble guanylate
+  cyclase.
+\newblock {\em Proceedings of the National Academy of Sciences}, 86:5159--5162,
+  1989.
+
+\bibitem{Hille_Ion_Channels}
+Bertil Hille.
+\newblock {\em Ionic Channels of Excitable Membranes}.
+\newblock Sinauer Associates, 2001.
+
+\bibitem{Steinert_NO}
+Joern~R. Steinert, Cornelia Kopp-Scheinpflug, Claire Baker, R.A.~John Challiss,
+  Raj Mistry, Martin~D. Haustein, Sarah~J. Griffin, Huaxia Tong, Bruce~P.
+  Graham, and Ian~D. Forsythe.
+\newblock Nitric oxide is a volume transmitter regulating postsynaptic
+  excitability at a glutamatergic synapse.
+\newblock {\em Neuron}, 60(4):642 -- 656, 2008.
+
+\bibitem{Pape_NO}
+Hans-Christian Pape and Ralph Mager.
+\newblock Nitric oxide controls oscillatory activity in thalamocortical
+  neurons.
+\newblock {\em Neuron}, 9:441--448, 1992.
+
 \bibitem{Theor_Neur_Dayan}
 Peter Dayan and L.F. Abbott.
 \newblock {\em Theoretical Neuroscience}.
 \newblock MIT Press, 2001.
-
-\bibitem{Bredt_Snyder_NO}
-D~S Bredt and S~H Snyder.
-\newblock Isolation of nitric oxide synthetase, a calmodulin-requiring enzyme.
-\newblock {\em Proceedings of the National Academy of Sciences},
-  87(2):682--685, 1990.
 
 \bibitem{Hill_Equ}
 AV. Hill.

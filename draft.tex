@@ -10,7 +10,8 @@
 \usepackage{hyperref}
 \usepackage{caption}
 \captionsetup[table]{singlelinecheck=false}
-\title{Diffusive Homeostasis in a Recurrent Neural Network \\
+\captionsetup[figure]{singlelinecheck=false}
+\title{Diffusive Homeostasis in a Self-Organizing Recurrent Neural Network \\
 \begin{large}
 Spatially dependent Interaction as a Determinant of Neural Activity and Plasticity
 \end{large}
@@ -101,58 +102,130 @@ where $V$ is the membrane potential, $E_l$ is the equilibrium membrane potential
 \begin{tabular}{|l|l|l|}
 \hline
 \textbf{parameter} & \textbf{exc. neur.} & \textbf{inh. neur.}\\ \hline
-$E_l$ & $-60 mV$ & $-60 mV$ \\ \hline
-$\tau_m$ & $20 ms$ & $20 ms$ \\ \hline
-$V_r$ & $-70 mV$ & $-60 mV$ \\ \hline
-$\sigma$ & $\sqrt{5} mV$ & $\sqrt{5} mV$ \\ \hline
-$V_t$ & subject to IP & $-58 mV$ \\ 
+$\mathrm{E_l}$ & $\mathrm{-60\;mV}$ & $\mathrm{-60\;mV}$ \\ \hline
+$\mathrm{\tau_m}$ & $\mathrm{20\;ms}$ & $\mathrm{20\;ms}$ \\ \hline
+$\mathrm{V_r}$ & $\mathrm{-70\;mV}$ & $\mathrm{-60\;mV}$ \\ \hline
+$\mathrm{\sigma}$ & $\mathrm{\sqrt{5}\;mV}$ & $\mathrm{\sqrt{5}\;mV}$ \\ \hline
+$\mathrm{V_t}$ & subject to IP & $\mathrm{-58\;mV}$ \\ 
 \hline
 \end{tabular}
 \caption{Parameters of LIF neuron}
 \label{LIF_neuron_params}
 \end{table}   
 
-\subsubsection{Intrinsic Plasticity}
+\subsubsection{Intrinsic Plasticity (IP)}
+
+Apart from dynamic processes within synapses which contribute to a stabilization of the network's activity, neurons possess internal mechanisms capable of maintaining a desired regime of activity. Regular-spiking cells are known to down-(up-)regulate their firing rate upon increased (decreased) input on a timescale of tens of milliseconds \cite{Connors_Gutnick_Spike_Patterns,Benda_Herz_Spike_Frequ_Adaption}. Since our simulation did not incorporate any rapidly changing external drive, the network itself was not expected to exhibit fast changes of synaptic input, allowing us to neglect this feature. On the other hand, a similar form of adaption as a reaction on deprived or enhanced input can be observed on a timescale of hours to days \cite{Desai_IP}. In contrast to the former short-term adaption, which can be explained by a separation of timescales among different ionic currents in the cell \cite[p.~252-256]{Izhikevich_Dynsys}, in the latter case, \cite{Desai_IP} finds evidence that a long-term change in excitability can be attributed to an altered resistance of ionic channels.
+
+In the original LIF-SORN, a simple form of low intrinsic homeostasis was implemented by altering the neurons' firing threshold based on the deviation from a target firing rate. This thesis implemented a new model of slow intrinsic homeostasis, based on the work in \cite{Sweeney_Paper}. The following section describes both models in further detail.
 
 
+\subsubsection{Modelling of Homeostatic Intrinsic Plasticity}
 
-
-
-\subsection{Simulation of Homeostasis}
-
-The original homeostatic control was described as an operation over discrete time steps $\Delta t$, carried out for each excitatory neuron:
+Our original model of homeostatic control was described as an operation over discrete time steps $\Delta t = 0.1ms$, carried out for each excitatory neuron:
 
 \begin{align}
-V_T &\rightarrow V_T + \eta_{IP} (N_{spikes} - h_{IP}) \label{can_hom_1}\\
+V_t &\rightarrow V_t + \eta_{IP} (N_{spikes} - h_{IP}) \label{can_hom_1}\\
 N_{spikes} &\rightarrow 0 \label{can_hom_2}
 \end{align}
-
-where $V_T$ is the firing threshold, $\eta_{IP}$ an adaption rate and $h_{IP}$ the desired number of spikes per time step. $N_{spikes}$ is a variable, counting the number of spikes of a the neuron within each interval. In a continuous, rate-based form, this update rule can be written as:
+where $V_t$ is the firing threshold, $\eta_{IP}$ an adaption rate and $h_{IP}$ the desired number of spikes per time step. $N_{spikes}$ is a variable, counting the number of spikes of the neuron within each interval. In a continuous, rate-based form, this update rule can as well be written as:
 
 \begin{equation}
-\dot{V}_T = \eta_{IP}(r-r_{IP}) \label{can_hom_rate}
+\dot{V}_t = \eta_{IP}(r-r_{IP}) \label{can_hom_rate}
 \end{equation}
- 
-with $r$ as the neurons momentary firing rate and $r_{IP}=h_{IP}/\Delta t$ the target firing rate.
- 
-This feedback control includes no interaction among neurons. The model presented in \cite{Sweeney_Paper} includes spacial interaction through a diffusive term. It is described by the following equations.
+with $r$ as the neuron's firing rate and $r_{IP}=h_{IP}/\Delta t$ the target firing rate. This feedback control indirectly drives the firing rate of each neuron towards $r_{IP}$: If $r>(<)r_{IP}$, $V_t$ increases (decreases), reducing (increasing) the probability of a spike to occur. 
+
+The model presented in \cite{Sweeney_Paper} includes spatial interaction across excitatory neurons through the diffusion of nitric oxide (NO). Enzymes that are responsible for NO synthase (NOS) are present in different areas of the body, namely being involved in the dilation of blood vessels (endothelial NOS, eNOS) , the immune system (inducible NOS, iNOS) and the CNS (neuronal NOS, nNOS) \cite{NOS_Mammals}. These Enzymes differ in their functionality and dependence on the presence of other molecules. In particular, nNOS is sensitive to the concentration of $Ca^{2+}$ ionic Calcium \cite{Knowles_Ca_nNOS}.
+
+Due to a depolarization of the membrane potential in the course of an action potential, voltage dependent $Ca^{2+}$-channels open, which causes a significant increase of the intracellular Calcium concentration (relative to the low concentration at rest) \cite[p.~98-100]{Hille_Ion_Channels}. A common theoretical description of voltage-dependent ion channels is provided by the Goldman-Hodgkin-Katz equations, see \cite[p.~445-451]{Hille_Ion_Channels}. As such, $Ca^{2+}$ constitutes a causal link between spiking activity and the production of NO.
+
+On the other hand, experimental studies have suggested that NO can act as a diffusive signalling pathway, decreasing intrinsic excitability \cite{Steinert_NO}, or generally suggest a role of NO in maintaining a functional state of activity \cite{Pape_NO}.
+
+Sweeney et al. combined these empirical findings into a model of \emph{diffusive homeostasis}, which is governed by the following equations:   
 
 \begin{align}
-\frac{dCa^{2+}_i}{dt}(t) &= -\frac{Ca^{2+}_i}{\tau_{Ca^{2+}}} + Ca^{2+}_{spike} \sum_{t_{spike}} \delta(t-t_{spike}) \label{Ca_dyn}\\
-\frac{dnNOS_i}{dt}(t) &= \frac{1}{\tau_{nNOS}} \left(  \frac{{Ca^{2+}_i}^3}{{Ca^{2+}_i}^3+1} - nNOS_i \right) \label{nNOS_dyn}\\
-\frac{dNO}{dt}(\mathbf{r},t)&=-\lambda NO + D \nabla^2 NO + \sum_{i} \delta^2(\mathbf{r}-\mathbf{r}_{neur,i})\cdot nNOS_i \label{NO_dyn}\\
-\frac{d\theta_i}{dt}(t) &= \frac{NO(\mathbf{r}_{neur,i},t)-NO_0}{NO_0\cdot\tau_{\theta}} \label{Theta_dyn}
+\dot{{Ca^{2+}}^i}(t) &= -\frac{{Ca^{2+}}^i}{\tau_{Ca^{2+}}} + Ca^{2+}_{spike} \sum_{j} \delta(t-t^i_{spike,j}) \label{Ca_dyn}\\
+\dot{nNOS^i}(t) &= \frac{1}{\tau_{nNOS}} \left(  \frac{{{Ca^{2+}}^i}^3}{{{Ca^{2+}}^i}^3+1} - nNOS^i \right) \label{nNOS_dyn}\\
+\dot{NO}(\mathbf{r},t)&=-\lambda NO + D \nabla^2 NO + \sum_{i} \delta^2(\mathbf{r}-\mathbf{r}_{neur}^i)\cdot nNOS^i \label{NO_dyn}\\
+\dot{V_t^i}(t) &= \frac{NO(\mathbf{r}_{neur}^i,t)-NO_0}{NO_0\cdot\tau_{V_t}} \label{Theta_dyn}
 \end{align}
 
-A depolarization within the cell causes an inflow of $Ca^{2+}$ ions, which is modelled as an instantaneous increase of the $Ca^{2+}$ concentration. Over time, the concentration decays exponentially by a time constant $\tau_{Ca^{2+}}$, see \eqref{Ca_dyn}. Though $Ca^{2+}$ currents can be described in a much more detailed fashion, it can be considered as a reasonable approximation \cite[p.~198-203]{Theor_Neur_Dayan}. It has been experimentally observed that the intracellular $Ca^{2+}$ concentration influences neuronal Nitric oxide synthase \cite{Bredt_Snyder_NO}. This was modelled by Sweeney et al. through \eqref{nNOS_dyn}, using the Hill equation \cite{Hill_Equ} to model a cooperative binding mechanism. The $nNOS$ production is then fed into the "pool" of nitric oxide via point sources located at the neurons' positions \eqref{NO_dyn}. An additional decay term was added to provide a stable $NO$ concentration under constant neuronal activity.
+A depolarization within a nerve cell upon a spike-event $t_{spike}$ causes a fixed inflow of ionic current $Ca^{2+}_{spike}$, which is modelled as an instantaneous increase of the $Ca^{2+}$ concentration. Over time, the concentration decays exponentially by a time constant $\tau_{Ca^{2+}}$, see \eqref{Ca_dyn}. Though $Ca^{2+}$ currents can be described in a much more detailed fashion, it can be considered as a reasonable approximation \cite[p.~198-203]{Theor_Neur_Dayan}. The aforementioned influence of $Ca^{2+}$ onto nNOS was modelled by Sweeney et al. through \eqref{nNOS_dyn}, using the Hill equation \cite{Hill_Equ} to model a cooperative binding mechanism. The $nNOS$ production is then fed into the "pool" of nitric oxide via point sources located at the neurons' positions. Apart from the inflow and the diffusive term $D \nabla^2 NO$, an additional decay term was added to provide a stable finite $NO$ concentration under constant neuronal activity.
 
-Finally, the dynamics of the firing thresholds $\theta_i$ were modelled such that the rate of change is proportional to the relative deviation of the $NO$ concentration at the neurons' locations from a global target concentration $NO_0$.
+Finally, the dynamics of the firing thresholds $V_t^i$ were modelled such that the rate of change is proportional to the relative deviation of the $NO$ concentration at the neurons' locations from a global target concentration $NO_0$. 
 
-Obviously, the appropriate choice of $NO_0$ is crucial for the goal of achieving and maintaining certain level of activity. However, one cannot directly set a parameter of the model to the desired population activity, as it was the case for canonical intrinsic homeostasis. Rather, one needs to determine the average concentration \textit{associated} with the desired activity and set it as a target concentration. Though it is possible to derive this relation in an analytic fashion, for practical purposes of the simulation, we let the system run with the previous homeostatic mechanism until a steady concentration level was reached. This level was then set to be the target concentration and we switched to diffusive homeostasis.
+Obviously, the appropriate choice of $NO_0$ is crucial for the goal of achieving and maintaining a certain level of activity. However, one cannot directly set a parameter of the model to the desired population activity, as it was the case for canonical intrinsic homeostasis. Rather, one needs to determine the average concentration \textit{associated} with the desired activity and set it as a target concentration. Though it is possible to derive this relation in an analytic fashion, for practical purposes of the simulation, we let the system run with the previous homeostatic mechanism, still solving equation \eqref{Ca_dyn}-\eqref{NO_dyn} until a steady mean over the concentrations at the neurons' positions was reached. This mean was then set to be the target concentration and we switched to diffusive homeostasis. Table \ref{Params_IP} summarizes the choice of parameters that where introduced in this section.
+\begin{table}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{parameter} & \textbf{value} \\
+\hline
+$\mathrm{r_{IP}}$ & $\mathrm{3\;Hz}$ \\
+\hline
+$\mathrm{\eta_{IP}}$ & $\mathrm{0.1\;mV}$ \\
+\hline
+$\mathrm{Ca^{2+}_{spike}}$ & 1 \\ \hline
+$\mathrm{\tau_{Ca^{2+}}}$ &  $\mathrm{10\;ms}$ \\
+\hline
+$\mathrm{\tau_{nNOS}}$ & $\mathrm{100\;ms}$ \\
+\hline
+$\mathrm{D}$ & default: 12500 $\mathrm{\mu m^2 s^{-1}}$ \\
+\hline 
+$\mathrm{\lambda}$ & $\mathrm{0.1\;s^{-1}}$ \\
+\hline
+$\mathrm{\tau_{V_t}}$ & see section ?? \\
+\hline
+\end{tabular}
+\caption{Parameters of homeostatic intrinsic plasticity.}
+\label{Params_IP}
+\end{table}
+
+\subsection{Simulation of Diffusion}
+
+We solved \eqref{NO_dyn} with the finite difference method on a grid with a resolution of $100\times 100$ points. Integration over time was carried out by a 4th-order Runge-Kutta method with a time step of $1 ms$. On each time step, $\nabla^2 NO(\mathbf{r})$ was approximated by
+\begin{equation}
+\nabla^2 NO(\mathbf{r}_{i,j}) \approx \frac{NO_{i+1,j}+NO_{i-1,j}+NO_{i,j+1}+NO_{i,j-1}-4NO_{i,j}}{h^2}
+\label{Laplace_Numeric}
+\end{equation}
+where $h = L/100$ is the distance between neighboured grid points, determined by the length $L$ of the square sheet and the resolution of the numeric grid. We implemented three possible boundary conditions into the simulation:
+
+1.) Periodic boundary conditions:
+\begin{align}
+NO_{i,N+1} &= NO_{i,0} \label{Periodic_Cond_1} \\
+NO_{N+1,i} &= NO_{0,i} \label{Periodic_Cond_2} \\
+NO_{i,-1} &= NO_{i,N} \label{Periodic_Cond_3} \\
+NO_{-1,i} &= NO_{N,i} \label{Periodic_Cond_4}
+\end{align}
+with $N$ being the grid resolution.
+
+2.) Neumann boundary conditions, with $\nabla NO = (0,0)$ at the boundaries:
+\begin{align}
+NO_{i,N+1} &= NO_{i,N-1} \label{Neumann_Cond_1} \\
+NO_{N+1,i} &= NO_{N-1,i} \label{Neumann_Cond_2} \\
+NO_{i,-1} &= NO_{i,1} \label{Neumann_Cond_3} \\
+NO_{-1,i} &= NO_{1,i} \label{Neumann_Cond_4}
+\end{align}
+
+3.) Dirichlet boundary conditions, with $NO = NO_{bound}$ at the boundaries.
+
+If not explicitly marked differently, Neumann boundary conditions where used for most of the simulations. This decision relates to the previously described mechanism of synaptic growth: Neurons placed close to the edge of the sheet have a lower connection probability due to the absence of neighbouring neurons in the direction perpendicular to the close-by border. It therefore models the synaptic growth within a square "cutout" of neural tissue. The Neumann boundary condition fits into this picture, since it allows a zero-flux condition at the borders. This is a reasonable assumption, because NO molecules cannot diffuse out of the tissue (unless they were placed in a fluid surrounding).
+
+Equation \eqref{NO_dyn} describes the influx of NO as a sum of scaled and spatially shifted Dirac functions. Apart from the question, whether this source term results in a well defined, finite solution at the neurons' positions (see section !!??!!), it can only be modelled to a certain degree of accuracy, depending on the resolution of the numeric grid. In practice, we approximated the point sources of NO as an insertions at individual grid cells at a rate of $nNOS^i(t) / h^2$, where the normalizing divisor $h^2$ ensured the desired total influx per neuron. This numeric implementation required two additional constraints: First, all random neuron positions were confined to integer multiples of $h$ in x- and y-direction. Second, to avoid redundancy and for physiological reasons, each grid cell could only hold one neuron at maximum. Both conditions combined led to an iterative generation of positions, where for each neuron a random number generator produced pairs of integers $(n_x,n_y)$, each within $[0,N]$, until an unoccupied pair of integers was found and occupied, moving on to the next neuron. Figure \ref{diff_test_plot} shows an example of the resulting NO density. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{../../plots/density_plots/density_plot.png}
+\end{center}
+\caption{Example of NO-diffusion with 400 point sources of excitatory neurons.}
+\label{diff_test_plot}
+\end{figure}
+
 
 \section{Results} \label{results}
+
+Since our main goal of the implementation of diffusive homeostasis was to allow the network to develop a broader distribution of firing rates across excitatory neurons compared to the original version of homeostasis, we first present the results of a comparison between features of the network activity in both variants in section \ref{activ_analys}. Following this is an analytic discussion of an instability we observed within the diffusive homeostatic feedback loop, see section \ref{theor_osc}. 
+
 \subsection{Activity Analysis} \label{activ_analys}
-Fig. \ref{full_sim_plots_av} shows the resulting dynamics of the population activity, average $NO$ concentration at the neurons' positions and the average firing threshold. Roughly speaking, both homeostatic mechanisms managed to keep the population activity in the desired range of $3~Hz$. However, what might appear to be slightly faster and stronger random fluctuations in the upper three plots of Fig. \ref{full_sim_plots_av}, turn out to be very regular oscillations across all three parameters depicted in the closeup. While the oscillation amplitude undergoes a rather unpredictable time course, the frequency remains at a constant level of $\simeq 1Hz$. Although one might argue that regular oscillations of the $NO$ concentration are not of much concern in terms of the network's structure and behaviour, this is not true for the population activity.
+Figure \ref{full_sim_plots_av} shows the resulting dynamics of the population activity, average $NO$ concentration at the neurons' positions and the average firing threshold. Both homeostatic mechanisms managed to keep the population activity in the desired range of 3 Hz. However, what might appear to be slightly faster and stronger random fluctuations in the upper three plots of Figure \ref{full_sim_plots_av}, turn out to be very regular oscillations across all three parameters depicted in the closeup. While the oscillation amplitude undergoes a rather unpredictable time course, the frequency remains at a constant level of $\simeq 1Hz$. Although one might argue that regular oscillations of the $NO$ concentration are not of much concern in terms of the network's structure and behaviour, this is not true for the population activity.
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_compl.eps}
 \includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_closeup.eps}
@@ -160,13 +233,13 @@ Fig. \ref{full_sim_plots_av} shows the resulting dynamics of the population acti
 \label{full_sim_plots_av}
 \end{figure}
 
-A first approach in comparing the network activity before and after altering the homeostatic mechanism is by means of the distribution of firing rates within the network. As Sweeney et al. point out, it has been experimentally observed that firing rates are rather heterogeneous, resulting in a broad distribution. In Fig. \ref{firing_rate_dist_comp} we compare our results for the firing distribution to the results by Sweeney et al.. 
+A first approach in comparing the network activity before and after altering the homeostatic mechanism is by means of the distribution of firing rates within the network. As Sweeney et al. point out, it has been experimentally observed that firing rates are rather heterogeneous, resulting in a broad distribution. In Figure \ref{firing_rate_dist_comp} we compare our results for the firing distribution to the results by Sweeney et al.. 
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/firing_rate_dists/firing_rate_dist_compare.eps}
 \caption{Left: Simulation results by Sweeney et al.. Right: Simulation results for the SORN.}
 \label{firing_rate_dist_comp}
 \end{figure}
-We observed a similar tendency of broader firing rate distributions for the diffusive homeostasis, though we did not get as heavy tailed statistics. Sweeney et al. found a reciprocal relation between the broadness of the firing rate distribution and the threshold distribution. The strong oscillations of the threshold make it difficult to estimate the threshold distribution in our case. For the plot in Fig. \ref{thresh_dist_comp}, we calculated each neuron's time average threshold for the case of non-diffusive and diffusive homeostasis and used this as a basis for the distribution. In contrast to Sweeney et al., the statistics did not change significantly.
+We observed a similar tendency of broader firing rate distributions for the diffusive homeostasis, though we did not get as heavy tailed statistics. Sweeney et al. found a reciprocal relation between the broadness of the firing rate distribution and the threshold distribution. The strong oscillations of the threshold make it difficult to estimate the threshold distribution in our case. For the plot in Figure \ref{thresh_dist_comp}, we calculated each neuron's time average threshold for the case of non-diffusive and diffusive homeostasis and used this as a basis for the distribution. In contrast to Sweeney et al., the statistics did not change significantly.
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/diff_hom/threshold_dist_compare.eps}
 \caption{Comparison of threshold distributions observed by Sweeney et al. (left) and in the SORN (right).}
@@ -175,21 +248,21 @@ We observed a similar tendency of broader firing rate distributions for the diff
 
 
 
-Another possibility of characterizing neural activity is to determine the distribution of interspike intervals (ISIs). Using non-diffusive homeostasis, one can observe a Poisson-like spiking behaviour with a stochastic refractory period, which is typically observed in cortical networks (Fig. . This is not what can be observed for the case of diffusive homeostasis: the ISI distribution reveals preference of interspike times in the range of $1s$, whereas interspike times in of $0.1-0.6s$ are less likely than a Poisson process would predict. This deviation matches the frequency of activity oscillations, see Fig. \ref{full_sim_plots_av}.
+Another possibility of characterizing neural activity is to determine the distribution of interspike intervals (ISIs). Using non-diffusive homeostasis, one can observe a Poisson-like spiking behaviour with a stochastic refractory period, which is typically observed in cortical networks (This is not what can be observed for the case of diffusive homeostasis: the ISI distribution reveals preference of interspike times in the range of $1s$, whereas interspike times in of $0.1-0.6s$ are less likely than a Poisson process would predict. This deviation matches the frequency of activity oscillations, see Figure \ref{full_sim_plots_av}.
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/Spike_Stats/ISI_compare_SORN.eps}
 \caption{Top: log-plot of ISI-distribution of diff. and non-diff. homeostasis in the SORN. Bottom: CV-distribution for diff and non-diff. homeostasis.}
 \label{ISI_compare}
 \end{figure}
 
-As a whole, the oscillating activity imposes a undesirable regularity onto the network's activity, see also Fig. \ref{spike_sequence}. While this effect might be tolerable without any external input, it is likely that the oscillations will overlay and obscure network responses onto external drive, presumably making it unusable for any computational task.
+As a whole, the oscillating activity imposes a undesirable regularity onto the network's activity, see also Figure \ref{spike_sequence}. While this effect might be tolerable without any external input, it is likely that the oscillations will overlay and obscure network responses onto external drive, presumably making it unusable for any computational task.
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/Spike_Stats/spike_sequence.eps}
 \caption{A spike sequence of 10 randomly picked excitatory neurons of the SORN. At $t=250s$, the homeostatic mechanism is switched to the diffusive variant.}
 \label{spike_sequence}
 \end{figure}
 
-\subsection{Analysis of sustained Oscillations}\label{theor_osc}
+\subsection{Analysis of Sustained Oscillations}\label{theor_osc}
 
 To find an explanation for the described oscillations and a possible way of avoiding them, one has to find the necessary minimal set of mechanisms, required to explain the observed phenomenon, without oversimplifying crucial aspects of the minimal model. In our model, there are two aspects whose simplification is of particular importance: First, it is impossible to analytically predict every single spike within the entire network. Our analytical treatment therefore aims to find analytical expressions for momentary firing rates among the network. Second, one might speculate that the exact solution of the NO diffusion process can be simplified in favour of a model, where one describes the dynamics of the average NO concentration across the nervous tissue. This approach can be justified by the fact that a unified, average NO concentration is effectively equal to a very large diffusion rate.
 
@@ -211,7 +284,7 @@ These conclusions can be transferred into the following "simple" dynamical syste
 \end{align}
 Here, $\xi(t)$ represents standard gaussian noise, accounting for the fact that, apart from the regular oscillation, the population activity features a certain amount of fluctuations. As an additional simplification, the fixed point was set to the origin.
 
-To complete the expression, one has to find an appropriate description of the $r(\theta)$-relation. As a most simple approximation, we applied a linear regression to the data of the average threshold and the corresponding population activity, see Fig. \ref{thresh_r_linfit}. The constant $C$ in equation \eqref{simple_NO_dyn} is then proportional to the slope of the linear fit. In addition, $C$ is proportional to the amount of NO released per spike, proportional to the number of contributing neurons and antiproportional to the total area of the tissue. We can solve and integrate equations \eqref{Ca_dyn} and \eqref{nNOS_dyn} for a single spike, resulting in a total of $\tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / 3$. Therefore, $C=N_{neur}\cdot \tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / (3\cdot L^2)$ and $C\cdot r(\theta)=\theta \cdot \alpha \cdot N_{neur} \cdot \tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / (3\cdot L^2)$, where $\alpha$ is the slope of the linear fit and $L^2$ the area of the tissue.
+To complete the expression, one has to find an appropriate description of the $r(\theta)$-relation. As a most simple approximation, we applied a linear regression to the data of the average threshold and the corresponding population activity, see Figure \ref{thresh_r_linfit}. The constant $C$ in equation \eqref{simple_NO_dyn} is then proportional to the slope of the linear fit. In addition, $C$ is proportional to the amount of NO released per spike, proportional to the number of contributing neurons and antiproportional to the total area of the tissue. We can solve and integrate equations \eqref{Ca_dyn} and \eqref{nNOS_dyn} for a single spike, resulting in a total of $\tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / 3$. Therefore, $C=N_{neur}\cdot \tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / (3\cdot L^2)$ and $C\cdot r(\theta)=\theta \cdot \alpha \cdot N_{neur} \cdot \tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / (3\cdot L^2)$, where $\alpha$ is the slope of the linear fit and $L^2$ the area of the tissue.
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/diff_hom/thresh_r_linfit.eps}
 \caption{Linear fit of the relation between the firing threshold (averaged over population) and the population activity. $R^2=0.99996$.}
@@ -222,7 +295,7 @@ To complete the expression, one has to find an appropriate description of the $r
 \caption{Simulation results for equations \eqref{simple_NO_dyn} and \eqref{simple_threshold_dyn}.}
 \label{lin_mod_osc}
 \end{figure}
-Fig. \ref{lin_mod_osc} shows the results achieved from the simulation. We observe that noise is capable of maintaining oscillations in an otherwise stable linear system.
+Figure \ref{lin_mod_osc} shows the results achieved from the simulation. We observe that noise is capable of maintaining oscillations in an otherwise stable linear system.
 
 Is it possible to get a better understanding of the achieved dynamics? For that purpose, we note that equations \eqref{simple_NO_dyn} and \eqref{simple_threshold_dyn} can be transformed into the following:
 
@@ -254,7 +327,7 @@ The maximum of this function then is
 S_\theta(\omega_{max}) &= \frac{\sigma^2}{\tau _\theta^2 r_g^2 \left(\frac{1}{4}-\frac{\lambda}{2}\right)-\alpha \lambda \tau _\theta r_g} \label{S_max_omega}
 \end{align}
 
-Fig. \ref{power_spec_thresh_sim_vs_an} suggests that the theoretical result does not fully cover the dynamics of the simulation, but supports the observation of a sustained oscillation at a preferred frequency.
+Figure \ref{power_spec_thresh_sim_vs_an} suggests that the theoretical result does not fully cover the dynamics of the simulation, but supports the observation of a sustained oscillation at a preferred frequency.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/power_spec/power_spectrum3}
@@ -268,7 +341,7 @@ Since the $S_\theta(\omega)$ represents a spectral density, one should not direc
 
 \section{The Firing Rate Distribution in the Network}
 
-As shown in Fig. \ref{firing_rate_dist_comp}, the distribution of firing rates within the population of neurons is highly dependent on the diffusion constant $D$, in accordance to the findings by Sweeney et. al. To analyze this dependence, a dynamic mean-field approach was suggested in \cite{Sweeney_Paper}. In short, it consists of set of equations which need to be fulfilled self-consistently.
+As shown in Figure \ref{firing_rate_dist_comp}, the distribution of firing rates within the population of neurons is highly dependent on the diffusion constant $D$, in accordance to the findings by Sweeney et. al. To analyze this dependence, a dynamic mean-field approach was suggested in \cite{Sweeney_Paper}. In short, it consists of set of equations which need to be fulfilled self-consistently.
 
 \begin{align}
 \nu &= \langle \phi \rangle = \frac{\sum \phi_i}{N} \label{sweeney_self_consist_rate1} \\
@@ -337,7 +410,7 @@ Of course, equation \eqref{sweeney_self_consist_rate1} has to be rewritten accor
 \label{sweeney_self_consist_rate1_mod}
 \end{equation}
 
-Fig. \ref{dynamics_rate_threshold_dyn_mean_field_sweeney} depicts the resulting dynamics for $\alpha=0.4$ and $\alpha = 0.8$. Both predictions can be confirmed: All rates approach the same target rate of $3Hz$ and, apparently, thresholds move toward the same state for either choice of $\alpha$. A significant difference only exists within the dynamics leading to the steady state. Roughly, a smaller value of $\alpha$ leads to a faster relaxation. Though, changes in the dynamics appear to be more subtle than a simple rescaling in the time domain.
+Figure \ref{dynamics_rate_threshold_dyn_mean_field_sweeney} depicts the resulting dynamics for $\alpha=0.4$ and $\alpha = 0.8$. Both predictions can be confirmed: All rates approach the same target rate of $3Hz$ and, apparently, thresholds move toward the same state for either choice of $\alpha$. A significant difference only exists within the dynamics leading to the steady state. Roughly, a smaller value of $\alpha$ leads to a faster relaxation. Though, changes in the dynamics appear to be more subtle than a simple rescaling in the time domain.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_comb}
@@ -414,7 +487,7 @@ The problem of finding the steady-state solution of the homeostatic constraint t
 \label{NO_euqil_cond_interact_matrix_operator_solve}
 \end{equation}
 
-An example of a distribution of rates acquired from this method is shown in fig. \ref{rate_dist_interact_matrix}.
+An example of a distribution of rates acquired from this method is shown in Figure \ref{rate_dist_interact_matrix}.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/diff_rate_solve.png}
