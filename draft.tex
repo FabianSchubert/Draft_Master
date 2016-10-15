@@ -1,4 +1,6 @@
 \documentclass[10pt,a4paper]{article}
+%\usepackage{layouts}
+\usepackage[a4paper,margin=1.5in]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
@@ -20,7 +22,6 @@ Spatially dependent Interaction as a Determinant of Neural Activity and Plastici
 
 \begin{document}
 \maketitle
-
 \section{Abstract} \label{abstract}
 Based on the LIF-SORN-model proposed in \cite{SORN_Paper}, we attempted to replace the intrinsic homeostatic control system used in the original version by a mechanism based on the diffusion of a neurotransmitter across the nervous tissue. The model of diffusive homeostasis was adopted from a paper by Y. Sweeney et al. \cite{Sweeney_Paper} and models the tissue as a surface of square shape and a set of points on this surface, representing the neurons' positions within the SORN. The group of excitatory neurons then acted as a point-source of nitric oxide (NO), as well as as a sensor for the NO-concentration at each individual position. The production and sensing of NO forms the basis of a feedback loop: The individual NO-readout is fed into a comparator which causes an appropriate change within the internal firing threshold of the neuron, in turn altering the neuron's firing rate. The control system is then closed by linking the rate of NO-production to the neuron's firing rate.
 
@@ -173,7 +174,7 @@ $\mathrm{D}$ & default: 12500 $\mathrm{\mu m^2 s^{-1}}$ \\
 \hline 
 $\mathrm{\lambda}$ & $\mathrm{0.1\;s^{-1}}$ \\
 \hline
-$\mathrm{\tau_{V_t}}$ & see section ?? \\
+$\mathrm{\tau_{V_t}}$ & see section \ref{activ_analys} \\
 \hline
 \end{tabular}
 \caption{Parameters of homeostatic intrinsic plasticity.}
@@ -222,16 +223,32 @@ Equation \eqref{NO_dyn} describes the influx of NO as a sum of scaled and spatia
 
 \section{Results} \label{results}
 
-Since our main goal of the implementation of diffusive homeostasis was to allow the network to develop a broader distribution of firing rates across excitatory neurons compared to the original version of homeostasis, we first present the results of a comparison between features of the network activity in both variants in section \ref{activ_analys}. Following this is an analytic discussion of an instability we observed within the diffusive homeostatic feedback loop, see section \ref{theor_osc}. 
+Since our main goal of the implementation of diffusive homeostasis was to allow the network to develop a broader distribution of firing rates across excitatory neurons compared to the original version of homeostasis, we first present the results of a comparison between features of the network activity in both variants in section \ref{activ_analys}. Following this is an analytic discussion of an instability we observed within the diffusive homeostatic feedback loop, see section \ref{theor_osc}. Furthermore, we compare topological features of the network under the influence of diffusive and non-diffusive homeostasis in section ???. 
 
 \subsection{Activity Analysis} \label{activ_analys}
-Figure \ref{full_sim_plots_av} shows the resulting dynamics of the population activity, average $NO$ concentration at the neurons' positions and the average firing threshold. Both homeostatic mechanisms managed to keep the population activity in the desired range of 3 Hz. However, what might appear to be slightly faster and stronger random fluctuations in the upper three plots of Figure \ref{full_sim_plots_av}, turn out to be very regular oscillations across all three parameters depicted in the closeup. While the oscillation amplitude undergoes a rather unpredictable time course, the frequency remains at a constant level of $\simeq 1Hz$. Although one might argue that regular oscillations of the $NO$ concentration are not of much concern in terms of the network's structure and behaviour, this is not true for the population activity.
+As a first attempt, we set the time constant of threshold adaptation in the diffusive homeostasis to $\mathrm{2500\, ms}$, as given by \cite{Sweeney_Paper}. Switching between non-diffusive/diffusive homeostasis after 700 seconds, Figure \ref{full_sim_osci} shows the resulting dynamics of the population activity of the excitatory and inhibitory group, the average $NO$ concentration at the excitatory neurons' positions and the average firing threshold within the exc. group (inh. threshold was fixed, see table \ref{LIF_neuron_params}). Both homeostatic mechanisms managed to keep the excitatory population activity in the desired range of 3 Hz. However, what might appear to be slightly faster and stronger random fluctuations in the upper three plots of Figure \ref{full_sim_osci}, are in fact regular oscillations across all three depicted variables. While the oscillation amplitudes undergo a rather unpredictable time course, the frequency remains at a constant level of $\simeq 0.5\, Hz$. Although one might argue that - for the sake of practical purposes - regular oscillations of the $NO$ concentration are not of much concern for the network as such, a periodically fluctuating firing rate is a qualitative feature requiring further inquiry.
+
 \begin{figure}
-\includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_compl.eps}
-\includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_closeup.eps}
-\caption{Population activity, average $NO$ concentration (averaged over readouts at neurons' positions) and average firing threshold. Canonical homeostasis was used for $0-250s$ , diffusive for $250-500s$. Activity target was $3 ~Hz$.}
-\label{full_sim_plots_av}
+\includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_compl.png}
+%\includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_closeup.png}
+\caption{A/A*: Mean of excitatory (blue) and inhibitory (red) neuronal firing rate. B/B*: NO concentration averaged over readouts at exc. neurons' positions. C/C*: Average exc. firing threshold. Non-diffusive homeostasis was used for $\mathrm{0-700\, s}$ , diffusive h. for $\mathrm{700-1500\, s}$. Target activity was $\mathrm{3\, Hz}$.}
+\label{full_sim_osci}
 \end{figure}
+
+Rhythmic patterns of activity are a commonly observed phenomenon within the brain. Depending on the rate of oscillations, the location within the brain and the spatial scale over which they are observed, different physiological features are found to be responsible, leading to explanatory models at different levels of abstraction. On a microscopic, single-neuron level, a so-called slow after-hyperpolarization conductance explains the appearance of bursting behaviour: A relatively short period of spiking activity is followed by a longer period of silence. This phenomenon can be modelled by a $Ca^{2+}$-dependent $K^{+}$-conductance. Upon the bursting period, $Ca^{2+}$ concentration rises, prohibiting continuous spiking due to the activation of $K^{+}$  current until the $Ca^{2+}$ concentration has returned to base-level \cite[p.~203-207]{Theor_Neur_Dayan}. However, due to the simplicity of our neuron model, this type of oscillating activity can be ruled out as an explanation.
+
+On a larger, rate-based level, dynamical models of interconnected excitatory and inhibitory groups can exhibit sustained oscillations of activity \cite[p.~270]{Theor_Neur_Dayan}. As a simplest model, one can describe the dynamics of the exc. and inh. populations as a 2-dimensional dynamical system, representing the respective population rates $r_e$ and $r_i$:
+\begin{align}
+\tau_e \dot{r}_e  &= -r_e + \phi_e(r_e W_{ee} + r_i W_{ie}) \label{2d-exc_inh_rate_1} \\
+\tau_i \dot{r}_i  &= -r_i + \phi_i(r_e W_{ei} + r_i W_{ii}) \label{2d-exc_inh_rate_2}
+\end{align}
+
+where $\tau_e$ and $\tau_i$ represents time constants representing the rapidity of firing rate adaptation, $\phi_e$ and $\phi_i$ the respective transition functions between synaptic input and firing rate and $W_{xy}$ the mean synaptic weight from population x to population y. 
+
+As plot A* in Figure \ref{full_sim_osci} indicates, the mean firing rates of both populations are highly correlated in time. For the source of oscillating behaviour to be found within the interaction between both populations,  
+
+
+
 
 A first approach in comparing the network activity before and after altering the homeostatic mechanism is by means of the distribution of firing rates within the network. As Sweeney et al. point out, it has been experimentally observed that firing rates are rather heterogeneous, resulting in a broad distribution. In Figure \ref{firing_rate_dist_comp} we compare our results for the firing distribution to the results by Sweeney et al.. 
 \begin{figure}
@@ -248,7 +265,7 @@ We observed a similar tendency of broader firing rate distributions for the diff
 
 
 
-Another possibility of characterizing neural activity is to determine the distribution of interspike intervals (ISIs). Using non-diffusive homeostasis, one can observe a Poisson-like spiking behaviour with a stochastic refractory period, which is typically observed in cortical networks (This is not what can be observed for the case of diffusive homeostasis: the ISI distribution reveals preference of interspike times in the range of $1s$, whereas interspike times in of $0.1-0.6s$ are less likely than a Poisson process would predict. This deviation matches the frequency of activity oscillations, see Figure \ref{full_sim_plots_av}.
+Another possibility of characterizing neural activity is to determine the distribution of interspike intervals (ISIs). Using non-diffusive homeostasis, one can observe a Poisson-like spiking behaviour with a stochastic refractory period, which is typically observed in cortical networks (This is not what can be observed for the case of diffusive homeostasis: the ISI distribution reveals preference of interspike times in the range of $1s$, whereas interspike times in of $0.1-0.6s$ are less likely than a Poisson process would predict. This deviation matches the frequency of activity oscillations, see Figure \ref{full_sim_osci}.
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/Spike_Stats/ISI_compare_SORN.eps}
 \caption{Top: log-plot of ISI-distribution of diff. and non-diff. homeostasis in the SORN. Bottom: CV-distribution for diff and non-diff. homeostasis.}
