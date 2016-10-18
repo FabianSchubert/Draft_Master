@@ -110,4 +110,15 @@ AV. Hill.
   haemoglobin on its dissociation curves.
 \newblock {\em The Journal of Physiology}, 40:iv---vii, 1910.
 
+\bibitem{Dyn_Sys_Hirsch}
+Morris~W. Hirsch and Stephen Smale, editors.
+\newblock {\em Differential Equations, Dynamical Systems, and Linear Algebra},
+  volume~60 of {\em Pure and Applied Mathematics}.
+\newblock Elsevier, 1974.
+
+\bibitem{Gerstner_Pop_Act}
+Wulfram Gerstner.
+\newblock Time structure of the activity in neural network models.
+\newblock {\em Phys. Rev. E}, 51:738--758, Jan 1995.
+
 \end{thebibliography}

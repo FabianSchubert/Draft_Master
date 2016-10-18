@@ -97,6 +97,7 @@ If no spikes arrive, the system rests at $x\cdot u = U$. Otherwise, depending on
 We used a leaky integrate-and-fire-model for all neurons in the network, whose dynamics are described by a stochastic differential equation:
 \begin{equation}
 dV = -\frac{V-E_l}{\tau_m}dt + \frac{\sigma}{\sqrt{\tau_m}}dW
+\label{LIF_Dynamics}
 \end{equation}
 where $V$ is the membrane potential, $E_l$ is the equilibrium membrane potential, $\tau_m$ is the time constant of the membrane, $\sigma$ is the standard deviation of the noise term and $dW$ is the standard Wiener process. A neuron is said to spike when its membrane potential reaches the threshold voltage $V_t$. The voltage is then reset to $V_r$. A refractory period was not implemented. A presynaptic spike causes a simple (delayed, see Table \ref{syn_conn_params}) increment of the membrane potential of the postsynaptic neuron by $w^{effective}_{ji}$. Table \ref{LIF_neuron_params} summarizes the aforementioned set of parameters.
 \begin{table}
@@ -243,7 +244,19 @@ On a larger, rate-based level, dynamical models of interconnected excitatory and
 \tau_i \dot{r}_i  &= -r_i + \phi_i(r_e W_{ei} + r_i W_{ii}) \label{2d-exc_inh_rate_2}
 \end{align}
 
-where $\tau_e$ and $\tau_i$ represents time constants representing the rapidity of firing rate adaptation, $\phi_e$ and $\phi_i$ the respective transition functions between synaptic input and firing rate and $W_{xy}$ the mean synaptic weight from population x to population y. 
+where $\tau_e$ and $\tau_i$ represents time constants representing the rapidity of firing rate adaptation, $\phi_e$ and $\phi_i$ the respective transition functions between synaptic input and firing rate and $W_{xy}$ the mean synaptic weight from population x to population y. A persistent oscillation then corresponds to a stable limit cycle in the 2-dimensional phase plane. According to the Poincaré-Bendixson Theorem, such a limit cycle exists inside a region $R$ if $R$ contains no fixed points and if any trajectory whose starting points lies within $R$ is confined to $R$. The second condition is equivalent to the condition that for all points $\mathbf{r}_{edge}$ on the edge of $R$, the vector field $\dot{\mathbf{r}}_{edge}$ is facing "into" $R$, see \cite[p.~248]{Dyn_Sys_Hirsch}. This case occurs if the system has a locally unstable fixed point, but a non-linearity that prevents an infinite deviation from the fixed point.
+Coming back to the dynamics in question, one would need to show that the network has a locally unstable fixed point at $\mathrm{(r_e,r_i)\approx (3\, Hz, 13\, Hz)}$, see A* in Figure \ref{full_sim_osci}. Several aspects come into play, making it a hard task to fit the full spiking network model onto the simplified equations \ref{2d-exc_inh_rate_1} and \ref{2d-exc_inh_rate_2}. First, the choice of $\tau_e$ and $\tau_i$ in \ref{2d-exc_inh_rate_1} and \ref{2d-exc_inh_rate_2} has significant influence onto the stability of the system. However, a straightforward equivalent does not exist in the used spiking neuron model. It has been shown that in the case of slowly varying input $\tau_{e/i}$ of equation \ref{2d-exc_inh_rate_1} and \ref{2d-exc_inh_rate_2} are equal to the membrane constant $\tau_m$ of the LIF-neuron used in the network \cite{Gerstner_Pop_Act}, see equation \ref{LIF_Dynamics}. A second problem is to choose a good estimate of the activation functions $\phi_{e/i}( \cdot )$. In the absence of noise in equation \ref{LIF_Dynamics}, the firing rate for a given constant total input $J$ is
+\begin{equation}
+\phi(J) = \begin{cases}\frac{1}{-\tau_m ln(\frac{V_t -E_l-J\tau_m}{V_r -E_l-J\tau_m})} & \mathrm{for}\; J\tau_m + E_l > V_t\\
+0 & \mathrm{otherwise}
+\end{cases}.
+\label{LIF_Fir_Rate_no_Noise}
+\end{equation}
+If membrane noise is present, according to \cite{Roxin_Firing_Rate_Distribution} one can calculate the \emph{mean} firing rate by
+\begin{equation}
+\phi(J) = 
+\label{LIF_Fir_Rate_with_Noise}
+\end{equation}
 
 As plot A* in Figure \ref{full_sim_osci} indicates, the mean firing rates of both populations are highly correlated in time. For the source of oscillating behaviour to be found within the interaction between both populations,  
 
