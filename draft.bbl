@@ -121,4 +121,10 @@ Wulfram Gerstner.
 \newblock Time structure of the activity in neural network models.
 \newblock {\em Phys. Rev. E}, 51:738--758, Jan 1995.
 
+\bibitem{Roxin_Firing_Rate_Distribution}
+Alex Roxin, Nicolas Brunel, David Hansel, Gianluigi Mongillo, and Carl van
+  Vreeswijk.
+\newblock On the distribution of firing rates in networks of cortical neurons.
+\newblock {\em Journal of Neuroscience}, 31(45):16217--16226, 2011.
+
 \end{thebibliography}

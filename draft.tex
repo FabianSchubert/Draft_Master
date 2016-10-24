@@ -96,7 +96,7 @@ If no spikes arrive, the system rests at $x\cdot u = U$. Otherwise, depending on
 
 We used a leaky integrate-and-fire-model for all neurons in the network, whose dynamics are described by a stochastic differential equation:
 \begin{equation}
-dV = -\frac{V-E_l}{\tau_m}dt + \frac{\sigma}{\sqrt{\tau_m}}dW
+{\tau_m}dV = -(V-E_l)dt + \sqrt{\tau_m} \sigma dW
 \label{LIF_Dynamics}
 \end{equation}
 where $V$ is the membrane potential, $E_l$ is the equilibrium membrane potential, $\tau_m$ is the time constant of the membrane, $\sigma$ is the standard deviation of the noise term and $dW$ is the standard Wiener process. A neuron is said to spike when its membrane potential reaches the threshold voltage $V_t$. The voltage is then reset to $V_r$. A refractory period was not implemented. A presynaptic spike causes a simple (delayed, see Table \ref{syn_conn_params}) increment of the membrane potential of the postsynaptic neuron by $w^{effective}_{ji}$. Table \ref{LIF_neuron_params} summarizes the aforementioned set of parameters.
@@ -227,12 +227,11 @@ Equation \eqref{NO_dyn} describes the influx of NO as a sum of scaled and spatia
 Since our main goal of the implementation of diffusive homeostasis was to allow the network to develop a broader distribution of firing rates across excitatory neurons compared to the original version of homeostasis, we first present the results of a comparison between features of the network activity in both variants in section \ref{activ_analys}. Following this is an analytic discussion of an instability we observed within the diffusive homeostatic feedback loop, see section \ref{theor_osc}. Furthermore, we compare topological features of the network under the influence of diffusive and non-diffusive homeostasis in section ???. 
 
 \subsection{Activity Analysis} \label{activ_analys}
-As a first attempt, we set the time constant of threshold adaptation in the diffusive homeostasis to $\mathrm{2500\, ms}$, as given by \cite{Sweeney_Paper}. Switching between non-diffusive/diffusive homeostasis after 700 seconds, Figure \ref{full_sim_osci} shows the resulting dynamics of the population activity of the excitatory and inhibitory group, the average $NO$ concentration at the excitatory neurons' positions and the average firing threshold within the exc. group (inh. threshold was fixed, see table \ref{LIF_neuron_params}). Both homeostatic mechanisms managed to keep the excitatory population activity in the desired range of 3 Hz. However, what might appear to be slightly faster and stronger random fluctuations in the upper three plots of Figure \ref{full_sim_osci}, are in fact regular oscillations across all three depicted variables. While the oscillation amplitudes undergo a rather unpredictable time course, the frequency remains at a constant level of $\simeq 0.5\, Hz$. Although one might argue that - for the sake of practical purposes - regular oscillations of the $NO$ concentration are not of much concern for the network as such, a periodically fluctuating firing rate is a qualitative feature requiring further inquiry.
-
+As a first attempt, we set the time constant of threshold adaptation in the diffusive homeostasis to $\mathrm{2500\, ms}$, as given by \cite{Sweeney_Paper}. Switching between non-diffusive/diffusive homeostasis after 750 seconds, Figure \ref{full_sim_osci} shows the resulting dynamics of the population activity of the excitatory and inhibitory group, the average $NO$ concentration at the excitatory neurons' positions and the average firing threshold within the exc. group (inh. threshold was fixed, see table \ref{LIF_neuron_params}). Both homeostatic mechanisms managed to keep the excitatory population activity in the desired range of 3 Hz. However, what might appear to be slightly faster and stronger random fluctuations in the upper three plots of Figure \ref{full_sim_osci}, are in fact regular oscillations across all three depicted variables. While the oscillation amplitudes undergo a rather unpredictable time course, the frequency remains at a constant level of $\simeq 0.5\, Hz$. Although one might argue that - for the sake of practical purposes - regular oscillations of the $NO$ concentration are not of much concern for the network as such, a periodically fluctuating firing rate is a qualitative feature requiring further enquiry.
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_compl.png}
 %\includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_closeup.png}
-\caption{A/A*: Mean of excitatory (blue) and inhibitory (red) neuronal firing rate. B/B*: NO concentration averaged over readouts at exc. neurons' positions. C/C*: Average exc. firing threshold. Non-diffusive homeostasis was used for $\mathrm{0-700\, s}$ , diffusive h. for $\mathrm{700-1500\, s}$. Target activity was $\mathrm{3\, Hz}$.}
+\caption{A/A*: Mean of excitatory (blue) and inhibitory (red) neuronal firing rate. B/B*: NO concentration averaged over readouts at exc. neurons' positions. C/C*: Average exc. firing threshold. Non-diffusive homeostasis was used for $\mathrm{0-750\, s}$ , diffusive h. for $\mathrm{750-1500\, s}$. Target activity was $\mathrm{3\, Hz}$.}
 \label{full_sim_osci}
 \end{figure}
 
@@ -252,11 +251,49 @@ Coming back to the dynamics in question, one would need to show that the network
 \end{cases}.
 \label{LIF_Fir_Rate_no_Noise}
 \end{equation}
-If membrane noise is present, according to \cite{Roxin_Firing_Rate_Distribution} one can calculate the \emph{mean} firing rate by
+If noise $\sigma$ is present, according to \cite{Roxin_Firing_Rate_Distribution} one can calculate the \emph{mean} firing rate by
+\begin{align}
+\phi(J) &= \left[ \sqrt{\pi}\tau_m \int_{x_-}^{x_+} dx e^{x^2} erfc(-x) \right]^{-1} \label{LIF_Fir_Rate_with_Noise1}\\
+x_- &= (V_r-E_l-J\tau_m)/\sigma \label{LIF_Fir_Rate_with_Noise2}\\
+x_+ &= (V_t-E_l-J\tau_m)/\sigma \label{LIF_Fir_Rate_with_Noise3}
+\end{align}
+where $erfc$ is the complementary error function. Figure \ref{F-I_noise_dep} shows that both predictions are quite accurate in predicting the mean firing rate. 
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{../../plots/F-I_noise_dep.png}
+\end{center}
+\caption{Comparison of mean firing rate of a LIF neuron without noise (squares) and with noise (circles, $\mathrm{\sigma = \sqrt{5}\, mV}$), averaged over $\mathrm{50\, s}$. Red and blue curves are the corresponding analytic predictions, see equation \ref{LIF_Fir_Rate_no_Noise} and \ref{LIF_Fir_Rate_with_Noise1}.}
+\label{F-I_noise_dep}
+\end{figure}
+However, one should note that the synaptic input within a spiking network carries an intrinsic randomness: since it is the sum of instantaneous increases in membrane voltage upon arriving spikes, one cannot simply describe it as a mean constant input $J$. Rather, if we assume that the arrival of spikes is approximately poisson-distributed and the time constant of the membrane is small compared to the average interspike-interval, according to \cite{Roxin_Firing_Rate_Distribution}, one can describe the synaptic input from population $\mathrm{A}$ to population $\mathrm{B}$ as $J_{AB}(t) = \mu_{AB} (t) + \sigma_{AB} \cdot \zeta(t)$, where $\zeta(t)$ is zero-mean standard gaussian noise and
+\begin{align}
+\mu_{AB} &= <w_{AB}> \cdot <N_{in,AB}> \cdot <r_A> \label{Noise_Approx_1}\\
+\sigma_{AB} &= \sqrt{\tau_m \cdot <w_{AB}>^2 \cdot <N_{in,AB}> \cdot <r_A>} \label{Noise_Approx_1} \, .
+\end{align}
+$\mathrm{<w_{AB}>,\, <N_{in,AB}>}$ and $\mathrm{<r_A>}$ denote the mean weight of a synapse connection population $\mathrm{A}$ with population $\mathrm{B}$, the mean number of incoming connections at a neuron in population $\mathrm{B}$ and the mean firing rate in population $\mathrm{A}$ (which makes it necessary to assume changes within the firing rate to be slow enough for a quasi-stationary description of the activity).
+Since we can assume intrinsic and input noise to be uncorrelated, the total noise within a neuron of population $\mathrm{B}$ has a standard deviation of 
 \begin{equation}
-\phi(J) = 
-\label{LIF_Fir_Rate_with_Noise}
+\sigma_{tot.} = \sqrt{\sigma_{intr.}^2 + \sum_A \sigma_{AB}^2} \; .
+\label{Total_Noise_Neuron}
 \end{equation}
+
+Apart from the correct description of $\phi_{e/i}$, a third problem is the analytic description of the STP that was present for recurrent excitatory connections in our network. In \cite{Markram_STP}, the steady-state value of $\mathrm{x\cdot u}$ for an input of constant rate $\mathrm{r}$ is given by
+\begin{align}
+x_{st.}(r) &= \frac{1-\exp \left(-\frac{1}{r\cdot \tau _d}\right)}{1-\left(1-u_{st.}\left(r\right)\right)\cdot \exp \left(-\frac{1}{r\cdot \tau _d}\right)} \label{STP_steady1} \\
+u_{st.}(r) &= \frac{U}{1-\left(1-U\right)\exp \left(-\frac{1}{r\cdot \tau _f}\right)} \; .\label{STP_steady2}
+\end{align}
+When trying to find the fixed point of equations \ref{2d-exc_inh_rate_1} and \ref{2d-exc_inh_rate_2}, one thus needs to incorporate the factor $\mathrm{x_{st.}\cdot u_{st.}}$ by means of the previously described mean input and the contribution to the total variance of the membrane noise.
+ 
+All these aspects taken together make it impossible to find an analytic expression for the fixed point of Equation \ref{2d-exc_inh_rate_1} and \ref{2d-exc_inh_rate_2}. Running a simulation of \ref{2d-exc_inh_rate_1} and \ref{2d-exc_inh_rate_2}, including all aforementioned approximations results in a stable configuration depicted in \ref{Dyn_Rate_Approx}. For this simulation, we set the relevant parameters to their predefined values and, in addition, extracted the mean threshold of the excitatory population which was set by the non-diffusive homeostasis, see C/C* in Figure \ref{full_sim_osci}, yielding a threshold of $\mathrm{-56.963\, mV}$. The results are depicted in Figure \ref{Dyn_Rate_Approx}. The system settled to a fixed point of $\mathrm{(r_{0,e},r_{0,i}) = (2.992\, Hz, 7.144\, Hz)}$, which is quite close to $\mathrm{(3\, Hz, 6.768\, Hz)}$, being the mean excitatory and inhibitory firing rate between 100-750 s of the full simulation (i.e., during non-diffusive homeostasis).
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{../../plots/approx_rates_EI.png}
+\end{center}
+\caption{Dynamics of equations \ref{2d-exc_inh_rate_1} (blue line) and \ref{2d-exc_inh_rate_2} (red line). Dotted lines mark the mean frequencies that where present in the full spiking network. Excitatory: 3 Hz, Inhibitory: 6,768 Hz. \ref{2d-exc_inh_rate_1} and \ref{2d-exc_inh_rate_2} converged to 2.992 Hz and 7.144 Hz respectively.}
+\label{Dyn_Rate_Approx}
+\end{figure}
+In principal, one could now further quantify the stability of the found fixed point by calculating the Jacobian matrix at $\mathrm{(r_{0,e},r_{0,i})}$. For the sake of the initial question though, namely the source of oscillation, it is sufficient at this point to restrict oneself to a preliminary result: Assuming the validity of the described rate-model, the recurrent network as such (without homeostasis) is stable under the given choice of parameters.
+
 
 As plot A* in Figure \ref{full_sim_osci} indicates, the mean firing rates of both populations are highly correlated in time. For the source of oscillating behaviour to be found within the interaction between both populations,  
 
