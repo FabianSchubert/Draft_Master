@@ -184,9 +184,9 @@ $\mathrm{\tau_{V_t}}$ & see section \ref{activ_analys} \\
 
 \subsection{Simulation of Diffusion}
 
-We solved \eqref{NO_dyn} with the finite difference method on a grid with a resolution of $100\times 100$ points. Integration over time was carried out by a 4th-order Runge-Kutta method with a time step of $1 ms$. On each time step, $\nabla^2 NO(\mathbf{r})$ was approximated by
+We solved \eqref{NO_dyn} with the finite difference method on a grid $\mathbf{r}_{i,j}$ with a resolution of $100\times 100$ points. Integration over time was carried out by a 4th-order Runge-Kutta method with a time step of $1 ms$. On each time step, $\nabla^2 NO(\mathbf{r}_{i,j}) = \nabla^2 NO_{i,j}$ was approximated by
 \begin{equation}
-\nabla^2 NO(\mathbf{r}_{i,j}) \approx \frac{NO_{i+1,j}+NO_{i-1,j}+NO_{i,j+1}+NO_{i,j-1}-4NO_{i,j}}{h^2}
+\nabla^2 NO_{i,j} \approx \frac{NO_{i+1,j}+NO_{i-1,j}+NO_{i,j+1}+NO_{i,j-1}-4NO_{i,j}}{h^2}
 \label{Laplace_Numeric}
 \end{equation}
 where $h = L/100$ is the distance between neighboured grid points, determined by the length $L$ of the square sheet and the resolution of the numeric grid. We implemented three possible boundary conditions into the simulation:
@@ -292,13 +292,20 @@ All these aspects taken together make it impossible to find an analytic expressi
 \caption{Dynamics of equations \ref{2d-exc_inh_rate_1} (blue line) and \ref{2d-exc_inh_rate_2} (red line). Dotted lines mark the mean frequencies that where present in the full spiking network. Excitatory: 3 Hz, Inhibitory: 6,768 Hz. \ref{2d-exc_inh_rate_1} and \ref{2d-exc_inh_rate_2} converged to 2.992 Hz and 7.144 Hz respectively.}
 \label{Dyn_Rate_Approx}
 \end{figure}
-In principal, one could now further quantify the stability of the found fixed point by calculating the Jacobian matrix at $\mathrm{(r_{0,e},r_{0,i})}$. For the sake of the initial question though, namely the source of oscillation, it is sufficient at this point to restrict oneself to a preliminary result: Assuming the validity of the described rate-model, the recurrent network as such (without homeostasis) is stable under the given choice of parameters.
+In principal, one could now further quantify the stability of the found fixed point by calculating the Jacobian matrix at $\mathrm{(r_{0,e},r_{0,i})}$. For the sake of the initial question though, namely the source of oscillation, it is sufficient at this point to restrict oneself to a preliminary result: Assuming validity of the described rate-model, the recurrent network as such (without homeostasis) is stable under the given choice of parameters. Furthermore, on an empirical basis, the occurrence of oscillations appear to be rather dependent on the choice of homeostasis, since apart from the homeostatic mechanism itself, all parameters of the simulation were kept unchanged upon the transition after 750s. In consequence, the following section further analyzes the dynamics underlying the diffusive homeostatic feedback.
+
+\subsection{Analysis of Oscillations under Dynamic Feedback}\label{theor_osc}
+
+Both forms of homeostasis use the excitatory firing threshold as a means of adjusting the excitatory firing rate. Though having a relatively immediate impact on the firing rate of the particular neuron, the network as a whole reacts by means of a local disturbance of activity as well: it settles at a new fixed point of firing rates. In the context of feedback dynamics, two questions are of importance. First, obviously, how the relation between a local change of threshold and the new fixed point of the network can be described and second, whether the time scale of the network's response is of relevance with respect to other time scales involved in the feedback loop.
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{../../plots/diff_hom/rate_th_close.png}
+\end{center}
+\label{rate_th_close}
+\end{figure}
 
 
-As plot A* in Figure \ref{full_sim_osci} indicates, the mean firing rates of both populations are highly correlated in time. For the source of oscillating behaviour to be found within the interaction between both populations,  
-
-
-
+!!!!AB HIER NUR UNSAUBER UND UNAUSGEARBEITET!!!!
 
 A first approach in comparing the network activity before and after altering the homeostatic mechanism is by means of the distribution of firing rates within the network. As Sweeney et al. point out, it has been experimentally observed that firing rates are rather heterogeneous, resulting in a broad distribution. In Figure \ref{firing_rate_dist_comp} we compare our results for the firing distribution to the results by Sweeney et al.. 
 \begin{figure}

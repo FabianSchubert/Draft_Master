@@ -8,9 +8,10 @@
 \BOOKMARK [2][-]{subsection.2.2}{Simulation of Diffusion}{section.2}% 8
 \BOOKMARK [1][-]{section.3}{Results}{}% 9
 \BOOKMARK [2][-]{subsection.3.1}{Activity Analysis}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.2}{Analysis of Sustained Oscillations}{section.3}% 11
-\BOOKMARK [1][-]{section.4}{The Firing Rate Distribution in the Network}{}% 12
-\BOOKMARK [2][-]{subsection.4.1}{Equilibrium in the full diffusive Model}{section.4}% 13
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Results for an Approximation of the Numerical Steady-State Solution}{subsection.4.1}% 14
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}{subsection.4.1}% 15
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Mean-Field Approximation for the Variance of Firing Rates}{subsection.4.1}% 16
+\BOOKMARK [2][-]{subsection.3.2}{Analysis of Oscillations under Dynamic Feedback}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.3}{Analysis of Sustained Oscillations}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{The Firing Rate Distribution in the Network}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Equilibrium in the full diffusive Model}{section.4}% 14
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Results for an Approximation of the Numerical Steady-State Solution}{subsection.4.1}% 15
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}{subsection.4.1}% 16
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Mean-Field Approximation for the Variance of Firing Rates}{subsection.4.1}% 17
