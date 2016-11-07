@@ -296,13 +296,17 @@ In principal, one could now further quantify the stability of the found fixed po
 
 \subsection{Analysis of Oscillations under Dynamic Feedback}\label{theor_osc}
 
-Both forms of homeostasis use the excitatory firing threshold as a means of adjusting the excitatory firing rate. Though having a relatively immediate impact on the firing rate of the particular neuron, the network as a whole reacts by means of a local disturbance of activity as well: it settles at a new fixed point of firing rates. In the context of feedback dynamics, two questions are of importance. First, obviously, how the relation between a local change of threshold and the new fixed point of the network can be described and second, whether the time scale of the network's response is of relevance with respect to other time scales involved in the feedback loop.
+Both forms of homeostasis use the excitatory firing threshold as a means of adjusting the excitatory firing rate. Though having a relatively immediate impact on the firing rate of the particular neuron, the network as a whole reacts by means of a local disturbance of activity as well: it settles at a new fixed point of firing rates. In the context of feedback dynamics, two questions are of importance. First, obviously, how the relation between a local change of threshold and the new fixed point of the network can be described and second, whether the time scale of the network's response is of relevance with respect to other time scales involved in the feedback loop. Regarding the second question, Figure \ref{rate_th_close} suggests that the excitatory population activity follows the mean firing threshold quasi instantaneously, compared with the overall time scale of the oscillating pattern.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.7\textwidth]{../../plots/diff_hom/rate_th_close.png}
 \end{center}
+\caption{Time course of the mean firing rate (blue) and the mean firing threshold within the excitatory pool (red). Bin width for firing rate estimation was 0.1s.}
 \label{rate_th_close}
 \end{figure}
+Thus, in a first attempt of understanding the occurrence of undesired oscillations, we presumed an immediate functional relationship $\mathbf{r}_e (t) = \mathbf{r}_e (\mathbf{V}_{t,e} (t))$, $\mathbf{r}_e$ and $\mathbf{V}_{t,e}$ representing the set of excitatory firing rates and thresholds, respectively.
+
+Describing the neural activity as instantaneous firing rates raises the question how to accurately describe the production of nitric oxide, since the outcome of equations \eqref{Ca_dyn} and \eqref{nNOS_dyn} relies on sudden increases of $Ca^{2+}$ concentration caused by spike events. Naively, one could replace the sum of dirac functions in \eqref{Ca_dyn} by a continuous inflow $Ca^{2+}_{spike} r_i(t)$. If \eqref{nNOS_dyn} was a linear homogeneous differential equation, this approximation would indeed allow for the correct calculation of a linear relation between mean firing rate and NO production. The cubic dependence on $Ca^{2+}$ breaks this simplicity.  
 
 
 !!!!AB HIER NUR UNSAUBER UND UNAUSGEARBEITET!!!!
