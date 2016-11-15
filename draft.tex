@@ -306,8 +306,54 @@ Both forms of homeostasis use the excitatory firing threshold as a means of adju
 \end{figure}
 Thus, in a first attempt of understanding the occurrence of undesired oscillations, we presumed an immediate functional relationship $\mathbf{r}_e (t) = \mathbf{r}_e (\mathbf{V}_{t,e} (t))$, $\mathbf{r}_e$ and $\mathbf{V}_{t,e}$ representing the set of excitatory firing rates and thresholds, respectively.
 
-Describing the neural activity as instantaneous firing rates raises the question how to accurately describe the production of nitric oxide, since the outcome of equations \eqref{Ca_dyn} and \eqref{nNOS_dyn} relies on sudden increases of $Ca^{2+}$ concentration caused by spike events. Naively, one could replace the sum of dirac functions in \eqref{Ca_dyn} by a continuous inflow $Ca^{2+}_{spike} r_i(t)$. If \eqref{nNOS_dyn} was a linear homogeneous differential equation, this approximation would indeed allow for the correct calculation of a linear relation between mean firing rate and NO production. The cubic dependence on $Ca^{2+}$ breaks this simplicity.  
+Describing the neural activity as instantaneous firing rates raises the question how to accurately describe the production of nitric oxide, since the outcome of equations \eqref{Ca_dyn} and \eqref{nNOS_dyn} relies on sudden increases of $Ca^{2+}$ concentration caused by spike events. Naively, one could replace the sum of dirac functions in \eqref{Ca_dyn} by a continuous inflow $Ca^{2+}_{spike} r_i(t)$. If \eqref{nNOS_dyn} was a linear homogeneous differential equation, this approximation would indeed allow for the correct calculation of a linear relation between mean firing rate and NO production. The cubic dependence on $Ca^{2+}$ breaks this simplicity. In order to derive an approximate description, we denote two things: First, the target firing rate of 3 Hz and the corresponding mean interspike interval of 0.33...s is large compared to the decay constant of Calcium, $\tau_{Ca^{2+}} = \mathrm{0.01\,s}$. Consequently, it is very unlikely that one spike event will fall into a region where the Calcium concentration, decaying from the instant jump of the previous spike event, is still significantly larger than zero. As such, one can justify
+\begin{equation}
+\begin{split}
+{Ca^{2+}}^3(t) &= \left[ Ca^{2+}_{spike} \sum_{i} \theta(t-t^i_{spike,i}) exp(-(t-t^i_{spike,j})/\tau_{Ca^{2+}}) \right]^3 \\
+&\approx {Ca^{2+}_{spike}}^3 \sum_{i} \theta(t-t^i_{spike,i}) exp(-3(t-t^i_{spike,j})/\tau_{Ca^{2+}})
+\end{split} \label{cubic_approx_1}			
+\end{equation}
+with $\theta(x)$ being the Heaviside step function. By the same argument
+\begin{equation}
+\frac{{Ca^{2+}}^3(t)}{{Ca^{2+}}^3(t)+1} \approx \sum_{i} \theta(t-t^i_{spike}) \frac{exp(-3(t-t^i_{spike})/\tau_{Ca^{2+}})}{exp(-3(t-t^i_{spike})/\tau_{Ca^{2+}}) + \frac{1}{{Ca^{2+}_{spike}}^3}}  
+\end{equation}
+Therefore, the resulting rate of NO synthesis can be decomposed into a sum of time shifted responses onto a single kernel of Calcium concentration as a result of a spike. for a spike at $t_{spike}=0$, the solution of \eqref{nNOS_dyn} can be calculated by
+\begin{equation}
+\begin{split}
+nNOS(t) &= \frac{1}{\tau_{nNOS}}\int_{-\infty}^t dt' exp(-(t-t')/\tau_{nNOS})\cdot \theta(t') \frac{exp(-3t'/\tau_{Ca^{2+}})}{exp(-3t'/\tau_{Ca^{2+}}) + \frac{1}{{Ca^{2+}_{spike}}^3}} \\
+&= \frac{1}{\tau_{nNOS}}\int_{0}^t dt' exp(-(t-t')/\tau_{nNOS})\cdot \frac{exp(-3t'/\tau_{Ca^{2+}})}{exp(-3t'/\tau_{Ca^{2+}}) + \frac{1}{{Ca^{2+}_{spike}}^3}}\;.
+\end{split}\label{nNOS_single_sol}
+\end{equation}
+The exact solution of this integral can be expressed in terms of the hypergeometric function, making it rather impractical for any further analysis. Looking for further simplifications, we note that $\tau_{nNOS}$ is chosen ten-fold larger than $\tau_{Ca^{2+}}$. This discrepancy in decay times allows for the assumption that the impact of the Calcium kernel onto $nNOS$ is practically instantaneous. Consequently, $nNOS(t)$ becomes
+\begin{equation}
+nNOS(t) = \frac{1}{\tau_{nNOS}} \theta(t) exp(-t/\tau_{nNOS}) \int_{0}^\infty dt' \frac{exp(-3t'/\tau_{Ca^{2+}})}{exp(-3t'/\tau_{Ca^{2+}}) + \frac{1}{{Ca^{2+}_{spike}}^3}}\;.
+\label{nNOS_single_sol_approx1}
+\end{equation}
+In this form, the integral has an easy-to-handle solution, which - with all spike events now included - results in
+\begin{equation}
+nNOS(t) = \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3\tau_{nNOS}} \sum_i \theta(t-t^i_{spike}) \exp(-(t-t^i_{spike})/\tau_{nNOS})\;.
+\label{nNOS_single_sol_approx2}
+\end{equation}
+Figure \ref{nNOS_approx_plot} compares the approximation given by \eqref{nNOS_single_sol_approx2} to the full NO production model (equations \eqref{Ca_dyn} and \eqref{nNOS_dyn}). Spikes were drawn from a poisson process at a rate of 3 Hz. As predicted, the simplified model fits very well for sufficiently isolated spike events. For the rare event of two subsequent spikes appearing very close to each other, as seen in Figure \ref{nNOS_approx_plot} at approximately 4 seconds, one can observe a slightly smaller but acceptable agreement.
+\begin{figure}
+\includegraphics[width=\textwidth]{../../plots/nNOS_approx.png}
+\caption{Time course of nNOS(t) with poisson spiking at 3Hz. The full simulation (blue, see equations \eqref{Ca_dyn},\eqref{nNOS_dyn}) is well fitted by the simplified model (red, see equation \eqref{nNOS_single_sol_approx2}). Top axis is a closeup of the first spike event.}
+\label{nNOS_approx_plot}
+\end{figure}
 
+Returning to the initial question, we note that according to equation \eqref{nNOS_single_sol_approx2}, a single spike causes the release of NO by an amount of $\frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$, which makes the mean rate of NO production over time simply $<nNOS> = <r> \cdot \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$. More specific, if the average interspike intervals of the underlying spike generation were short compared to the decay constant $\tau_{nNOS}$, one could show that \eqref{nNOS_single_sol_approx2} approaches gaussian noise with the aforementioned mean $\mu_{nNOS}(<r>) =  <r> \cdot \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$ and a variance of $\sigma^2_{nNOS}(<r>) = <r> \frac{{Ca^{2+}_{spike}}^6 {\tau_{Ca^{2+}}}^2 ln^2(2)}{18\tau_{nNOS}}$. However, for a single cell spiking at a mean firing rate of 3 Hz with approximately poissonian statistics, Figure \ref{nNOS_approx_plot} indicates that this approximation is not valid. Furthermore, the condition of interspike intervals to be short compared to the decay constant inherently contradicts the necessary assumptions that were taken for the previous approximations to hold.
+
+To overcome this contradiction, we introduce an idealized picture of diffusive homeostasis, where diffusion across the tissue is instantaneous. This simplification results in a single level of NO-concentration for all neurons, only being modified over time by the sum of all neurons' NO-syntheses and the decay term $-\lambda NO$. To account for the spread of NO, $nNOS(t)$ must be divided by the area $L^2$ of the tissue. The idealized version of \eqref{NO_dyn} then reads
+\begin{equation}
+\dot{NO}(t)=-\lambda NO + \frac{\sum_{i} nNOS^i(t)}{L^2}\;.
+\label{NO_dyn_approx}
+\end{equation}
+In this form, it becomes clear that we can now describe the \emph{total} influx of NO (the sum in \eqref{NO_dyn_approx}) as the sum of a mean and a random fluctuation: While spiking events on individual cells remain sufficiently separated to justify equation \eqref{nNOS_single_sol_approx2}, the sum of all spike events from the excitatory population results in an effective poisson process with a mean rate of $3 Hz \cdot N_{exc.} = \mathrm{1200\,Hz}$, given the assumption that cells are spiking weakly correlated. Furthermore, we argue that a total rate of $\mathrm{1200\,Hz}$ is sufficiently large to express this rate as a continuous function of time, $r_{total} = N_{exc.}\cdot r_{exc.pop.}(t)$, at least on the time scale of the oscillations to be studied (see  Figure \ref{rate_th_close}). Thus, equation \eqref{NO_dyn_approx} becomes
+\begin{equation}
+\dot{NO}(t)=-\lambda NO + \frac{\mu_{nNOS}(N_{exc.}r_{exc.pop.}(t)) + \sigma_{nNOS}(N_{exc.}r_{exc.pop.}(t)) \xi (t)}{L^2}\;.
+\label{NO_dyn_approx2}
+\end{equation}
+As a next step, we attempted to simplify the dynamics of threshold adaption and its effect on the population rate. Since equation \eqref{NO_dyn_approx2} contains a single variable $r_{exc.pop.}(t)$ for the mean excitatory activity, we attempted to find an appropriate description based solely on 
 
 !!!!AB HIER NUR UNSAUBER UND UNAUSGEARBEITET!!!!
 
