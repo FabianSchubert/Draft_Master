@@ -13,6 +13,23 @@
 \usepackage{caption}
 \captionsetup[table]{singlelinecheck=false}
 \captionsetup[figure]{singlelinecheck=false}
+
+\usepackage{setspace}
+\makeatletter
+\newcommand{\MSonehalfspacing}{%
+  \setstretch{1.44}%  default
+  \ifcase \@ptsize \relax % 10pt
+    \setstretch {1.448}%
+  \or % 11pt
+    \setstretch {1.399}%
+  \or % 12pt
+    \setstretch {1.433}%
+  \fi
+}
+
+%\makeatother
+%\MSonehalfspacing
+
 \title{Diffusive Homeostasis in a Self-Organizing Recurrent Neural Network \\
 \begin{large}
 Spatially dependent Interaction as a Determinant of Neural Activity and Plasticity
@@ -227,15 +244,22 @@ Equation \eqref{NO_dyn} describes the influx of NO as a sum of scaled and spatia
 Since our main goal of the implementation of diffusive homeostasis was to allow the network to develop a broader distribution of firing rates across excitatory neurons compared to the original version of homeostasis, we first present the results of a comparison between features of the network activity in both variants in section \ref{activ_analys}. Following this is an analytic discussion of an instability we observed within the diffusive homeostatic feedback loop, see section \ref{theor_osc}. Furthermore, we compare topological features of the network under the influence of diffusive and non-diffusive homeostasis in section ???. 
 
 \subsection{Activity Analysis} \label{activ_analys}
-As a first attempt, we set the time constant of threshold adaptation in the diffusive homeostasis to $\mathrm{2500\, ms}$, as given by \cite{Sweeney_Paper}. Switching between non-diffusive/diffusive homeostasis after 750 seconds, Figure \ref{full_sim_osci} shows the resulting dynamics of the population activity of the excitatory and inhibitory group, the average $NO$ concentration at the excitatory neurons' positions and the average firing threshold within the exc. group (inh. threshold was fixed, see table \ref{LIF_neuron_params}). Both homeostatic mechanisms managed to keep the excitatory population activity in the desired range of 3 Hz. However, what might appear to be slightly faster and stronger random fluctuations in the upper three plots of Figure \ref{full_sim_osci}, are in fact regular oscillations across all three depicted variables. While the oscillation amplitudes undergo a rather unpredictable time course, the frequency remains at a constant level of $\simeq 0.5\, Hz$. Although one might argue that - for the sake of practical purposes - regular oscillations of the $NO$ concentration are not of much concern for the network as such, a periodically fluctuating firing rate is a qualitative feature requiring further enquiry.
+As a first attempt, we set the time constant of threshold adaptation in the diffusive homeostasis to $\mathrm{2500\, ms}$, as given by \cite{Sweeney_Paper}. Switching between non-diffusive/diffusive homeostasis after 750 seconds, Figure \ref{full_sim_osci} shows the resulting dynamics of the population activity of the excitatory and inhibitory group, the average $NO$ concentration at the excitatory neurons' positions and the average firing threshold within the exc. group (inh. threshold was fixed, see table \ref{LIF_neuron_params}). Both homeostatic mechanisms managed to keep the excitatory population activity in the desired range of 3 Hz. However, what might appear to be slightly faster and stronger random fluctuations in the upper three plots of Figure \ref{full_sim_osci}, are in fact regular oscillations across all three depicted variables. While the oscillation amplitudes undergo a rather unpredictable time course, the frequency remains at a constant level of $\simeq 0.5\, Hz$. This feature is also illustrated by the fact that the power spectra depicted in Figure \ref{Power_Spec_without_Analysis} have a peak at the frequency that appeared to be dominant in Figure \ref{full_sim_osci}. The fact that the mean over all power spectra of excitatory thresholds differs from the power spectrum of the mean of these thresholds in its amplitude indicates that not all thresholds oscillate at the same phase. Still though, the overall shape of both spectra are equivalent. 
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_compl.png}
 %\includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_closeup.png}
 \caption{A/A*: Mean of excitatory (blue) and inhibitory (red) neuronal firing rate. B/B*: NO concentration averaged over readouts at exc. neurons' positions. C/C*: Average exc. firing threshold. Non-diffusive homeostasis was used for $\mathrm{0-750\, s}$ , diffusive h. for $\mathrm{750-1500\, s}$. Target activity was $\mathrm{3\, Hz}$.}
 \label{full_sim_osci}
 \end{figure}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{../../plots/power_spec/power_spectrum_sim_only.png}
+\caption{Blue: Mean of power spectrum over all excitatory thresholds. Red: Power spectrum of mean over all exc. thresholds.}
+\label{Power_Spec_without_Analysis}
+\end{center}
 
-Rhythmic patterns of activity are a commonly observed phenomenon within the brain. Depending on the rate of oscillations, the location within the brain and the spatial scale over which they are observed, different physiological features are found to be responsible, leading to explanatory models at different levels of abstraction. On a microscopic, single-neuron level, a so-called slow after-hyperpolarization conductance explains the appearance of bursting behaviour: A relatively short period of spiking activity is followed by a longer period of silence. This phenomenon can be modelled by a $Ca^{2+}$-dependent $K^{+}$-conductance. Upon the bursting period, $Ca^{2+}$ concentration rises, prohibiting continuous spiking due to the activation of $K^{+}$  current until the $Ca^{2+}$ concentration has returned to base-level \cite[p.~203-207]{Theor_Neur_Dayan}. However, due to the simplicity of our neuron model, this type of oscillating activity can be ruled out as an explanation.
+\end{figure}
+Although one might argue that - for the sake of practical purposes - regular oscillations of the $NO$ concentration are not of much concern for the network as such, a periodically fluctuating firing rate is a qualitative feature requiring further enquiry. Rhythmic patterns of activity are a commonly observed phenomenon within the brain. Depending on the rate of oscillations, the location within the brain and the spatial scale over which they are observed, different physiological features are found to be responsible, leading to explanatory models at different levels of abstraction. On a microscopic, single-neuron level, a so-called slow after-hyperpolarization conductance explains the appearance of bursting behaviour: A relatively short period of spiking activity is followed by a longer period of silence. This phenomenon can be modelled by a $Ca^{2+}$-dependent $K^{+}$-conductance. Upon the bursting period, $Ca^{2+}$ concentration rises, prohibiting continuous spiking due to the activation of $K^{+}$  current until the $Ca^{2+}$ concentration has returned to base-level \cite[p.~203-207]{Theor_Neur_Dayan}. However, due to the simplicity of our neuron model, this type of oscillating activity can be ruled out as an explanation.
 
 On a larger, rate-based level, dynamical models of interconnected excitatory and inhibitory groups can exhibit sustained oscillations of activity \cite[p.~270]{Theor_Neur_Dayan}. As a simplest model, one can describe the dynamics of the exc. and inh. populations as a 2-dimensional dynamical system, representing the respective population rates $r_e$ and $r_i$:
 \begin{align}
@@ -295,6 +319,7 @@ All these aspects taken together make it impossible to find an analytic expressi
 In principal, one could now further quantify the stability of the found fixed point by calculating the Jacobian matrix at $\mathrm{(r_{0,e},r_{0,i})}$. For the sake of the initial question though, namely the source of oscillation, it is sufficient at this point to restrict oneself to a preliminary result: Assuming validity of the described rate-model, the recurrent network as such (without homeostasis) is stable under the given choice of parameters. Furthermore, on an empirical basis, the occurrence of oscillations appear to be rather dependent on the choice of homeostasis, since apart from the homeostatic mechanism itself, all parameters of the simulation were kept unchanged upon the transition after 750s. In consequence, the following section further analyzes the dynamics underlying the diffusive homeostatic feedback.
 
 \subsection{Analysis of Oscillations under Dynamic Feedback}\label{theor_osc}
+In this section, we discuss an analytic treatment of the dynamics underlying the diffusive homeostatic mechanism. The goal of this analysis is to predict the shape of the power spectrum shown in Figure \ref{Power_Spec_without_Analysis}. This will give insight into the relation between parameters of the model and the resulting preferred frequency and amplitude, allowing us to choose appropriate parameter values in order to reduce frequency and amplitude of the oscillations.
 
 Both forms of homeostasis use the excitatory firing threshold as a means of adjusting the excitatory firing rate. Though having a relatively immediate impact on the firing rate of the particular neuron, the network as a whole reacts by means of a local disturbance of activity as well: it settles at a new fixed point of firing rates. In the context of feedback dynamics, two questions are of importance. First, obviously, how the relation between a local change of threshold and the new fixed point of the network can be described and second, whether the time scale of the network's response is of relevance with respect to other time scales involved in the feedback loop. Regarding the second question, Figure \ref{rate_th_close} suggests that the excitatory population activity follows the mean firing threshold quasi instantaneously, compared with the overall time scale of the oscillating pattern.
 \begin{figure}
@@ -341,7 +366,7 @@ Figure \ref{nNOS_approx_plot} compares the approximation given by \eqref{nNOS_si
 \label{nNOS_approx_plot}
 \end{figure}
 
-Returning to the initial question, we note that according to equation \eqref{nNOS_single_sol_approx2}, a single spike causes the release of NO by an amount of $\frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$, which makes the mean rate of NO production over time simply $<nNOS> = <r> \cdot \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$. More specific, if the average interspike intervals of the underlying spike generation were short compared to the decay constant $\tau_{nNOS}$, one could show that \eqref{nNOS_single_sol_approx2} approaches gaussian noise with the aforementioned mean $\mu_{nNOS}(<r>) =  <r> \cdot \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$ and a variance of $\sigma^2_{nNOS}(<r>) = <r> \frac{{Ca^{2+}_{spike}}^6 {\tau_{Ca^{2+}}}^2 ln^2(2)}{18\tau_{nNOS}}$. However, for a single cell spiking at a mean firing rate of 3 Hz with approximately poissonian statistics, Figure \ref{nNOS_approx_plot} indicates that this approximation is not valid. Furthermore, the condition of interspike intervals to be short compared to the decay constant inherently contradicts the necessary assumptions that were taken for the previous approximations to hold.
+Returning to the question of how to describe NO synthesis in a simplified form, we note that according to equation \eqref{nNOS_single_sol_approx2}, a single spike causes the release of NO by an amount of $\frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$, which makes the mean rate of NO production over time simply $<nNOS> = <r> \cdot \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$. More specific, if the average interspike intervals of the underlying spike generation were short compared to the decay constant $\tau_{nNOS}$, one could show that \eqref{nNOS_single_sol_approx2} approaches gaussian noise with the aforementioned mean $\mu_{nNOS}(<r>) =  <r> \cdot \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$ and a variance of $\sigma^2_{nNOS}(<r>) = <r> \frac{{Ca^{2+}_{spike}}^6 {\tau_{Ca^{2+}}}^2 ln^2(2)}{18\tau_{nNOS}}$. However, for a single cell spiking at a mean firing rate of 3 Hz with approximately poissonian statistics, Figure \ref{nNOS_approx_plot} indicates that this approximation is not valid. Furthermore, the condition of interspike intervals to be short compared to the decay constant inherently contradicts the necessary assumptions that were taken for the previous approximations to hold.
 
 To overcome this contradiction, we introduce an idealized picture of diffusive homeostasis, where diffusion across the tissue is instantaneous. This simplification results in a single level of NO-concentration for all neurons, only being modified over time by the sum of all neurons' NO-syntheses and the decay term $-\lambda NO$. To account for the spread of NO, $nNOS(t)$ must be divided by the area $L^2$ of the tissue. The idealized version of \eqref{NO_dyn} then reads
 \begin{equation}
@@ -368,7 +393,7 @@ Combining these results in a set of equations, we find
 \end{split}\label{2d-sys-homeostasis1}\\
 \dot{V_{t,pop.}}(t) &= \frac{NO-NO_0}{NO_0 \tau_{V_t}}\;. \label{2d-sys-homeostasis2}
 \end{align}
-Through the coordinate transformation $n = NO-NO_0 \; , \theta = V_{t,pop.}(t)-V_{t,0}$, we can a simplify the dynamical system:
+Through the coordinate transformation $n = NO-NO_0 \; , \theta = V_{t,pop.}(t)-V_{t,0}$, we can simplify the dynamical system:
 \begin{align}
 \begin{split}
 \dot{n} &= -\lambda n + \frac{\alpha N_{exc.} {Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3 L^2}\theta \\
@@ -376,7 +401,7 @@ Through the coordinate transformation $n = NO-NO_0 \; , \theta = V_{t,pop.}(t)-V
 \end{split}\label{2d-sys-homeostasis-coord_transf1}\\
 \dot{\theta} &= \frac{1}{NO_0 \tau_{V_t}} n \label{2d-sys-homeostasis-coord_transf2}
 \end{align}
-
+The amplitude of noise in equation \ref{2d-sys-homeostasis-coord_transf1} depends on $\theta$. If kept in the equation, this dependence turned out be an insuperable obstacle for our goal of finding an analytic description of the homeostatic oscillations. In consequence, we decided to make one further simplification, replacing $\sqrt{\alpha\theta + r_{IP}}$ by a constant factor $\sqrt{r_{IP}}$. 
 
 !!!!AB HIER NUR UNSAUBER UND UNAUSGEARBEITET!!!!
 
