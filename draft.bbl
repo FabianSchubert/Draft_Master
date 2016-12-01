@@ -127,4 +127,9 @@ Alex Roxin, Nicolas Brunel, David Hansel, Gianluigi Mongillo, and Carl van
 \newblock On the distribution of firing rates in networks of cortical neurons.
 \newblock {\em Journal of Neuroscience}, 31(45):16217--16226, 2011.
 
+\bibitem{Spiking_Gerstner}
+Wulfram Gerstner and Werner~M. Kistler.
+\newblock {\em Spiking Neuron Models. Single Neurons, Populations, Plasticity.}
+\newblock Cambridge University Press, 2002.
+
 \end{thebibliography}
