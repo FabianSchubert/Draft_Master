@@ -457,15 +457,15 @@ Substituting all the intermediate results, we get
 P_\theta(\omega) = \frac{1}{N_{exc.}r_{IP}\tau_{nNOS}^2 \left( \frac{1}{\tau_{nNOS}^2} +\omega^2 \right)\left[ \omega^2 \left( \tau_{V_t} + \frac{\alpha \tau_r}{r_{IP}(1+\omega^2\tau_r^2)}\right)^2 + \left( \omega^2 \frac{\tau_{V_t}}{\lambda} + \frac{\alpha}{r_{IP}(1+\omega^2\tau_r^2)} \right)^2 \right] } \; .\label{Pow_Spec_Theta_Final}
 \normalsize
 \end{equation}
-
+Figure \ref{Pow_Spec_Theta_vs_Analytic} shows the result. Apart from $\mathrm{\tau_r = 20\,ms}$, the prediction underestimates the preferred frequency of oscillations and the overall amplitude.   
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{../../plots/power_spec/power_spectrum_analytic.png}
 \end{center}
-\caption{Power Spectrum of $\mathrm{\langle V_t \rangle}$ (blue) and analytic predictions based on Equation \eqref{Pow_Spec_Theta_Final} for different time constants of spike rate adaption. Red curve is a fit by tweaking $\tau_m$,$\alpha$ and the overall amplitude of \eqref{Pow_Spec_Theta_Final}.}
+\caption{Power Spectrum of $\mathrm{\langle V_t \rangle}$ (blue) and analytic predictions based on Equation \eqref{Pow_Spec_Theta_Final} for different time constants of spike rate adaption. Red curve is a fit by tweaking $\tau_r$,$\alpha$ and the overall amplitude of \eqref{Pow_Spec_Theta_Final}. The fit returned $\mathrm{\tau_r=54\,ms}$, $\mathrm{\alpha=-1.02\,Hz/mV}$ and a correction of amplitude by a factor of $\mathrm{13.1}$.}
 \label{Pow_Spec_Theta_vs_Analytic}
 \end{figure}
-
+As a reference, we fitted equation \eqref{Pow_Spec_Theta_Final} to the simulation result by means of $\mathrm{\tau_r}$, $\mathrm{\alpha}$ and an additional multiplicative correction of amplitude (dashed line in Figure \ref{Pow_Spec_Theta_vs_Analytic}). The result for $\mathrm{\tau_r=54\,ms}$ is in line with our prediction that the firing rate adaption of the entire network should be slower than the membrane constant $\mathrm{\tau_m=20\,ms}$. The underestimation of preferred frequency strongly depends on the slope of the linear rate-threshold relation: a steeper slope results in faster oscillations and vice versa. While the fit seen in Figure \ref{thresh_r_linfit} resulted in $\mathrm{\alpha=-0.79\,Hz/mV}$, the fit in Figure \ref{Pow_Spec_Theta_vs_Analytic} returned $\mathrm{\alpha=-1.02\,Hz/mV}$. This discrepancy can be at least partially explained by the fact that the linear regression overestimates the importance of a number of outliers in the range of $\mathrm{\langle V_t \rangle > 54\,mV}$, resulting in a slightly too shallow negative slope. However, excluding these data points from the fit still resulted in a shallower slope of $\mathrm{\alpha=-0.85\,Hz/mV}$. 
 
 !!!!AB HIER NUR UNSAUBER UND UNAUSGEARBEITET!!!!
 
