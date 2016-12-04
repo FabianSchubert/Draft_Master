@@ -388,8 +388,7 @@ From Equation \eqref{NO_dyn_approx} it is clear why we can now describe the \emp
 \end{equation} 
 where $\frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$ is the integral from Equation \eqref{nNOS_single_sol_approx1}.
 
-As a next step, we attempted to simplify the dynamics of threshold adaption and its effect on the population rate. Corresponding to the reduction to a single variable $r_{exc.pop.}(t)$ for the mean excitatory activity in equation \eqref{nNOS_total_dyn}, we wanted to find an appropriate description containing only the mean threshold $V_{t,pop.}(t) = <V_t(t)>$. As stated earlier, Figure \ref{rate_th_close} suggests an immediate and approximately linear relation between excitatory population rate and the mean of thresholds within the excitatory population. Figure \ref{thresh_r_linfit} shows a linear fit (being of the form $\alpha x + \beta$) of these two quantities plotted against each other. Apart from rarely appearing high values of $V_{t,pop.}$, we found a good fit to the linear model. However, when we color coded the slope of $V_{t,pop.}(t)$, one could see a separation of the rising phase and falling phase within the cloud of data points. This indicates a small (due to the "flatness" of the shape) but noticeable delay between threshold and firing rate, the latter following the former. We implemented this in a similar way as in Equation \eqref{2d-exc_inh_rate_1}. The population rate relaxates towards a value given by the fitted linear dependence on $V_{t,pop.}$ linear fit: $\dot{r_{exc.pop.}}(t) = (-r_{exc.pop.} + r_{IP} + \alpha(V_{t,pop.}(t)-V_{t,0}))/\tau_r$, where $r_{IP}$ is given in table \ref{Params_IP} as the mean excitatory target firing rate and $V_{t,0} \equiv (r_{IP}-\beta)/\alpha$ is the mean threshold corresponding to the target rate. We expect $\tau_r$ to be in the same order of magnitude as the membrane time constant $\tau_m$. However, $r_{exc.pop.}$ represents the whole excitatory population. Taking conduction delay and interactions with the inhibitory population into account, $\tau_r$ thus should be slightly larger.
-
+As a next step, we attempted to simplify the dynamics of threshold adaption and its effect on the population rate. Corresponding to the reduction to a single variable $r_{exc.pop.}(t)$ for the mean excitatory activity in equation \eqref{nNOS_total_dyn}, we wanted to find an appropriate description containing only the mean threshold $V_{t,pop.}(t) = <V_t(t)>$. As stated earlier, Figure \ref{rate_th_close} suggests an immediate and approximately linear relation between excitatory population rate and the mean of thresholds within the excitatory population. Figure \ref{thresh_r_linfit} shows a linear fit (being of the form $\alpha x + \beta$) of these two quantities plotted against each other. Apart from rarely appearing high values of $V_{t,pop.}$, we found a good fit to the linear model. We thus expressed the population rate by $r_{exc.pop.}(t) = r_{IP} + \alpha(V_{t,pop.}(t)-V_{t,0})$, where $r_{IP}$ is given in table \ref{Params_IP} as the mean excitatory target firing rate and $V_{t,0} \equiv (r_{IP}-\beta)/\alpha$ is the mean threshold corresponding to the target rate.
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/Spike_Stats/linfit_th_rate.png}
 \caption{Linear fit of excitatory population activity and mean excitatory threshold. Slope $\alpha$ of the fit: $\mathrm{-0.772\, Hz/mV}$. Offset $\beta$: $\mathrm{-41.01\, Hz}$. Mean squared error: $\mathrm{R^2 = 0.69}$. Colors encode the time derivative of $<V_t(t)>$, which indicates an ellipsoid like trajectory in phase space, with the firing rate following the threshold with a short delay.}
@@ -398,12 +397,9 @@ As a next step, we attempted to simplify the dynamics of threshold adaption and 
 
 Combining these results in a set of equations, we find
 \begin{align}
-\begin{split}
-\dot{NO}(t) &= - \lambda NO + \frac{ N_{exc.} {Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3 L^2}r_{exc.pop.} \\
-&+ \frac{{Ca^{2+}_{spike}}^3 {\tau_{Ca^{2+}}} ln(2)}{3L^2}\sqrt{\frac{N_{exc.}}{2 \tau_{nNOS}}}\sqrt{r_{exc.pop.}}\xi (t)
-\end{split}\label{2d-sys-homeostasis1}\\
+\dot{NO}(t) &= -\lambda NO + \frac{nNOS_{total}(t)}{L^2} + \sigma_{NO} \xi(t) \label{2d-sys-homeostasis1}\\
 \dot{V_{t,pop.}}(t) &= \frac{NO-NO_0}{NO_0 \tau_{V_t}} \label{2d-sys-homeostasis2} \\
-\dot{r_{exc.pop.}}(t) &= \frac{-r_{exc.pop.}+\alpha(V_{t,pop.}(t)-V_{t,0}) + r_{IP}}{\tau_r}\;. \label{2d-sys-homeostasis3}
+\dot{nNOS_{total}}(t) &= \frac{(r_{IP} + \alpha(V_{t,pop.}(t)-V_{t,0}))\cdot N_{exc.}\frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3} - nNOS_{total}}{\tau_{nNOS}}\;. \label{2d-sys-homeostasis3}
 \end{align}
 Through the coordinate transformation $n = NO-NO_0 \; , \theta = V_{t,pop.}(t)-V_{t,0}\; , \nu = r_{exc.pop.} - r_{IP}$ we can simplify the dynamical system:
 \begin{align}
