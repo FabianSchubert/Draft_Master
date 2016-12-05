@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: draft.aux
 The style file: unsrt.bst
 Database file #1: test_base.bib
-You've used 22 entries,
+You've used 23 entries,
             1791 wiz_defined-function locations,
-            605 strings with 7666 characters,
-and the built_in function-call counts, 4878 in all, are:
-= -- 419
-> -- 227
+            615 strings with 7810 characters,
+and the built_in function-call counts, 5184 in all, are:
+= -- 455
+> -- 231
 < -- 1
-+ -- 84
-- -- 62
-* -- 347
-:= -- 797
-add.period$ -- 66
-call.type$ -- 22
-change.case$ -- 17
++ -- 86
+- -- 63
+* -- 374
+:= -- 844
+add.period$ -- 69
+call.type$ -- 23
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 199
-empty$ -- 486
-format.name$ -- 62
-if$ -- 1075
+cite$ -- 23
+duplicate$ -- 207
+empty$ -- 515
+format.name$ -- 63
+if$ -- 1138
 int.to.chr$ -- 0
-int.to.str$ -- 22
+int.to.str$ -- 23
 missing$ -- 25
-newline$ -- 113
-num.names$ -- 23
-pop$ -- 59
+newline$ -- 118
+num.names$ -- 24
+pop$ -- 54
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 69
+skip$ -- 73
 stack$ -- 0
-substring$ -- 354
-swap$ -- 24
+substring$ -- 410
+swap$ -- 25
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 40
-width$ -- 24
-write$ -- 237
+while$ -- 45
+width$ -- 25
+write$ -- 249

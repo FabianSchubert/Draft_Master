@@ -391,7 +391,7 @@ where $\frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$ is the integral from E
 As a next step, we attempted to simplify the dynamics of threshold adaption and its effect on the population rate. Corresponding to the reduction to a single variable $r_{exc.pop.}(t)$ for the mean excitatory activity in equation \eqref{nNOS_total_dyn}, we wanted to find an appropriate description containing only the mean threshold $V_{t,pop.}(t) = <V_t(t)>$. As stated earlier, Figure \ref{rate_th_close} suggests an immediate and approximately linear relation between excitatory population rate and the mean of thresholds within the excitatory population. Figure \ref{thresh_r_linfit} shows a linear fit (being of the form $\alpha x + \beta$) of these two quantities plotted against each other. Apart from rarely appearing high values of $V_{t,pop.}$, we found a good fit to the linear model. We thus expressed the population rate by $r_{exc.pop.}(t) = r_{IP} + \alpha(V_{t,pop.}(t)-V_{t,0})$, where $r_{IP}$ is given in table \ref{Params_IP} as the mean excitatory target firing rate and $V_{t,0} \equiv (r_{IP}-\beta)/\alpha$ is the mean threshold corresponding to the target rate.
 \begin{figure}
 \includegraphics[width=\textwidth]{../../plots/Spike_Stats/linfit_th_rate.png}
-\caption{Linear fit of excitatory population activity and mean excitatory threshold. Slope $\alpha$ of the fit: $\mathrm{-0.772\, Hz/mV}$. Offset $\beta$: $\mathrm{-41.01\, Hz}$. Mean squared error: $\mathrm{R^2 = 0.69}$. Colors encode the time derivative of $<V_t(t)>$, which indicates an ellipsoid like trajectory in phase space, with the firing rate following the threshold with a short delay.}
+\caption{Linear fit of excitatory population activity and mean excitatory threshold. Slope $\alpha$ of the fit: $\mathrm{-0.789\, Hz/mV}$. Offset $\beta$: $\mathrm{-41.97\, Hz}$. Mean squared error: $\mathrm{R^2 = 0.68}$. Colors encode the time derivative of $<V_t(t)>$, which indicates an ellipsoid like trajectory in phase space, with the firing rate following the threshold with a short delay.}
 \label{thresh_r_linfit}
 \end{figure}
 
@@ -401,185 +401,53 @@ Combining these results in a set of equations, we find
 \dot{V_{t,pop.}}(t) &= \frac{NO-NO_0}{NO_0 \tau_{V_t}} \label{2d-sys-homeostasis2} \\
 \dot{nNOS_{total}}(t) &= \frac{(r_{IP} + \alpha(V_{t,pop.}(t)-V_{t,0}))\cdot N_{exc.}\frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3} - nNOS_{total}}{\tau_{nNOS}}\;. \label{2d-sys-homeostasis3}
 \end{align}
-Through the coordinate transformation $n = NO-NO_0 \; , \theta = V_{t,pop.}(t)-V_{t,0}\; , \nu = r_{exc.pop.} - r_{IP}$ we can simplify the dynamical system:
+Through the coordinate transformations
 \begin{align}
-\begin{split}
-\dot{n} &= -\lambda n + \frac{N_{exc.} {Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3 L^2}\nu \\
-&+ \frac{{Ca^{2+}_{spike}}^3 {\tau_{Ca^{2+}}} ln(2)}{3L^2}\sqrt{\frac{N_{exc.}}{2 \tau_{nNOS}}}\sqrt{\nu + r_{IP}}\xi (t)
-\end{split}\label{2d-sys-homeostasis-coord_transf1}\\
+n &\equiv NO-NO_0 \label{simplif_coord_transf1}\\
+\theta &\equiv V_{t,pop.}(t)-V_{t,0} \label{simplif_coord_transf2}\\
+nos &\equiv nNOS_{total} - nNOS_{total,0} \label{simplif_coord_transf3}
+\end{align}
+we can simplify the dynamical system:
+\begin{align}
+\dot{n} &= -\lambda n + \frac{nos}{L^2} + \sigma_{NO} \xi(t) \label{2d-sys-homeostasis-coord_transf1}\\
 \dot{\theta} &= \frac{1}{NO_0 \tau_{V_t}} n \label{2d-sys-homeostasis-coord_transf2} \\
-\dot{\nu} &= \frac{-\nu + \alpha \theta}{\tau_r} \label{2d-sys-homeostasis-coord_transf3}
+\dot{nos} &= \frac{\alpha \cdot N_{exc} \cdot \gamma \cdot \theta - nos }{\tau_{nNOS}} \label{2d-sys-homeostasis-coord_transf3}
 \end{align}
-where we have used the fact that $NO_0$ can be solved and expressed in terms of $r_{IP}$ by setting $\dot{NO}(t) = 0$. The amplitude of noise in equation \ref{2d-sys-homeostasis-coord_transf1} depends on $\nu$. Keeping this dependence in the equation turned out be an insuperable obstacle for our goal of finding an analytic description of the power spectrum of homeostatic oscillations. In consequence, we decided to take one further step of simplification by replacing $\sqrt{\nu + r_{IP}}$ by a constant factor $\sqrt{r_{IP}}$. In the following equation we use the substitutes $A\equiv \frac{N_{exc.} {Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3 L^2}$, $B\equiv \frac{{Ca^{2+}_{spike}}^3 {\tau_{Ca^{2+}}} ln(2)}{3L^2}\sqrt{\frac{N_{exc.}}{2 \tau_{nNOS}}}\sqrt{r_{IP}}$ and $C\equiv \frac{1}{NO_0 \tau_{V_t}}$, resulting in
+where we have additionally used
 \begin{align}
-\dot{n} &= -\lambda n + A \nu + B \xi (t) \label{2d-sys-homeostasis-coord_transf_substitute1} \\
-\dot{\theta} &= Cn \label{2d-sys-homeostasis-coord_transf_substitute2} \\
-\dot{\nu} &= \frac{-\nu + \alpha \theta}{\tau_r} \label{2d-sys-homeostasis-coord_transf_substitute3}
+\gamma &\equiv \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3} \label{2d-sys-fixed-points1}\\
+NO_0 &= \frac{nNOS_{total,0}}{\lambda L^2} \label{2d-sys-fixed-points2}\\
+nNOS_{total,0} &= r_{IP}\cdot N_{exc.} \cdot \gamma \; . \label{2d-sys-fixed-points2}
 \end{align}
-As stated in the beginning, we were interested in finding an analytic expression for the power spectrum of the mean excitatory threshold. Therefore we took the fourier transform of \eqref{2d-sys-homeostasis-coord_transf_substitute1} and \eqref{2d-sys-homeostasis-coord_transf_substitute2}, yielding
+As stated in the beginning, we were interested in finding an analytic expression for the power spectrum of the mean excitatory threshold. Therefore we took the fourier transform of \eqref{2d-sys-homeostasis-coord_transf1} - \eqref{2d-sys-homeostasis-coord_transf3}, yielding
 \begin{align}
-i\omega f_n &= - \lambda f_n + A f_\nu + B f_\xi \label{2d-sys-homeostasis-coord_transf_substitute_ft1}\\
-i\omega f_\theta &= C f_n \label{2d-sys-homeostasis-coord_transf_substitute_ft2} \\
-i\omega f_\nu &= \frac{-f_\nu + \alpha f_\theta}{\tau_r} \label{2d-sys-homeostasis-coord_transf_substitute_ft3}
+i\omega f_n &= - \lambda f_n + \frac{f_{nos}}{L^2} + \sigma_{NO} f_{\xi} \label{2d-sys-homeostasis-coord_transf_ft1}\\
+i\omega f_\theta &= \frac{f_n}{NO_0\tau_{V_t}} \label{2d-sys-homeostasis-coord_transf_ft2} \\
+i\omega f_{nos} &= \frac{\alpha \cdot N_{exc.} \cdot \gamma f_\theta - f_{nos}}{\tau_{nNOS}} \label{2d-sys-homeostasis-coord_transf_ft3}
 \end{align}
 where $f_{(\cdot)}$ denotes the fourier transform. We solved for $f_\theta$ which immediately gave us the power spectrum $P_\theta (\omega) \equiv |f_\theta (\omega)|^2$ of $\theta$:
 \begin{equation}
-P_\theta (\omega) = \frac{B^2 P_\xi (\omega)}{\omega^2 \left( \frac{\lambda}{C} + \frac{A\alpha \tau_r}{1+\omega^2 \tau_r^2}\right)^2  + \left(         \frac{A\alpha}{1+\omega^2\tau_r^2} + \frac{\omega^2}{C}\right)^2}
+P_\theta (\omega) = \frac{\sigma_{NO}^2}{\omega^2 \left( \lambda NO_0 \tau_{V_t} + \frac{\alpha N_{exc.} \gamma \tau_{nNOS}}{L^2(\omega^2\tau_{nNOS}^2 + 1)} \right)^2 + \left( \omega^2 NO_0 \tau_{V_t} + \frac{\alpha N_{exc.} \gamma}{L^2 (\omega^2\tau_{nNOS}^2 + 1)}\right)^2} \label{Pow_Spec_Theta_Final}
 \end{equation}
-It was already mentioned that the statistics of $\xi(t)$ are approximately gaussian. However, this does not necessarily imply that its power spectrum is white. To find the actual power spectrum, we recall that Equation \eqref{nNOS_single_sol_approx2} can be written as a convolution:
-\begin{align}
-nNOS(t) &= \left(f \ast g\right)(t) \label{Noise_Pow_Spec_Conv1_1} \\
-f(t') &= \sum_i \delta(t' - t^i_{spike}) \label{Noise_Pow_Spec_Conv1_2} \\
-g(t') &= \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3\tau_{nNOS}} \theta(t') exp(-t'/\tau_{nNOS}) \label{Noise_Pow_Spec_Conv1_3}
-\end{align}
-Thus $\xi(t)$ is generated in the same way, namely a convolution of an exponential kernel with the same relaxation constant $\tau_{nNOS}$ and a poisson process with a rate of $N_{exc.}\cdot r_{IP}$, since it incorporates spikes from \emph{all} excitatory neurons:
-\begin{align}
-\xi (t) &= \left(f_\xi \ast g_\xi \right)(t) \label{Noise_Pow_Spec_Conv2_1} \\
-f_\xi (t') &= \sum_i \sum_{j=1}^{N_{exc.}} \delta(t' - t^{i,j}_{spike}) \label{Noise_Pow_Spec_Conv2_2} \\
-g_\xi (t') &= \sqrt{\frac{2}{r_{IP}N_{exc.}\tau_{nNOS}}} \theta(t') exp(-t'/\tau_{nNOS}) \label{Noise_Pow_Spec_Conv2_3}
-\end{align}
-where $\sqrt{\frac{2}{r_{IP}N_{exc.}\tau_{nNOS}}}$ accounts for the fact that $\xi(t)$ had a variance of one by definition. We can express the power spectrum as
-\begin{equation}
-P_{\xi} = P_{f_\xi} \cdot P_{g_\xi} \;. \label{Noise_Pow_Spec_Conv2}
-\end{equation}
-Similar to the earlier assumption that the width of the noise term is stationary, we assume that $f_\xi$ is a stationary Poisson Process with an average rate $r_{IP}N_{exc.}$. It thus has a power spectrum of (see e.g. \cite[p. 162]{Spiking_Gerstner})
-\begin{equation}
-P_{f_\xi} (\omega) = r_{IP}N_{exc.} + 2\pi (r_{IP}N_{exc.})^2 \delta(\omega) \; . \label{Pow_Spec_Poisson}
-\end{equation}
-for $P_{g_\xi}$, one gets
-\begin{equation}
-\begin{split}
-P_g(\omega) &= \frac{2}{r_{IP}N_{exc.}\tau_{nNOS}}  \left| \int_{-\infty}^{\infty} \theta(t) exp(-t/\tau_{nNOS}) exp(-i\omega t) dt \right|^2\\
- &= \frac{2}{r_{IP}N_{exc.}\tau_{nNOS}} \frac{1}{\frac{1}{\tau_{nNOS}^2} + \omega^2}
- \end{split} \;. \label{Pow_Spec_Exponential_Kernel}
-\end{equation}
-Since $\xi(t)$ only accounts for the fluctuations around the mean, we can remove the delta function in $P_{f_\xi}$, and get
-\begin{equation}
-P_{\xi} = \frac{2}{\tau_{nNOS}} \frac{1}{\frac{1}{\tau_{nNOS}^2} + \omega^2}
-\end{equation}
-Substituting all the intermediate results, we get
-\begin{equation}
-\small
-P_\theta(\omega) = \frac{1}{N_{exc.}r_{IP}\tau_{nNOS}^2 \left( \frac{1}{\tau_{nNOS}^2} +\omega^2 \right)\left[ \omega^2 \left( \tau_{V_t} + \frac{\alpha \tau_r}{r_{IP}(1+\omega^2\tau_r^2)}\right)^2 + \left( \omega^2 \frac{\tau_{V_t}}{\lambda} + \frac{\alpha}{r_{IP}(1+\omega^2\tau_r^2)} \right)^2 \right] } \; .\label{Pow_Spec_Theta_Final}
-\normalsize
-\end{equation}
-Figure \ref{Pow_Spec_Theta_vs_Analytic} shows the result. Apart from $\mathrm{\tau_r = 20\,ms}$, the prediction underestimates the preferred frequency of oscillations and the overall amplitude.   
+Since we assumed the noise term $\xi$ to be approximately white and gaussian noise with unit variance, its power spectrum is $|f_{\xi}|^2 = 1$.
+
+Figure \ref{Pow_Spec_Theta_vs_Analytic} shows the result of \eqref{Pow_Spec_Theta_Final}. 
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.8\textwidth]{../../plots/power_spec/power_spectrum_analytic.png}
+\includegraphics[width=\textwidth]{../../plots/power_spec/power_spectrum_analytic.png}
 \end{center}
-\caption{Power Spectrum of $\mathrm{\langle V_t \rangle}$ (blue) and analytic predictions based on Equation \eqref{Pow_Spec_Theta_Final} for different time constants of spike rate adaption. Red curve is a fit by tweaking $\tau_r$,$\alpha$ and the overall amplitude of \eqref{Pow_Spec_Theta_Final}. The fit returned $\mathrm{\tau_r=54\,ms}$, $\mathrm{\alpha=-1.02\,Hz/mV}$ and a correction of amplitude by a factor of $\mathrm{13.1}$.}
+\caption{Power Spectrum of $\mathrm{\langle V_t \rangle}$ (blue) and analytic predictions based on Equation \eqref{Pow_Spec_Theta_Final}. Red curve was fitted by tweaking only the overall amplitude $\sigma_{NO}$ \eqref{Pow_Spec_Theta_Final} ($\mathrm{\alpha = -0.789 \,Hz/mV}$, as in Figure \ref{thresh_r_linfit}). Green curve is a fit achieved by adjusting $\sigma_{NO}$ and $\alpha$ in \eqref{Pow_Spec_Theta_Final} ($\mathrm{\alpha = -1.114 \,Hz/mV}$).}
 \label{Pow_Spec_Theta_vs_Analytic}
 \end{figure}
-As a reference, we fitted equation \eqref{Pow_Spec_Theta_Final} to the simulation result by means of $\mathrm{\tau_r}$, $\mathrm{\alpha}$ and an additional multiplicative correction of amplitude (dashed line in Figure \ref{Pow_Spec_Theta_vs_Analytic}). The result for $\mathrm{\tau_r=54\,ms}$ is in line with our prediction that the firing rate adaption of the entire network should be slower than the membrane constant $\mathrm{\tau_m=20\,ms}$. The underestimation of preferred frequency strongly depends on the slope of the linear rate-threshold relation: a steeper slope results in faster oscillations and vice versa. While the fit seen in Figure \ref{thresh_r_linfit} resulted in $\mathrm{\alpha=-0.79\,Hz/mV}$, the fit in Figure \ref{Pow_Spec_Theta_vs_Analytic} returned $\mathrm{\alpha=-1.02\,Hz/mV}$. This discrepancy can be at least partially explained by the fact that the linear regression overestimates the importance of a number of outliers in the range of $\mathrm{\langle V_t \rangle > 54\,mV}$, resulting in a slightly too shallow negative slope. However, excluding these data points from the fit still resulted in a shallower slope of $\mathrm{\alpha=-0.85\,Hz/mV}$. 
+Apparently, the value for $\alpha$ that was determined by means of the linear fit in Figure \ref{thresh_r_linfit} leads to an underestimation of the preferred frequency. Partially, this can be explained by the fact that the linear regression overestimates the importance of a number of high-threshold-outliers which leads to a shallower slope than what would be appropriate for the "working point" of oscillatory behaviour. Another possible explanation is the fact that "instant spread" is only an approximation. Rather, one could picture the nitrous oxide just to fill a fraction of the available space on a short time scale by replacing $L^2$ by a smaller area. This leads to a stronger local increase of concentration, which eventually leads to faster oscillations. Either way, since these parameters always appear as a fraction $\alpha/L^2$ in \eqref{Pow_Spec_Theta_Final}, both explanations have the same effect onto the shape of the power spectrum.   
 
-!!!!AB HIER NUR UNSAUBER UND UNAUSGEARBEITET!!!!
+!!! HIER MUSS NOCH EINE ANALYSE HIN, WIE SICH DIE OSCI-AMPLITUDE MIT TAU-TH ÄNDERT !!!
 
-A first approach in comparing the network activity before and after altering the homeostatic mechanism is by means of the distribution of firing rates within the network. As Sweeney et al. point out, it has been experimentally observed that firing rates are rather heterogeneous, resulting in a broad distribution. In Figure \ref{firing_rate_dist_comp} we compare our results for the firing distribution to the results by Sweeney et al.. 
-\begin{figure}
-\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/firing_rate_dist_compare.eps}
-\caption{Left: Simulation results by Sweeney et al.. Right: Simulation results for the SORN.}
-\label{firing_rate_dist_comp}
-\end{figure}
-We observed a similar tendency of broader firing rate distributions for the diffusive homeostasis, though we did not get as heavy tailed statistics. Sweeney et al. found a reciprocal relation between the broadness of the firing rate distribution and the threshold distribution. The strong oscillations of the threshold make it difficult to estimate the threshold distribution in our case. For the plot in Figure \ref{thresh_dist_comp}, we calculated each neuron's time average threshold for the case of non-diffusive and diffusive homeostasis and used this as a basis for the distribution. In contrast to Sweeney et al., the statistics did not change significantly.
-\begin{figure}
-\includegraphics[width=\textwidth]{../../plots/diff_hom/threshold_dist_compare.eps}
-\caption{Comparison of threshold distributions observed by Sweeney et al. (left) and in the SORN (right).}
-\label{thresh_dist_comp}
-\end{figure}
+\subsection{Properties of Network Activity}
 
+After the elimination of oscillatory activity in the network, we further investigated the features of spiking behaviour, in particular those of the excitatory population, since these were exposed to homeostasis.
 
-
-Another possibility of characterizing neural activity is to determine the distribution of interspike intervals (ISIs). Using non-diffusive homeostasis, one can observe a Poisson-like spiking behaviour with a stochastic refractory period, which is typically observed in cortical networks (This is not what can be observed for the case of diffusive homeostasis: the ISI distribution reveals preference of interspike times in the range of $1s$, whereas interspike times in of $0.1-0.6s$ are less likely than a Poisson process would predict. This deviation matches the frequency of activity oscillations, see Figure \ref{full_sim_osci}.
-\begin{figure}
-\includegraphics[width=\textwidth]{../../plots/Spike_Stats/ISI_compare_SORN.eps}
-\caption{Top: log-plot of ISI-distribution of diff. and non-diff. homeostasis in the SORN. Bottom: CV-distribution for diff and non-diff. homeostasis.}
-\label{ISI_compare}
-\end{figure}
-
-As a whole, the oscillating activity imposes a undesirable regularity onto the network's activity, see also Figure \ref{spike_sequence}. While this effect might be tolerable without any external input, it is likely that the oscillations will overlay and obscure network responses onto external drive, presumably making it unusable for any computational task.
-\begin{figure}
-\includegraphics[width=\textwidth]{../../plots/Spike_Stats/spike_sequence.eps}
-\caption{A spike sequence of 10 randomly picked excitatory neurons of the SORN. At $t=250s$, the homeostatic mechanism is switched to the diffusive variant.}
-\label{spike_sequence}
-\end{figure}
-
-\subsection{Analysis of Sustained Oscillations}\label{theor_osc}
-
-To find an explanation for the described oscillations and a possible way of avoiding them, one has to find the necessary minimal set of mechanisms, required to explain the observed phenomenon, without oversimplifying crucial aspects of the minimal model. In our model, there are two aspects whose simplification is of particular importance: First, it is impossible to analytically predict every single spike within the entire network. Our analytical treatment therefore aims to find analytical expressions for momentary firing rates among the network. Second, one might speculate that the exact solution of the NO diffusion process can be simplified in favour of a model, where one describes the dynamics of the average NO concentration across the nervous tissue. This approach can be justified by the fact that a unified, average NO concentration is effectively equal to a very large diffusion rate.
-
-We took several approaches to find the minimal set of equations that sufficiently reproduces the desired phenomena. Here, we will present the final and most successful version. We derived the equation from the following assumptions and results:
-
-\begin{itemize}
-\item Oscillations persisted for very large diffusion constants. Therefore, one may assume that the dynamics of NO solely depend on the decay rate $\lambda$ and can be expressed by a single scalar variable.
-\item We observed that even though the overall activity oscillated, the total input for each neuron remained at a relatively steady level, only showing random fluctuations with periodically increasing and decreasing deviations. One can therefore assume that the effect of recurrent, "self-feeding" network dynamics can be neglected.
-\item The firing rate distribution has a significant variance.
-\item Since we simplified the NO dynamics to a global variable, all thresholds follow the same dynamics (apart from a variance in the initial conditions). We can therefore as well reduce the problem to a single average threshold variable.
-\item The phase difference between threshold and activity appears to be practically zero. It is therefore reasonable to assume a direct functional dependence $r_{pop}=r(\theta)_{pop}$.
-\item In the regime of the desired population activity of $3~Hz$, nonlinearities within the "$spike \rightarrow Ca^{2+} \rightarrow nNOS$" mechanism can be neglected in favour of a simple relation $nNOS = C\cdot r_{pop}$.  
-\end{itemize}
-
-These conclusions can be transferred into the following "simple" dynamical system:
-\begin{align}
-\dot{NO} &= -\lambda NO + C\cdot r(\theta) + C\cdot \sigma \xi(t) \label{simple_NO_dyn}\\ 
-\dot{\theta} &= \frac{NO}{NO_0\cdot \tau_{\theta}} \label{simple_threshold_dyn}
-\end{align}
-Here, $\xi(t)$ represents standard gaussian noise, accounting for the fact that, apart from the regular oscillation, the population activity features a certain amount of fluctuations. As an additional simplification, the fixed point was set to the origin.
-
-To complete the expression, one has to find an appropriate description of the $r(\theta)$-relation. As a most simple approximation, we applied a linear regression to the data of the average threshold and the corresponding population activity, see Figure \ref{thresh_r_linfit}. The constant $C$ in equation \eqref{simple_NO_dyn} is then proportional to the slope of the linear fit. In addition, $C$ is proportional to the amount of NO released per spike, proportional to the number of contributing neurons and antiproportional to the total area of the tissue. We can solve and integrate equations \eqref{Ca_dyn} and \eqref{nNOS_dyn} for a single spike, resulting in a total of $\tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / 3$. Therefore, $C=N_{neur}\cdot \tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / (3\cdot L^2)$ and $C\cdot r(\theta)=\theta \cdot \alpha \cdot N_{neur} \cdot \tau_{Ca^{2+}}\cdot ln(1+{Ca^{2+}_{spike}}^3) / (3\cdot L^2)$, where $\alpha$ is the slope of the linear fit and $L^2$ the area of the tissue.
-\begin{figure}
-\includegraphics[width=\textwidth]{../../plots/diff_hom/thresh_r_linfit.eps}
-\caption{Linear fit of the relation between the firing threshold (averaged over population) and the population activity. $R^2=0.99996$.}
-
-\end{figure}
-\begin{figure}
-\includegraphics[width=\textwidth]{../../plots/diff_hom/lin_model_osc.eps}
-\caption{Simulation results for equations \eqref{simple_NO_dyn} and \eqref{simple_threshold_dyn}.}
-\label{lin_mod_osc}
-\end{figure}
-Figure \ref{lin_mod_osc} shows the results achieved from the simulation. We observe that noise is capable of maintaining oscillations in an otherwise stable linear system.
-
-Is it possible to get a better understanding of the achieved dynamics? For that purpose, we note that equations \eqref{simple_NO_dyn} and \eqref{simple_threshold_dyn} can be transformed into the following:
-
-\begin{align}
-\dot{v} &= -\frac{\lambda}{m} v - \omega_0^2 x + \frac{C\cdot \sigma}{m} \xi (t) \label{langevin_v} \\
-\dot{x} &= v \label{langevin_x}
-\end{align}
-with $x=\theta NO_0 \tau_{\theta}$, $v=NO$, $m=1$ and $\omega_0^2 =-\frac{\alpha C}{NO_0 \tau_{\theta}}$. This set of equations is equal to a Langevin equation, describing a brownian particle in a harmonic potential. By taking the fourier transform of both equations, one can find an analytic expression for the power spectrum of the particle's location:
-\begin{equation}
-S_x (\omega) = \frac{S_\xi (\omega)}{(\omega_0^2 - \omega^2)^2 + \lambda^2 \omega^2} \label{power_spec_part}
-\end{equation}
-where, in the case of white gaussian noise, $S_\xi(\omega)=C^2 \cdot \sigma^2$. Substituting the transformations yields
-\begin{equation}
-S_\theta (\omega) = \left( \frac{C \sigma}{NO_0 \tau_\theta}\right)^2 \frac{1}{(\frac{\alpha C}{NO_0 \tau_\theta} + \omega^2)^2 + \lambda^2 \omega^2} \label{power_spec_thresh}
-\end{equation}
-By calculating the steady-state solution of equation \eqref{simple_NO_dyn}, one can analytically express the target concentration $NO_0$ as a function of the desired pop. rate $r_g$:
-\begin{equation}
-NO_0=r_g \frac{N_e \cdot \tau_{Ca^{2+}} \cdot ln(1+{Ca_{Spike}^{2+}}^3)}{3\lambda L^2} = r_g \frac{C}{\lambda}
-\label{NO_analytic}
-\end{equation} 
-Substituting into equ. \eqref{power_spec_thresh} one gets
-\begin{equation}
-S_\theta (\omega) = \frac{\sigma^2}{(\alpha+\frac{r_g \tau_\theta \omega^2}{\lambda})+\tau_\theta^2 r_g^2 \omega^2}
-\label{power_spec_thresh_r_g}
-\end{equation}
-The maximum of this function then is
-\begin{align}
-\omega_{max} &= \sqrt{-\lambda(\frac{1}{2}+\frac{\alpha}{\tau_\theta r_g})} \label{max_omega}\\
-S_\theta(\omega_{max}) &= \frac{\sigma^2}{\tau _\theta^2 r_g^2 \left(\frac{1}{4}-\frac{\lambda}{2}\right)-\alpha \lambda \tau _\theta r_g} \label{S_max_omega}
-\end{align}
-
-Figure \ref{power_spec_thresh_sim_vs_an} suggests that the theoretical result does not fully cover the dynamics of the simulation, but supports the observation of a sustained oscillation at a preferred frequency.
-
-\begin{figure}
-\includegraphics[width=\textwidth]{../../plots/power_spec/power_spectrum3}
-\caption{Power Spectrum of the firing threshold and analytic result of equation \eqref{power_spec_thresh_r_g}.}
-\label{power_spec_thresh_sim_vs_an}
-\end{figure}
-
-For the purpose of reducing the oscillations to a negligible amplitude, $\lambda$ and $\tau_\theta$ can be increased. Note however that increasing $\lambda$ will also increase $\omega{max}$, which will presumably result in faster oscillations. $\tau_\theta$ on the other hand leads to a decrease of both, $\omega_{max}$ and $S_\theta(\omega_{max})$.
-
-Since the $S_\theta(\omega)$ represents a spectral density, one should not directly relate $S_\theta(\omega_{max})$ to the actual squared amplitude of the oscillation. However, due to the linearity of the fourier transform, "rescaling" in the frequency spectrum also proportionally alters the amplitude of the signal in the time domain.    
+Balanced networks of inhibitory and excitatory populations of spiking LIF-neurons are known to show highly random, uncorrelated spiking behaviour under sparse connectivity with a relatively high per-synapse connection strength, see e.g. \cite{Vreeswijk1996} or \cite{Brunel2000}. This kind of asynchronous regular state is characterized by a population firing rate showing no regularities over time, though maintaining an overall stable level of activity. This feature was shown to be achieved after slowing down the rate of homeostatic adaption. On the level of single cells, interspike intervals should be random, approximately following the statistics of a poisson process.   
 
 \section{The Firing Rate Distribution in the Network}
 

@@ -127,9 +127,16 @@ Alex Roxin, Nicolas Brunel, David Hansel, Gianluigi Mongillo, and Carl van
 \newblock On the distribution of firing rates in networks of cortical neurons.
 \newblock {\em Journal of Neuroscience}, 31(45):16217--16226, 2011.
 
-\bibitem{Spiking_Gerstner}
-Wulfram Gerstner and Werner~M. Kistler.
-\newblock {\em Spiking Neuron Models. Single Neurons, Populations, Plasticity.}
-\newblock Cambridge University Press, 2002.
+\bibitem{Vreeswijk1996}
+C~van Vreeswijk and H~Sompolinsky.
+\newblock {Chaos in neuronal networks with balanced excitatory and inhibitory
+  activity.}
+\newblock {\em Science}, 274:1724--1726, 1996.
+
+\bibitem{Brunel2000}
+N~Brunel.
+\newblock {Dynamics of sparsely connected networks of excitatory and inhibitory
+  spiking neurons.}
+\newblock {\em J Comput Neurosci}, 8:183--208, 2000.
 
 \end{thebibliography}
