@@ -139,4 +139,10 @@ N~Brunel.
   spiking neurons.}
 \newblock {\em J Comput Neurosci}, 8:183--208, 2000.
 
+\bibitem{Ostojic2011}
+Srdjan Ostojic.
+\newblock Interspike interval distributions of spiking neurons driven by
+  fluctuating inputs.
+\newblock {\em Journal of Neurophysiology}, 106(1):361--373, 2011.
+
 \end{thebibliography}
