@@ -188,7 +188,7 @@ $\mathrm{\tau_{Ca^{2+}}}$ &  $\mathrm{10\;ms}$ \\
 \hline
 $\mathrm{\tau_{nNOS}}$ & $\mathrm{100\;ms}$ \\
 \hline
-$\mathrm{D}$ & default: 12500 $\mathrm{\mu m^2 s^{-1}}$ \\
+$\mathrm{D}$ & default: 10000 $\mathrm{\mu m^2 s^{-1}}$ \\
 \hline 
 $\mathrm{\lambda}$ & $\mathrm{0.1\;s^{-1}}$ \\
 \hline
@@ -467,7 +467,12 @@ When speculating about the root of this discrepancy one could consider two possi
 In summary, we found that diffusive homeostasis does not interfere with the poisson-like spiking statistics observed on a single-cell level, but leads to an increased correlation across the neural population. 
 
 \subsubsection{Distribution of Firing Rates}
-
+Achieving a broad distribution of firing rates among neurons was the core motivation for the implementation of diffusive homeostasis. Figure \ref{Fir_Rate_Dist_Compare} shows a first result, comparing both homeostatic mechanisms. As expected, non-diffusive homeostasis leads to a sharp distribution of firing rates at 3 Hz. Diffusive homeostasis indeed results in a much broader distribution of mean firing rates.  
+\begin{figure}
+\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/fir_rate_dist_compare.png}
+\caption{Histograms of mean firing rates over the excitatory population, regular (A) and logarithmic space (B). For diffusive homeostasis ($\mathrm{D=1000\, \mu m^2 s^{-1}}$), the distribution was generated from 10 simulation runs, 1 simulation was used for non-diffusive homeostasis. Mean firing rates where calculated from spikes within $\mathrm{t=1000-1500\,s}$.}
+\label{Fir_Rate_Dist_Compare}
+\end{figure}
 
 !!!HEAD!!!
 
