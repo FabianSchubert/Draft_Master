@@ -145,4 +145,16 @@ Srdjan Ostojic.
   fluctuating inputs.
 \newblock {\em Journal of Neurophysiology}, 106(1):361--373, 2011.
 
+\bibitem{Buzsaki_Fir_Rates_2014}
+György Buzsáki and Kenji Mizuseki.
+\newblock The log-dynamic brain: how skewed distributions affect network
+  operations.
+\newblock {\em Nature Reviews Neuroscience}, 2014.
+
+\bibitem{Wohrer_Fir_Rates_2012}
+Adrien Wohrer, Mark~D. Humphries, and Christian Machens.
+\newblock Population-wide distributions of neural activity during perceptual
+  decision-making.
+\newblock {\em Progress in Neurobiology}, 2012.
+
 \end{thebibliography}
