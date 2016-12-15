@@ -255,11 +255,11 @@ As a first attempt, we set the time constant of threshold adaptation in the diff
 \end{figure}
 \begin{figure}
 \begin{center}
+%%% plot_pow_spec.py
 \includegraphics[width=0.7\textwidth]{../../plots/power_spec/power_spectrum_sim_only.png}
 \caption{Blue: Mean of power spectrum over all excitatory thresholds. Red: Power spectrum of mean over all exc. thresholds.}
 \label{Power_Spec_without_Analysis}
 \end{center}
-
 \end{figure}
 Although one might argue that - for the sake of practical purposes - regular oscillations of the $NO$ concentration are not of much concern for the network as such, a periodically fluctuating firing rate is a qualitative feature requiring further enquiry. Rhythmic patterns of activity are a commonly observed phenomenon within the brain. Depending on the rate of oscillations, the location within the brain and the spatial scale over which they are observed, different physiological features are found to be responsible, leading to explanatory models at different levels of abstraction. On a microscopic, single-neuron level, a so-called slow after-hyperpolarization conductance explains the appearance of bursting behaviour: A relatively short period of spiking activity is followed by a longer period of silence. This phenomenon can be modelled by a $Ca^{2+}$-dependent $K^{+}$-conductance. Upon the bursting period, $Ca^{2+}$ concentration rises, prohibiting continuous spiking due to the activation of $K^{+}$  current until the $Ca^{2+}$ concentration has returned to base-level \cite[p.~203-207]{Theor_Neur_Dayan}. However, due to the simplicity of our neuron model, this type of oscillating activity can be ruled out as an explanation.
 
@@ -294,7 +294,7 @@ where $erfc$ is the complementary error function. Figure \ref{F-I_noise_dep} sho
 However, one should note that the synaptic input within a spiking network carries an intrinsic randomness: since it is the sum of instantaneous increases in membrane voltage upon arriving spikes, one cannot simply describe it as a mean constant input $J$. Rather, if we assume that the arrival of spikes is approximately poisson-distributed and the time constant of the membrane is small compared to the average interspike-interval, according to \cite{Roxin_Firing_Rate_Distribution}, one can describe the synaptic input from population $\mathrm{A}$ to population $\mathrm{B}$ as $J_{AB}(t) = \mu_{AB} (t) + \sigma_{AB} \cdot \zeta(t)$, where $\zeta(t)$ is zero-mean standard gaussian noise and
 \begin{align}
 \mu_{AB} &= <w_{AB}> \cdot <N_{in,AB}> \cdot <r_A> \label{Noise_Approx_1}\\
-\sigma_{AB} &= \sqrt{\tau_m \cdot <w_{AB}>^2 \cdot <N_{in,AB}> \cdot <r_A>} \label{Noise_Approx_1} \, .
+\sigma_{AB} &= \sqrt{\tau_m \cdot <w_{AB}>^2 \cdot <N_{in,AB}> \cdot <r_A>} \label{Noise_Approx_2} \, .
 \end{align}
 $\mathrm{<w_{AB}>,\, <N_{in,AB}>}$ and $\mathrm{<r_A>}$ denote the mean weight of a synapse connection population $\mathrm{A}$ with population $\mathrm{B}$, the mean number of incoming connections at a neuron in population $\mathrm{B}$ and the mean firing rate in population $\mathrm{A}$ (which makes it necessary to assume changes within the firing rate to be slow enough for a quasi-stationary description of the activity).
 Since we can assume intrinsic and input noise to be uncorrelated, the total noise within a neuron of population $\mathrm{B}$ has a standard deviation of 
@@ -363,6 +363,7 @@ nNOS(t) = \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3\tau_{nNOS}} \sum_i \t
 \end{equation}
 Figure \ref{nNOS_approx_plot} compares the approximation given by \eqref{nNOS_single_sol_approx2} to the full NO production model (equations \eqref{Ca_dyn} and \eqref{nNOS_dyn}). Spikes were drawn from a poisson process at a rate of 3 Hz. As predicted, the simplified model fits very well for sufficiently isolated spike events. For the rare event of two subsequent spikes appearing very close to each other, as seen in Figure \ref{nNOS_approx_plot} at approximately 4 seconds, one can observe a slightly smaller but acceptable agreement.
 \begin{figure}
+%%% ca_nnos_test.py
 \includegraphics[width=\textwidth]{../../plots/nNOS_approx.png}
 \caption{Time course of nNOS(t) with poisson spiking at 3Hz. The full simulation (blue, see equations \eqref{Ca_dyn},\eqref{nNOS_dyn}) is well fitted by the simplified model (red, see equation \eqref{nNOS_single_sol_approx2}). Top axis is a closeup of the first spike event.}
 \label{nNOS_approx_plot}
@@ -386,6 +387,7 @@ where $\frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3}$ is the integral from E
 
 As a next step, we wanted to simplify the dynamics of threshold adaption and its effect on the population rate. Corresponding to the reduction to a single variable $r_{exc.pop.}(t)$ for the mean excitatory activity in equation \eqref{nNOS_total_dyn}, we wanted to find an appropriate description containing only the mean threshold $V_{t,pop.}(t) = <V_t(t)>$. As stated earlier, Figure \ref{rate_th_close} suggests an immediate and approximately linear relation between excitatory population rate and the mean of thresholds within the excitatory population. Figure \ref{thresh_r_linfit} shows a linear fit (being of the form $\alpha x + \beta$) of these two quantities plotted against each other. Apart from rarely appearing high values of $V_{t,pop.}$, we found a good fit to the linear model. We thus expressed the population rate by $r_{exc.pop.}(t) = r_{IP} + \alpha(V_{t,pop.}(t)-V_{t,0})$, where $r_{IP}$ is given in table \ref{Params_IP} as the mean excitatory target firing rate and $V_{t,0} \equiv (r_{IP}-\beta)/\alpha$ is the mean threshold corresponding to the target rate.
 \begin{figure}
+%%% linfit_th_rate.py
 \includegraphics[width=\textwidth]{../../plots/Spike_Stats/linfit_th_rate.png}
 \caption{Linear fit of excitatory population activity and mean excitatory threshold. Slope $\alpha$ of the fit: $\mathrm{-0.789\, Hz/mV}$. Offset $\beta$: $\mathrm{-41.97\, Hz}$. Mean squared error: $\mathrm{R^2 = 0.68}$.}
 \label{thresh_r_linfit}
@@ -410,7 +412,7 @@ where we have additionally used
 \begin{align}
 \gamma &\equiv \frac{{Ca^{2+}_{spike}}^3 \tau_{Ca^{2+}}ln(2)}{3} \label{2d-sys-fixed-points1}\\
 NO_0 &= \frac{nNOS_{total,0}}{\lambda L^2} \label{2d-sys-fixed-points2}\\
-nNOS_{total,0} &= r_{IP}\cdot N_{exc.} \cdot \gamma \; . \label{2d-sys-fixed-points2}
+nNOS_{total,0} &= r_{IP}\cdot N_{exc.} \cdot \gamma \; . \label{2d-sys-fixed-points3}
 \end{align}
 As stated in the beginning, we were interested in finding an analytic expression for the power spectrum of the mean excitatory threshold. Therefore we took the fourier transform of \eqref{2d-sys-homeostasis-coord_transf1} and \eqref{2d-sys-homeostasis-coord_transf2}, yielding
 \begin{align}
@@ -437,12 +439,14 @@ Regarding the damping of the system, we can interpret   !!! SIMULATION STEHT NOC
 
 In the context of the presented power spectra, reducing oscillations meant to reduce height and frequency of the peak of the spectrum. We managed to do so by increasing the time constant $\mathrm{\tau_{V_t}}$, as shown in Figure \ref{Peak_Prop_vs_Theta}. Moreover, by choosing $\mathrm{\sigma_{NO}}$, $\mathrm{\lambda}$ and $\mathrm{\alpha}$ in accordance to the fit shown in Figure \ref{Pow_Spec_Theta_vs_Analytic} (black curve), Equation \eqref{Pow_Spec_Theta_Final} provides a good prediction for the position and height of the peak. For proper comparison, we smoothed the curve of the simulation data in plot (A) of Figure \ref{Peak_Prop_vs_Theta} by a window of $\mathrm{[-5,5]}$ data points, since the maximum of the power spectrum of simulation data is likely to overshoot the analytic prediction due to random fluctuations.  
 \begin{figure}
+%%% plot_osc_ampl_vs_tau_theta.py
 \includegraphics[width=\textwidth]{../../plots/diff_hom/osc_ampl_vs_tau_th.png}
 \caption{A: Maximum of the spectrum-peak (see Figure \ref{Pow_Spec_Theta_vs_Analytic}). A smoothing window of $\mathrm{[-5,5]}$ data points around the maximum was used to reduce overestimation of the maximum due to random fluctuations. Blue line corresponds to Equation \eqref{Pow_Spec_Theta_Final}, fit values taken from black curve in Figure \ref{Pow_Spec_Theta_vs_Analytic}. B: Position of the peak on the frequency axis. Analytic prediction was acquired according to (A).}
 \label{Peak_Prop_vs_Theta}
 \end{figure} 
 To reduce oscillations as much as possible we eventually settled at a 1000-fold increased time constant, $\mathrm{\tau_{V_t}=2500\,s}$. Despite the slowness of threshold adaption, homeostasis still managed to keep excitatory network activity in the desired range, as shown in Figure \ref{full_sim_osci_slow_tau_th}. Despite a slight regularity of the NO-concentration, no oscillating activity occurs.  
 \begin{figure}
+%%% oscillating_activity_plot_full_time_only.py
 \includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_compl_large_tau.png}
 \caption{A: Excitatory (blue) and and inhibitory (red) population rate, being controlled by diffusive homeostasis over the full simulation time. B,C: Mean NO-concentration over excitatory sites and mean excitatory threshold.}
 \label{full_sim_osci_slow_tau_th}
@@ -456,6 +460,7 @@ After the elimination of oscillatory activity in the network, we further investi
 \subsubsection{Spike-Train Statistics}
 Balanced networks of inhibitory and excitatory populations of spiking LIF-neurons are known to show highly random, uncorrelated spiking behaviour under sparse connectivity with a relatively high per-synapse connection strength, see e.g. \cite{Vreeswijk1996} or \cite{Brunel2000}. This kind of asynchronous regular state is characterized by a population firing rate showing no regularities over time, though maintaining an overall stable level of activity. This feature was shown in the previous section after slowing down the rate of homeostatic adaption. On the level of single cells, interspike intervals should be random, approximately following the statistics of a poisson process.   
 \begin{figure}
+%%% isi_plot.py
 \includegraphics[width=\textwidth]{../../plots/Spike_Stats/isi_cv_compare.png}
 \caption{A/C: Distribution of interspike intervals of excitatory/inhibitory neurons for diffusive and non-diffusive homeostasis, measured over $\mathrm{1000\,s}$. Only neurons with a mean firing rate in a certain range (see legend) were included into statistics to prevent overlap of different firing rates (except for non-diff. homeostasis and excitatory neurons, all being very close to 3 Hz). Black lines are fits of exponential functions. B/D: Distribution of coefficients of variation. Each sample represents the CV of one excitatory/inhibitory neuron.}
 \label{ISI_CV_compare}
@@ -475,7 +480,8 @@ In summary, we found that diffusive homeostasis does not interfere with the pois
 \subsubsection{Distribution of Firing Rates}
 Achieving a broad distribution of firing rates among neurons was the core motivation for the implementation of diffusive homeostasis. Figure \ref{Fir_Rate_Dist_Compare} shows a first result, comparing both homeostatic mechanisms. As expected, non-diffusive homeostasis leads to a sharp distribution of firing rates at 3 Hz. Diffusive homeostasis indeed results in a much broader distribution of mean firing rates. A large number of experimental studies have found that distributions of firing rates are not only broadly distributed but well described by a log-normal distribution, which has a non-zero third moment or skewness (\cite{Buzsaki_Fir_Rates_2014}, \cite{Wohrer_Fir_Rates_2012}). By definition, the logarithm of the random variable in question is thus again normally distributed. To check for this property we plotted the the distribution of decadic logarithms of firing rates in Figure \ref{Fir_Rate_Dist_Compare} (B). In (A), we found a skewness of $\mathrm{v_{Diff} = 0.765}$, in (B) $\mathrm{v_{Diff,log} = -0.488}$. Though this told us that the distribution is "more symmetric" on a logarithmic scale, it should rather be seen as being neither strictly normally or log-normally distributed.  
 \begin{figure}
-\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/fir_rate_dist_compare.png}
+%%% plot_frequ_dist_mult_sets.py
+\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/fir_rate_dist_e_compare.png}
 \includegraphics[width=\textwidth]{../../plots/firing_rate_dists/fir_rate_dist_i_compare.png}
 \caption{Histograms of mean firing rates over the excitatory/inhibitory population in regular (A/A*) and logarithmic space (B/B*). For diffusive homeostasis ($\mathrm{D=1000\, \mu m^2 s^{-1}}$), the distribution was generated from 10 simulation runs, 1 simulation was used for non-diffusive homeostasis. Mean firing rates where calculated from spikes within $\mathrm{t=1000-1500\,s}$.}
 \label{Fir_Rate_Dist_Compare}
@@ -483,9 +489,15 @@ Achieving a broad distribution of firing rates among neurons was the core motiva
 In contrast, inhibitory cells showed a much clearer distinction: A skewness of $\mathrm{v_{Diff} = 1.522}$ in regular space and $\mathrm{v_{Diff,log} = -0.147}$ in log-space. As a first interpretation, we related this difference to the fact that inhibitory cells are only indirectly affected by diffusive homeostasis in the sense that their distribution of activity is mainly determined by differences withing neural input since inhibitory thresholds are all initialized and kept at the same value.
 
 Despite of fluctuations within the firing rate on small time scales due to the inherent nature of - approximately - random spike generation, we wanted to know how strongly firing rates of single excitatory cells fluctuate over longer timescales of multiple seconds. This question is not only of relevance with respect to the "stiffness" of homeostasis, but also relates to the plot in Figure \ref{Fir_Rate_Dist_Compare}: if firing rates fluctuate too much during the period over which means were calculated, the resulting distribution might be narrower than what one could expect from a distribution of "momentary" rates.
-!!!HEAD!!!
 
-
+A constant "rate" of an approximately randomly spiking neuron means that the dependence of fluctuations of rates onto the width of the averaging window should be identical to a homogeneous poisson process of the same total mean firing rate. As bin sizes increase, possible long-term fluctuations of firing rates can then be identified as deviations from the variance one would expect from a homogeneous process. We tested this in Figure \ref{f_Var_vs_n_Bin}. (A) was taken from $\mathrm{1000-1500\,s}$, which is well inside the phase of diffusive homeostasis. As one can see, the statistics of the three representative neurons are well fitted by the predictions for homogeneous poisson processes with the same mean rate, being a straight line given by $\mathrm{var = f_{mean}\cdot n_{bins}/T_{total}}$, though slight deviations can be seen as a different factor of proportionality. (B) acts as an illustration showing a counterexample: here, we included the entire time span of the simulation, including the transition between non-diffusive and diffusive homeostasis. For almost all of the neurons, this will cause a transition of firing rate between 3 Hz and a new rate different from 3 Hz. This inhomogeneity is represented by the increasing positive relative deviation from the dashed line for small number of bins (i.e., large bin widths), even increasing again for a very few number of bins.
+\begin{figure}
+%%% plot_spt_var_vs_bin_width.py
+\includegraphics[width=\textwidth]{../../plots/Spike_Stats/sim_f_var_vs_hom_poisson.png}
+\caption{A: Relation between Variance of the frequency signal (acquired by binning spikes) and the number of bins within the given time range of $\mathrm{1000-1500\,s}$, taken from three randomly picked excitatory neurons. B: Same procedure as in (A) for a randomly chosen excitatory neuron, but time range was $\mathrm{1000-1500\,s}$, which includes the initial phase of non-diffusive homeostasis. In both plots, dashed lines are the expected curve of a homogeneous poisson process of the same mean rate.}
+\label{f_Var_vs_n_Bin}
+\end{figure}
+We therefore concluded that diffusive homeostasis manages to retain firing rates on a constant level, not only population-wise but on a single-cell level as well, making Figure \ref In particular, plastic modifications across the network due to STDP and synaptic growth/pruning (which where always acting for all the simulation results presented so far) appeared to be compensated for.  
 
 \section{The Firing Rate Distribution in the Network}
 

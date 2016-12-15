@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.20)  14 DEC 2016 18:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.23)  15 DEC 2016 17:02
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **draft.tex
 (./draft.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+Babel <3.9h> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -552,14 +552,7 @@ Package caption Info: hyperref package is loaded.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
-) (./draft.aux
-
-LaTeX Warning: Label `Noise_Approx_1' multiply defined.
-
-
-LaTeX Warning: Label `2d-sys-fixed-points2' multiply defined.
-
-)
+) (./draft.aux)
 \openout1 = `draft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -687,7 +680,7 @@ File: ../../plots/power_spec/power_spectrum_sim_only.png Graphic file (type png
 )
  <use ../../plots/power_spec/power_spectrum_sim_only.png>
 Package pdftex.def Info: ../../plots/power_spec/power_spectrum_sim_only.png use
-d on input line 258.
+d on input line 259.
 (pdftex.def)             Requested size: 266.48735pt x 213.25777pt.
  [7 <../../plots/density_plots/density_plot.png>] [8] [9 <../../plots/diff_hom/
 rate_NO_th_compl.png>] <../../plots/F-I_noise_dep.png, id=251, 237.7683pt x 173
@@ -719,7 +712,7 @@ ine 329.
 File: ../../plots/nNOS_approx.png Graphic file (type png)
 
 <use ../../plots/nNOS_approx.png>
-Package pdftex.def Info: ../../plots/nNOS_approx.png used on input line 366.
+Package pdftex.def Info: ../../plots/nNOS_approx.png used on input line 367.
 (pdftex.def)             Requested size: 380.69788pt x 228.43187pt.
  [14]
 <../../plots/Spike_Stats/linfit_th_rate.png, id=345, 380.622pt x 251.2587pt>
@@ -727,7 +720,7 @@ File: ../../plots/Spike_Stats/linfit_th_rate.png Graphic file (type png)
 
 <use ../../plots/Spike_Stats/linfit_th_rate.png>
 Package pdftex.def Info: ../../plots/Spike_Stats/linfit_th_rate.png used on inp
-ut line 389.
+ut line 391.
 (pdftex.def)             Requested size: 380.69788pt x 251.32324pt.
  [15 <../../plots/nNOS_approx.png>] [16 <../../plots/Spike_Stats/linfit_th_rate
 .png>]
@@ -737,7 +730,7 @@ File: ../../plots/power_spec/power_spectrum_analytic.png Graphic file (type png
 )
  <use ../../plots/power_spec/power_spectrum_analytic.png>
 Package pdftex.def Info: ../../plots/power_spec/power_spectrum_analytic.png use
-d on input line 429.
+d on input line 431.
 (pdftex.def)             Requested size: 380.69788pt x 304.57584pt.
 
 <../../plots/diff_hom/osc_ampl_vs_tau_th.png, id=381, 380.622pt x 228.3732pt>
@@ -745,7 +738,7 @@ File: ../../plots/diff_hom/osc_ampl_vs_tau_th.png Graphic file (type png)
 
 <use ../../plots/diff_hom/osc_ampl_vs_tau_th.png>
 Package pdftex.def Info: ../../plots/diff_hom/osc_ampl_vs_tau_th.png used on in
-put line 440.
+put line 443.
 (pdftex.def)             Requested size: 380.69788pt x 228.43187pt.
 
 <../../plots/diff_hom/rate_NO_th_compl_large_tau.png, id=386, 380.622pt x 304.4
@@ -754,7 +747,7 @@ File: ../../plots/diff_hom/rate_NO_th_compl_large_tau.png Graphic file (type pn
 g)
  <use ../../plots/diff_hom/rate_NO_th_compl_large_tau.png>
 Package pdftex.def Info: ../../plots/diff_hom/rate_NO_th_compl_large_tau.png us
-ed on input line 446.
+ed on input line 450.
 (pdftex.def)             Requested size: 380.69788pt x 304.57584pt.
  [17] [18 <../../plots/power_spec/power_spectrum_analytic.png>]
 <../../plots/Spike_Stats/isi_cv_compare.png, id=407, 380.622pt x 380.622pt>
@@ -762,7 +755,7 @@ File: ../../plots/Spike_Stats/isi_cv_compare.png Graphic file (type png)
 
 <use ../../plots/Spike_Stats/isi_cv_compare.png>
 Package pdftex.def Info: ../../plots/Spike_Stats/isi_cv_compare.png used on inp
-ut line 459.
+ut line 464.
 (pdftex.def)             Requested size: 380.69788pt x 380.71977pt.
  [19 <../../plots/diff_hom/osc_ampl_vs_tau_th.png>] [20 <../../plots/diff_hom/r
 ate_NO_th_compl_large_tau.png>] [21 <../../plots/Spike_Stats/isi_cv_compare.png
@@ -772,16 +765,16 @@ t>
 File: ../../plots/Spike_Stats/pop_mean_cross_corr.png Graphic file (type png)
  <use ../../plots/Spike_Stats/pop_mean_cross_corr.png>
 Package pdftex.def Info: ../../plots/Spike_Stats/pop_mean_cross_corr.png used o
-n input line 467.
+n input line 472.
 (pdftex.def)             Requested size: 380.69788pt x 266.50385pt.
  [22 <../../plots/Spike_Stats/pop_mean_cross_corr.png>]
-<../../plots/firing_rate_dists/fir_rate_dist_compare.png, id=448, 380.622pt x 1
-52.2488pt>
-File: ../../plots/firing_rate_dists/fir_rate_dist_compare.png Graphic file (typ
-e png)
- <use ../../plots/firing_rate_dists/fir_rate_dist_compare.png>
-Package pdftex.def Info: ../../plots/firing_rate_dists/fir_rate_dist_compare.pn
-g used on input line 478.
+<../../plots/firing_rate_dists/fir_rate_dist_e_compare.png, id=448, 380.622pt x
+ 152.2488pt>
+File: ../../plots/firing_rate_dists/fir_rate_dist_e_compare.png Graphic file (t
+ype png)
+ <use ../../plots/firing_rate_dists/fir_rate_dist_e_compare.png>
+Package pdftex.def Info: ../../plots/firing_rate_dists/fir_rate_dist_e_compare.
+png used on input line 484.
 (pdftex.def)             Requested size: 380.69788pt x 152.2879pt.
 
 <../../plots/firing_rate_dists/fir_rate_dist_i_compare.png, id=449, 380.622pt x
@@ -790,95 +783,101 @@ File: ../../plots/firing_rate_dists/fir_rate_dist_i_compare.png Graphic file (t
 ype png)
  <use ../../plots/firing_rate_dists/fir_rate_dist_i_compare.png>
 Package pdftex.def Info: ../../plots/firing_rate_dists/fir_rate_dist_i_compare.
-png used on input line 479.
+png used on input line 485.
 (pdftex.def)             Requested size: 380.69788pt x 152.2879pt.
 
-
-LaTeX Warning: Reference `firing_rate_dist_comp' on page 23 undefined on input 
-line 492.
-
-[23] [24 <../../plots/firing_rate_dists/fir_rate_dist_compare.png> <../../plots
-/firing_rate_dists/fir_rate_dist_i_compare.png>]
+<../../plots/Spike_Stats/sim_f_var_vs_hom_poisson.png, id=452, 380.622pt x 190.
+311pt>
+File: ../../plots/Spike_Stats/sim_f_var_vs_hom_poisson.png Graphic file (type p
+ng)
+ <use ../../plots/Spike_Stats/sim_f_var_vs_hom_poisson.png>
+Package pdftex.def Info: ../../plots/Spike_Stats/sim_f_var_vs_hom_poisson.png u
+sed on input line 496.
+(pdftex.def)             Requested size: 380.69788pt x 190.35988pt.
+ [23] [24 <../../plots/firing_rate_dists/fir_rate_dist_e_compare.png> <../../pl
+ots/firing_rate_dists/fir_rate_dist_i_compare.png>]
 
 LaTeX Warning: Reference `firing_rate_dist_comp' on page 25 undefined on input 
 line 504.
 
-[25]
+
+LaTeX Warning: Reference `firing_rate_dist_comp' on page 25 undefined on input 
+line 516.
+
+[25 <../../plots/Spike_Stats/sim_f_var_vs_hom_poisson.png>] [26]
 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_comb
-.png, id=492, 587.0733pt x 442.5333pt>
+.png, id=501, 587.0733pt x 442.5333pt>
 File: ../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha
 _comb.png Graphic file (type png)
 
 <use ../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_
 comb.png>
 Package pdftex.def Info: ../../plots/rate_threshold_simpl_hip_alpha/rate_thresh
-old_simpl_hip_alpha_comb.png used on input line 564.
+old_simpl_hip_alpha_comb.png used on input line 576.
 (pdftex.def)             Requested size: 380.69788pt x 286.96797pt.
 
 
-LaTeX Warning: Reference `simple_NO_dyn' on page 26 undefined on input line 573
+LaTeX Warning: Reference `simple_NO_dyn' on page 27 undefined on input line 585
 .
 
-[26] [27 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_a
-lpha_comb.png>] <../../plots/diff_rate_solve.png, id=515, 578.16pt x 433.62pt>
+[27 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_
+comb.png>] [28] <../../plots/diff_rate_solve.png, id=532, 578.16pt x 433.62pt>
 File: ../../plots/diff_rate_solve.png Graphic file (type png)
 
 <use ../../plots/diff_rate_solve.png>
-Package pdftex.def Info: ../../plots/diff_rate_solve.png used on input line 641
+Package pdftex.def Info: ../../plots/diff_rate_solve.png used on input line 653
 .
 (pdftex.def)             Requested size: 380.69788pt x 285.52182pt.
- [28] [29 <../../plots/diff_rate_solve.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 675.
+ [29 <../../plots/diff_rate_solve.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 687.
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 675.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 687.
 
-<../../plots/Boundary_Cond_Sketch.png, id=542, 377.7312pt x 188.6247pt>
+<../../plots/Boundary_Cond_Sketch.png, id=547, 377.7312pt x 188.6247pt>
 File: ../../plots/Boundary_Cond_Sketch.png Graphic file (type png)
 
 <use ../../plots/Boundary_Cond_Sketch.png>
 Package pdftex.def Info: ../../plots/Boundary_Cond_Sketch.png used on input lin
-e 681.
+e 693.
 (pdftex.def)             Requested size: 190.34894pt x 95.05467pt.
- [30]
-<../../plots/firing_rate_dists/frequ_moments_compare.png, id=554, 425.4294pt x 
+ [30 <../../plots/Boundary_Cond_Sketch.png>]
+<../../plots/firing_rate_dists/frequ_moments_compare.png, id=559, 425.4294pt x 
 341.5962pt>
 File: ../../plots/firing_rate_dists/frequ_moments_compare.png Graphic file (typ
 e png)
  <use ../../plots/firing_rate_dists/frequ_moments_compare.png>
 Package pdftex.def Info: ../../plots/firing_rate_dists/frequ_moments_compare.pn
-g used on input line 707.
+g used on input line 719.
 (pdftex.def)             Requested size: 380.69788pt x 305.69281pt.
 
-[31 <../../plots/Boundary_Cond_Sketch.png>] [32 <../../plots/firing_rate_dists/
-frequ_moments_compare.png>] (./draft.bbl [33])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 752.
+[31 <../../plots/firing_rate_dists/frequ_moments_compare.png>] (./draft.bbl
+[32] [33])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 764.
  [34]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 752.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 764.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 752.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 752.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 764.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 764.
 Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: 4D1F49467E61016B3E9ABA32C37F7D5D;1589.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 752.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 764.
  ) 
 Here is how much of TeX's memory you used:
- 8576 strings out of 493304
- 129726 string characters out of 6139871
- 237191 words of memory out of 5000000
- 11688 multiletter control sequences out of 15000+600000
+ 8585 strings out of 494985
+ 130062 string characters out of 6180355
+ 233655 words of memory out of 5000000
+ 11453 multiletter control sequences out of 15000+600000
  12636 words of font info for 49 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
+ 36 hyphenation exceptions out of 8191
  42i,18n,38p,1865b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
@@ -897,10 +896,10 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on draft.pdf (34 pages, 2516046 bytes).
+Output written on draft.pdf (34 pages, 2526691 bytes).
 PDF statistics:
- 686 PDF objects out of 1000 (max. 8388607)
- 588 compressed objects within 6 object streams
- 193 named destinations out of 1000 (max. 500000)
- 248 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 690 PDF objects out of 1000 (max. 8388607)
+ 590 compressed objects within 6 object streams
+ 194 named destinations out of 1000 (max. 500000)
+ 253 words of extra memory for PDF output out of 10000 (max. 10000000)
 
