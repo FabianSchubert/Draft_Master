@@ -497,7 +497,24 @@ A constant "rate" of an approximately randomly spiking neuron means that the dep
 \caption{A: Relation between Variance of the frequency signal (acquired by binning spikes) and the number of bins within the given time range of $\mathrm{1000-1500\,s}$, taken from three randomly picked excitatory neurons. B: Same procedure as in (A) for a randomly chosen excitatory neuron, but time range was $\mathrm{1000-1500\,s}$, which includes the initial phase of non-diffusive homeostasis. In both plots, dashed lines are the expected curve of a homogeneous poisson process of the same mean rate.}
 \label{f_Var_vs_n_Bin}
 \end{figure}
-We therefore concluded that diffusive homeostasis manages to retain firing rates on a constant level, not only population-wise but on a single-cell level as well, making Figure \ref In particular, plastic modifications across the network due to STDP and synaptic growth/pruning (which where always acting for all the simulation results presented so far) appeared to be compensated for.  
+We therefore concluded that diffusive homeostasis manages to retain firing rates on a constant level, not only population-wise but on a single-cell level as well, making Figure \ref In particular, plastic modifications across the network due to STDP and synaptic growth/pruning (which where always acting for all the simulation results presented so far) appeared to be compensated for.
+
+Sweeney et al. found that diffusive homeostasis maintains broadness of firing rates across a wide range of diffusion constants but rapidly approaching zero for small values \cite[p. 6]{Sweeney_Paper}. We were able to reproduce this result, see Figure \ref{Fir_Rate_Dist_Width_vs_D}. Homeostasis reaches a point of saturation, where faster diffusion has no effect on the heterogeneity of firing rates. 
+\begin{figure}
+%%% freq_dist_width_vs_D.py
+\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/std_dev_vs_D_neumann.png}
+\caption{Standard deviation of firing rate distribution of excitatory neurons (neumann boundary conditions).}
+\label{Fir_Rate_Dist_Width_vs_D}
+\end{figure}
+To further quantify this dependence, we also investigated the influence of the diffusion constant onto the distribution's skewness, shown in Figure \ref{Fir_Rate_Dist_Skew_vs_D}. Compared to the standard deviation, we see a similar but not as clear trend with a drop for very small diffusion constants, even occasionally resulting in a left-skewed distribution (negative D-values).
+\begin{figure}
+%%% freq_dist_skew_vs_D.py
+\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/skew_vs_D_neumann.png}
+\caption{Skewness of firing rate distribution of excitatory neurons (neumann boundary conditions).}
+\label{Fir_Rate_Dist_Skew_vs_D}
+\end{figure}
+
+!!!HEAD!!!
 
 \section{The Firing Rate Distribution in the Network}
 

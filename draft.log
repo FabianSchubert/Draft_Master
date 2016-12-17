@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.23)  15 DEC 2016 17:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.23)  16 DEC 2016 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,88 +794,120 @@ ng)
 Package pdftex.def Info: ../../plots/Spike_Stats/sim_f_var_vs_hom_poisson.png u
 sed on input line 496.
 (pdftex.def)             Requested size: 380.69788pt x 190.35988pt.
- [23] [24 <../../plots/firing_rate_dists/fir_rate_dist_e_compare.png> <../../pl
-ots/firing_rate_dists/fir_rate_dist_i_compare.png>]
+
+
+LaTeX Warning: Reference `I' on page 23 undefined on input line 500.
+
+[23] [24 <../../plots/firing_rate_dists/fir_rate_dist_e_compare.png> <../../plo
+ts/firing_rate_dists/fir_rate_dist_i_compare.png>]
+
+LaTeX Warning: Reference `Fir_Rate_Dist_Width_vs_D' on page 25 undefined on inp
+ut line 502.
+
+
+<../../plots/firing_rate_dists/std_dev_vs_D_neumann.png, id=468, 380.622pt x 26
+6.4354pt>
+File: ../../plots/firing_rate_dists/std_dev_vs_D_neumann.png Graphic file (type
+ png)
+ <use ../../plots/firing_rate_dists/std_dev_vs_D_neumann.png>
+Package pdftex.def Info: ../../plots/firing_rate_dists/std_dev_vs_D_neumann.png
+ used on input line 505.
+(pdftex.def)             Requested size: 380.69788pt x 266.50385pt.
+
+<../../plots/firing_rate_dists/skew_vs_D_neumann.png, id=469, 380.622pt x 266.4
+354pt>
+File: ../../plots/firing_rate_dists/skew_vs_D_neumann.png Graphic file (type pn
+g)
+ <use ../../plots/firing_rate_dists/skew_vs_D_neumann.png>
+Package pdftex.def Info: ../../plots/firing_rate_dists/skew_vs_D_neumann.png us
+ed on input line 512.
+(pdftex.def)             Requested size: 380.69788pt x 266.50385pt.
+
 
 LaTeX Warning: Reference `firing_rate_dist_comp' on page 25 undefined on input 
-line 504.
+line 519.
 
+[25 <../../plots/Spike_Stats/sim_f_var_vs_hom_poisson.png>] [26 <../../plots/fi
+ring_rate_dists/std_dev_vs_D_neumann.png> <../../plots/firing_rate_dists/skew_v
+s_D_neumann.png>]
 
-LaTeX Warning: Reference `firing_rate_dist_comp' on page 25 undefined on input 
-line 516.
+LaTeX Warning: Reference `firing_rate_dist_comp' on page 27 undefined on input 
+line 531.
 
-[25 <../../plots/Spike_Stats/sim_f_var_vs_hom_poisson.png>] [26]
+[27]
 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_comb
-.png, id=501, 587.0733pt x 442.5333pt>
+.png, id=511, 587.0733pt x 442.5333pt>
 File: ../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha
 _comb.png Graphic file (type png)
 
 <use ../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_
 comb.png>
 Package pdftex.def Info: ../../plots/rate_threshold_simpl_hip_alpha/rate_thresh
-old_simpl_hip_alpha_comb.png used on input line 576.
+old_simpl_hip_alpha_comb.png used on input line 591.
 (pdftex.def)             Requested size: 380.69788pt x 286.96797pt.
 
 
-LaTeX Warning: Reference `simple_NO_dyn' on page 27 undefined on input line 585
+LaTeX Warning: Reference `simple_NO_dyn' on page 28 undefined on input line 600
 .
 
-[27 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_
-comb.png>] [28] <../../plots/diff_rate_solve.png, id=532, 578.16pt x 433.62pt>
+[28] [29 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_a
+lpha_comb.png>] <../../plots/diff_rate_solve.png, id=534, 578.16pt x 433.62pt>
 File: ../../plots/diff_rate_solve.png Graphic file (type png)
 
 <use ../../plots/diff_rate_solve.png>
-Package pdftex.def Info: ../../plots/diff_rate_solve.png used on input line 653
+Package pdftex.def Info: ../../plots/diff_rate_solve.png used on input line 668
 .
 (pdftex.def)             Requested size: 380.69788pt x 285.52182pt.
- [29 <../../plots/diff_rate_solve.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 687.
+ [30] [31 <../../plots/diff_rate_solve.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 702.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 687.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 702.
 
-<../../plots/Boundary_Cond_Sketch.png, id=547, 377.7312pt x 188.6247pt>
+<../../plots/Boundary_Cond_Sketch.png, id=562, 377.7312pt x 188.6247pt>
 File: ../../plots/Boundary_Cond_Sketch.png Graphic file (type png)
 
 <use ../../plots/Boundary_Cond_Sketch.png>
 Package pdftex.def Info: ../../plots/Boundary_Cond_Sketch.png used on input lin
-e 693.
+e 708.
 (pdftex.def)             Requested size: 190.34894pt x 95.05467pt.
- [30 <../../plots/Boundary_Cond_Sketch.png>]
-<../../plots/firing_rate_dists/frequ_moments_compare.png, id=559, 425.4294pt x 
+ [32]
+<../../plots/firing_rate_dists/frequ_moments_compare.png, id=573, 425.4294pt x 
 341.5962pt>
 File: ../../plots/firing_rate_dists/frequ_moments_compare.png Graphic file (typ
 e png)
  <use ../../plots/firing_rate_dists/frequ_moments_compare.png>
 Package pdftex.def Info: ../../plots/firing_rate_dists/frequ_moments_compare.pn
-g used on input line 719.
+g used on input line 734.
 (pdftex.def)             Requested size: 380.69788pt x 305.69281pt.
 
-[31 <../../plots/firing_rate_dists/frequ_moments_compare.png>] (./draft.bbl
-[32] [33])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 764.
- [34]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 764.
+[33 <../../plots/Boundary_Cond_Sketch.png>] [34 <../../plots/firing_rate_dists/
+frequ_moments_compare.png>] (./draft.bbl [35])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 779.
+ [36]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 779.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 764.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 764.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 779.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 779.
 Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: 4D1F49467E61016B3E9ABA32C37F7D5D;1589.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 764.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 779.
  ) 
 Here is how much of TeX's memory you used:
- 8585 strings out of 494985
- 130062 string characters out of 6180355
+ 8601 strings out of 494985
+ 130642 string characters out of 6180355
  233655 words of memory out of 5000000
- 11453 multiletter control sequences out of 15000+600000
+ 11463 multiletter control sequences out of 15000+600000
  12636 words of font info for 49 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  42i,18n,38p,1865b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -896,10 +928,10 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on draft.pdf (34 pages, 2526691 bytes).
+Output written on draft.pdf (36 pages, 2615059 bytes).
 PDF statistics:
- 690 PDF objects out of 1000 (max. 8388607)
- 590 compressed objects within 6 object streams
- 194 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 705 PDF objects out of 1000 (max. 8388607)
+ 599 compressed objects within 6 object streams
+ 198 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 
