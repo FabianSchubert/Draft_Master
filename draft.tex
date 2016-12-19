@@ -486,7 +486,7 @@ Achieving a broad distribution of firing rates among neurons was the core motiva
 \caption{Histograms of mean firing rates over the excitatory/inhibitory population in regular (A/A*) and logarithmic space (B/B*). For diffusive homeostasis ($\mathrm{D=1000\, \mu m^2 s^{-1}}$), the distribution was generated from 10 simulation runs, 1 simulation was used for non-diffusive homeostasis. Mean firing rates where calculated from spikes within $\mathrm{t=1000-1500\,s}$.}
 \label{Fir_Rate_Dist_Compare}
 \end{figure}
-In contrast, inhibitory cells showed a much clearer distinction: A skewness of $\mathrm{v_{Diff} = 1.522}$ in regular space and $\mathrm{v_{Diff,log} = -0.147}$ in log-space. As a first interpretation, we related this difference to the fact that inhibitory cells are only indirectly affected by diffusive homeostasis in the sense that their distribution of activity is mainly determined by differences withing neural input since inhibitory thresholds are all initialized and kept at the same value.
+In contrast, inhibitory cells showed a much clearer distinction: A skewness of $\mathrm{v_{Diff} = 1.522}$ in regular space and $\mathrm{v_{Diff,log} = -0.147}$ in log-space. As a first interpretation, we related this difference to the fact that inhibitory cells are only indirectly affected by diffusive homeostasis in the sense that their distribution of activity is mainly determined by differences withing neural input while inhibitory thresholds are all initialized and kept at the same value.
 
 Despite of fluctuations within the firing rate on small time scales due to the inherent nature of - approximately - random spike generation, we wanted to know how strongly firing rates of single excitatory cells fluctuate over longer timescales of multiple seconds. This question is not only of relevance with respect to the "stiffness" of homeostasis, but also relates to the plot in Figure \ref{Fir_Rate_Dist_Compare}: if firing rates fluctuate too much during the period over which means were calculated, the resulting distribution might be narrower than what one could expect from a distribution of "momentary" rates.
 
@@ -497,7 +497,7 @@ A constant "rate" of an approximately randomly spiking neuron means that the dep
 \caption{A: Relation between Variance of the frequency signal (acquired by binning spikes) and the number of bins within the given time range of $\mathrm{1000-1500\,s}$, taken from three randomly picked excitatory neurons. B: Same procedure as in (A) for a randomly chosen excitatory neuron, but time range was $\mathrm{1000-1500\,s}$, which includes the initial phase of non-diffusive homeostasis. In both plots, dashed lines are the expected curve of a homogeneous poisson process of the same mean rate.}
 \label{f_Var_vs_n_Bin}
 \end{figure}
-We therefore concluded that diffusive homeostasis manages to retain firing rates on a constant level, not only population-wise but on a single-cell level as well, making Figure \ref In particular, plastic modifications across the network due to STDP and synaptic growth/pruning (which where always acting for all the simulation results presented so far) appeared to be compensated for.
+We therefore concluded that diffusive homeostasis manages to retain firing rates on a constant level, not only population-wise but on a single-cell level as well. In particular, plastic modifications across the network due to STDP and synaptic growth/pruning - which where always acting for all the simulation results presented so far - appeared to be compensated for.
 
 Sweeney et al. found that diffusive homeostasis maintains broadness of firing rates across a wide range of diffusion constants but rapidly approaching zero for small values \cite[p. 6]{Sweeney_Paper}. We were able to reproduce this result, see Figure \ref{Fir_Rate_Dist_Width_vs_D}. Homeostasis reaches a point of saturation, where faster diffusion has no effect on the heterogeneity of firing rates. 
 \begin{figure}
@@ -513,8 +513,20 @@ To further quantify this dependence, we also investigated the influence of the d
 \caption{Skewness of firing rate distribution of excitatory neurons (neumann boundary conditions).}
 \label{Fir_Rate_Dist_Skew_vs_D}
 \end{figure}
+A naturally emerging question when altering the diffusion constant is how the firing rate behaves in the absolute limit of infinitely fast diffusion. In fact, simulation-wise this case is quite easy to simulate: one simply has  to feed all NO-sources into a single scalar variable of NO concentration. In particular, this will provide the same NO readout for all excitatory neurons, which means that all excitatory thresholds change at the same rate all the time. Since we initialized all excitatory neurons at the same threshold, only one global excitatory threshold variable had to be considered in this case. Figure \ref{Fir_Rate_Dist_Instant_compare} shows the distribution for this special limiting case. The standard deviation for the excitatory was $\mathrm{\sigma_{inst} = 1.41\, Hz}$ and the skewness $\mathrm{v_{inst} = 1.27}$ ($\mathrm{v_{inst,log} = -0.46}$), which makes the asymmetry slightly more pronounced than in Figure \ref{Fir_Rate_Dist_Compare}.  
+\begin{figure}
+%%% frequ_dist_instant_diff.py
+\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/instant_diff_fir_dist_e.png}
+\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/instant_diff_fir_dist_i.png}
+\caption{Distribution of firing rates for instantaneous diffusion for excitatory (A,B) and inhibitory (A*,B*) population. Data was taken from 2 simulations and $\mathrm{t=1000-1500\,s}$.}
+\label{Fir_Rate_Dist_Instant_compare}
+\end{figure}
 
-!!!HEAD!!!
+Summing up the results of this section, we can state that stable network activity can be achieved in the SORN with diffusive homeostasis while producing a broad distribution of firing rates within the excitatory population. We found that this ensemble of activity is maintained on a single cell level, each cell spiking with approximately poissonian statistics at a constant mean rate. The broadness of distribution could be maintained at a relatively constant level over a wide range of diffusion rates. However, we did not find a distribution as right skewed and heavy tailed as reported by Sweeney et al. and numerous experimental studies.
+
+\subsection{Network Topology}
+So far, we have only analyzed network activity, whereas in this section we present results that relate to features of synaptic topology. Since the SORN we used for all simulations only included plastic mechanisms affecting recurrent excitatory connections, these were the main subject of our investigations. Moreover, in contrast to the previous section, we did not explicitly aim for the emergence of an explicitly \emph{new} feature of synaptic topology, but rather sought to recover properties that had been found in earlier versions of the SORN.
+
 
 \section{The Firing Rate Distribution in the Network}
 
