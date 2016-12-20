@@ -157,4 +157,50 @@ Adrien Wohrer, Mark~D. Humphries, and Christian Machens.
   decision-making.
 \newblock {\em Progress in Neurobiology}, 2012.
 
+\bibitem{Markram_Connections_1997}
+H~Markram.
+\newblock A network of tufted layer 5 pyramidal neurons.
+\newblock {\em Cerebral Cortex}, 7(6):523--533, 1997.
+
+\bibitem{Song_Connectivity_2005}
+Sen Song, Per~Jesper Sjöström, Markus Reigl, Sacha Nelson, and Dmitri~B
+  Chklovskii.
+\newblock Highly nonrandom features of synaptic connectivity in local cortical
+  circuits.
+\newblock {\em PLOS Biology}, 3(3), 03 2005.
+
+\bibitem{Syn_Plast_Abbott}
+L.~Abbott and S.~B. Nelson.
+\newblock Synaptic plasticity: taming the beast.
+\newblock {\em Nature Neuroscience}, 2000.
+
+\bibitem{Lisman_Synapses_1993}
+John~E. Lisman and Kristen~M. Harris.
+\newblock Quantal analysis and synaptic anatomy — integrating two views of
+  hippocampal plasticity.
+\newblock {\em Trends in Neurosciences}, 16(4):141 -- 147, 1993.
+
+\bibitem{Yasumatsu_Synapses_2008}
+Nobuaki Yasumatsu, Masanori Matsuzaki, Takashi Miyazaki, Jun Noguchi, and Haruo
+  Kasai.
+\newblock Principles of long-term dynamics of dendritic spines.
+\newblock {\em Journal of Neuroscience}, 28(50):13592--13608, 2008.
+
+\bibitem{Loewenstein_Spine_Sizes}
+Yonatan Loewenstein, Annerose Kuras, and Simon Rumpel.
+\newblock Multiplicative dynamics underlie the emergence of the log-normal
+  distribution of spine sizes in the neocortex in vivo.
+\newblock {\em Journal of Neuroscience}, 31(26):9481--9488, 2011.
+
+\bibitem{Statman_Synapses_2014}
+Adiel Statman, Maya Kaufman, Amir Minerbi, Noam~E. Ziv, and Naama Brenner.
+\newblock Synaptic size dynamics as an effectively stochastic process.
+\newblock {\em PLOS Computational Biology}, 10(10):1--17, 10 2014.
+
+\bibitem{Pengsheng_2013}
+Pengsheng Zheng, Christos Dimitrakakis, and Jochen Triesch.
+\newblock Network self-organization explains the statistics and dynamics of
+  synaptic connection strength in cortex.
+\newblock {\em PLOS Computational Biology}, 2013.
+
 \end{thebibliography}
