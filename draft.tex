@@ -531,11 +531,11 @@ So far, we have only analyzed network activity, whereas in this section we prese
 In the previous version of the SORN, initializing the network with zero recurrent excitatory connections led to a monotonically increasing but saturating excitatory-to-excitatory connection fraction (CF). The growth rate was tuned such that the terminal CF settled at $\mathrm{10\%}$, see \cite[p. 8]{SORN_Paper}. Omitting the distance dependence of connection probability for synaptic growth led to a slightly higher connection fraction. To compare these previous results to the diffusive case, we ran a full simulation under diffusive homeostasis, including the growth phase by setting the target concentration to an appropriate value that was determined in a previous simulation with non-diffusive homeostasis. The resulting time course of CF is depicted in Figure \ref{CF_plot}.
 \begin{figure}
 %%% plot_CF.py
-\includegraphics[width=\textwidth]{../../plots/CF_plot.png}
+\includegraphics[width=\textwidth]{../../plots/syn_topology/CF_plot.png}
 \caption{Connection fractions of recurrent excitatory synapses. Simulation protocols include all four possible combinations of diffusive/non-diffusive homeostasis and distance-dependent/non-distance-dependent synaptic growth, each variant retained for the entire simulation time.}
 \label{CF_plot}
 \end{figure}
-To our surprise, diffusive homeostasis caused the CF to overshoot its final fraction in the growth phase. Eventually however, it settled at a similar equilibrium of $\mathrm{\approx 10\%}$. To understand this kind of behaviour, we recalled the two mechanisms that directly determine changes within the connection fraction, namely synaptic growth and pruning. The average change of connection fraction is simply proportional to the difference between newly created synapses and those that were removed. Though fluctuating, the synaptic growth rate was kept at a constant level of 920 synapses/second. In consequence, any differences in Figure \ref{CF_plot} must originate in different pruning rates. As explained in section \ref{network simulation}, pruning is performed once per second by collection connections that have fallen under the given weight-threshold. Within this second, a synaptic weight can fall below this value for two reasons: either due to multiplicative normalization or additive STDP. If the weight of a neuron is already very small, multiplicative changes due to normalization have a minor effect compared to weight fluctuations caused by additive STDP, drawing us to the conclusion that differences within the statistics of STDP are the potential cause for the observed overshooting of the CF. Figure \ref{STDP_change} shows the mean and standard deviation of weight changes due to STDP between two normalization steps. Non-diffusive homeostasis has a higher mean as well as a broader distribution of weight fluctuations throughout the beginning of the simulation. However, the difference of mean changes is orders of magnitude smaller than the width of fluctuations. Thus, while it might seem counter-intuitive that a higher positive mean weight change comes with a smaller chance of synaptic survival, we attribute the main cause of overshooting in Figure \ref{CF_plot} to the increased fluctuation of weights, since it raises the chance of going below the pruning threshold within a given time interval.
+Diffusive homeostasis caused the CF to slightly overshoot its final fraction in the growth phase. To understand this kind of behaviour, we recalled the two mechanisms that directly determine changes within the connection fraction, namely synaptic growth and pruning. The average change of connection fraction is simply proportional to the difference between newly created synapses and those that were removed. Though fluctuating, the synaptic growth rate was kept at a constant level of 920 synapses/second. In consequence, any differences in Figure \ref{CF_plot} must originate in different pruning rates. Figure \ref{STDP_change} shows the mean and standard deviation of weight changes due to STDP between two normalization steps. Non-diffusive homeostasis has a higher mean as well as a broader distribution of weight fluctuations throughout the beginning of the simulation. However, the difference of mean changes is orders of magnitude smaller than the width of fluctuations. Thus, while it might seem counter-intuitive that a higher positive mean weight change comes with a smaller chance of synaptic survival, we attribute the main cause of overshooting in Figure \ref{CF_plot} to the increased fluctuation of weights, since it raises the chance of going below the pruning threshold within a given time interval.
 \begin{figure}
 %%% stdp_change_time.py
 \includegraphics[width=\textwidth]{../../plots/syn_topology/av_stdp_change_time.png}
@@ -558,8 +558,18 @@ A very well-studied property of neural networks is the distribution of synaptic 
 \label{Weight_Dist}
 \end{figure}
 \subsubsection{Synaptic Lifetimes}
-Synaptic lifetimes have been shown to approximately follow a power law distribution in earlier versions of the LIF-SORN and binary SORN \cite{SORN_Paper,Pengsheng_2013}.
-
+Synaptic lifetimes have been shown to approximately follow a power law distribution in earlier versions of the LIF-SORN and binary SORN \cite{SORN_Paper,Pengsheng_2013}. This feature was preserved under diffusive homeostasis, as shown in Figure \ref{Syn_Lifetimes}. The resulting slopes are within previously reported values of $mathrm{\approx - 5/3}$ \cite{SORN_Paper}.
+\begin{figure}
+\includegraphics[width=\textwidth]{../../plots/syn_topology/syn_lifetimes.png}
+\caption{Distribution of recurrent excitatory synaptic lifetimes. Linear fits ignoring falloff for large synaptic lifetimes resulted in a slope of $\mathrm{-1.871}$ for diffusive homeostasis and $\mathrm{-1.676}$ for non-diffusive homeostasis.}
+\label{Syn_Lifetimes}
+\end{figure}
+To get an approximative explanation for the observed slope in the region of small lifetimes, we note that short synaptic lifetimes are most likely coming from synapses whose weights did not reach large values compared to the initial weight. In this regime of small weights, the effect of multiplicative normalization is small compared to additive STDP. Therefore, small weights are determined by additive quasi-random (due to their weak coupling to the postsynaptic neuron) fluctuations, which, as a very simple approximation, can be described as a brownian motion with certain standard deviation $\mathrm{\sigma}$. The first hitting time of this brownian motion is described by a Lévy distribution:
+\begin{equation}
+p(t,w_0,w_{prune}) = \frac{|w_0-w_{prune}|}{\sqrt{2\pi \sigma t^3}}exp \left( \frac{(w_0-w_{prune})^2}{2\sigma t}\right)
+\label{Levy_Dist}
+\end{equation}
+For larger $\mathrm{t}$, the dominating term is $\mathrm{t^{-3/2}}$, which roughly resembles the power-law exponents found in Figure \ref{Syn_Lifetimes}.
 
 \section{The Firing Rate Distribution in the Network}
 
@@ -578,7 +588,7 @@ where $\nu$ is the mean population firing rate, $\phi_i$ the individual firing r
 As a simplification, the authors of \ref{firing_rate_dist_comp} proposed to implement diffusive homeostasis in this context by the following equation:
 
 \begin{equation}
-\frac{d\theta_i}{dt} = \frac{1}{\tau_{HIP}} \left(  (1-\alpha)\frac{\phi_i-\phi_0}{\phi_i} +\alpha \frac{\langle \phi \rangle-\phi_0}{\langle \phi \rangle} \right) 
+\frac{d\theta_i}{dt} = \frac{1}{\tau_{HIP}} \left( (1-\alpha)\frac{\phi_i-\phi_0}{\phi_i} +\alpha \frac{\langle \phi \rangle-\phi_0}{\langle \phi \rangle} \right) 
 \label{diff_hom_simpl_sweeney}
 \end{equation}
 
