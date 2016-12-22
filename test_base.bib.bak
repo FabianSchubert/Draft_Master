@@ -125,6 +125,28 @@
   Timestamp                = {2016.10.11}
 }
 
+@Article{Eckmann_Leader_Neurons_2008,
+  Title                    = {Leader neurons in population bursts of 2D living neural networks},
+  Author                   = {Eckmann, J.P. and Jacobi, Shimshon and Marom, Shimon and Moses, Elisha and Zbinden, Cyrille},
+  Journal                  = {New Journal of Physics},
+  Year                     = {2008},
+  Volume                   = {10},
+
+  Doi                      = {10.1088/1367-2630/10/1/015011},
+  Owner                    = {fschubert},
+  Timestamp                = {2016.12.22}
+}
+
+@Article{Effenberger_2015,
+  Title                    = {Self-Organization in Balanced State Networks by STDP and Homeostatic Plasticity},
+  Author                   = {Effenberger, F. and Jost, J.},
+  Journal                  = {PLOS Computational Biology},
+  Year                     = {2015},
+
+  Owner                    = {fschubert},
+  Timestamp                = {2016.12.22}
+}
+
 @Article{Froemke_STDP,
   Title                    = {Spike-timing-dependent synaptic plasticity depends on dendritic location},
   Author                   = {Froemke, Robert C. and Poo, Mu-ming and Dan, Yang},
@@ -393,6 +415,16 @@
   Url                      = {http://link.aps.org/doi/10.1103/PhysRev.81.617}
 }
 
+@Article{Sjoestroem_Syn_Plasticity_2001,
+  Title                    = {Rate, Timing, and Cooperativity Jointly Determine Cortical Synaptic Plasticity},
+  Author                   = {Sj\"ostr\"om, P. J. and Turrigiano, G. G.},
+  Journal                  = {Neuron},
+  Year                     = {2001},
+
+  Owner                    = {fschubert},
+  Timestamp                = {2016.12.22}
+}
+
 @Article{STDP,
   Title                    = {Competitive Hebbian learning through spike-timing-dependent synaptic plasticity},
   Author                   = {Song, Sen and Miller, Kenneth D. and Abbott, L. F.},
@@ -405,7 +437,7 @@
 
 @Article{Song_Connectivity_2005,
   Title                    = {Highly Nonrandom Features of Synaptic Connectivity in Local Cortical Circuits},
-  Author                   = {Song, Sen AND Sjöström, Per Jesper AND Reigl, Markus AND Nelson, Sacha AND Chklovskii, Dmitri B},
+  Author                   = {Song, Sen AND Sj\"ostr\"om, Per Jesper AND Reigl, Markus AND Nelson, Sacha AND Chklovskii, Dmitri B},
   Journal                  = {PLOS Biology},
   Year                     = {2005},
 
@@ -484,6 +516,20 @@
   Timestamp                = {2016.12.11}
 }
 
+@Article{Yassin_Subnetworks_2010,
+  Title                    = {An Embedded Subnetwork of Highly Active Neurons in the Neocortex },
+  Author                   = {Lina Yassin and Brett L. Benedetti and Jean-Sébastien Jouhanneau and Jing A. Wen and James F.A. Poulet and Alison L. Barth},
+  Journal                  = {Neuron },
+  Year                     = {2010},
+  Number                   = {6},
+  Pages                    = {1043 - 1050},
+  Volume                   = {68},
+
+  Doi                      = {http://dx.doi.org/10.1016/j.neuron.2010.11.029},
+  ISSN                     = {0896-6273},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/S0896627310009712}
+}
+
 @Article{Yasumatsu_Synapses_2008,
   Title                    = {Principles of Long-Term Dynamics of Dendritic Spines},
   Author                   = {Yasumatsu, Nobuaki and Matsuzaki, Masanori and Miyazaki, Takashi and Noguchi, Jun and Kasai, Haruo},
@@ -511,6 +557,16 @@
 
   Owner                    = {fschubert},
   Timestamp                = {2016.10.06}
+}
+
+@Article{Pengsheng_2013,
+  Title                    = {Network Self-Organization Explains the Statistics and Dynamics of Synaptic Connection Strength in Cortex},
+  Author                   = {Zheng, Pengsheng and Dimitrakakis, Christos and Triesch, Jochen},
+  Journal                  = {PLOS Computational Biology},
+  Year                     = {2013},
+
+  Owner                    = {fschubert},
+  Timestamp                = {2016.12.20}
 }
 
 @Book{Dyn_Sys_Hirsch,

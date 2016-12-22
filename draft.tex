@@ -532,7 +532,7 @@ In the previous version of the SORN, initializing the network with zero recurren
 \begin{figure}
 %%% plot_CF.py
 \includegraphics[width=\textwidth]{../../plots/syn_topology/CF_plot.png}
-\caption{Connection fractions of recurrent excitatory synapses. Simulation protocols include all four possible combinations of diffusive/non-diffusive homeostasis and distance-dependent/non-distance-dependent synaptic growth, each variant retained for the entire simulation time.}
+\caption{Connection fractions of recurrent excitatory synapses. Simulation protocols include all four possible combinations of diffusive/non-diffusive homeostasis and distance-dependent/non-distance-dependent synaptic growth, each variant retained for the entire simulation time. Data from 10 trials, linewidth represents standard error.}
 \label{CF_plot}
 \end{figure}
 Diffusive homeostasis caused the CF to slightly overshoot its final fraction in the growth phase. To understand this kind of behaviour, we recalled the two mechanisms that directly determine changes within the connection fraction, namely synaptic growth and pruning. The average change of connection fraction is simply proportional to the difference between newly created synapses and those that were removed. Though fluctuating, the synaptic growth rate was kept at a constant level of 920 synapses/second. In consequence, any differences in Figure \ref{CF_plot} must originate in different pruning rates. Figure \ref{STDP_change} shows the mean and standard deviation of weight changes due to STDP between two normalization steps. Non-diffusive homeostasis has a higher mean as well as a broader distribution of weight fluctuations throughout the beginning of the simulation. However, the difference of mean changes is orders of magnitude smaller than the width of fluctuations. Thus, while it might seem counter-intuitive that a higher positive mean weight change comes with a smaller chance of synaptic survival, we attribute the main cause of overshooting in Figure \ref{CF_plot} to the increased fluctuation of weights, since it raises the chance of going below the pruning threshold within a given time interval.
@@ -546,7 +546,7 @@ Apart from reproducing the desired connection fraction, previous versions of the
 \begin{figure}
 %%% plot_RC_CFB.py
 \includegraphics[width=\textwidth]{../../plots/syn_topology/RC_CFB_plot.png}
-\caption{Fraction of bidirectional connections normalized over the expected fraction for a random graph with equal total connection fraction.}
+\caption{Fraction of bidirectional connections normalized over the expected fraction for a random graph with equal total connection fraction. Data from 10 trials, linewidth represents standard error.}
 \label{RC_CFB_plot}
 \end{figure}
 \subsubsection{Distribution of Synaptic Weights}
@@ -557,9 +557,11 @@ A very well-studied property of neural networks is the distribution of synaptic 
 \caption{Distribution of decadic logarithm of excitatory synaptic weights at $\mathrm{t=1500\,s}$ for diffusive and non-diffusive homeostasis (both with distance-dependent connectivity). Gaussian fits returned $\mathrm{\mu_{diff}=-0.172\, log_{10}(mV)}$, $\mathrm{\mu_{non-diff}=-0.087\, log_{10}(mV)}$, $\mathrm{\sigma_{diff}=0.643\, log_{10}(mV)}$ and $\mathrm{\sigma_{non-diff}=0.418\, log_{10}(mV)}$.}
 \label{Weight_Dist}
 \end{figure}
+
 \subsubsection{Synaptic Lifetimes}
 Synaptic lifetimes have been shown to approximately follow a power law distribution in earlier versions of the LIF-SORN and binary SORN \cite{SORN_Paper,Pengsheng_2013}. This feature was preserved under diffusive homeostasis, as shown in Figure \ref{Syn_Lifetimes}. The resulting slopes are within previously reported values of $mathrm{\approx - 5/3}$ \cite{SORN_Paper}.
 \begin{figure}
+%%% plot_syn_lifetimes.py
 \includegraphics[width=\textwidth]{../../plots/syn_topology/syn_lifetimes.png}
 \caption{Distribution of recurrent excitatory synaptic lifetimes. Linear fits ignoring falloff for large synaptic lifetimes resulted in a slope of $\mathrm{-1.871}$ for diffusive homeostasis and $\mathrm{-1.676}$ for non-diffusive homeostasis.}
 \label{Syn_Lifetimes}
@@ -570,6 +572,20 @@ p(t,w_0,w_{prune}) = \frac{|w_0-w_{prune}|}{\sqrt{2\pi \sigma t^3}}exp \left( \f
 \label{Levy_Dist}
 \end{equation}
 For larger $\mathrm{t}$, the dominating term is $\mathrm{t^{-3/2}}$, which roughly resembles the power-law exponents found in Figure \ref{Syn_Lifetimes}.
+
+\subsubsection{Mean outgoing Weights}
+Since we only implemented synaptic normalization for the sum of ingoing weights, the total or average strength of outgoing connections may vary from cell to cell. In a sense, the strength of outgoing connections per neuron can be regarded as a measure of how "influential" a neuron's activity is with respect to other neurons in the network. Effenberger et. al. have shown in computational studies that these "driver neurons" form highly active and interconnected subnetworks \cite{Effenberger_2015}, an observation that is backed up by experimental studies \cite{Yassin_Subnetworks_2010,Eckmann_Leader_Neurons_2008}. Figure \ref{Out_Weight_Mean_Quantile} shows that diffusive homeostasis allows for the emergence of a small group of highly influential neurons, which reproduces the findings in \cite{Effenberger_2015}. A comparison of statistics generated with shuffled versions of the weight matrices illustrates that above-chance exceptionally strong outgoing weights were indeed present. Furthermore, we noted that the difference between shuffled matrices corresponding to non-diffusive and diffusive homeostasis is in line with our observation from Figure \ref{Weight_Dist}, which indicated a broader distribution of weights for diffusive homeostasis.
+\begin{figure}
+%%% plot_sum_outgoing_weights_dist.py
+\includegraphics[width=\textwidth]{../../plots/syn_topology/outgoing_weights_distribution.png}
+\caption{Mean of outgoing weights of excitatory neurons in order sorted by magnitude. Dashed lines are means obtained by randomly shuffling synaptic weights. Data was taken from 25 weight matrices per line, representing weights within $\mathrm{t=1000-1500\,s}$.}
+\label{Out_Weight_Mean_Quantile}
+\end{figure}
+
+In contrast to our model, Effenberger et. al. identified the presence of inhibitory STDP as a necessary mechanism for the development of this feature. On a deeper explanatory level, the authors argue that inhibitory STDP is indirectly involved: it weakens inhibitory currents for some neurons, which cause these neurons to have more above-average firing rates. In turn, synapses between highly active presynaptic cells and postsynaptic neurons with lower activity are known to be subject to long-term potentiation \cite{Sjoestroem_Syn_Plasticity_2001,Feldman_STDP_2012}. With these causal relations in mind, we can argue that diffusive homeostasis effectively embodies the same functional role as inhibitory STDP in \cite{Effenberger_2015} by allowing for the presence of excitatory cells with above-average activity. We tested this relationship by plotting mean outgoing weights against the average firing rate 
+\begin{figure}
+\includegraphics[width=\textwidth]{../../plots/syn_topology/mean_out_weights_vs_rate.png}
+\end{figure}
 
 \section{The Firing Rate Distribution in the Network}
 

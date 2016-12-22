@@ -163,7 +163,7 @@ H~Markram.
 \newblock {\em Cerebral Cortex}, 7(6):523--533, 1997.
 
 \bibitem{Song_Connectivity_2005}
-Sen Song, Per~Jesper Sjöström, Markus Reigl, Sacha Nelson, and Dmitri~B
+Sen Song, Per~Jesper Sj\"ostr\"om, Markus Reigl, Sacha Nelson, and Dmitri~B
   Chklovskii.
 \newblock Highly nonrandom features of synaptic connectivity in local cortical
   circuits.
@@ -202,5 +202,33 @@ Pengsheng Zheng, Christos Dimitrakakis, and Jochen Triesch.
 \newblock Network self-organization explains the statistics and dynamics of
   synaptic connection strength in cortex.
 \newblock {\em PLOS Computational Biology}, 2013.
+
+\bibitem{Effenberger_2015}
+F.~Effenberger and J.~Jost.
+\newblock Self-organization in balanced state networks by stdp and homeostatic
+  plasticity.
+\newblock {\em PLOS Computational Biology}, 2015.
+
+\bibitem{Yassin_Subnetworks_2010}
+Lina Yassin, Brett~L. Benedetti, Jean-Sébastien Jouhanneau, Jing~A. Wen,
+  James~F.A. Poulet, and Alison~L. Barth.
+\newblock An embedded subnetwork of highly active neurons in the neocortex.
+\newblock {\em Neuron}, 68(6):1043 -- 1050, 2010.
+
+\bibitem{Eckmann_Leader_Neurons_2008}
+J.P. Eckmann, Shimshon Jacobi, Shimon Marom, Elisha Moses, and Cyrille Zbinden.
+\newblock Leader neurons in population bursts of 2d living neural networks.
+\newblock {\em New Journal of Physics}, 10, 2008.
+
+\bibitem{Sjoestroem_Syn_Plasticity_2001}
+P.~J. Sj\"ostr\"om and G.~G. Turrigiano.
+\newblock Rate, timing, and cooperativity jointly determine cortical synaptic
+  plasticity.
+\newblock {\em Neuron}, 2001.
+
+\bibitem{Feldman_STDP_2012}
+D.~Feldman.
+\newblock The spike-timing dependence of plasticity.
+\newblock {\em Neuron}, 2012.
 
 \end{thebibliography}
