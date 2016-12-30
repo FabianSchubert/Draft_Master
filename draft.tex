@@ -477,7 +477,7 @@ When speculating about the root of this discrepancy one could consider two possi
 
 In summary, we found that diffusive homeostasis does not interfere with the poisson-like spiking statistics observed on a single-cell level, but leads to an increased correlation across the neural population. 
 
-\subsubsection{Distribution of Firing Rates}
+\subsubsection{Distribution of Firing Rates}\label{Fir_Dist_Section}
 Achieving a broad distribution of firing rates among neurons was the core motivation for the implementation of diffusive homeostasis. Figure \ref{Fir_Rate_Dist_Compare} shows a first result, comparing both homeostatic mechanisms. As expected, non-diffusive homeostasis leads to a sharp distribution of firing rates at 3 Hz. Diffusive homeostasis indeed results in a much broader distribution of mean firing rates. A large number of experimental studies have found that distributions of firing rates are not only broadly distributed but well described by a log-normal distribution, which has a non-zero third moment or skewness (\cite{Buzsaki_Fir_Rates_2014}, \cite{Wohrer_Fir_Rates_2012}). By definition, the logarithm of the random variable in question is thus again normally distributed. To check for this property we plotted the the distribution of decadic logarithms of firing rates in Figure \ref{Fir_Rate_Dist_Compare} (B). In (A), we found a skewness of $\mathrm{v_{Diff} = 0.765}$, in (B) $\mathrm{v_{Diff,log} = -0.488}$. Though this told us that the distribution is "more symmetric" on a logarithmic scale, it should rather be seen as being neither strictly normally or log-normally distributed.  
 \begin{figure}
 %%% plot_frequ_dist_mult_sets.py
@@ -542,7 +542,7 @@ Diffusive homeostasis caused the CF to slightly overshoot its final fraction in 
 \caption{Top: Mean change of synaptic weights (growth and pruning excluded) between two normalization steps. Bottom: Standard deviation for the same data. Both curves correspond to those in Figure \ref{CF_plot} with the same color.}
 \label{STDP_change}
 \end{figure}
-Apart from reproducing the desired connection fraction, previous versions of the LIF-SORN showed an over-representation of bidirectional connections compared to a random graph with equal connectivity \cite{SORN_Paper}. This experimentally observed feature \cite{Markram_Connections_1997,Song_Connectivity_2005} required the presence of a distance dependent connection probability, as described in section \ref{network simulation}. The absence of this breaking of spatial homogeneity even led to an under-representation of bidirectional connections, which is known to be an effect of STDP in recurrent networks \cite{Syn_Plast_Abbott}. As shown in Figure \ref{RC_CFB_plot}, the separation between simulations with and without a spatial connection profile is retained, but a slight shift towards higher fractions of bidirectional connections is preserved over a long time. 
+Apart from reproducing the desired connection fraction, previous versions of the LIF-SORN showed an over-representation of bidirectional connections compared to a random graph with equal connectivity \cite{SORN_Paper}. This experimentally observed feature \cite{Markram_Connections_1997,Song_Connectivity_2005} required the presence of a distance dependent connection probability, as described in section \ref{network simulation}. The absence of this breaking of spatial homogeneity even led to an under-representation of bidirectional connections, which is known to be an effect of STDP in recurrent networks \cite{Syn_Plast_Abbott}. As shown in Figure \ref{RC_CFB_plot}, the separation between simulations with and without a spatial connection profile is retained. 
 \begin{figure}
 %%% plot_RC_CFB.py
 \includegraphics[width=\textwidth]{../../plots/syn_topology/RC_CFB_plot.png}
@@ -582,96 +582,94 @@ Since we only implemented synaptic normalization for the sum of ingoing weights,
 \label{Out_Weight_Mean_Quantile}
 \end{figure}
 
-In contrast to our model, Effenberger et. al. identified the presence of inhibitory STDP as a necessary mechanism for the development of this feature. On a deeper explanatory level, the authors argue that inhibitory STDP is indirectly involved: it weakens inhibitory currents for some neurons, which cause these neurons to have more above-average firing rates. In turn, synapses between highly active presynaptic cells and postsynaptic neurons with lower activity are known to be subject to long-term potentiation \cite{Sjoestroem_Syn_Plasticity_2001,Feldman_STDP_2012}. With these causal relations in mind, we can argue that diffusive homeostasis effectively embodies the same functional role as inhibitory STDP in \cite{Effenberger_2015} by allowing for the presence of excitatory cells with above-average activity. We tested this relationship by plotting mean outgoing weights against the average firing rate 
+In contrast to our model, Effenberger et. al. identified the presence of inhibitory STDP as a necessary mechanism for the development of this feature. On a deeper explanatory level, the authors argue that inhibitory STDP is indirectly involved: it weakens inhibitory currents for some neurons, which cause these neurons to have more above-average firing rates. In turn, synapses between highly active presynaptic cells and postsynaptic neurons with lower activity are known to be subject to long-term potentiation \cite{Sjoestroem_Syn_Plasticity_2001,Feldman_STDP_2012}. With these causal relations in mind, we can argue that diffusive homeostasis effectively embodies the same functional role as inhibitory STDP in \cite{Effenberger_2015} by allowing for the presence of excitatory cells with above-average activity. We tested this relationship by plotting mean outgoing weights against the average firing rate, see Figure \ref{Out_Weight_vs_F}. A strong heterogeneity of firing rates allows for the development of few strong synapses, while the resulting distribution of mean weights of a narrow distribution is limited to a smaller range.
 \begin{figure}
+%%% out_weight_vs_f.py
 \includegraphics[width=\textwidth]{../../plots/syn_topology/mean_out_weights_vs_rate.png}
+\caption{Mean of outgoing excitatory weights at $\mathrm{t=1500\,s}$ plotted against mean presynaptic firing rate (averaged over $\mathrm{t=1200-1500\,s}$) in regular (A) and logarithmic space (B). Each plot corresponds to a presynaptic excitatory cell.}
+\label{Out_Weight_vs_F}
 \end{figure}
+It is interesting to note that on a logarithmic weight scale, we found a roughly linear relationship. Figure \ref{Out_Weight_vs_F} only depicts data from simulations including a distance dependent connection profile, since removing this topology did not result in noticeable differences.
 
-\section{The Firing Rate Distribution in the Network}
-
-As shown in Figure \ref{firing_rate_dist_comp}, the distribution of firing rates within the population of neurons is highly dependent on the diffusion constant $D$, in accordance to the findings by Sweeney et. al. To analyze this dependence, a dynamic mean-field approach was suggested in \cite{Sweeney_Paper}. In short, it consists of set of equations which need to be fulfilled self-consistently.
-
-\begin{align}
-\nu &= \langle \phi \rangle = \frac{\sum \phi_i}{N} \label{sweeney_self_consist_rate1} \\
-\phi_i &= \phi_i(\mu_i(\nu),\sigma_i(\nu),\theta_i) \label{sweeney_self_consist_rate2} \\
-\mu_i &= J_iC_i\nu \tau \label{sweeney_self_consist_rate3} \\
-\sigma_i &= J_i\sqrt{C_i\nu  \tau} \label{sweeney_self_consist_rate4}
-\end{align}
-
-
-where $\nu$ is the mean population firing rate, $\phi_i$ the individual firing rate of neuron $i$, $\mu_i$, $\sigma_i$ and $\theta_i$ its synaptic input mean and standard deviation and intrinsic firing threshold respectively and $J_i$, $C_i$ and $\tau$ the neuron's mean synaptic efficacy, number of incoming neurons and the membrane time constant. Self consistency is achieved by iterating through equations \eqref{sweeney_self_consist_rate1} and \eqref{sweeney_self_consist_rate2} until the desired precision is reached.
-
-As a simplification, the authors of \ref{firing_rate_dist_comp} proposed to implement diffusive homeostasis in this context by the following equation:
-
+\section{Further Analysis of the Firing Rate Distribution}
+On a preliminary level, the results of section \ref{Fir_Dist_Section} were positive with respect to our goal of achieving a broad and skewed firing rate distribution. Following this, we tried to further gain insight to the actual shape of the resulting distribution. 
+\subsection{Review of a Dynamic Mean-Field Model}
+Sweeney et al. attempted to predict the shape of the firing rate distribution by means of a simplified mean-field approximation of diffusive \cite{Sweeney_Paper}. The main simplification within homoestatic feedback is the replacement of Equation \ref{Theta_dyn} by
 \begin{equation}
-\frac{d\theta_i}{dt} = \frac{1}{\tau_{HIP}} \left( (1-\alpha)\frac{\phi_i-\phi_0}{\phi_i} +\alpha \frac{\langle \phi \rangle-\phi_0}{\langle \phi \rangle} \right) 
+\dot{V_t^i}(t) = \frac{1}{\tau_{HIP}} \left( (1-\alpha)\frac{\phi_i-\phi_0}{\phi_i} +\alpha \frac{\langle \phi \rangle-\phi_0}{\langle \phi \rangle} \right)\;. 
 \label{diff_hom_simpl_sweeney}
 \end{equation}
+$\mathrm{\alpha \: \epsilon \: [0,1]}$ thereby acts as a parameter that determines the "mixture" between single-neuron-homeostasis ($\mathrm{\alpha=0}$) and the limit of quasi instantaneous spreading of the diffusive signal across the population ($\mathrm{\alpha=1}$). $\mathrm{\phi_i}$ and $\mathrm{\mathrm{\langle \phi \rangle}}$ represent individual firing rates and their overall mean.
 
-$\alpha \: \epsilon \: [0,1]$ thereby acts as a parameter that determines the "mixture" between single-neuron-homeostasis ($\alpha=0$) and the limit of quasi instantaneous spreading of the diffusive signal across the population ($\alpha=1$).
-
-The authors claim that this model reproduces observations in the full network, namely that the steady-state firing rate distribution spreads out due to a larger diffusion constant (or a larger $\alpha$, respectively).
-
-However, in the following, I will argue that the steady-state solution of this simplified model will result in the same firing rate $\phi_0$ for all neurons, no matter what $\alpha$ is set to. This can be seen by setting the left hand side of equ. \eqref{diff_hom_simpl_sweeney} to $0$ (which is necessarily the case in the steady state) and rearranging the equation:
-
-\begin{equation}
-(\alpha-1)\frac{\phi_i - \phi_0}{\phi_i} = \alpha \frac{\langle \phi \rangle - \phi_0}{\langle \phi \rangle}
-\label{diff_hom_simpl_sweeney_3}
-\end{equation}
-
-The right term of the equation is the same for all neurons $i$. Since the left term is monotonic as a function of $\phi_i$, only one specific solution $\phi_i = \Phi$ for all $i$ exists that equals the given term on the right. Furthermore, this implies $\langle \phi \rangle = \Phi$. Thus,
-
-\begin{equation}
-(\alpha-1)\frac{\Phi - \phi_0}{\Phi} = \alpha \frac{\Phi - \phi_0}{\Phi}
-\label{diff_hom_simpl_sweeney_2}
-\end{equation}
-
-which is only fulfilled for $\Phi = \phi_0$.
-
-Moreover, one can argue that this result also implies a fixed distribution of thresholds in the steady state, independent of $\alpha$: Given the result above, one finds
+Furthermore, the spiking recurrent network was replaced by a set of non-interacting non-spiking neurons, whose individual mean firing rates were calculated by
 \begin{align}
-\phi(\mu_i(\nu),\sigma_i(\nu),\theta_i) &= \phi_0 \label{fixed_thresh_dist_argument1} \\
-\mu_i &= J_iC_i \phi_0 \tau \label{fixed_thresh_dist_argument2} \\
-\sigma_i &= J_i\sqrt{C_i \phi_0  \tau} \label{fixed_thresh_dist_argument3} \\
-\rightarrow \theta_i &= {\phi}^{-1}(J_iC_i \phi_0 \tau,J_i\sqrt{C_i \phi_0  \tau},\phi_0) \label{fixed_thresh_dist_argument4}
+\phi_i(\mu_i,\sigma_i,V_t^i) &= \left[ \sqrt{\pi}\tau_m \int_{x_-}^{x_+} dx e^{x^2} erfc(-x) \right]^{-1} \label{LIF_Fir_Rate_with_Noise1_copy}\\
+x_- &= (V_r-E_l-\mu_i\tau_m)/\sigma_i \label{LIF_Fir_Rate_with_Noise2_copy}\\
+x_+ &= (V_t^i-E_l-\mu_i\tau_m)/\sigma_i \label{LIF_Fir_Rate_with_Noise3_copy}
 \end{align}
-which implies that $\theta_i$ only depends on the given network topology.
+which is the same formula we used in \eqref{LIF_Fir_Rate_with_Noise1}. Furthermore, in accordance to \cite{Roxin_Firing_Rate_Distribution}, mean and standard deviation of the inputs were calculated by Sweeney et al. as
+\begin{align}
+\nu &= \langle \phi \rangle = \frac{\sum \phi_i}{N} \label{sweeney_self_consist_rate1} \\
+\mu_i &= J_iC_i\nu \tau \label{sweeney_self_consist_rate2} \\
+\sigma_i &= J_i\sqrt{C_i\nu  \tau} \label{sweeney_self_consist_rate3}
+\end{align}
 
-In \cite{Sweeney_Paper}, a non-interacting population of neurons was simulated while inputs where drawn randomly from a gaussian distribution supposed to model the input statistics of the full network.
+where $\nu$ is the mean population firing rate, $\phi_i$ the individual firing rate of neuron $i$, $\mu_i$, $\sigma_i$ and $V_t^i$ its synaptic input mean and standard deviation and intrinsic firing threshold respectively and $J_i$, $C_i$ and $\tau$ the neuron's mean synaptic efficacy, number of incoming neurons and the membrane time constant. Synaptic efficacy and number if incoming neurons were drawn randomly to match the statistics of the actual network topology. Self consistency was achieved by iterating through equations \eqref{LIF_Fir_Rate_with_Noise1_copy} and \eqref{sweeney_self_consist_rate1} - \eqref{sweeney_self_consist_rate1} until the desired precision of convergence is reached.
 
-To verify our remarks concerning the dynamic mean field model, we simulated a similar population, but used an interacting population of neurons of the same size as in the previous simulations (400 excitatory, 80 inhibitory neurons). This allowed us to directly use a weight matrix acquired by means of a simulation of the full plastic network, taken from the network after $1500s$ (i.E., the "stable" phase).
-Individual values for $\mu_i$ and $\sigma_i$ where then calculated according to \eqref{sweeney_self_consist_rate3} and \eqref{sweeney_self_consist_rate4}. Note however that in this case the mean (input) firing rate $\nu$ also takes different values $\nu_i$ for each neuron.
+The authors claim that this model reproduces results of the full network, in particular that the steady-state firing rate distribution spreads out due to a larger diffusion constant (or a larger $\alpha$, respectively).
 
-Instead of directly iterating through equations \eqref{sweeney_self_consist_rate1} - \eqref{sweeney_self_consist_rate4} (as done in \cite{Sweeney_Paper}) to fulfil self-consistency, we described the dynamics of the neurons' rates $r_i$ through a continuous dynamic equation
+We tested this dynamic mean-field model by simulating a similar population, but used an interacting population of neurons of the same size as in the previous simulations (400 excitatory, 80 inhibitory neurons). This allowed us to directly use a weight matrix acquired by means of a simulation of the full plastic network, taken from the network after $1500s$ (i.E., the "stable" phase).
+Individual values for $\mu_i$ and $\sigma_i$ where then calculated according to \eqref{sweeney_self_consist_rate2} and \eqref{sweeney_self_consist_rate3}. Note however that in this case the mean (input) firing rate $\nu$ also takes different values $\nu_i$ for each neuron.
 
+Instead of directly iterating through equations \eqref{LIF_Fir_Rate_with_Noise1_copy} and \eqref{sweeney_self_consist_rate1} - \eqref{sweeney_self_consist_rate3} - as done in \cite{Sweeney_Paper} - to fulfil self-consistency, we described the dynamics of the neurons' rates $r_i$ through a continuous dynamic equation
 \begin{equation}
 \frac{dr_i}{dt} = \frac{1}{\tau_m} \left( -r_i + \phi_i(\mu_i(\nu),\sigma_i(\nu),\theta_i) \right)
 \label{dyn_rate_equation}
 \end{equation}
-
-where $\tau_m$ is the membrane time constant.
-
-Of course, equation \eqref{sweeney_self_consist_rate1} has to be rewritten accordingly:
-
+where $\tau_m$ is the membrane time constant. Equation \eqref{sweeney_self_consist_rate1} has to be rewritten accordingly:
 \begin{equation}
 \nu_i = {\langle r \rangle}_{presyn.,i} \equiv \frac{\sum_{\exists syn. j\rightarrow i} r_j}{N_{presyn., i}}
 \label{sweeney_self_consist_rate1_mod}
 \end{equation}
+In addition, we included the modulation of weights by STP through a rate-dependent prefactor by combining Equation \eqref{STP_dynamics1} and \eqref{STP_dynamics2} into rate-based equations and solving for their steady-state:
+\begin{equation}
+x_{0}\cdot u_{0} = \frac{1+r_{total,i} \tau_f}{1/U + r_{total,i} (\tau_d + \tau_f)+ r_{total,i}^2 \tau_d \tau_f}
+\label{STP_steady}
+\end{equation}
+where $\mathrm{r_{total,i}}$ is the rate of all combined spikes arriving at neuron i.
 
-Figure \ref{dynamics_rate_threshold_dyn_mean_field_sweeney} depicts the resulting dynamics for $\alpha=0.4$ and $\alpha = 0.8$. Both predictions can be confirmed: All rates approach the same target rate of $3Hz$ and, apparently, thresholds move toward the same state for either choice of $\alpha$. A significant difference only exists within the dynamics leading to the steady state. Roughly, a smaller value of $\alpha$ leads to a faster relaxation. Though, changes in the dynamics appear to be more subtle than a simple rescaling in the time domain.
-
+Figure \ref{dynamics_rate_threshold_dyn_mean_field_sweeney} depicts the resulting dynamics of excitatory rates and thresholds for $\alpha=0.4$ and $\alpha = 0.8$. Apparently, except for the limiting case of $\mathrm{\alpha=1}$, all rates approach the same target rate of $\mathrm{3Hz}$ and thresholds move toward the same configuration for either choice of $\alpha$. A significant difference only exists within the dynamics leading to the steady state. Roughly, a smaller value of $\alpha$ leads to a faster relaxation. Though, changes in the dynamics appear to be more subtle than a simple rescaling in the time domain.
 \begin{figure}
+%%% plot_sim_mean_field_sweeney.py
 \includegraphics[width=\textwidth]{../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_comb}
-\caption{Dynamics of rates and thresholds of excitatory population of 400 Neurons (see equations \eqref{dyn_rate_equation} and \eqref{diff_hom_simpl_sweeney}). For both values of $\alpha$, rates and thresholds approach the same steady state.}
+\caption{Dynamics of rates (A) and thresholds (B) of excitatory population of 400 Neurons and different values of $\mathrm{\alpha}$ (see equations \eqref{dyn_rate_equation} and \eqref{diff_hom_simpl_sweeney}).}
 \label{dynamics_rate_threshold_dyn_mean_field_sweeney}
 \end{figure}
+These findings led us to the conclusion that, apart from the special case $\mathrm{\alpha=1}$ (which is the equivalent to "instantaneous" diffusion), a mean-field model describing the diffusive signal as a mixture of individual activity and all neurons is not suitable for explaining the existence of stable heterogeneous distributions of rates for a broad range of diffusion constants. We did not intent to debase the validity of results of the mean-field model of Sweeney et al. However, by analysing Equation \ref{diff_hom_simpl_sweeney}, we could show that the steady-state solution of this simplified model will result in the same firing rate $\phi_0$ for all neurons, given any value of $\mathrm{\alpha}$ except $\mathrm{\alpha=1}$. This can be seen by setting the left hand side of equ. \eqref{diff_hom_simpl_sweeney} to $0$ (which is necessarily the case in the steady state) and rearranging the equation:
+\begin{equation}
+(\alpha-1)\frac{\phi_i - \phi_0}{\phi_i} = \alpha \frac{\langle \phi \rangle - \phi_0}{\langle \phi \rangle}
+\label{diff_hom_simpl_sweeney_2}
+\end{equation}
+The right term of the equation is the same for all neurons $i$. Since the left term is monotonically increasing as a function of $\phi_i$ as long as $\mathrm{\alpha<1}$, only one specific solution $\phi_i = \Phi$ for all $i$ exists that equals the given term on the right. Furthermore, this implies $\langle \phi \rangle = \Phi$. Thus,
+\begin{equation}
+(\alpha-1)\frac{\Phi - \phi_0}{\Phi} = \alpha \frac{\Phi - \phi_0}{\Phi}
+\label{diff_hom_simpl_sweeney_3}
+\end{equation}
+which is only fulfilled for $\Phi = \phi_0$.
 
-\subsection{Equilibrium in the full diffusive Model}
+Moreover, one can argue that this result also implies a fixed distribution of thresholds in the steady state, independent of $\alpha$: Given the result above, one finds
+\begin{align}
+\phi(\mu_i(\nu),\sigma_i(\nu),V_t^i) &= \phi_0 \label{fixed_thresh_dist_argument1} \\
+\mu_i &= J_iC_i \phi_0 \tau \label{fixed_thresh_dist_argument2} \\
+\sigma_i &= J_i\sqrt{C_i \phi_0  \tau} \label{fixed_thresh_dist_argument3} \\
+\rightarrow V_t^i &= {\phi}^{-1}(J_iC_i \phi_0 \tau,J_i\sqrt{C_i \phi_0  \tau},\phi_0) \label{fixed_thresh_dist_argument4}
+\end{align}
+which implies that the set of $V_t^i$ only depends on the given network topology.
 
-Since the previous section has proven the simplified model in \cite{Sweeney_Paper} to be incapable of maintaining a broad distribution of firing rates, turning to a more general formulation of the problem seems reasonable, especially if it includes the possibility of the "exact" description of the initial model.
+\subsection{Equilibrium in the full Diffusive Model}
+Since the previous section has shown that the simplified model in \cite{Sweeney_Paper} has problems maintaining a broad distribution of firing rates, turning to a more general formulation of the problem seemed reasonable.
 
-Equation \eqref{NO_dyn} describes the full dynamics of the diffusive neurotransmitter. Furthermore, equation \eqref{simple_NO_dyn} represents a simplification by means of two assumptions, namely the disregard of the diffusive term and the simplification of the process of NO-generation to a simple relation $nNOS_i = C \cdot r_i$, $r_i$ representing a neuron's rate. Here we would like to discuss the implications of an "in-between" simplification, only applying the second one, but retaining the diffusive term:
-
+Equation \eqref{NO_dyn} describes the full dynamics of the diffusive neurotransmitter. Furthermore, equation \eqref{2d-sys-homeostasis1} represents a simplification by means of two assumptions, namely the disregard of the diffusive term and the simplification of the process of NO-generation to a simple relation $nNOS_i = C \cdot r_i$, $r_i$ representing a neuron's rate. In this section we discuss the implications of an "in-between" description, only applying the second simplification, but retaining the diffusive term:
 \begin{equation}
 \frac{dNO}{dt}(\mathbf{x},t) =-\lambda NO + D \nabla^2 NO + \sum_{i} \delta^2(\mathbf{x}-\mathbf{x}_{neur,i})\cdot C \cdot r_i
 \label{simple_NO_dyn_with_diff}
