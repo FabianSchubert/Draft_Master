@@ -735,7 +735,7 @@ Still, to acquire any prediction from this model, we had to find a modified, non
 \end{equation}
 where $\mathrm{\varepsilon}$ determines the "smoothness" of transition between $\mathrm{\psi}$ and the cutoff value $\mathrm{\psi_0}$. We chose $\varepsilon=10$ for all further calculations. To find an expression for $\mathrm{\psi_0}$, we took the simple approach to interpret this value as a mean of the analytic solution across the square area covered by the corresponding grid cell. As an additional simplification, we substitute the necessary integration over the square grid cell by a circular area of equal size around the source. This calculation yields
 \begin{equation}
-\psi_0 = \frac{1-h\sqrt{\frac{\lambda}{\pi D}} K_1\left( h\sqrt{\frac{\lambda}{\pi D}}\right) }{h^2 \lambda}
+\psi_0 = \gamma \frac{1-h\sqrt{\frac{\lambda}{\pi D}} K_1\left( h\sqrt{\frac{\lambda}{\pi D}}\right) }{h^2 \lambda}
 \label{Numeric_Grid_Bessel_Approx}
 \end{equation}
 where $\mathrm{h}$ is the spatial resolution of the grid cells. Figure \ref{Psi_Approximation_Compare} shows a comparison between the numerically calculated solution and the expression given by \ref{Numeric_Solution_Expression_Trick}. As expected, the approximation fits very well for nonzero values. The value at the critical point at the origin is slightly underestimated by \eqref{Numeric_Grid_Bessel_Approx}, but nonetheless fits well into the overall shape.
@@ -778,6 +778,8 @@ M(\mathbf{x}) &\equiv
 \end{align}
 Note that the shift was applied to the second position. Theoretically, $n_x$,$n_y$ is iterated over all integers and in this case it is irrelevant whether to shift the first or the second position. For numerical calculations, we obviously had to limit the amount of elements of the sum such that copies that are shifted further away can be neglected.
 \subsubsection{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}
+After having worked out the framework of 
+
 
 We compared the firing rate distributions acquired from the solution of the random matrix system and those of the full simulated network by means of its standard deviation and skewness.
 \begin{figure}
