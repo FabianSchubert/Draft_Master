@@ -559,7 +559,7 @@ A very well-studied property of neural networks is the distribution of synaptic 
 \end{figure}
 
 \subsubsection{Synaptic Lifetimes}
-Synaptic lifetimes have been shown to approximately follow a power law distribution in earlier versions of the LIF-SORN and binary SORN \cite{SORN_Paper,Pengsheng_2013}. This feature was preserved under diffusive homeostasis, as shown in Figure \ref{Syn_Lifetimes}. The resulting slopes are within previously reported values of $mathrm{\approx - 5/3}$ \cite{SORN_Paper}.
+Synaptic lifetimes have been shown to approximately follow a power law distribution in earlier versions of the LIF-SORN and binary SORN \cite{SORN_Paper,Pengsheng_2013}. This feature was preserved under diffusive homeostasis, as shown in Figure \ref{Syn_Lifetimes}. The resulting slopes are within previously reported values of $\mathrm{\approx - 5/3}$ \cite{SORN_Paper}.
 \begin{figure}
 %%% plot_syn_lifetimes.py
 \includegraphics[width=\textwidth]{../../plots/syn_topology/syn_lifetimes.png}
@@ -638,14 +638,14 @@ x_{0}\cdot u_{0} = \frac{1+r_{total,i} \tau_f}{1/U + r_{total,i} (\tau_d + \tau_
 \end{equation}
 where $\mathrm{r_{total,i}}$ is the rate of all combined spikes arriving at neuron i.
 
-Figure \ref{dynamics_rate_threshold_dyn_mean_field_sweeney} depicts the resulting dynamics of excitatory rates and thresholds for $\alpha=0.4$ and $\alpha = 0.8$. Apparently, except for the limiting case of $\mathrm{\alpha=1}$, all rates approach the same target rate of $\mathrm{3Hz}$ and thresholds move toward the same configuration for either choice of $\alpha$. A significant difference only exists within the dynamics leading to the steady state. Roughly, a smaller value of $\alpha$ leads to a faster relaxation. Though, changes in the dynamics appear to be more subtle than a simple rescaling in the time domain.
+Figure \ref{dynamics_rate_threshold_dyn_mean_field_sweeney} depicts the resulting dynamics of excitatory rates and thresholds for $\mathrm{\alpha=\lbrace 0.4,0.8,0.9,1.0\rbrace}$. Apparently, except for the limiting case of $\mathrm{\alpha=1}$, all rates approach the same target rate of $\mathrm{3Hz}$ and thresholds move towards the same configuration for either choice of $\mathrm{\alpha}$. A significant difference only exists within the dynamics leading to the steady state. Roughly, a smaller value of $\mathrm{\alpha}$ leads to a faster relaxation.
 \begin{figure}
 %%% plot_sim_mean_field_sweeney.py
 \includegraphics[width=\textwidth]{../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_comb}
 \caption{Dynamics of rates (A) and thresholds (B) of excitatory population of 400 Neurons and different values of $\mathrm{\alpha}$ (see equations \eqref{dyn_rate_equation} and \eqref{diff_hom_simpl_sweeney}).}
 \label{dynamics_rate_threshold_dyn_mean_field_sweeney}
 \end{figure}
-These findings led us to the conclusion that, apart from the special case $\mathrm{\alpha=1}$ (which is the equivalent to "instantaneous" diffusion), a mean-field model describing the diffusive signal as a mixture of individual activity and all neurons is not suitable for explaining the existence of stable heterogeneous distributions of rates for a broad range of diffusion constants. We did not intent to debase the validity of results of the mean-field model of Sweeney et al. However, by analysing Equation \ref{diff_hom_simpl_sweeney}, we could show that the steady-state solution of this simplified model will result in the same firing rate $\phi_0$ for all neurons, given any value of $\mathrm{\alpha}$ except $\mathrm{\alpha=1}$. This can be seen by setting the left hand side of equ. \eqref{diff_hom_simpl_sweeney} to $0$ (which is necessarily the case in the steady state) and rearranging the equation:
+These findings led us to the conclusion that, apart from the special case $\mathrm{\alpha=1}$ (which is the equivalent to "instantaneous" diffusion), a mean-field model describing the diffusive signal as a mixture of individual activity and all neurons is not suitable for explaining the existence of stable heterogeneous distributions of rates for a broad range of diffusion constants. We did not intent to debase the validity of results of the mean-field model of Sweeney et al. However, by analyzing Equation \ref{diff_hom_simpl_sweeney}, we could show that the steady-state solution of this simplified model will result in the same firing rate $\phi_0$ for all neurons, given any value of $\mathrm{\alpha}$ except $\mathrm{\alpha=1}$. This can be seen by setting the left hand side of equ. \eqref{diff_hom_simpl_sweeney} to $0$ (which is necessarily the case in the steady state) and rearranging the equation:
 \begin{equation}
 (\alpha-1)\frac{\phi_i - \phi_0}{\phi_i} = \alpha \frac{\langle \phi \rangle - \phi_0}{\langle \phi \rangle}
 \label{diff_hom_simpl_sweeney_2}
@@ -667,54 +667,50 @@ Moreover, one can argue that this result also implies a fixed distribution of th
 which implies that the set of $V_t^i$ only depends on the given network topology.
 
 \subsection{Equilibrium in the full Diffusive Model}
-Since the previous section has shown that the simplified model in \cite{Sweeney_Paper} has problems maintaining a broad distribution of firing rates, turning to a more general formulation of the problem seemed reasonable.
+Since the previous section has shown that the simplified model in \cite{Sweeney_Paper} has problems \emph{maintaining} a broad distribution of firing rates, turning to a more general formulation of the problem seemed reasonable.
 
-Equation \eqref{NO_dyn} describes the full dynamics of the diffusive neurotransmitter. Furthermore, equation \eqref{2d-sys-homeostasis1} represents a simplification by means of two assumptions, namely the disregard of the diffusive term and the simplification of the process of NO-generation to a simple relation $nNOS_i = C \cdot r_i$, $r_i$ representing a neuron's rate. In this section we discuss the implications of an "in-between" description, only applying the second simplification, but retaining the diffusive term:
+Equation \eqref{NO_dyn} describes the full dynamics of the diffusive neurotransmitter. Furthermore, equation \eqref{2d-sys-homeostasis1} represents a simplification by means of two assumptions, namely the disregard of the diffusive term and the simplification of the process of NO-generation to a simple relation $\mathrm{nNOS_i = \gamma \cdot r_i}$, $\mathrm{r_i}$ representing a neuron's rate and $\mathrm{\gamma}$ being defined by Equation \eqref{2d-sys-fixed-points1}. In this section we discuss the implications of an "in-between" description, only applying the second simplification, but retaining the diffusive term:
 \begin{equation}
-\frac{dNO}{dt}(\mathbf{x},t) =-\lambda NO + D \nabla^2 NO + \sum_{i} \delta^2(\mathbf{x}-\mathbf{x}_{neur,i})\cdot C \cdot r_i
+\frac{dNO}{dt}(\mathbf{x},t) =-\lambda NO + D \nabla^2 NO + \sum_{i} \delta^2(\mathbf{x}-\mathbf{x}_{neur,i})\cdot \gamma \cdot r_i
 \label{simple_NO_dyn_with_diff}
 \end{equation}
 As in the previous section, we ask for the steady-state distribution of rates. Thus as a first step, one needs to solve
-
 \begin{equation}
-(\lambda - D \nabla^2) NO = \sum_{i} \delta^2(\mathbf{x}-\mathbf{x}_{neur,i})\cdot C \cdot r_i
+(\lambda - D \nabla^2) NO = \sum_{i} \delta^2(\mathbf{x}-\mathbf{x}_{neur,i})\cdot \gamma \cdot r_i
 \label{simple_NO_dyn_with_diff_equil}
 \end{equation}
-for $\lbrace r_i\rbrace$, such that
-
+for $\mathrm{\lbrace r_i\rbrace}$, such that
 \begin{equation}
 NO(\mathbf{x}_{neur,i}) = NO_0 \:, \: \forall i
 \label{NO_equil_cond}
 \end{equation}
+At this point, we were aware of the fact that these equations completely neglect fluctuations of NO-synthesis due to spiking. However, given the very slow adaption of thresholds, which are responsible for changes of firing rates, we argued that noise can be neglected in the sense that $\mathrm{\lbrace r_i\rbrace}$ represents the set of mean firing rates whose resulting spike-train-induced NO-synthesis \emph{on average} fulfils \eqref{simple_NO_dyn_with_diff_equil} and \eqref{NO_equil_cond}.
+  
 Equation \eqref{simple_NO_dyn_with_diff_equil} can be rewritten as
-
 \begin{equation}
-\left(\nabla^2 + \left( i\sqrt{\frac{\lambda}{D}}\right)^2\right) NO = \sum_{i} \delta^2(\mathbf{x}-\mathbf{x}_{neur,i})\cdot \frac{- C \cdot r_i}{D}
+\left(\nabla^2 + \left( i\sqrt{\frac{\lambda}{D}}\right)^2\right) NO = \sum_{i} \delta^2(\mathbf{x}-\mathbf{x}_{neur,i})\cdot \frac{- \gamma \cdot r_i}{D}
 \label{simple_NO_dyn_with_diff_equil_helmholtz}
 \end{equation}
-Which is a two-dimensional Helmholtz equation with a superposition of (scaled) Dirac-functions. Thus, the solution of $NO$ is composed of a superposition of shifted and scaled versions of the Green's function of the differential operator on the left of the equation. For each delta function $\delta^2(\mathbf{x}-\mathbf{x}_i)$, the solution is
-
+which is a two-dimensional Helmholtz equation with a superposition of (scaled) Dirac-functions. Thus, the solution of $\mathrm{NO}$ is composed of a superposition of shifted and scaled versions of the Green's function of the differential operator on the left of the equation. For each delta function $\delta^2(\mathbf{x}-\mathbf{x}_i)$, the solution is
 \begin{equation}
-NO_i(\mathbf{x}) = \frac{r_i C}{2 \pi D} K_0 \left(|\mathbf{x}-\mathbf{x}_{neur,i}|\sqrt{\frac{\lambda}{D}} \right)
+NO_i(\mathbf{x}) = \frac{r_i \gamma}{2 \pi D} K_0 \left(|\mathbf{x}-\mathbf{x}_{neur,i}|\sqrt{\frac{\lambda}{D}} \right) \equiv r_i \cdot \psi_{point}(|\mathbf{x}-\mathbf{x}_{neur,i}|)
 \label{solution_diff_equil_bessel}
 \end{equation}
-where $K_0$ is the zeroth modified Bessel function of the second kind. This solution reveals a fundamental problem of modelling the sources of $NO$-production as point sources: that is to say, the fact that $K_0(x)$ diverges to infinity for $x\rightarrow 0$. It is merely due to the finite density of the numeric grid used for the simulation of the diffusion that allows for a finite target value of concentration. Note that this problem only occurs in the two- or three-dimensional version of the differential equation, whereas in one dimension, the fundamental solution can be expressed as an exponential function with respect to the distance to the origin, resulting in a well-defined finite value at $0$.
+where $\mathrm{K_0}$ is the zeroth modified Bessel function of the second kind. This solution reveals a fundamental problem of modelling the sources of $\mathrm{NO}$-production as point sources: the fact that $\mathrm{K_0(x)}$ diverges to infinity for $\mathrm{x\rightarrow 0}$. It is merely due to the finite density of the numeric grid used for the simulation of the diffusion that allows for a finite target value of concentration. Note that this problem only occurs in the two- or three-dimensional version of the differential equation, whereas in one dimension, the fundamental solution can be expressed as an exponential function with respect to the distance to the origin, resulting in a well-defined finite value at $\mathrm{x=0}$.
 
-Generally speaking, no matter how the actual shape of the numeric solution in the equilibrium at a constant production rate will look like, it is expected to be of the form
-
+Generally speaking, no matter how the actual shape of the numeric solution in the equilibrium at a constant production rate looks like, it is expected to be of the form
 \begin{align}
 NO_i(\mathbf{x}) &= r_i \cdot \psi (d(\mathbf{x}_{neur,i},\mathbf{x})) \label{general_diff_interaction} \\
-d(\mathbf{x},\mathbf{y}) &\equiv |\mathbf{x}-\mathbf{y}| \label{eucl_dist}
+d(\mathbf{x},\mathbf{y}) &\equiv |\mathbf{x}-\mathbf{y}| \; . \label{eucl_dist}
 \end{align}
 The full solution is then
 \begin{equation}
-NO(\mathbf{x}) = \sum_i NO_i(\mathbf{x})
+NO(\mathbf{x}) = \sum_i NO_i(\mathbf{x})\;.
 \label{full_sol_diff_equil}
 \end{equation}
-
 If we define
 \begin{equation}
-\psi_{ij} = \psi_{ij} \equiv \psi (d(\mathbf{x}_{neur,i},\mathbf{x}_{neur,i}))
+\psi_{ij} \equiv \psi_{ij} \equiv \psi (d(\mathbf{x}_{neur,i},\mathbf{x}_{neur,i}))
 \label{interact_matrix_elements}
 \end{equation}
 we can express the condition \eqref{NO_equil_cond} as
@@ -725,55 +721,39 @@ we can express the condition \eqref{NO_equil_cond} as
 or, as an operator
 \begin{align}
 \hat{\psi}\mathbf{r} &= NO_0 \mathbf{n} \label{NO_equil_cond_interact_matrix_operator} \\
-\mathbf{n}&\equiv (1,1,...,1)
+\mathbf{n}&\equiv (1,1,...,1) \; .
 \end{align}
 The problem of finding the steady-state solution of the homeostatic constraint thus reduces to inverting $\hat{\psi}$:
 \begin{equation}
 \mathbf{r} = NO_0 \hat{\psi}^{-1} \mathbf{n}
 \label{NO_euqil_cond_interact_matrix_operator_solve}
 \end{equation}
-
-An example of a distribution of rates acquired from this method is shown in Figure \ref{rate_dist_interact_matrix}.
-
-\begin{figure}
-\includegraphics[width=\textwidth]{../../plots/diff_rate_solve.png}
-\caption{Distribution of the solution of \eqref{NO_euqil_cond_interact_matrix_operator_solve} with an exponential distance dependent approximation in 2d (similar to the exact solution in 1d). For better statistical significance, calculations where carried out for $1600$ random neurons-positions and $50$ trials in total.}
-\label{rate_dist_interact_matrix}
-\end{figure}
-
-\subsubsection{Results for an Approximation of the Numerical Steady-State Solution}
-
-If one aims for an appropriate expression for the numerical steady-state solution of a single "point"-source with a constant influx, two things should be of importance: first, it should correctly predict the concentration at the location of the source and second, it should be close to the analytic result in regions further away from the source. One possibility is to use the following "trick" to overcome the divergence of the analytic solution at the origin:
-
+Still, to acquire any prediction from this model, we had to find a modified, non-diverging version of $\mathrm{\psi (d(\mathbf{x}_{neur,i},\mathbf{x}))}$ that retains the shape given by \eqref{solution_diff_equil_bessel} for larger distances but approaches the correct "numeric error"-value at the origin, determined by the spacing of the numeric grid. We "solved" this problem by the following expression:
 \begin{equation}
-NO_{approx.}(d) = \frac{1}{\sqrt{\frac{1}{NO_{source,num.}^2} + \frac{1}{NO(d)^2}}}
+\psi_{approx.} \equiv \frac{1}{\left(\frac{1}{\psi_0^\varepsilon} + \frac{1}{\psi_{point}^\varepsilon}\right)^{\frac{1}{\varepsilon}}}
 \label{Numeric_Solution_Expression_Trick}
 \end{equation}
-
-At the pole $NO(0)$, $NO_{approx.}(0)$ then takes the value $NO_{source,num.}$. On the other hand, for larger values of $r$, the term $\frac{1}{NO_{source,num.}^2}$ becomes negligible compared to $ \frac{1}{NO(d)^2}$, thus $NO_{approx.}(d) \rightarrow NO(d)$ for $d \rightarrow \infty$.
-
-To find an approximation for $NO_{source,num.}$, one can interpret this value as a mean of the analytic solution across the square area covered by the corresponding grid cell. As an additional simplification, we substitute the necessary integration over the square grid cell by a circular area of equal size around the source. This calculation yields
-
+where $\mathrm{\varepsilon}$ determines the "smoothness" of transition between $\mathrm{\psi}$ and the cutoff value $\mathrm{\psi_0}$. We chose $\varepsilon=10$ for all further calculations. To find an expression for $\mathrm{\psi_0}$, we took the simple approach to interpret this value as a mean of the analytic solution across the square area covered by the corresponding grid cell. As an additional simplification, we substitute the necessary integration over the square grid cell by a circular area of equal size around the source. This calculation yields
 \begin{equation}
-NO_{source,num.} =  r \cdot \frac{1-h\sqrt{\frac{\lambda}{\pi D}} K_1\left( h\sqrt{\frac{\lambda}{\pi D}}\right) }{h^2 \lambda} \equiv r \cdot \psi_{source,num.}
+\psi_0 = \frac{1-h\sqrt{\frac{\lambda}{\pi D}} K_1\left( h\sqrt{\frac{\lambda}{\pi D}}\right) }{h^2 \lambda}
 \label{Numeric_Grid_Bessel_Approx}
 \end{equation}
-with $r$ being the neuron's rate. Equivalently, one can then define
-\begin{equation}
-\psi_{approx.}(d) \equiv \frac{1}{\sqrt{\frac{1}{\psi_{source,num.}^2} + \frac{1}{\psi (d)^2}}}
-\end{equation}
+where $\mathrm{h}$ is the spatial resolution of the grid cells. Figure \ref{Psi_Approximation_Compare} shows a comparison between the numerically calculated solution and the expression given by \ref{Numeric_Solution_Expression_Trick}. As expected, the approximation fits very well for nonzero values. The value at the critical point at the origin is slightly underestimated by \eqref{Numeric_Grid_Bessel_Approx}, but nonetheless fits well into the overall shape.
+\begin{figure}
+%% compare_num_diff_steady_vs_analytic.py
+\begin{center}
+\includegraphics[width=0.7\textwidth]{../../plots/Psi_Interact_Approximation.png}
+\end{center}
+\caption{Numerical steady-state solution of Equation \eqref{simple_NO_dyn_with_diff_equil_helmholtz} (blue, $\mathrm{h=10\;\mu m}$) and its approximation (dashed) given by \eqref{Numeric_Solution_Expression_Trick}. The numerical simulation was carried out on a 2d-grid and the curve represents a cut through the origin in x-direction.}
+\label{Psi_Approximation_Compare}
+\end{figure}
+Thus, we took this approximation as a basis for further calculations of the "interaction" matrix $\mathrm{\hat{\psi}}$.
 
-\subsubsection{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}
-
-\eqref{Numeric_Solution_Expression_Trick} and \eqref{Numeric_Grid_Bessel_Approx} can be used in \eqref{NO_euqil_cond_interact_matrix_operator_solve} for a more accurate description of the distance-dependent diffusive interaction.
-
-In addition, one needs to account for the boundary conditions used in the network simulation. We simulated the network with Neumann boundary conditions (setting the flux through the boundary to zero) as well as periodic boundaries. Both types can be modelled by extending the neurons' population through spatially shifted and mirrored versions of the base population (see Figure \ref{Bound_Cond_Patches}):
-
+By simply calculating all matrix elements of $\mathrm{\hat{\psi}}$ by means of Equation \eqref{interact_matrix_elements}, one would neglect the finite boundaries of the system, which would cause neurons close to the edge to "bleed" into empty space. This in turn would cause the solution of \eqref{NO_equil_cond_interact_matrix_operator} to contain an over-representation of high firing rates, since close-to-the-edge neurons would need to compensate for their lack of neighbours. Thus, we had to account for the boundary conditions used in the network simulation. As described in section \ref{methods}, we simulated the network mostly with Neumann boundary conditions as well as periodic boundaries. Both types can be modelled by extending the neurons' population through spatially shifted and mirrored versions of the base population (see Figure \ref{Bound_Cond_Patches}):
 \begin{itemize}
 \item Periodic boundary conditions are induced by copies of the neurons' positions shifted by $L\cdot (n_x,n_y)$, $n_x,n_y \in \mathbb{Z}$.
 \item Zero flux through the boundaries can be achieved by copied positions being shifted by $L\cdot (n_x,n_y)$, $n_x,n_y \in \mathbb{Z}$ \textit{and} mirrored in $x$($y$)-direction if $n_x$($n_y$) is odd.
 \end{itemize}
-
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.5\textwidth]{../../plots/Boundary_Cond_Sketch.png}
@@ -781,14 +761,11 @@ In addition, one needs to account for the boundary conditions used in the networ
 \caption{Sketch for patches of copied (and mirrored) positions for periodic (A) and Neumann (B) boundary conditions.}
 \label{Bound_Cond_Patches}
 \end{figure}
-
-The entries of the operator for periodic boundary conditions $\hat{\psi}_{per.}$ can now calculated by
+Therefore, the entries of the operator for periodic boundary conditions $\hat{\psi}_{per.}$ could be calculated by
 \begin{equation}
-\psi_{ij,per.} = \sum_{n_x,n_y \in \mathbb{Z}} \psi_{approx.} (d(\mathbf{x}_{neur,i},\mathbf{x}_{neur,i} + L \cdot (n_x,n_y)))
+\psi_{ij,per.} = \sum_{n_x,n_y \in \mathbb{Z}} \psi_{approx.} (d(\mathbf{x}_{neur,i},\mathbf{x}_{neur,i} + L \cdot (n_x,n_y))) \; .
 \label{Psi_entries_periodic_bound}
 \end{equation}
-Note that the shift was applied to the second position. Theoretically, $n_x$,$n_y$ is iterated over all integers and in this case it is irrelevant whether to shift the first or the second position. For numerical calculations however, the shift was applied to the second position.
-
 For the Neumann boundary condition, one finds
 \begin{align}
 \psi_{ij,neum.} &= \sum_{n_x,n_y \in \mathbb{Z}} \psi_{approx.} \left( d(\mathbf{x}_{neur,i},M(\mathbf{x}_{neur,i}) + L \cdot (n_x,n_y)) \right) \label{Psi_entries_neumann_bound} \\
@@ -797,8 +774,10 @@ M(\mathbf{x}) &\equiv
   (-1)^{n_x} & 0\\
   0 & (-1)^{n_y}
  \end{pmatrix}
-\mathbf{x} + L \cdot (mod(\left| n_x\right|,2),mod(\left| n_y\right|,2)) \label{Mirror_Operator}
+\mathbf{x} + L \cdot (mod(\left| n_x\right|,2),mod(\left| n_y\right|,2)) \; . \label{Mirror_Operator}
 \end{align}
+Note that the shift was applied to the second position. Theoretically, $n_x$,$n_y$ is iterated over all integers and in this case it is irrelevant whether to shift the first or the second position. For numerical calculations, we obviously had to limit the amount of elements of the sum such that copies that are shifted further away can be neglected.
+\subsubsection{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}
 
 We compared the firing rate distributions acquired from the solution of the random matrix system and those of the full simulated network by means of its standard deviation and skewness.
 \begin{figure}
