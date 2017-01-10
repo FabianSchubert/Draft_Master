@@ -147,6 +147,16 @@
   Timestamp                = {2016.12.22}
 }
 
+@Article{Feldman_STDP_2012,
+  Title                    = {The Spike-Timing Dependence of Plasticity},
+  Author                   = {Feldman, D.},
+  Journal                  = {Neuron},
+  Year                     = {2012},
+
+  Owner                    = {fschubert},
+  Timestamp                = {2016.12.22}
+}
+
 @Article{Froemke_STDP,
   Title                    = {Spike-timing-dependent synaptic plasticity depends on dendritic location},
   Author                   = {Froemke, Robert C. and Poo, Mu-ming and Dan, Yang},
