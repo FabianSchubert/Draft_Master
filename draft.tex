@@ -231,6 +231,7 @@ If not explicitly marked differently, Neumann boundary conditions where used for
 
 Equation \eqref{NO_dyn} describes the influx of NO as a sum of scaled and spatially shifted Dirac functions. Apart from the question, whether this source term results in a well defined, finite solution at the neurons' positions (see section !!??!!), it can only be modelled to a certain degree of accuracy, depending on the resolution of the numeric grid. In practice, we approximated the point sources of NO as an insertions at individual grid cells at a rate of $nNOS^i(t) / h^2$, where the normalizing divisor $h^2$ ensured the desired total influx per neuron. This numeric implementation required two additional constraints: First, all random neuron positions were confined to integer multiples of $h$ in x- and y-direction. Second, to avoid redundancy and for physiological reasons, each grid cell could only hold one neuron at maximum. Both conditions combined led to an iterative generation of positions, where for each neuron a random number generator produced pairs of integers $(n_x,n_y)$, each within $[0,N]$, until an unoccupied pair of integers was found and occupied, moving on to the next neuron. Figure \ref{diff_test_plot} shows an example of the resulting NO density. 
 \begin{figure}[h!]
+%% density_plot.py
 \begin{center}
 \includegraphics[width=0.7\textwidth]{../../plots/density_plots/density_plot.png}
 \end{center}
@@ -246,7 +247,9 @@ Since our main goal of the implementation of diffusive homeostasis was to allow 
 \subsection{Activity Analysis} \label{activ_analys}
 As a first attempt, we set the time constant of threshold adaptation in the diffusive homeostasis to $\mathrm{2500\, ms}$, as given by \cite{Sweeney_Paper}. Switching between non-diffusive/diffusive homeostasis after 750 seconds, Figure \ref{full_sim_osci} shows the resulting dynamics of the population activity of the excitatory and inhibitory group, the average $NO$ concentration at the excitatory neurons' positions and the average firing threshold within the exc. group (inh. threshold was fixed, see table \ref{LIF_neuron_params}). Both homeostatic mechanisms managed to keep the excitatory population activity in the desired range of 3 Hz. However, what might appear to be slightly faster and stronger random fluctuations in the upper three plots of Figure \ref{full_sim_osci}, are in fact regular oscillations across all three depicted variables. While the oscillation amplitudes undergo a rather unpredictable time course, the frequency remains at a constant level of $\simeq 0.5\, Hz$. This feature is also illustrated by the fact that the power spectra depicted in Figure \ref{Power_Spec_without_Analysis} have a peak at the frequency that appeared to be dominant in Figure \ref{full_sim_osci}. The fact that the mean over all power spectra of excitatory thresholds differs from the power spectrum of the mean of these thresholds in its amplitude indicates that not all thresholds oscillate at the same phase. Still though, the overall shape of both spectra are equivalent. 
 \begin{figure}
+
 \begin{center}
+%% oscillating_activity_plot.py
 \includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_compl.png}
 \end{center}
 %\includegraphics[width=\textwidth]{../../plots/diff_hom/rate_NO_th_closeup.png}
@@ -285,6 +288,7 @@ x_+ &= (V_t-E_l-J\tau_m)/\sigma \label{LIF_Fir_Rate_with_Noise3}
 \end{align}
 where $erfc$ is the complementary error function. Figure \ref{F-I_noise_dep} shows that both predictions are quite accurate in predicting the mean firing rate. 
 \begin{figure}
+
 \begin{center}
 \includegraphics[width=0.7\textwidth]{../../plots/F-I_noise_dep.png}
 \end{center}
@@ -312,6 +316,7 @@ When trying to find the fixed point of equations \ref{2d-exc_inh_rate_1} and \re
  
 All these aspects taken together make it impossible to find an analytic expression for the fixed point of Equation \ref{2d-exc_inh_rate_1} and \ref{2d-exc_inh_rate_2}. Running a simulation of \ref{2d-exc_inh_rate_1} and \ref{2d-exc_inh_rate_2}, including all aforementioned approximations results in a stable configuration depicted in \ref{Dyn_Rate_Approx}. For this simulation, we set the relevant parameters to their predefined values and, in addition, extracted the mean threshold of the excitatory population which was set by the non-diffusive homeostasis, see C/C* in Figure \ref{full_sim_osci}, yielding a threshold of $\mathrm{-56.963\, mV}$. The results are depicted in Figure \ref{Dyn_Rate_Approx}. The system settled to a fixed point of $\mathrm{(r_{0,e},r_{0,i}) = (2.992\, Hz, 7.144\, Hz)}$, which is quite close to $\mathrm{(3\, Hz, 6.768\, Hz)}$, being the mean excitatory and inhibitory firing rate between 100-750 s of the full simulation (i.e., during non-diffusive homeostasis).
 \begin{figure}
+%% fixed_point_net.py
 \begin{center}
 \includegraphics[width=0.7\textwidth]{../../plots/approx_rates_EI.png}
 \end{center}
@@ -325,6 +330,7 @@ In this section, we discuss an analytic treatment of the dynamics underlying the
 
 Both forms of homeostasis use excitatory firing thresholds as a means of adjusting the excitatory firing rate. Though having a relatively immediate impact on the firing rate of the particular neuron, the network as a whole reacts by means of a local disturbance of activity as well: it settles at a new fixed point of firing rates. Two questions are of importance in the context of feedback dynamics. First - obviously - how the relation between a local change of threshold and the new fixed point of the network can be described and second, whether the time scale of the network's response is of relevance with respect to other time scales involved in the feedback loop. Regarding the second question, Figure \ref{rate_th_close} suggests that the excitatory population activity follows the mean firing threshold in a quasi instantaneous fashion, at least in comparison with the overall time scale of the oscillating pattern.
 \begin{figure}
+%% oscillating_activity_plot_rate_threshold.py
 \begin{center}
 \includegraphics[width=0.7\textwidth]{../../plots/diff_hom/rate_th_close.png}
 \end{center}
@@ -427,6 +433,7 @@ Since we assumed the noise term $\xi$ to be approximately white and gaussian noi
 
 Figure \ref{Pow_Spec_Theta_vs_Analytic} shows the result of \eqref{Pow_Spec_Theta_Final}. Choosing noise amplitude to be the only free parameter of the model gave a rather unsatisfying result. Our approximation underestimated the amount of damping within the system (which controls the "peakiness" of the spectrum), as well as predicting a slightly smaller preferred amplitude. While the broadness of the spectrum is mostly controlled by the damping term $-\lambda$, the preferred amplitude is controlled by $\frac{\gamma \alpha N_{exc.}}{L^2}$ and $\frac{1}{NO_0\tau_{V_t}}$. Since the latter term was taken unaltered from the original system (apart from a shift in phase space), we added $-\lambda$ and $\alpha$ as free fitting parameters and managed to get a very good fit to the simulation data, see Figure \ref{Pow_Spec_Theta_vs_Analytic}.   
 \begin{figure}
+%% plot_pow_spec_analytic.py
 \begin{center}
 \includegraphics[width=\textwidth]{../../plots/power_spec/power_spectrum_analytic.png}
 \end{center}
@@ -785,52 +792,25 @@ After having worked out the analytical basis, we compared the prediction obtaine
 \caption{Measured firing rates (t=1200-1500s) versus predicted firing rates based on the solution of Equation \eqref{NO_equil_cond_interact_matrix_operator}. For $\mathrm{D=\infty}$ (instant diffusion in the full simulation), the analytic prediction was calculated with a comparably "large" diffusion constant of $\mathrm{D=100\, \mu m^2 /s}$.}
 \label{Rand_Matrix_Sol_vs_Sim}
 \end{figure}
-Naturally, these observations led us to the question of how the correlation between predicted measured firing rates behaves in between the aforementioned extremes. Especially, we were interested in the \emph{range} of the diffusion constant for which our model provides a good description of the full spiking network's activity.
+Naturally, these observations led us to the question of how the correlation between predicted measured firing rates behaves in between the aforementioned extremes. Especially, we were interested in the \emph{range} of the diffusion constant for which our model provides a good description of the full spiking network's activity. Figure \ref{Corr_Coeff_vs_D} depicts the Pearson correlation coefficient of $\mathrm{f_{matrix \\, predict}}$ and $\mathrm{f_{sim}}$ against the diffusion constant used in the simulation. A relatively high correlation was obtained for a wide range of diffusion constants. However, we could see a general decline of correlation for larger diffusion constants. This trend is in line with the aforementioned limit of instant diffusion, resulting in a complete decorrelation between prediction and measurement. Furthermore, though being rather small, a slight decorrelation could also be observed for very small diffusion constants.
+
+\begin{figure}
+%% sim_vs_matrix_solve_corr_vs_D.py
+\begin{center}
+\includegraphics[width=0.7\textwidth]{../../plots/sim_vs_matrix_solve_corr_vs_D.png}
+\end{center}
+\caption{Pearson correlation coefficient of predicted and measured firing rates (see Figure \ref{Rand_Matrix_Sol_vs_Sim}) versus diffusion constant. Line width depicts standard error.}
+\label{Corr_Coeff_vs_D}
+\end{figure}
    
 
-We compared the firing rate distributions acquired from the solution of the random matrix system and those of the full simulated network by means of its standard deviation and skewness.
-\begin{figure}
-\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/frequ_moments_compare.png}
-\caption{Standard deviation and skewness of firing rate distributions for the full spiking network (blue) and the solution of the random matrix model (orange) for Neumann (A,B) and periodic (C,D) boundary conditions.}
-\label{frequ_moments_compare}
-\end{figure}
-While the standard deviation appears to be better fitting the full network in the case of Neumann boundary conditions, the prediction of skewness is more accurate for periodic boundaries. In both versions, the standard deviation seems to be underestimated by the solution of the random matrix equation. This seems reasonable, considering the fact that a network of irregularly spiking neurons "naturally" provides a certain amount of firing rate variability and that during simulation, all plasticity mechanisms where kept in place (changes of presynaptic weights requires an adjustment of the internal threshold to maintain the desired firing rate). 
 
-\subsubsection{Mean-Field Approximation for the Variance of Firing Rates}
 
-Generally, Mean-Field approximations reduce the calculation of a full set of interacting entities (or particles, in the context of physics) to a single instance interacting with an effective mean of the entire field, especially ignoring the influence of the single instance onto the whole set of entities and thus the field itself.
+\subsubsection{Approximation of analytic Solution by Neuronal Density}
 
-In the system presented here, a single neuron with a firing rate $\nu$ must fulfil the equation
 
-\begin{equation}
-\nu =\frac{NO_0 - \sum \limits_{i} \nu_i \psi(d_i)}{\psi_0}
-\label{sample_neuron_firing_rate}
-\end{equation}
-where $i$ indexes over all "remaining" neurons and $d_i$ refers to the euclidean distance of the sample neuron to "field"-neuron $i$. $\psi_0$ is the factor that - multiplied with $\nu$ - yields the $NO$-concentration at the origin of the sample neuron.
 
-Depending on the constraints that one imposes onto the system, one might look for different properties to be extracted from this equation. Specifically, in the simulation protocol that has been used in all previous simulations, the average firing rate was forced to a certain value by means of adjusting the target concentration $NO_0$. A Mean-Field approximation for the average firing rate therefore is of no relevance in this particular case.
 
-However, one might try to give an estimate for the variance of the firing rate distribution in dependence of the diffusion constant $D$. Interpreting $\nu$ in \eqref{sample_neuron_firing_rate} as a stochastic variable, one finds
-
-\begin{equation}
-Var[\nu] = \frac{Var[\sum \limits_{i} \nu_i \psi(d_i)]}{\psi_0^2}
-\label{variance_sample_neuron_firing_rate}
-\end{equation}
-
-As an approximation, one can now replace all $\nu_i$ by the mean activity, which has been forced to a certain value $\nu_0$:
-
-\begin{equation}
-Var[\nu] = \frac{\nu_0^2 \cdot Var[\sum \limits_{i} \psi(d_i)]}{\psi_0^2}
-\label{variance_sample_neuron_firing_rate_mean_act}
-\end{equation}
-
-The random individual neurons' positions are statistically independent, therefore one gets
-
-\begin{equation}
-Var[\nu] = \frac{\nu_0^2 \cdot N \cdot Var[\psi(d)]}{\psi_0^2}
-\label{variance_sample_neuron_firing_rate_mean_act_indep_positions}
-\end{equation}
-where $N$ is the number of neurons. One should note however that this expression only applies to the case of open boundaries. Furthermore, depending on the position of the "sample neuron" relative to the population, one can achieve different statistics for $\psi(d)$. The limit case, in which both remarks are of no relevance, is a population of a certain density spreading across a tissue of infinite size.
 
 
 \bibliography{test_base}
