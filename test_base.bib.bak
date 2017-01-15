@@ -104,8 +104,7 @@
 }
 
 @Article{Helmholtz_Solution_2d,
-  Title                    = {Green's functions for the wave, Helmholtz and Poisson equations
-in a two-dimensional boundless domain},
+  Title                    = {Green's functions for the wave, Helmholtz and Poisson equations in a two-dimensional boundless domain},
   Author                   = {Couto, Roberto Toscano},
   Journal                  = {Revista Brasileira de Ensino Física},
   Year                     = {2013},
@@ -290,7 +289,7 @@ in a two-dimensional boundless domain},
 }
 
 @Article{Knowles_Ca_nNOS,
-  Title                    = {FoNeurons of Nitric Oxide from L-Arginine in the Central Nervous System: A Transduction Mechanism for Stimulation of the Soluble Guanylate Cyclase},
+  Title                    = {Formation of nitric oxide from L-arginine in the central nervous system: a transduction mechanism for stimulation of the soluble guanylate cyclase},
   Author                   = {Knowles, Richard G. and Palacios, Miriam and Palmer, Richard M. J. and Moncada, Salvador},
   Journal                  = {Proceedings of the National Academy of Sciences},
   Year                     = {1989},
