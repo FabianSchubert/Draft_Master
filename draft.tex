@@ -506,20 +506,21 @@ A constant "rate" of an approximately randomly spiking neuron means that the dep
 \end{figure}
 We therefore concluded that diffusive homeostasis manages to retain firing rates on a constant level, not only population-wise but on a single-cell level as well. In particular, plastic modifications across the network due to STDP and synaptic growth/pruning - which where always acting for all the simulation results presented so far - appeared to be compensated for.
 
-Sweeney et al. found that diffusive homeostasis maintains broadness of firing rates across a wide range of diffusion constants but rapidly approaching zero for small values \cite[p. 6]{Sweeney_Paper}. We were able to reproduce this result, see Figure \ref{Fir_Rate_Dist_Width_vs_D}. Homeostasis reaches a point of saturation, where faster diffusion has no effect on the heterogeneity of firing rates. 
+Sweeney et al. found that diffusive homeostasis maintains broadness of firing rates across a wide range of diffusion constants but rapidly approaching zero for small values \cite[p. 6]{Sweeney_Paper}. We were able to reproduce this result, see Figure \ref{Fir_Rate_Dist_Width_Skewness_vs_D} (A). Homeostasis reaches a point of saturation, where faster diffusion has no effect on the heterogeneity of firing rates. 
 \begin{figure}
+\begin{minipage}{0.5\textwidth}
 %%% freq_dist_width_vs_D.py
 \includegraphics[width=\textwidth]{../../plots/firing_rate_dists/std_dev_vs_D_neumann.png}
-\caption{Standard deviation of firing rate distribution of excitatory neurons (neumann boundary conditions).}
-\label{Fir_Rate_Dist_Width_vs_D}
-\end{figure}
-To further quantify this dependence, we also investigated the influence of the diffusion constant onto the distribution's skewness, shown in Figure \ref{Fir_Rate_Dist_Skew_vs_D}. Compared to the standard deviation, we see a similar but not as clear trend with a drop for very small diffusion constants, even occasionally resulting in a left-skewed distribution (negative D-values).
-\begin{figure}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
 %%% freq_dist_skew_vs_D.py
 \includegraphics[width=\textwidth]{../../plots/firing_rate_dists/skew_vs_D_neumann.png}
-\caption{Skewness of firing rate distribution of excitatory neurons (neumann boundary conditions).}
-\label{Fir_Rate_Dist_Skew_vs_D}
+\end{minipage}
+\caption{Standard deviation (A) and skewness (B) of firing rate distribution of excitatory neurons (neumann boundary conditions).}
+\label{Fir_Rate_Dist_Width_Skewness_vs_D}
 \end{figure}
+To further quantify this dependence, we also investigated the influence of the diffusion constant onto the distribution's skewness, shown in Figure \ref{Fir_Rate_Dist_Width_Skewness_vs_D} (B). Compared to the standard deviation, we see a similar but not as clear trend with a drop for very small diffusion constants, even occasionally resulting in a left-skewed distribution (negative D-values).
+
 A naturally emerging question when altering the diffusion constant is how the firing rate behaves in the absolute limit of infinitely fast diffusion. In fact, simulation-wise this case is quite easy to simulate: one simply has  to feed all NO-sources into a single scalar variable of NO concentration. In particular, this will provide the same NO readout for all excitatory neurons, which means that all excitatory thresholds change at the same rate all the time, only shifting their initial random distribution. Figure \ref{Fir_Rate_Dist_Instant_compare} shows the distribution for this special limiting case. The standard deviation for the excitatory was $\mathrm{\sigma_{inst} = 1.41\, Hz}$ and the skewness $\mathrm{v_{inst} = 1.27}$ ($\mathrm{v_{inst,log} = -0.46}$), which makes the asymmetry slightly more pronounced than in Figure \ref{Fir_Rate_Dist_Compare}.  
 \begin{figure}
 %%% frequ_dist_instant_diff.py
@@ -580,7 +581,7 @@ p(t,w_0,w_{prune}) = \frac{|w_0-w_{prune}|}{\sqrt{2\pi \sigma t^3}}exp \left( \f
 \end{equation}
 For larger $\mathrm{t}$, the dominating term is $\mathrm{t^{-3/2}}$, which roughly resembles the power-law exponents found in Figure \ref{Syn_Lifetimes}.
 
-\subsubsection{Mean outgoing Weights}
+\subsubsection{Mean outgoing Weights}\label{Section_Mean_outgoing_Weights}
 Since we only implemented synaptic normalization for the sum of ingoing weights, the total or average strength of outgoing connections may vary from cell to cell. In a sense, the strength of outgoing connections per neuron can be regarded as a measure of how "influential" a neuron's activity is with respect to other neurons in the network. Effenberger et. al. have shown in computational studies that these "driver neurons" form highly active and interconnected subnetworks \cite{Effenberger_2015}, an observation that is backed up by experimental studies \cite{Yassin_Subnetworks_2010,Eckmann_Leader_Neurons_2008}. Figure \ref{Out_Weight_Mean_Quantile} shows that diffusive homeostasis allows for the emergence of a small group of highly influential neurons, which reproduces the findings in \cite{Effenberger_2015}. A comparison of statistics generated with shuffled versions of the weight matrices illustrates that above-chance exceptionally strong outgoing weights were indeed present. Furthermore, we noted that the difference between shuffled matrices corresponding to non-diffusive and diffusive homeostasis is in line with our observation from Figure \ref{Weight_Dist}, which indicated a broader distribution of weights for diffusive homeostasis.
 \begin{figure}
 %%% plot_sum_outgoing_weights_dist.py
@@ -784,16 +785,24 @@ M(\mathbf{x}) &\equiv
 \mathbf{x} + L \cdot (mod(\left| n_x\right|,2),mod(\left| n_y\right|,2)) \; . \label{Mirror_Operator}
 \end{align}
 Note that the shift was applied to the second position. Theoretically, $n_x$,$n_y$ is iterated over all integers and in this case it is irrelevant whether to shift the first or the second position. For our calculations, we obviously had to limit the amount of elements of the sum such that copies that are shifted further away can be neglected.
-\subsubsection{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}
-After having worked out the analytical basis, we compared the prediction obtained from numerically solving \eqref{NO_equil_cond_interact_matrix_operator} for certain spatial configurations of neurons to the steady-state firing rates of the full spiking network with the same spatial structure. In particular, we were interested in the quality of the predictions in respect to the choice of diffusion constant. Figure \ref{Rand_Matrix_Sol_vs_Sim} shows two examples: For $\mathrm{D=10\, \mu m^2 /s}$, the correlation between measured and predicted firing rates is very good. In contrast, we included the - obviously unsuccessful - attempt to predict firing rates for a simulation with instant diffusion based on the spatial structure by setting D to a relatively high value of $\mathrm{D=100\, \mu m^2 /s}$. Since instant diffusion overrides any spatial inhomogeneities, this represents one limiting case where our analytic model cannot make any predictions. The other limit shown in the plot, $\mathrm{D=0}$, is correctly predicted by the analytic model. However, because of the singularity of the solution, we could not quantify the correlation. Still, both extremes share their property of overriding the effect of spatial heterogeneity onto firing rates. 
+\subsubsection{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}\label{Section_Rand_Mat_vs_Sim}
+After having worked out the analytical basis, we compared the prediction obtained from numerically solving \eqref{NO_equil_cond_interact_matrix_operator} for certain spatial configurations of neurons to the steady-state firing rates of the full spiking network with the same spatial structure. In particular, we were interested in the quality of the predictions in respect to the choice of diffusion constant. Figure \ref{Rand_Matrix_Sol_vs_Sim} shows three examples: For $\mathrm{D=10\, \mu m^2 /s}$, the correlation between measured and predicted firing rates is very good. In contrast, we included the - obviously unsuccessful - attempt to predict firing rates for a simulation with instant diffusion based on the spatial structure by setting D to a relatively high value of $\mathrm{D=100\, \mu m^2 /s}$. Since instant diffusion overrides any spatial inhomogeneities, this represents one limiting case where our analytic model cannot make any predictions. The outcome of the third case shown in the plot, $\mathrm{D=0}$, is correctly predicted by the analytic model. In general, instant diffusion as well as $\mathrm{D=0}$ overrides the effect of spatial heterogeneity onto firing rates. 
 \begin{figure}
 %% plot_rand_matrix_sol_vs_sim.py
 \includegraphics[width=\textwidth]{../../plots/rates_matrix_prediction_vs_sim.png}
 \caption{Measured firing rates (t=1200-1500s) versus predicted firing rates based on the solution of Equation \eqref{NO_equil_cond_interact_matrix_operator}. For $\mathrm{D=\infty}$ (instant diffusion in the full simulation), the analytic prediction was calculated with a comparably "large" diffusion constant of $\mathrm{D=100\, \mu m^2 /s}$.}
 \label{Rand_Matrix_Sol_vs_Sim}
 \end{figure}
-Naturally, these observations led us to the question of how the correlation between predicted measured firing rates behaves in between the aforementioned extremes. Especially, we were interested in the \emph{range} of the diffusion constant for which our model provides a good description of the full spiking network's activity. Figure \ref{Corr_Coeff_vs_D} depicts the Pearson correlation coefficient of $\mathrm{f_{matrix \\, predict}}$ and $\mathrm{f_{sim}}$ against the diffusion constant used in the simulation. A relatively high correlation was obtained for a wide range of diffusion constants. However, we could see a general decline of correlation for larger diffusion constants. This trend is in line with the aforementioned limit of instant diffusion, resulting in a complete decorrelation between prediction and measurement. Furthermore, though being rather small, a slight decorrelation could also be observed for very small diffusion constants.
-
+As Figure \ref{Fir_Rate_Dist_Sim_vs_Mat} shows, the actual shape of the distribution is well predicted by the solution of the linear system.
+\begin{figure}
+\begin{center}
+%% fir_dist_shape_sim_matrix_compare.py
+\includegraphics[width=0.7\textwidth]{../../plots/firing_rate_dists/fir_rate_dist_sim_vs_mat.png}
+\end{center}
+\caption{Distribution of firing rates for $\mathrm{D=10\, \mu m^2 / ms}$, full simulation and analytic prediction. Data was taken from 10 simulation runs.}
+\label{Fir_Rate_Dist_Sim_vs_Mat}
+\end{figure}
+Naturally, these observations led us to the question of how the correlation between predicted measured firing rates behaves in between the aforementioned limits. Especially, we were interested in the \emph{range} of the diffusion constant for which our model provides a good description of the full spiking network's activity. Figure \ref{Corr_Coeff_vs_D} depicts the Pearson correlation coefficient of $\mathrm{f_{matrix \\, predict}}$ and $\mathrm{f_{sim}}$ against the diffusion constant used in the simulation. A relatively high correlation was obtained for a wide range of diffusion constants. However, we could see a general decline of correlation for larger diffusion constants. This trend is in line with the aforementioned limit of instant diffusion, namely a complete decorrelation between prediction and measurement, as well as the good agreement for $\mathrm{D= 10\, \mu m^2 / ms}$ shown in Figure \ref{Fir_Rate_Dist_Sim_vs_Mat}.
 \begin{figure}
 %% sim_vs_matrix_solve_corr_vs_D.py
 \begin{center}
@@ -802,12 +811,31 @@ Naturally, these observations led us to the question of how the correlation betw
 \caption{Pearson correlation coefficient of predicted and measured firing rates (see Figure \ref{Rand_Matrix_Sol_vs_Sim}) versus diffusion constant. Line width depicts standard error.}
 \label{Corr_Coeff_vs_D}
 \end{figure}
-   
+We characterized the dependence of the shape of the firing rate distribution onto $\mathrm{D}$ by means of its standard deviation and skewness in Figure \ref{Fir_Rate_Dist_Width_Skewness_vs_D}. To test whether our analytic model predicts this dependence, we generated random ensembles of neuron positions, solved the linear system of rates and extracted the resulting standard deviation and skewness. Thereby, we found a good fit of the resulting histogram compared to the simulation data, see Figure \ref{Std_Skew_Dist_vs_Data}.
+\begin{figure}
+\begin{minipage}{0.5\textwidth}
+%% sim_vs_matrix_sol_standard_dev_distribution.py
+\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/mat_sim_std_dev_dist.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+%% sim_vs_matrix_sol_skew_distribution.py
+\includegraphics[width=\textwidth]{../../plots/firing_rate_dists/mat_sim_skew_dist.png}
+\end{minipage}
+\caption{Comparison of distribution of standard deviation (A) and skewness (B) for random-matrix solutions (gray) and values acquired from simulation (blue), neumann boundaries.}
+\label{Std_Skew_Dist_vs_Data}
+\end{figure}
+In summary, the shape and broadness of the firing rate distribution appeared to be strongly determined by fluctuation in the spatial distribution of neurons. Finally, to further support this result by testing, we arranged excitatory neurons on a regular grid with a nearest-neighbour distance of $\mathrm{50\, \mu m}$ and a $\mathrm{25\, \mu m}$ distance between the border and the neurons closest to it. By doing so, all neurons were given the same structure of neighbours. Due to symmetry, all neurons then should - in theory - exhibit the exact same firing rate. Figure \ref{Fir_Rate_Dist_Reg_Grid} shows the result, being a significantly narrower distribution. This strongly supports the previous assertion.
+\begin{figure}
+\begin{center}
+%% plot_firing_rate_dist_regular_grid.py
+\includegraphics[width=0.7\textwidth]{../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png}
+\end{center}
+\caption{Distribution of firing rates for a regular square grid with distance $\mathrm{50\, \mu m}$ and neumann boundary conditions.}
+\label{Fir_Rate_Dist_Reg_Grid}
+\end{figure}  
 
-
-
-\subsubsection{Approximation of analytic Solution by Neuronal Density}
-
+\subsubsection{Low-Density Neighbourhoods correlate with strong outgoing Connections}
+In Section \ref{Section_Mean_outgoing_Weights}, we stated that diffusive homeostasis allowed the network do develop few neurons with exceptionally strong outgoing weights. Furthermore, we found this effect to be present in neurons with an highly above-average firing rate. Moreover, the outcomes presented in Section \ref{Section_Rand_Mat_vs_Sim} suggest that the steady state of firing rates is strongly influenced by the spatial structure of excitatory neurons. Combining these two qualities led us the conclusion that one should be able to observe some relation between spatial structure and the emergence of "driver neurons".  
 
 
 
