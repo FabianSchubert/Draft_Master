@@ -110,6 +110,12 @@ AV. Hill.
   haemoglobin on its dissociation curves.
 \newblock {\em The Journal of Physiology}, 40:iv---vii, 1910.
 
+\bibitem{Philippides_2000}
+Andrew Philippides, Phil Husbands, and Michael O{\textquoteright}Shea.
+\newblock Four-dimensional neuronal signaling by nitric oxide: A computational
+  analysis.
+\newblock {\em Journal of Neuroscience}, 20(3):1199--1207, 2000.
+
 \bibitem{Dyn_Sys_Hirsch}
 Morris~W. Hirsch and Stephen Smale, editors.
 \newblock {\em Differential Equations, Dynamical Systems, and Linear Algebra},
@@ -237,11 +243,28 @@ Roberto~Toscano Couto.
   two-dimensional boundless domain.
 \newblock {\em Revista Brasileira de Ensino Física}, 2013.
 
+\bibitem{Stability_Homeostasis_Harnack_2015}
+Daniel Harnack, Miha Pelko, Antoine Chaillet, Yacine Chitour, and Mark C.~W.
+  van Rossum.
+\newblock Stability of neuronal networks with homeostatic regulation.
+\newblock {\em PLOS Computational Biology}, 2015.
+
+\bibitem{Vreeswijk1998}
+C~van Vreeswijk and H~Sompolinsky.
+\newblock Chaotic balanced state in a model of cortical circuits.
+\newblock {\em Neural Computation}, 1998.
+
 \bibitem{Ivenshitz_2010}
 Miriam Ivenshitz and Menahem Segal.
 \newblock Neuronal density determines network connectivity and spontaneous
   activity in cultured hippocampus.
 \newblock {\em Journal of Neurophysiology}, 104(2):1052--1060, 2010.
+
+\bibitem{Lever_Long_Term_Plast_2002}
+Colin Lever, Tom Wills, Francesca Cacucci, Neil Burgess, and John O'Keefe.
+\newblock Long-term plasticity in hippocampal place-cell representation of
+  environmental geometry.
+\newblock {\em Nature}, 2002.
 
 \bibitem{Philippides_2005}
 Andrew Philippides, Swidbert~R. Ott, Philip Husbands, Thelma~A. Lovick, and

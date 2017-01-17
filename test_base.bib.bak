@@ -226,6 +226,16 @@
   Timestamp                = {2016.10.12}
 }
 
+@Article{Stability_Homeostasis_Harnach_2015,
+  Title                    = {Stability of Neuronal Networks with Homeostatic Regulation},
+  Author                   = {Harnack, Daniel and Pelko, Miha and Chaillet, Antoine and Chitour, Yacine and van Rossum, Mark C. W.},
+  Journal                  = {PLOS Computational Biology},
+  Year                     = {2015},
+
+  Owner                    = {fschubert},
+  Timestamp                = {2017.01.17}
+}
+
 @Article{Hill_Equ,
   Title                    = {The possible effects of the aggregation of the molecules of haemoglobin on its dissociation curves.},
   Author                   = {Hill, AV.},
@@ -298,6 +308,16 @@
 
   Owner                    = {fschubert},
   Timestamp                = {2016.10.12}
+}
+
+@Article{Lever_Long_Term_Plast_2002,
+  Title                    = {Long-term plasticity in hippocampal place-cell representation of environmental geometry},
+  Author                   = {Lever, Colin and Wills, Tom and Cacucci, Francesca and Burgess, Neil and O'Keefe, John},
+  Journal                  = {Nature},
+  Year                     = {2002},
+
+  Owner                    = {fschubert},
+  Timestamp                = {2017.01.17}
 }
 
 @Article{Lisman_Synapses_1993,
@@ -397,6 +417,39 @@
 
   Owner                    = {fschubert},
   Timestamp                = {2016.10.12}
+}
+
+@Article{Philippides_2000,
+  Title                    = {Four-Dimensional Neuronal Signaling by Nitric Oxide: A Computational Analysis},
+  Author                   = {Philippides, Andrew and Husbands, Phil and O{\textquoteright}Shea, Michael},
+  Journal                  = {Journal of Neuroscience},
+  Year                     = {2000},
+  Number                   = {3},
+  Pages                    = {1199--1207},
+  Volume                   = {20},
+
+  Abstract                 = {Nitric oxide (NO) is now recognized as a transmitter of neurons that express the neuronal isoform of the enzyme nitric oxide synthase. NO, however, violates some of the key tenets of chemical transmission, which is classically regarded as occurring at points of close apposition between neurons. It is the ability of NO to diffuse isotropically in aqueous and lipid environments that has suggested a radically different form of signaling in which the transmitter acts four-dimensionally in space and time, affecting volumes of the brain containing many neurons and synapses. Although {\textquotedblleft}volume signaling{\textquotedblright} clearly challenges simple connectionist models of neural processing, crucial to its understanding are the spatial and temporal dynamics of the spread of NO within the brain. Existing models of NO diffusion, however, have serious shortcomings because they represent solutions for {\textquotedblleft}point-sources,{\textquotedblright} which have no physical dimensions. Methods for overcoming these difficulties are presented here, and results are described that show how NO spreads from realistic neural architectures with both simple symmetrical and irregular shapes. By highlighting the important influence of the geometry of NO sources, our results provide insights into the four-dimensional spread of a diffusing messenger. We show for example that reservoirs of NO that accumulate in volumes of the nervous system where NO is not synthesized contribute significantly to the temporal and spatial dynamics of NO spread.},
+  Eprint                   = {http://www.jneurosci.org/content/20/3/1199.full.pdf},
+  ISSN                     = {0270-6474},
+  Publisher                = {Society for Neuroscience},
+  Url                      = {http://www.jneurosci.org/content/20/3/1199}
+}
+
+@Article{Philippides_2005,
+  Title                    = {Modeling Cooperative Volume Signaling in a Plexus of Nitric Oxide Synthase-Expressing Neurons},
+  Author                   = {Philippides, Andrew and Ott, Swidbert R. and Husbands, Philip and Lovick, Thelma A. and O{\textquoteright}Shea, Michael},
+  Journal                  = {Journal of Neuroscience},
+  Year                     = {2005},
+  Number                   = {28},
+  Pages                    = {6520--6532},
+  Volume                   = {25},
+
+  Abstract                 = {In vertebrate and invertebrate brains, nitric oxide (NO) synthase (NOS) is frequently expressed in extensive meshworks (plexuses) of exceedingly fine fibers. In this paper, we investigate the functional implications of this morphology by modeling NO diffusion in fiber systems of varying fineness and dispersal. Because size severely limits the signaling ability of an NO-producing fiber, the predominance of fine fibers seems paradoxical. Our modeling reveals, however, that cooperation between many fibers of low individual efficacy can generate an extensive and strong volume signal. Importantly, the signal produced by such a system of cooperating dispersed fibers is significantly more homogeneous in both space and time than that produced by fewer larger sources. Signals generated by plexuses of fine fibers are also better centered on the active region and less dependent on their particular branching morphology. We conclude that an ultrafine plexus is configured to target a volume of the brain with a homogeneous volume signal. Moreover, by translating only persistent regional activity into an effective NO volume signal, dispersed sources integrate neural activity over both space and time. In the mammalian cerebral cortex, for example, the NOS plexus would preferentially translate persistent regional increases in neural activity into a signal that targets blood vessels residing in the same region of the cortex, resulting in an increased regional blood flow. We propose that the fineness-dependent properties of volume signals may in part account for the presence of similar NOS plexus morphologies in distantly related animals.},
+  Doi                      = {10.1523/JNEUROSCI.1264-05.2005},
+  Eprint                   = {http://www.jneurosci.org/content/25/28/6520.full.pdf},
+  ISSN                     = {0270-6474},
+  Publisher                = {Society for Neuroscience},
+  Url                      = {http://www.jneurosci.org/content/25/28/6520}
 }
 
 @Article{Roxin_Firing_Rate_Distribution,
@@ -511,6 +564,16 @@
 
   Owner                    = {fschubert},
   Timestamp                = {2016.04.11}
+}
+
+@Article{Vreeswijk1998,
+  Title                    = {Chaotic Balanced State in a Model of  Cortical Circuits},
+  Author                   = {van Vreeswijk, C and Sompolinsky, H},
+  Journal                  = {Neural Computation},
+  Year                     = {1998},
+
+  Owner                    = {fschubert},
+  Timestamp                = {2017.01.17}
 }
 
 @Article{Vreeswijk1996,
