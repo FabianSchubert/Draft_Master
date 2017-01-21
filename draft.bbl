@@ -1,17 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{SORN_Paper}
-Daniel Miner and Jochen Triesch.
-\newblock Plasticity-driven self-organization under topological constraints
-  accounts for non-random features of cortical synaptic wiring.
-\newblock {\em PLoS Computational Biology}, 2016.
-
-\bibitem{Sweeney_Paper}
-Yann Sweeney, Jeanette~Hellgren Kotaleski, and Matthias~H. Hennig.
-\newblock A diffusive homeostatic signal maintains neural heterogeneity and
-  responsiveness in cortical networks.
-\newblock {\em PLoS Computational Biology}, 2015.
-
 \bibitem{Bear_Exploring_the_Brain}
 Mark~F. Bear, B.~W. Connors, and Michael~A. Paradiso.
 \newblock {\em Neuroscience: Exploring the Brain}.
@@ -54,6 +42,30 @@ L.~Abbott and S.~B. Nelson.
 Peter Dayan and L.F. Abbott.
 \newblock {\em Theoretical Neuroscience}.
 \newblock MIT Press, 2001.
+
+\bibitem{SORN_Paper}
+Daniel Miner and Jochen Triesch.
+\newblock Plasticity-driven self-organization under topological constraints
+  accounts for non-random features of cortical synaptic wiring.
+\newblock {\em PLoS Computational Biology}, 2016.
+
+\bibitem{Buzsaki_Fir_Rates_2014}
+György Buzsáki and Kenji Mizuseki.
+\newblock The log-dynamic brain: how skewed distributions affect network
+  operations.
+\newblock {\em Nature Reviews Neuroscience}, 2014.
+
+\bibitem{Wohrer_Fir_Rates_2012}
+Adrien Wohrer, Mark~D. Humphries, and Christian Machens.
+\newblock Population-wide distributions of neural activity during perceptual
+  decision-making.
+\newblock {\em Progress in Neurobiology}, 2012.
+
+\bibitem{Sweeney_Paper}
+Yann Sweeney, Jeanette~Hellgren Kotaleski, and Matthias~H. Hennig.
+\newblock A diffusive homeostatic signal maintains neural heterogeneity and
+  responsiveness in cortical networks.
+\newblock {\em PLoS Computational Biology}, 2015.
 
 \bibitem{Briansim}
 Romain Brette, Dan Goodman, and Marcel Stirnberg.
@@ -188,18 +200,6 @@ Srdjan Ostojic.
 \newblock Interspike interval distributions of spiking neurons driven by
   fluctuating inputs.
 \newblock {\em Journal of Neurophysiology}, 106(1):361--373, 2011.
-
-\bibitem{Buzsaki_Fir_Rates_2014}
-György Buzsáki and Kenji Mizuseki.
-\newblock The log-dynamic brain: how skewed distributions affect network
-  operations.
-\newblock {\em Nature Reviews Neuroscience}, 2014.
-
-\bibitem{Wohrer_Fir_Rates_2012}
-Adrien Wohrer, Mark~D. Humphries, and Christian Machens.
-\newblock Population-wide distributions of neural activity during perceptual
-  decision-making.
-\newblock {\em Progress in Neurobiology}, 2012.
 
 \bibitem{Markram_Connections_1997}
 H~Markram.
