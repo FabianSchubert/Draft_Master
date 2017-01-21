@@ -12,6 +12,49 @@ Yann Sweeney, Jeanette~Hellgren Kotaleski, and Matthias~H. Hennig.
   responsiveness in cortical networks.
 \newblock {\em PLoS Computational Biology}, 2015.
 
+\bibitem{Bear_Exploring_the_Brain}
+Mark~F. Bear, B.~W. Connors, and Michael~A. Paradiso.
+\newblock {\em Neuroscience: Exploring the Brain}.
+\newblock Lippincott Williams \& Wilki, 2007.
+
+\bibitem{Wisdom_of_the_Body_Cannon}
+Walter~B. Cannon.
+\newblock {\em The Wisdom of the Body}.
+\newblock Norton \& Company, 1932.
+
+\bibitem{Homeostasis_Queenan_2012}
+Bridget~N. Queenan, Kea~Joo Lee, and Daniel T.~S. Pak.
+\newblock Where art thou, homeo(stasis)? functional diversity in homeostatic
+  synaptic plasticity.
+\newblock {\em Neural Plasticity}, 2012, 2012.
+
+\bibitem{Turrigiano_1994}
+G~Turrigiano, LF~Abbott, and E~Marder.
+\newblock Activity-dependent changes in the intrinsic properties of cultured
+  neurons.
+\newblock {\em Science}, 264(5161):974--977, 1994.
+
+\bibitem{Burrone_2003}
+Juan Burrone and Venkatesh~N Murthy.
+\newblock Synaptic gain control and homeostasis.
+\newblock {\em Current Opinion in Neurobiology}, 13(5):560 -- 567, 2003.
+
+\bibitem{Desai_2003}
+Niraj~S. Desai.
+\newblock Homeostatic plasticity in the cns: synaptic and intrinsic forms.
+\newblock {\em Journal of Physiology-Paris}, 97(4–6):391 -- 402, 2003.
+\newblock Neuroscience and Computation.
+
+\bibitem{Syn_Plast_Abbott}
+L.~Abbott and S.~B. Nelson.
+\newblock Synaptic plasticity: taming the beast.
+\newblock {\em Nature Neuroscience}, 2000.
+
+\bibitem{Theor_Neur_Dayan}
+Peter Dayan and L.F. Abbott.
+\newblock {\em Theoretical Neuroscience}.
+\newblock MIT Press, 2001.
+
 \bibitem{Briansim}
 Romain Brette, Dan Goodman, and Marcel Stirnberg.
 \newblock The brian spiking neural network simulator (version 1.0) [computer
@@ -99,11 +142,6 @@ Hans-Christian Pape and Ralph Mager.
   neurons.
 \newblock {\em Neuron}, 9:441--448, 1992.
 
-\bibitem{Theor_Neur_Dayan}
-Peter Dayan and L.F. Abbott.
-\newblock {\em Theoretical Neuroscience}.
-\newblock MIT Press, 2001.
-
 \bibitem{Hill_Equ}
 AV. Hill.
 \newblock The possible effects of the aggregation of the molecules of
@@ -174,11 +212,6 @@ Sen Song, Per~Jesper Sj\"ostr\"om, Markus Reigl, Sacha Nelson, and Dmitri~B
 \newblock Highly nonrandom features of synaptic connectivity in local cortical
   circuits.
 \newblock {\em PLOS Biology}, 3(3), 03 2005.
-
-\bibitem{Syn_Plast_Abbott}
-L.~Abbott and S.~B. Nelson.
-\newblock Synaptic plasticity: taming the beast.
-\newblock {\em Nature Neuroscience}, 2000.
 
 \bibitem{Lisman_Synapses_1993}
 John~E. Lisman and Kristen~M. Harris.
