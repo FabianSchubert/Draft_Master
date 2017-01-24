@@ -43,6 +43,59 @@ Peter Dayan and L.F. Abbott.
 \newblock {\em Theoretical Neuroscience}.
 \newblock MIT Press, 2001.
 
+\bibitem{Sweeney_Paper}
+Yann Sweeney, Jeanette~Hellgren Kotaleski, and Matthias~H. Hennig.
+\newblock A diffusive homeostatic signal maintains neural heterogeneity and
+  responsiveness in cortical networks.
+\newblock {\em PLoS Computational Biology}, 2015.
+
+\bibitem{NOS_Mammals}
+Richard~G. Knowles and Salvador Moncada.
+\newblock Nitrix oxide synthases in mammals.
+\newblock {\em Biochemical Journal}, 298(Pt 2):249--258, 1994.
+
+\bibitem{Knowles_Ca_nNOS}
+Richard~G. Knowles, Miriam Palacios, Richard M.~J. Palmer, and Salvador
+  Moncada.
+\newblock Formation of nitric oxide from l-arginine in the central nervous
+  system: a transduction mechanism for stimulation of the soluble guanylate
+  cyclase.
+\newblock {\em Proceedings of the National Academy of Sciences}, 86:5159--5162,
+  1989.
+
+\bibitem{Steinert_NO}
+J.~Steinert, Cornelia Kopp-Scheinpflug, Claire Baker, R.A.~John Challiss, Raj
+  Mistry, Martin~D. Haustein, Sarah~J. Griffin, Huaxia Tong, Bruce~P. Graham,
+  and Ian~D. Forsythe.
+\newblock Nitric oxide is a volume transmitter regulating postsynaptic
+  excitability at a glutamatergic synapse.
+\newblock {\em Neuron}, 60(4):642 -- 656, 2008.
+
+\bibitem{Lancaster_1994}
+J~R Lancaster.
+\newblock Simulation of the diffusion and reaction of endogenously produced
+  nitric oxide.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 91(17):8137--8141, August 1994.
+
+\bibitem{Hille_Ion_Channels}
+Bertil Hille.
+\newblock {\em Ionic Channels of Excitable Membranes}.
+\newblock Sinauer Associates, 2001.
+
+\bibitem{Steinert_NO_2011}
+J.~Steinert, S.~Robinson, H.~Tong, M.~Haustein, C.~Kopp-Scheinpflug, and
+  I.~Forsythe.
+\newblock Nitric oxide is an activity-dependent regulator of target neuron
+  intrinsic excitability.
+\newblock {\em Neuron}, 71(2):291--305, 2011.
+
+\bibitem{Pape_NO}
+Hans-Christian Pape and Ralph Mager.
+\newblock Nitric oxide controls oscillatory activity in thalamocortical
+  neurons.
+\newblock {\em Neuron}, 9:441--448, 1992.
+
 \bibitem{SORN_Paper}
 Daniel Miner and Jochen Triesch.
 \newblock Plasticity-driven self-organization under topological constraints
@@ -60,12 +113,6 @@ Adrien Wohrer, Mark~D. Humphries, and Christian Machens.
 \newblock Population-wide distributions of neural activity during perceptual
   decision-making.
 \newblock {\em Progress in Neurobiology}, 2012.
-
-\bibitem{Sweeney_Paper}
-Yann Sweeney, Jeanette~Hellgren Kotaleski, and Matthias~H. Hennig.
-\newblock A diffusive homeostatic signal maintains neural heterogeneity and
-  responsiveness in cortical networks.
-\newblock {\em PLoS Computational Biology}, 2015.
 
 \bibitem{Briansim}
 Romain Brette, Dan Goodman, and Marcel Stirnberg.
@@ -121,39 +168,6 @@ Eugene~M. Izhikevich.
   and Bursting}.
 \newblock The MIT Press, 2007.
 
-\bibitem{NOS_Mammals}
-Richard~G. Knowles and Salvador Moncada.
-\newblock Nitrix oxide synthases in mammals.
-\newblock {\em Biochemical Journal}, 298(Pt 2):249--258, 1994.
-
-\bibitem{Knowles_Ca_nNOS}
-Richard~G. Knowles, Miriam Palacios, Richard M.~J. Palmer, and Salvador
-  Moncada.
-\newblock Formation of nitric oxide from l-arginine in the central nervous
-  system: a transduction mechanism for stimulation of the soluble guanylate
-  cyclase.
-\newblock {\em Proceedings of the National Academy of Sciences}, 86:5159--5162,
-  1989.
-
-\bibitem{Hille_Ion_Channels}
-Bertil Hille.
-\newblock {\em Ionic Channels of Excitable Membranes}.
-\newblock Sinauer Associates, 2001.
-
-\bibitem{Steinert_NO}
-J.~Steinert, Cornelia Kopp-Scheinpflug, Claire Baker, R.A.~John Challiss, Raj
-  Mistry, Martin~D. Haustein, Sarah~J. Griffin, Huaxia Tong, Bruce~P. Graham,
-  and Ian~D. Forsythe.
-\newblock Nitric oxide is a volume transmitter regulating postsynaptic
-  excitability at a glutamatergic synapse.
-\newblock {\em Neuron}, 60(4):642 -- 656, 2008.
-
-\bibitem{Pape_NO}
-Hans-Christian Pape and Ralph Mager.
-\newblock Nitric oxide controls oscillatory activity in thalamocortical
-  neurons.
-\newblock {\em Neuron}, 9:441--448, 1992.
-
 \bibitem{Hill_Equ}
 AV. Hill.
 \newblock The possible effects of the aggregation of the molecules of
@@ -185,14 +199,14 @@ Alex Roxin, Nicolas Brunel, David Hansel, Gianluigi Mongillo, and Carl van
 
 \bibitem{Vreeswijk1996}
 C~van Vreeswijk and H~Sompolinsky.
-\newblock {Chaos in neuronal networks with balanced excitatory and inhibitory
-  activity.}
+\newblock Chaos in neuronal networks with balanced excitatory and inhibitory
+  activity.
 \newblock {\em Science}, 274:1724--1726, 1996.
 
 \bibitem{Brunel2000}
 N~Brunel.
-\newblock {Dynamics of sparsely connected networks of excitatory and inhibitory
-  spiking neurons.}
+\newblock Dynamics of sparsely connected networks of excitatory and inhibitory
+  spiking neurons.
 \newblock {\em J Comput Neurosci}, 8:183--208, 2000.
 
 \bibitem{Ostojic2011}
@@ -305,12 +319,5 @@ Andrew Philippides, Swidbert~R. Ott, Philip Husbands, Thelma~A. Lovick, and
 \newblock Modeling cooperative volume signaling in a plexus of nitric oxide
   synthase-expressing neurons.
 \newblock {\em Journal of Neuroscience}, 25(28):6520--6532, 2005.
-
-\bibitem{Steinert_NO_2011}
-J.~Steinert, S.~Robinson, H.~Tong, M.~Haustein, C.~Kopp-Scheinpflug, and
-  I.~Forsythe.
-\newblock Nitric oxide is an activity-dependent regulator of target neuron
-  intrinsic excitability.
-\newblock {\em Neuron}, 71(2):291--305, 2011.
 
 \end{thebibliography}
