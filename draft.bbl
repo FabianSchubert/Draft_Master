@@ -43,6 +43,48 @@ Peter Dayan and L.F. Abbott.
 \newblock {\em Theoretical Neuroscience}.
 \newblock MIT Press, 2001.
 
+\bibitem{Buzsaki_Fir_Rates_2014}
+György Buzsáki and Kenji Mizuseki.
+\newblock The log-dynamic brain: how skewed distributions affect network
+  operations.
+\newblock {\em Nature Reviews Neuroscience}, 2014.
+
+\bibitem{Wohrer_Fir_Rates_2012}
+Adrien Wohrer, Mark~D. Humphries, and Christian Machens.
+\newblock Population-wide distributions of neural activity during perceptual
+  decision-making.
+\newblock {\em Progress in Neurobiology}, 2012.
+
+\bibitem{Marsat_2010}
+Gary Marsat and Leonard Maler.
+\newblock Neural heterogeneity and efficient population codes for communication
+  signals.
+\newblock {\em Journal of Neurophysiology}, 104(5):2543--2555, 2010.
+
+\bibitem{SORN_Paper}
+Daniel Miner and Jochen Triesch.
+\newblock Plasticity-driven self-organization under topological constraints
+  accounts for non-random features of cortical synaptic wiring.
+\newblock {\em PLoS Computational Biology}, 2016.
+
+\bibitem{Pengsheng_2013}
+Pengsheng Zheng, Christos Dimitrakakis, and Jochen Triesch.
+\newblock Network self-organization explains the statistics and dynamics of
+  synaptic connection strength in cortex.
+\newblock {\em PLOS Computational Biology}, 2013.
+
+\bibitem{Markram_Connections_1997}
+H~Markram.
+\newblock A network of tufted layer 5 pyramidal neurons.
+\newblock {\em Cerebral Cortex}, 7(6):523--533, 1997.
+
+\bibitem{Song_Connectivity_2005}
+Sen Song, Per~Jesper Sj\"ostr\"om, Markus Reigl, Sacha Nelson, and Dmitri~B
+  Chklovskii.
+\newblock Highly nonrandom features of synaptic connectivity in local cortical
+  circuits.
+\newblock {\em PLOS Biology}, 3(3), 03 2005.
+
 \bibitem{Sweeney_Paper}
 Yann Sweeney, Jeanette~Hellgren Kotaleski, and Matthias~H. Hennig.
 \newblock A diffusive homeostatic signal maintains neural heterogeneity and
@@ -95,24 +137,6 @@ Hans-Christian Pape and Ralph Mager.
 \newblock Nitric oxide controls oscillatory activity in thalamocortical
   neurons.
 \newblock {\em Neuron}, 9:441--448, 1992.
-
-\bibitem{SORN_Paper}
-Daniel Miner and Jochen Triesch.
-\newblock Plasticity-driven self-organization under topological constraints
-  accounts for non-random features of cortical synaptic wiring.
-\newblock {\em PLoS Computational Biology}, 2016.
-
-\bibitem{Buzsaki_Fir_Rates_2014}
-György Buzsáki and Kenji Mizuseki.
-\newblock The log-dynamic brain: how skewed distributions affect network
-  operations.
-\newblock {\em Nature Reviews Neuroscience}, 2014.
-
-\bibitem{Wohrer_Fir_Rates_2012}
-Adrien Wohrer, Mark~D. Humphries, and Christian Machens.
-\newblock Population-wide distributions of neural activity during perceptual
-  decision-making.
-\newblock {\em Progress in Neurobiology}, 2012.
 
 \bibitem{Briansim}
 Romain Brette, Dan Goodman, and Marcel Stirnberg.
@@ -215,18 +239,6 @@ Srdjan Ostojic.
   fluctuating inputs.
 \newblock {\em Journal of Neurophysiology}, 106(1):361--373, 2011.
 
-\bibitem{Markram_Connections_1997}
-H~Markram.
-\newblock A network of tufted layer 5 pyramidal neurons.
-\newblock {\em Cerebral Cortex}, 7(6):523--533, 1997.
-
-\bibitem{Song_Connectivity_2005}
-Sen Song, Per~Jesper Sj\"ostr\"om, Markus Reigl, Sacha Nelson, and Dmitri~B
-  Chklovskii.
-\newblock Highly nonrandom features of synaptic connectivity in local cortical
-  circuits.
-\newblock {\em PLOS Biology}, 3(3), 03 2005.
-
 \bibitem{Lisman_Synapses_1993}
 John~E. Lisman and Kristen~M. Harris.
 \newblock Quantal analysis and synaptic anatomy — integrating two views of
@@ -249,12 +261,6 @@ Yonatan Loewenstein, Annerose Kuras, and Simon Rumpel.
 Adiel Statman, Maya Kaufman, Amir Minerbi, Noam~E. Ziv, and Naama Brenner.
 \newblock Synaptic size dynamics as an effectively stochastic process.
 \newblock {\em PLOS Computational Biology}, 10(10):1--17, 10 2014.
-
-\bibitem{Pengsheng_2013}
-Pengsheng Zheng, Christos Dimitrakakis, and Jochen Triesch.
-\newblock Network self-organization explains the statistics and dynamics of
-  synaptic connection strength in cortex.
-\newblock {\em PLOS Computational Biology}, 2013.
 
 \bibitem{Effenberger_2015}
 F.~Effenberger and J.~Jost.
