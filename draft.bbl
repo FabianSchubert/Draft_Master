@@ -61,29 +61,17 @@ Gary Marsat and Leonard Maler.
   signals.
 \newblock {\em Journal of Neurophysiology}, 104(5):2543--2555, 2010.
 
-\bibitem{SORN_Paper}
-Daniel Miner and Jochen Triesch.
-\newblock Plasticity-driven self-organization under topological constraints
-  accounts for non-random features of cortical synaptic wiring.
-\newblock {\em PLoS Computational Biology}, 2016.
+\bibitem{Turrigiano_2011}
+G~Turrigiano.
+\newblock Too many cooks? intrinsic and synaptic homeostatic mechanisms in
+  cortical circuit refinement.
+\newblock {\em Annual Review of Neuroscience}, 2011.
 
-\bibitem{Pengsheng_2013}
-Pengsheng Zheng, Christos Dimitrakakis, and Jochen Triesch.
-\newblock Network self-organization explains the statistics and dynamics of
-  synaptic connection strength in cortex.
-\newblock {\em PLOS Computational Biology}, 2013.
-
-\bibitem{Markram_Connections_1997}
-H~Markram.
-\newblock A network of tufted layer 5 pyramidal neurons.
-\newblock {\em Cerebral Cortex}, 7(6):523--533, 1997.
-
-\bibitem{Song_Connectivity_2005}
-Sen Song, Per~Jesper Sj\"ostr\"om, Markus Reigl, Sacha Nelson, and Dmitri~B
-  Chklovskii.
-\newblock Highly nonrandom features of synaptic connectivity in local cortical
-  circuits.
-\newblock {\em PLOS Biology}, 3(3), 03 2005.
+\bibitem{Marder_2006}
+E~Marder and J.~Goaillard.
+\newblock Variability, compensation and homeostasis in neuron and network
+  function.
+\newblock {\em Nature Reviews Neuroscience}, 2006.
 
 \bibitem{Sweeney_Paper}
 Yann Sweeney, Jeanette~Hellgren Kotaleski, and Matthias~H. Hennig.
@@ -137,6 +125,30 @@ Hans-Christian Pape and Ralph Mager.
 \newblock Nitric oxide controls oscillatory activity in thalamocortical
   neurons.
 \newblock {\em Neuron}, 9:441--448, 1992.
+
+\bibitem{SORN_Paper}
+Daniel Miner and Jochen Triesch.
+\newblock Plasticity-driven self-organization under topological constraints
+  accounts for non-random features of cortical synaptic wiring.
+\newblock {\em PLoS Computational Biology}, 2016.
+
+\bibitem{Pengsheng_2013}
+Pengsheng Zheng, Christos Dimitrakakis, and Jochen Triesch.
+\newblock Network self-organization explains the statistics and dynamics of
+  synaptic connection strength in cortex.
+\newblock {\em PLOS Computational Biology}, 2013.
+
+\bibitem{Markram_Connections_1997}
+H~Markram.
+\newblock A network of tufted layer 5 pyramidal neurons.
+\newblock {\em Cerebral Cortex}, 7(6):523--533, 1997.
+
+\bibitem{Song_Connectivity_2005}
+Sen Song, Per~Jesper Sj\"ostr\"om, Markus Reigl, Sacha Nelson, and Dmitri~B
+  Chklovskii.
+\newblock Highly nonrandom features of synaptic connectivity in local cortical
+  circuits.
+\newblock {\em PLOS Biology}, 3(3), 03 2005.
 
 \bibitem{Briansim}
 Romain Brette, Dan Goodman, and Marcel Stirnberg.
