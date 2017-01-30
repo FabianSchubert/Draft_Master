@@ -43,6 +43,16 @@ Peter Dayan and L.F. Abbott.
 \newblock {\em Theoretical Neuroscience}.
 \newblock MIT Press, 2001.
 
+\bibitem{Cybernetik_Systems_Cruse_2006}
+Holk Cruse.
+\newblock {\em Neural Networks as Cybernetic Systems}.
+\newblock Brains, Minds \& Media, 2006.
+
+\bibitem{LeMasson_1993}
+G~LeMasson, E~Marder, and LF~Abbott.
+\newblock Activity-dependent regulation of conductances in model neurons.
+\newblock {\em Science}, 259(5103):1915--1917, 1993.
+
 \bibitem{Buzsaki_Fir_Rates_2014}
 György Buzsáki and Kenji Mizuseki.
 \newblock The log-dynamic brain: how skewed distributions affect network
@@ -149,6 +159,12 @@ Sen Song, Per~Jesper Sj\"ostr\"om, Markus Reigl, Sacha Nelson, and Dmitri~B
 \newblock Highly nonrandom features of synaptic connectivity in local cortical
   circuits.
 \newblock {\em PLOS Biology}, 3(3), 03 2005.
+
+\bibitem{Hartmann_2016}
+Christoph Hartmann, Andreea Lazar, Bernhard Nessler, and Jochen Triesch.
+\newblock Where’s the noise? key features of spontaneous activity and neural
+  variability arise through learning in a deterministic network.
+\newblock {\em PLOS Computational Biology}, 11(12):1--35, 12 2016.
 
 \bibitem{Briansim}
 Romain Brette, Dan Goodman, and Marcel Stirnberg.
