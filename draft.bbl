@@ -6,29 +6,29 @@ Mark~F. Bear, B.~W. Connors, and Michael~A. Paradiso.
 \newblock Lippincott Williams \& Wilki, 2007.
 
 \bibitem{Wisdom_of_the_Body_Cannon}
-Walter~B. Cannon.
+W.~B. Cannon.
 \newblock {\em The Wisdom of the Body}.
 \newblock Norton \& Company, 1932.
 
 \bibitem{Homeostasis_Queenan_2012}
-Bridget~N. Queenan, Kea~Joo Lee, and Daniel T.~S. Pak.
+B.~N. Queenan, K.~J. Lee, and D.~T.~S. Pak.
 \newblock Where art thou, homeo(stasis)? functional diversity in homeostatic
   synaptic plasticity.
 \newblock {\em Neural Plasticity}, 2012, 2012.
 
 \bibitem{Turrigiano_1994}
-G~Turrigiano, LF~Abbott, and E~Marder.
+G.~G. Turrigiano, L.~F. Abbott, and E.~Marder.
 \newblock Activity-dependent changes in the intrinsic properties of cultured
   neurons.
 \newblock {\em Science}, 264(5161):974--977, 1994.
 
 \bibitem{Burrone_2003}
-Juan Burrone and Venkatesh~N Murthy.
+J.~Burrone and V.~N. Murthy.
 \newblock Synaptic gain control and homeostasis.
 \newblock {\em Current Opinion in Neurobiology}, 13(5):560 -- 567, 2003.
 
 \bibitem{Desai_2003}
-Niraj~S. Desai.
+Niraj~S. D.
 \newblock Homeostatic plasticity in the cns: synaptic and intrinsic forms.
 \newblock {\em Journal of Physiology-Paris}, 97(4–6):391 -- 402, 2003.
 \newblock Neuroscience and Computation.
@@ -39,17 +39,17 @@ L.~Abbott and S.~B. Nelson.
 \newblock {\em Nature Neuroscience}, 2000.
 
 \bibitem{Theor_Neur_Dayan}
-Peter Dayan and L.F. Abbott.
+P.~Dayan and L.F. Abbott.
 \newblock {\em Theoretical Neuroscience}.
 \newblock MIT Press, 2001.
 
 \bibitem{Cybernetik_Systems_Cruse_2006}
-Holk Cruse.
+H.~Cruse.
 \newblock {\em Neural Networks as Cybernetic Systems}.
 \newblock Brains, Minds \& Media, 2006.
 
 \bibitem{LeMasson_1993}
-G~LeMasson, E~Marder, and LF~Abbott.
+G.~LeMasson, E.~Marder, and L.~F. Abbott.
 \newblock Activity-dependent regulation of conductances in model neurons.
 \newblock {\em Science}, 259(5103):1915--1917, 1993.
 
@@ -60,49 +60,48 @@ J.~Burrone, M.~O'Byrne, and V.~N. Murthy.
 \newblock {\em Nature}, 2002.
 
 \bibitem{Buzsaki_Fir_Rates_2014}
-György Buzsáki and Kenji Mizuseki.
+G.~Buzsáki and K.~Mizuseki.
 \newblock The log-dynamic brain: how skewed distributions affect network
   operations.
 \newblock {\em Nature Reviews Neuroscience}, 2014.
 
 \bibitem{Wohrer_Fir_Rates_2012}
-Adrien Wohrer, Mark~D. Humphries, and Christian Machens.
+A.~Wohrer, M.~D. Humphries, and C.~Machens.
 \newblock Population-wide distributions of neural activity during perceptual
   decision-making.
 \newblock {\em Progress in Neurobiology}, 2012.
 
 \bibitem{Marsat_2010}
-Gary Marsat and Leonard Maler.
+G.~Marsat and L.~Maler.
 \newblock Neural heterogeneity and efficient population codes for communication
   signals.
 \newblock {\em Journal of Neurophysiology}, 104(5):2543--2555, 2010.
 
 \bibitem{Turrigiano_2011}
-G~Turrigiano.
+G.~G. Turrigiano.
 \newblock Too many cooks? intrinsic and synaptic homeostatic mechanisms in
   cortical circuit refinement.
 \newblock {\em Annual Review of Neuroscience}, 2011.
 
 \bibitem{Marder_2006}
-E~Marder and J.~Goaillard.
+E.~Marder and J.~Goaillard.
 \newblock Variability, compensation and homeostasis in neuron and network
   function.
 \newblock {\em Nature Reviews Neuroscience}, 2006.
 
 \bibitem{Sweeney_Paper}
-Yann Sweeney, Jeanette~Hellgren Kotaleski, and Matthias~H. Hennig.
+Y.~Sweeney, J.~H. Kotaleski, and M.~H. Hennig.
 \newblock A diffusive homeostatic signal maintains neural heterogeneity and
   responsiveness in cortical networks.
 \newblock {\em PLoS Computational Biology}, 2015.
 
 \bibitem{NOS_Mammals}
-Richard~G. Knowles and Salvador Moncada.
+R.~G. Knowles and S.~Moncada.
 \newblock Nitrix oxide synthases in mammals.
 \newblock {\em Biochemical Journal}, 298(Pt 2):249--258, 1994.
 
 \bibitem{Knowles_Ca_nNOS}
-Richard~G. Knowles, Miriam Palacios, Richard M.~J. Palmer, and Salvador
-  Moncada.
+R.~G. Knowles, M.~Palacios, R.~M.~J. Palmer, and S.~Moncada.
 \newblock Formation of nitric oxide from l-arginine in the central nervous
   system: a transduction mechanism for stimulation of the soluble guanylate
   cyclase.
@@ -110,22 +109,21 @@ Richard~G. Knowles, Miriam Palacios, Richard M.~J. Palmer, and Salvador
   1989.
 
 \bibitem{Steinert_NO}
-J.~Steinert, Cornelia Kopp-Scheinpflug, Claire Baker, R.A.~John Challiss, Raj
-  Mistry, Martin~D. Haustein, Sarah~J. Griffin, Huaxia Tong, Bruce~P. Graham,
-  and Ian~D. Forsythe.
+J.~Steinert, C.~Kopp-Scheinpflug, C.~Baker, R.~J. Challiss, R.~Mistry,
+  M.~Haustein, S.~J. Griffin, H.~Tong, B.~P. Graham, and I.~D. Forsythe.
 \newblock Nitric oxide is a volume transmitter regulating postsynaptic
   excitability at a glutamatergic synapse.
 \newblock {\em Neuron}, 60(4):642 -- 656, 2008.
 
 \bibitem{Lancaster_1994}
-J~R Lancaster.
+J.~R. Lancaster.
 \newblock Simulation of the diffusion and reaction of endogenously produced
   nitric oxide.
 \newblock {\em Proceedings of the National Academy of Sciences of the United
   States of America}, 91(17):8137--8141, August 1994.
 
 \bibitem{Hille_Ion_Channels}
-Bertil Hille.
+B.~Hille.
 \newblock {\em Ionic Channels of Excitable Membranes}.
 \newblock Sinauer Associates, 2001.
 
@@ -137,37 +135,36 @@ J.~Steinert, S.~Robinson, H.~Tong, M.~Haustein, C.~Kopp-Scheinpflug, and
 \newblock {\em Neuron}, 71(2):291--305, 2011.
 
 \bibitem{Pape_NO}
-Hans-Christian Pape and Ralph Mager.
+H.-C. Pape and R.~Mager.
 \newblock Nitric oxide controls oscillatory activity in thalamocortical
   neurons.
 \newblock {\em Neuron}, 9:441--448, 1992.
 
 \bibitem{SORN_Paper}
-Daniel Miner and Jochen Triesch.
+D.~Miner and J.~Triesch.
 \newblock Plasticity-driven self-organization under topological constraints
   accounts for non-random features of cortical synaptic wiring.
 \newblock {\em PLoS Computational Biology}, 2016.
 
 \bibitem{Pengsheng_2013}
-Pengsheng Zheng, Christos Dimitrakakis, and Jochen Triesch.
+P.~Zheng, C.~Dimitrakakis, and J.~Triesch.
 \newblock Network self-organization explains the statistics and dynamics of
   synaptic connection strength in cortex.
 \newblock {\em PLOS Computational Biology}, 2013.
 
 \bibitem{Markram_Connections_1997}
-H~Markram.
+H.~Markram.
 \newblock A network of tufted layer 5 pyramidal neurons.
 \newblock {\em Cerebral Cortex}, 7(6):523--533, 1997.
 
 \bibitem{Song_Connectivity_2005}
-Sen Song, Per~Jesper Sj\"ostr\"om, Markus Reigl, Sacha Nelson, and Dmitri~B
-  Chklovskii.
+S.~Song, P.~J. Sj\"ostr\"om, M.~Reigl, S.~Nelson, and D.~B. Chklovskii.
 \newblock Highly nonrandom features of synaptic connectivity in local cortical
   circuits.
 \newblock {\em PLOS Biology}, 3(3), 03 2005.
 
 \bibitem{Hartmann_2016}
-Christoph Hartmann, Andreea Lazar, Bernhard Nessler, and Jochen Triesch.
+C.~Hartmann, A.~Lazar, B.~Nessler, and J.~Triesch.
 \newblock Where’s the noise? key features of spontaneous activity and neural
   variability arise through learning in a deterministic network.
 \newblock {\em PLOS Computational Biology}, 11(12):1--35, 12 2016.
@@ -179,49 +176,48 @@ Romain Brette, Dan Goodman, and Marcel Stirnberg.
 \newblock \url{http://www.briansimulator.org/}, 2016.
 
 \bibitem{Zhang_STDP}
-Li~I. Zhang, Li~I. Zhang, Huizhong~W. Tao, Christine~E. Holt, William~A.
-  Harris, and Mu-ming Poo.
+L.~I. Zhang, H.~W. Tao, C.~E. Holt, W.~A. Harris, and M.~Poo.
 \newblock A critical window for cooperation and competition among developing
   retinotectal synapses.
 \newblock {\em Nature}, 395:37--44, 1998.
 
 \bibitem{Bi_Poo_STDP}
-Guo-qiang Bi and Mu-ming Poo.
+G.~Bi and M.~Poo.
 \newblock Synaptic modifications in cultured hippocampal neurons: Dependence on
   spike timing, synaptic strength, and postsynaptic cell type.
 \newblock {\em The Journal of Neuroscience}, 18(24):10464--10472, 1998.
 
 \bibitem{Froemke_STDP}
-Robert~C. Froemke, Mu-ming Poo, and Yang Dan.
+R.~C. Froemke, M.~Poo, and Y.~Dan.
 \newblock Spike-timing-dependent synaptic plasticity depends on dendritic
   location.
 \newblock {\em Nature}, 434(7030):221--225, March 2005.
 
 \bibitem{Markram_STP}
-Henry Markram, Yun Wang, and Misha Tsodyks.
+H.~Markram, Y.~Wang, and M.~Tsodyks.
 \newblock Differential signaling via the same axon of neocortical pyramidal
   neurons.
 \newblock {\em Proceedings of the National Academy of Sciences},
   95(9):5323--5328, 1998.
 
 \bibitem{Connors_Gutnick_Spike_Patterns}
-Barry~W. Connors and Michael~J. Gutnick.
+B.~W. Connors and M.~J. Gutnick.
 \newblock Intrinsic firing patterns of diverse neocortical neurons.
 \newblock {\em Trends in Neurosciences}, 13(3):99 -- 104, 1990.
 
 \bibitem{Benda_Herz_Spike_Frequ_Adaption}
-Jan Benda and Andreas V.~M. Herz.
+J.~Benda and A.~V.~M. Herz.
 \newblock A universal model for spike-frequency adaption.
 \newblock {\em Neural Computation}, 15(11):2523--2564, 2003.
 
 \bibitem{Desai_IP}
-Niraj~S. Desai, Lana~C. Rutherford, and Gina~G. Turrigiano.
+N.~S. Desai, L.~C. Rutherford, and G.~G. Turrigiano.
 \newblock Plasticity in the intrinsic excitability of cortical pyramidal
   neurons.
 \newblock {\em Nature Neuroscience}, 2:515--520, 1999.
 
 \bibitem{Izhikevich_Dynsys}
-Eugene~M. Izhikevich.
+E.~M. Izhikevich.
 \newblock {\em Dynamical Systems in Neuroscience - The Geometry of Excitability
   and Bursting}.
 \newblock The MIT Press, 2007.
@@ -233,66 +229,64 @@ AV. Hill.
 \newblock {\em The Journal of Physiology}, 40:iv---vii, 1910.
 
 \bibitem{Philippides_2000}
-Andrew Philippides, Phil Husbands, and Michael O{\textquoteright}Shea.
+A.~Philippides, P.~Husbands, and M.~O{\textquoteright}Shea.
 \newblock Four-dimensional neuronal signaling by nitric oxide: A computational
   analysis.
 \newblock {\em Journal of Neuroscience}, 20(3):1199--1207, 2000.
 
 \bibitem{Dyn_Sys_Hirsch}
-Morris~W. Hirsch and Stephen Smale, editors.
+M.~W. Hirsch and S.~Smale, editors.
 \newblock {\em Differential Equations, Dynamical Systems, and Linear Algebra},
   volume~60 of {\em Pure and Applied Mathematics}.
 \newblock Elsevier, 1974.
 
 \bibitem{Gerstner_Pop_Act}
-Wulfram Gerstner.
+W.~Gerstner.
 \newblock Time structure of the activity in neural network models.
 \newblock {\em Phys. Rev. E}, 51:738--758, Jan 1995.
 
 \bibitem{Roxin_Firing_Rate_Distribution}
-Alex Roxin, Nicolas Brunel, David Hansel, Gianluigi Mongillo, and Carl van
-  Vreeswijk.
+A.~Roxin, N.~Brunel, D.~Hansel, G.~Mongillo, and C.~van Vreeswijk.
 \newblock On the distribution of firing rates in networks of cortical neurons.
 \newblock {\em Journal of Neuroscience}, 31(45):16217--16226, 2011.
 
 \bibitem{Vreeswijk1996}
-C~van Vreeswijk and H~Sompolinsky.
+C.~van Vreeswijk and H.~Sompolinsky.
 \newblock Chaos in neuronal networks with balanced excitatory and inhibitory
   activity.
 \newblock {\em Science}, 274:1724--1726, 1996.
 
 \bibitem{Brunel2000}
-N~Brunel.
+N.~Brunel.
 \newblock Dynamics of sparsely connected networks of excitatory and inhibitory
   spiking neurons.
 \newblock {\em J Comput Neurosci}, 8:183--208, 2000.
 
 \bibitem{Ostojic2011}
-Srdjan Ostojic.
+S.~Ostojic.
 \newblock Interspike interval distributions of spiking neurons driven by
   fluctuating inputs.
 \newblock {\em Journal of Neurophysiology}, 106(1):361--373, 2011.
 
 \bibitem{Lisman_Synapses_1993}
-John~E. Lisman and Kristen~M. Harris.
+J.~E. Lisman and K.~M. Harris.
 \newblock Quantal analysis and synaptic anatomy — integrating two views of
   hippocampal plasticity.
 \newblock {\em Trends in Neurosciences}, 16(4):141 -- 147, 1993.
 
 \bibitem{Yasumatsu_Synapses_2008}
-Nobuaki Yasumatsu, Masanori Matsuzaki, Takashi Miyazaki, Jun Noguchi, and Haruo
-  Kasai.
+N.~Yasumatsu, M.~Matsuzaki, T.~Miyazaki, J.~Noguchi, and H.~Kasai.
 \newblock Principles of long-term dynamics of dendritic spines.
 \newblock {\em Journal of Neuroscience}, 28(50):13592--13608, 2008.
 
 \bibitem{Loewenstein_Spine_Sizes}
-Yonatan Loewenstein, Annerose Kuras, and Simon Rumpel.
+Y.~Loewenstein, A.~Kuras, and S.~Rumpel.
 \newblock Multiplicative dynamics underlie the emergence of the log-normal
   distribution of spine sizes in the neocortex in vivo.
 \newblock {\em Journal of Neuroscience}, 31(26):9481--9488, 2011.
 
 \bibitem{Statman_Synapses_2014}
-Adiel Statman, Maya Kaufman, Amir Minerbi, Noam~E. Ziv, and Naama Brenner.
+A.~Statman, M.~Kaufman, A.~Minerbi, N.~E. Ziv, and N.~Brenner.
 \newblock Synaptic size dynamics as an effectively stochastic process.
 \newblock {\em PLOS Computational Biology}, 10(10):1--17, 10 2014.
 
@@ -303,13 +297,13 @@ F.~Effenberger and J.~Jost.
 \newblock {\em PLOS Computational Biology}, 2015.
 
 \bibitem{Yassin_Subnetworks_2010}
-Lina Yassin, Brett~L. Benedetti, Jean-Sébastien Jouhanneau, Jing~A. Wen,
-  James~F.A. Poulet, and Alison~L. Barth.
+L.~Yassin, B.~L. Benedetti, J.-S. Jouhanneau, J.~A. Wen, J.~F. Poulet, and
+  A.~L. Barth.
 \newblock An embedded subnetwork of highly active neurons in the neocortex.
 \newblock {\em Neuron}, 68(6):1043 -- 1050, 2010.
 
 \bibitem{Eckmann_Leader_Neurons_2008}
-J.P. Eckmann, Shimshon Jacobi, Shimon Marom, Elisha Moses, and Cyrille Zbinden.
+J.P. Eckmann, S.~Jacobi, S.~Marom, E.~Moses, and C.~Zbinden.
 \newblock Leader neurons in population bursts of 2d living neural networks.
 \newblock {\em New Journal of Physics}, 10, 2008.
 
@@ -325,37 +319,36 @@ D.~Feldman.
 \newblock {\em Neuron}, 2012.
 
 \bibitem{Helmholtz_Solution_2d}
-Roberto~Toscano Couto.
+R.~T. Couto.
 \newblock Green's functions for the wave, helmholtz and poisson equations in a
   two-dimensional boundless domain.
 \newblock {\em Revista Brasileira de Ensino Física}, 2013.
 
 \bibitem{Stability_Homeostasis_Harnack_2015}
-Daniel Harnack, Miha Pelko, Antoine Chaillet, Yacine Chitour, and Mark C.~W.
-  van Rossum.
+D.~Harnack, M.~Pelko, A.~Chaillet, Y.~Chitour, and M.~C.~W. van Rossum.
 \newblock Stability of neuronal networks with homeostatic regulation.
 \newblock {\em PLOS Computational Biology}, 2015.
 
 \bibitem{Vreeswijk1998}
-C~van Vreeswijk and H~Sompolinsky.
+C.~van Vreeswijk and H.~Sompolinsky.
 \newblock Chaotic balanced state in a model of cortical circuits.
 \newblock {\em Neural Computation}, 1998.
 
 \bibitem{Ivenshitz_2010}
-Miriam Ivenshitz and Menahem Segal.
+M.~Ivenshitz and M.~Segal.
 \newblock Neuronal density determines network connectivity and spontaneous
   activity in cultured hippocampus.
 \newblock {\em Journal of Neurophysiology}, 104(2):1052--1060, 2010.
 
 \bibitem{Lever_Long_Term_Plast_2002}
-Colin Lever, Tom Wills, Francesca Cacucci, Neil Burgess, and John O'Keefe.
+C.~Lever, T.~Wills, F.~Cacucci, N.~Burgess, and J.~O'Keefe.
 \newblock Long-term plasticity in hippocampal place-cell representation of
   environmental geometry.
 \newblock {\em Nature}, 2002.
 
 \bibitem{Philippides_2005}
-Andrew Philippides, Swidbert~R. Ott, Philip Husbands, Thelma~A. Lovick, and
-  Michael O{\textquoteright}Shea.
+A.~Philippides, S.~R. Ott, P.~Husbands, T.~A. Lovick, and
+  M.~O{\textquoteright}Shea.
 \newblock Modeling cooperative volume signaling in a plexus of nitric oxide
   synthase-expressing neurons.
 \newblock {\em Journal of Neuroscience}, 25(28):6520--6532, 2005.
