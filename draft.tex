@@ -83,14 +83,26 @@ not used other than the declared sources/resources. I explicitly marked all mate
 
 \clearpage
 \thispagestyle{empty}
- 
+
+\makeatother
+\MSonehalfspacing
+
+\begin{abstract}
+Building upon on a self-organizing spiking neural network (LIF-SORN) we attempted to replace the intrinsic homeostatic control system used in earlier versions by a mechanism based on the diffusion of a neurotransmitter across the nervous tissue. The model of diffusive homeostasis was adopted from a paper by Sweeney et al. and models the tissue as a surface of square shape and a set of points on this surface, representing the positions of the neurons within the network. Excitatory neurons acted as a source of nitric oxide (NO), as well as as a sensor for the NO concentration at each individual position. Production and sensing of NO formed the basis of a feedback loop: Individual NO readouts caused an appropriate change within the internal excitability of the neurons. The control system was closed by linking the rate of NO production to the neurons' firing rates.
+
+The main goal of this modification was to allow for a broad and heavy tailed distribution of firing rates among the excitatory neural population. This feature of cortical activity has been extensively observed and studied experimentally, but could not be achieved by the formerly used single-cell homeostatic mechanism which bound firing rates of all neurons to a fixed target value. Indeed, our statistical analysis of spiking activity showed that diffusive homeostasis could significantly broaden the distribution of firing rates.
+
+After having analyzed the stability of the homeostatic control loop and the resulting statistical features of spiking activity, we compared both homeostatic mechanisms with respect to features of synaptic network structures emerging throughout the simulation. Apart from the preservation of a number of topological features we found that diffusive homeostasis allowed for the emergence of highly influential neurons with strong outgoing synaptic efficacies. By means of an analytic approach to the homeostatic steady state, we could relate this feature of synaptic topology to the imposed spatial structure of the neural population.
+\end{abstract}
+
+\clearpage
+
 \tableofcontents
 \newpage
 \clearpage
 \setcounter{page}{1}
 
-\makeatother
-\MSonehalfspacing
+
 
 \section{Introduction}
 \subsection{Homeostasis in the Nervous System}
@@ -170,7 +182,7 @@ conduction delay & $1.5 ms$ & $0.5 ms$ & $1.0 ms$ & $1.0 ms$ \\
 \subsubsection{Synaptic Plasticity}
 \textbf{Synaptic Growth:} The random, distance dependent generation of new EE synapses was carried out n times once per second, where n is taken from a normal distribution with mean 920 and standard deviation $\sqrt{920}$. This constant growth rate was tuned to achieve the desired target concentration of 0.1 (see \ref{syn_conn_params}).
 
-\textbf{Synaptic Pruning:} At the same rate of 1/sec, EE synapses below a threshold of 0.000001 mV were removed, thus being added again to the set of "potential" connections from which the growth process draws new connections. Especially, they were temporarily excluded from STDP (see below).
+\textbf{Synaptic Pruning:} At the same rate of 1/sec, EE synapses below a threshold of 0.000001 mV were removed, thus being added again to the set of "potential" connections from which the growth process draws new connections.
 
 \textbf{Spike Timing Dependent Plasticity:} An additive STDP rule was used as described e.g. in \cite{Zhang_STDP}. The change of weight between two neurons due to a pre- and postsynaptic spike (i $\rightarrow$ j) is defined as:
 \begin{align}
