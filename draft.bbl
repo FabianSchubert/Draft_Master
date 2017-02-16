@@ -28,7 +28,7 @@ J.~Burrone and V.~N. Murthy.
 \newblock {\em Current Opinion in Neurobiology}, 13(5):560 -- 567, 2003.
 
 \bibitem{Desai_2003}
-Niraj~S. D.
+N.~S. Desai.
 \newblock Homeostatic plasticity in the cns: synaptic and intrinsic forms.
 \newblock {\em Journal of Physiology-Paris}, 97(4–6):391 -- 402, 2003.
 \newblock Neuroscience and Computation.
@@ -71,11 +71,23 @@ A.~Wohrer, M.~D. Humphries, and C.~Machens.
   decision-making.
 \newblock {\em Progress in Neurobiology}, 2012.
 
-\bibitem{Marsat_2010}
-G.~Marsat and L.~Maler.
-\newblock Neural heterogeneity and efficient population codes for communication
-  signals.
-\newblock {\em Journal of Neurophysiology}, 104(5):2543--2555, 2010.
+\bibitem{Dragoi_2003}
+G.~Dragoi, K.~D. Harris, and G.~Buzsáki.
+\newblock Place representation within hippocampal networks is modified by
+  long-term potentiation.
+\newblock {\em Neuron}, 39(5):843 -- 853, 2003.
+
+\bibitem{OConnor_2010}
+D.~H O'Connor, S.~P. Peron, D.~Huber, and K.~Svoboda.
+\newblock Neural activity in barrel cortex underlying vibrissa-based object
+  localization in mice.
+\newblock {\em Neuron}, 67, 2010.
+
+\bibitem{Mizuseki_2013}
+K.~Mizuseki and G.~Buzsáki.
+\newblock Preconfigured, skewed distribution of firing rates in the hippocampus
+  and entorhinal cortex.
+\newblock {\em Cell Reports}, 4, 2013.
 
 \bibitem{Turrigiano_2011}
 G.~G. Turrigiano.
