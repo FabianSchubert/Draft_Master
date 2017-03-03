@@ -326,6 +326,12 @@ A.~Statman, M.~Kaufman, A.~Minerbi, N.~E. Ziv, and N.~Brenner.
 \newblock Synaptic size dynamics as an effectively stochastic process.
 \newblock {\em PLOS Computational Biology}, 10(10):1--17, 10 2014.
 
+\bibitem{Roy_1968}
+L.K. Roy and M.T. Wasan.
+\newblock The first passage time distribution of brownian motion with positive
+  drift.
+\newblock {\em Mathematical Biosciences}, 3:191 -- 204, 1968.
+
 \bibitem{Effenberger_2015}
 F.~Effenberger and J.~Jost.
 \newblock Self-organization in balanced state networks by stdp and homeostatic
@@ -342,6 +348,12 @@ L.~Yassin, B.~L. Benedetti, J.-S. Jouhanneau, J.~A. Wen, J.~F. Poulet, and
 J.P. Eckmann, S.~Jacobi, S.~Marom, E.~Moses, and C.~Zbinden.
 \newblock Leader neurons in population bursts of 2d living neural networks.
 \newblock {\em New Journal of Physics}, 10, 2008.
+
+\bibitem{Vogels_2011}
+T.~P. Vogels, H.~Sprekeler, F.~Zenke, C.~Clopath, and W.~Gerstner.
+\newblock Inhibitory plasticity balances excitation and inhibition in sensory
+  pathways and memory networks.
+\newblock {\em Science}, 334(6062):1569--1573, 2011.
 
 \bibitem{Sjoestroem_Syn_Plasticity_2001}
 P.~J. Sj\"ostr\"om and G.~G. Turrigiano.

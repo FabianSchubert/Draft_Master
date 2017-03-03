@@ -16,7 +16,7 @@
 \usepackage{cite}
 \usepackage{hyperref}
 \usepackage{caption}
-
+\usepackage{tabu}
 \usepackage{float}
 
 \captionsetup[table]{singlelinecheck=false}
@@ -47,6 +47,8 @@ Spatially dependent Interaction as a Determinant of Neural Activity and Plastici
 
 
 \begin{document}
+\tabulinesep=1.2mm
+
 \begin{titlepage}
 \clearpage
 \thispagestyle{empty}
@@ -175,14 +177,14 @@ The Neural Network was simulated with the code used in \cite{SORN_Paper}, which 
 Recurrent excitatory synapses were subject to a number of plastic mechanisms to be described in Section \ref{Section_Syn_Plast}. 
 
 \begin{table}
-\begin{tabular}{|l|l|l|l|l|}
+\begin{tabu}{|l|l|l|l|l|}
 \hline
 \textbf{parameter} & \textbf{EE} & \textbf{EI} & \textbf{IE} & \textbf{II} \\ \hline
 connection fraction & $\rightarrow 0.1$ & $0.1$ & $0.1$ & $0.5$ \\ \hline
 initial connection strength & $0.0001 mV$ & $1.5 mV$ & $-1.5 mV$ & $-1.5 mV$ \\ \hline
 conduction delay & $1.5 ms$ & $0.5 ms$ & $1.0 ms$ & $1.0 ms$ \\
 \hline
-\end{tabular}
+\end{tabu}
 \caption{Parameters of synaptic connections.}
 \label{syn_conn_params}
 \end{table}
@@ -196,7 +198,7 @@ We used a leaky integrate-and-fire model for all neurons in the network, whose d
 \end{equation}
 where $V_i$ is the membrane potential of neuron $i$, $E_l$ is the equilibrium membrane potential, $\tau_m$ is the time constant of the membrane, $\sigma$ is the standard deviation of the noise term and $dW$ is the standard Wiener process. A neuron is said to spike when its membrane potential reaches the threshold voltage $V_t$. The voltage is then reset to $V_r$. A refractory period was not implemented. A presynaptic spike from neuron $j$ causes a simple (delayed, see Table \ref{syn_conn_params}) increment of the membrane potential of the postsynaptic neuron $i$ by $w^{\rm effective}_{ij}$. Table \ref{LIF_neuron_params} summarizes the aforementioned set of parameters.
 \begin{table}[H]
-\begin{tabular}{|l|l|l|}
+\begin{tabu}{|l|l|l|}
 \hline
 \textbf{parameter} & \textbf{exc. neur.} & \textbf{inh. neur.}\\ \hline
 $\mathrm{E_l}$ & $\mathrm{-60\;mV}$ & $\mathrm{-60\;mV}$ \\ \hline
@@ -205,7 +207,7 @@ $\mathrm{V_r}$ & $\mathrm{-70\;mV}$ & $\mathrm{-60\;mV}$ \\ \hline
 $\mathrm{\sigma}$ & $\mathrm{\sqrt{5}\;mV}$ & $\mathrm{\sqrt{5}\;mV}$ \\ \hline
 $\mathrm{V_t}$ & subject to IP & $\mathrm{-58\;mV}$ \\ 
 \hline
-\end{tabular}
+\end{tabu}
 \caption{Parameters of LIF neuron}
 \label{LIF_neuron_params}
 \end{table}   
@@ -277,7 +279,7 @@ Finally, the dynamics of firing thresholds $V_{t,i}$ were modeled such that the 
 
 The appropriate choice of $NO_0$ is obviously crucial for the goal of achieving and maintaining a certain level of activity. However, one cannot directly set a parameter of the model to the desired population activity as was the case for canonical intrinsic homeostasis. One rather needs to determine the average concentration \textit{associated} with the desired activity and set it as a target concentration. Though it is possible to derive this relation in an analytic fashion, we let the system run with the previous homeostatic mechanism, still solving equation \eqref{Ca_dyn}--\eqref{NO_dyn} until a steady mean over the concentrations at the neurons' positions was reached. This mean was then set to be the target concentration and we switched to diffusive homeostasis. Table \ref{Params_IP} summarizes the choice of parameters that were introduced in this section. Diffusion parameters roughly match those measured in experiments \cite{Philippides_2000}.
 \begin{table}
-\begin{tabular}{|l|l|}
+\begin{tabu}{|l|l|}
 \hline
 \textbf{parameter} & \textbf{value} \\
 \hline
@@ -296,7 +298,7 @@ $\mathrm{\lambda}$ & $\mathrm{0.1\;s^{-1}}$ \\
 \hline
 $\mathrm{\tau_{V_t}}$ & see Section \ref{activ_analys} \\
 \hline
-\end{tabular}
+\end{tabu}
 \caption{Parameters of homeostatic intrinsic plasticity.}
 \label{Params_IP}
 \end{table}
@@ -436,7 +438,7 @@ Both forms of homeostasis use excitatory firing thresholds as a means of adjusti
 \end{figure}
 We thus presumed an immediate functional relationship $\mathbf{r}_e (t) = \mathbf{r}_e (\mathbf{V}_{t,e} (t))$ in a first attempt at understanding the occurrence of undesired oscillations, where $\mathbf{r}_e$ and $\mathbf{V}_{t,e}$ represent the set of excitatory firing rates and thresholds, respectively.
 
-Describing the neural activity as instantaneous firing rates raises the question how to describe the production of nitric oxide, since the outcome of equations \eqref{Ca_dyn} and \eqref{nNOS_dyn} relies on sudden increases of $Ca^{2+}$ concentration caused by spike events. One could naively replace the sum of Dirac functions in \eqref{Ca_dyn} by a continuous inflow $Ca^{2+}_{\rm spike} r_i(t)$. This approximation would indeed allow for the correct calculation of a linear relation between mean firing rate and NO production if \eqref{nNOS_dyn} was a linear homogeneous differential equation. The cubic dependence on $Ca^{2+}$ breaks this simplicity. We note the following in order to derive an approximate description: The target firing rate of 3 Hz and the corresponding mean interspike interval of 0.33...s is large compared to the decay constant of calcium, $\tau_{Ca^{2+}} = \mathrm{0.01\,s}$. Consequently, it is very unlikely that one spike event will fall into a region where the calcium concentration, decaying from the instant jump of the previous spike event, is still significantly larger than zero. In fact, calculating the mean concentration of $\rm Ca^{2+}$ before a new spike event over all neurons and all spike events for $\rm 1500\,s$ resulted in a value of $\rm 0.0013$. As such, one can justify the approximation of replacing the exact expression of ${Ca^{2+}}^3(t)$, which is a cubed sum of cut-off exponential functions, by a sum of cubed exponentials, because only one term of the sum at a time is significantly larger than zero:
+Describing the neural activity as instantaneous firing rates raises the question how to describe the production of nitric oxide, since the outcome of Equations \eqref{Ca_dyn} and \eqref{nNOS_dyn} relies on sudden increases of $\rm Ca^{2+}$ concentration caused by spike events. One could naively replace the sum of Dirac functions in \eqref{Ca_dyn} by a continuous inflow $Ca^{2+}_{\rm spike} r_i(t)$. This approximation would indeed allow for the correct calculation of a linear relation between mean firing rate and NO production if \eqref{nNOS_dyn} was a linear homogeneous differential equation. The cubic dependence on $Ca^{2+}$ breaks this simplicity. We note the following in order to derive an approximate description: The target firing rate of 3 Hz and the corresponding mean interspike interval of 0.33...s is large compared to the decay constant of calcium, $\tau_{Ca^{2+}} = \mathrm{0.01\,s}$. Consequently, it is very unlikely that one spike event will fall into a region where the calcium concentration, decaying from the instant jump of the previous spike event, is still significantly larger than zero. In fact, calculating the mean concentration of $\rm Ca^{2+}$ before a new spike event over all neurons and all spike events for $\rm 1500\,s$ resulted in a value of $\rm 0.0013$. As such, one can justify the approximation of replacing the exact expression of ${Ca^{2+}}^3(t)$, which is a cubed sum of cut-off exponential functions, by a sum of cubed exponentials, because only one term of the sum at a time is significantly larger than zero:
 \begin{equation}
 \begin{split}
 {Ca^{2+}}^3(t) &= \left[ Ca^{2+}_{\rm spike} \sum_{i} \mathrm{\theta} \left( t-t^i_{\rm spike} \right) \mathrm{exp} \left( - \left( t-t^i_{\rm spike} \right) /\tau_{Ca^{2+}} \right) \right]^3 \\
@@ -610,7 +612,7 @@ We applied external Poisson input for $\mathrm{t\geq 300\, s}$ onto two excitato
 \label{Ext_Input_Switch}
 \end{figure}
 
-Sweeney et al. found that diffusive homeostasis maintains broadness of firing rates across a wide range of diffusion constants but rapidly approaching zero for small values \cite[p. 6]{Sweeney_Paper}. We were able to reproduce this result, see Figure \ref{Fir_Rate_Dist_Width_Skewness_vs_D} (A). Homeostasis reaches a point of saturation, where faster diffusion has no effect on the heterogeneity of firing rates. 
+Sweeney et al. found that diffusive homeostasis maintains broadness of firing rates across a wide range of diffusion constants but rapidly approaching zero for small values \cite[p. 6]{Sweeney_Paper}. We were able to reproduce this result, see Figure \ref{Fir_Rate_Dist_Width_Skewness_vs_D} (A). Homeostasis reaches a point of saturation, where faster diffusion has no effect on the heterogeneity of firing rates. Each of the data points in Figure \ref{Fir_Rate_Dist_Width_Skewness_vs_D} (A) and (B) corresponds to a single full simulation, though the same simulation data was used in (A) and (B). $\rm 55$ simulations were ran in total. We picked the $\rm D$-values by hand to achieve a good representation of the overall trend while limiting the amount of simulations. The set of diffusion constants used is given in Table \ref{Diff_Test_Constants_Sim_Number}.
 \begin{figure}
 \begin{minipage}{0.5\textwidth}
 %%% freq_dist_width_vs_D.py
@@ -623,6 +625,19 @@ Sweeney et al. found that diffusive homeostasis maintains broadness of firing ra
 \caption{Standard deviation (A) and skewness (B) of firing rate distribution of excitatory neurons (Neumann boundary conditions).}
 \label{Fir_Rate_Dist_Width_Skewness_vs_D}
 \end{figure}
+
+\begin{table}
+\begin{tabu}{|l|l|}
+\hline
+\boldmath{$\rm D\;[\mu m^2 ms^{-1}]$} & \textbf{Number of Sim.} \\ \hline
+$\rm 0.0$ & 1 \\ \hline
+$\rm 0.1,0.2,...,0.8,0.9$ & 2 \\ \hline
+$\rm 1.0,2.0,...,5.0,8.0,10.0,15.0,20.0$ & 4 \\ \hline
+\end{tabu}
+\caption{Diffusion constants and number of simulations used in Figure \ref{Fir_Rate_Dist_Width_Skewness_vs_D}.}
+\label{Diff_Test_Constants_Sim_Number}
+\end{table}
+
 We also investigated the influence of the diffusion constant onto the distribution's skewness, shown in Figure \ref{Fir_Rate_Dist_Width_Skewness_vs_D} (B), to further quantify this dependence. Compared to the standard deviation, we saw a similar but not as clear trend with a drop for very small diffusion constants, even occasionally resulting in a left-skewed distribution (negative D-values).
 
 A naturally emerging question when altering the diffusion constant is how the firing rate behaves in the absolute limit of infinitely fast diffusion. In fact, this case is quite easy to implement simulation-wise: One simply has to feed all NO-sources into a single scalar variable of NO concentration. This will provide the same NO readout for all excitatory neurons, which means that all excitatory thresholds change at the same rate all the time, only shifting their initial random distribution. Figure \ref{Fir_Rate_Dist_Instant_compare} shows the distribution for this special limiting case. The standard deviation for the excitatory population was $\mathrm{\sigma_{\rm inst.} = 1.79\, Hz}$ and the skewness $\mathrm{v_{\rm inst.} = 1.51}$ ($\mathrm{v_{\rm inst.,log} = -0.52}$), which makes the asymmetry slightly more pronounced than in Figure \ref{Fir_Rate_Dist_Compare}.  
@@ -694,7 +709,7 @@ Synaptic lifetimes have been shown to approximately follow a power law distribut
 \begin{figure}
 %%% plot_syn_lifetimes.py
 \includegraphics[width=\textwidth]{../../plots/syn_topology/syn_lifetimes.png}
-\caption{Distribution of lifetimes of recurrent excitatory synaptic connections. Linear fits ignoring falloff for large synaptic lifetimes resulted in a slope of $\mathrm{-1.87}$ for diffusive homeostasis and $\mathrm{-1.68}$ for non-diffusive homeostasis.}
+\caption{Distribution of lifetimes of recurrent excitatory synaptic connections. Linear fits ignoring falloff (only using bins with $\rm t \leq 150 \, s$) for large synaptic lifetimes resulted in a slope of $\mathrm{-1.87}$ for diffusive homeostasis and $\mathrm{-1.68}$ for non-diffusive homeostasis.}
 \label{Syn_Lifetimes}
 \end{figure}
 To get an approximative explanation for the observed slope in the region of small lifetimes, we note that short synaptic lifetimes are most likely coming from synapses whose weights did not reach large values compared to the initial weight. The effect of multiplicative normalization is small compared to additive STDP in this regime of small weights. Small weights are therefore determined by additive quasi-random (due to their weak coupling to the postsynaptic neuron) fluctuations, which, as a very simple approximation, can be described as a Brownian motion with a certain standard deviation $\mathrm{\sigma}$. The first-hitting time of this Brownian motion is described by a Lévy distribution \cite{Roy_1968}:
@@ -702,25 +717,56 @@ To get an approximative explanation for the observed slope in the region of smal
 p(t,w_0,w_{\rm prune}) = \frac{ | w_0-w_{\rm prune}|}{\sqrt{2\pi \sigma t^3}} \mathrm{exp} \left( \frac{ \left( w_0-w_{\rm prune} \right) ^2}{2\sigma t}\right)
 \label{Levy_Dist}
 \end{equation}
-The term $\mathrm{t^{-3/2}}$ dominates for larger $\mathrm{t}$, which very roughly resembles the power-law exponents found in Figure \ref{Syn_Lifetimes}. Zheng et al. found a similar slope in the binary version of the SORN and also argued that this could be referred to random-walk behavior \cite{Pengsheng_2013}. Still, understanding the exponent of this distribution is subject to ongoing research and it has been argued that a more precise explanation could be used to relate certain parameters of synaptic plasticity to the value of this exponent, especially regarding the balance between long-term potentiation and depression.
+The term $\mathrm{t^{-3/2}}$ dominates for larger $\mathrm{t}$, which very roughly resembles the power-law exponents found in Figure \ref{Syn_Lifetimes}. Zheng et al. found a similar slope in the binary version of the SORN and also argued that this could be referred to random-walk behavior \cite{Pengsheng_2013}. Still, understanding the exponent of this distribution is subject to ongoing research and it has been argued that a more precise explanation could be used to relate certain parameters of synaptic plasticity to the value of this exponent. Especially, the balance between long-term potentiation and depression is thought to influence this exponent, where potentiation/depression dominated plasticity leads to a smaller/larger absolute value of the exponent of the distribution.
 
 \subsubsection{Mean outgoing Weights}\label{Section_Mean_outgoing_Weights}
-Since we only implemented synaptic normalization for the sum of \emph{incoming} weights, the total or average strength of \emph{outgoing} connections may vary from cell to cell. In a sense, the strength of outgoing connections per neuron can be regarded as a measure of how influential a neuron's activity is with respect to other neurons in the network. Effenberger et al. have shown in computational studies that influential ``driver neurons" form highly active and interconnected subnetworks \cite{Effenberger_2015}, an observation that is backed up by experimental studies \cite{Yassin_Subnetworks_2010,Eckmann_Leader_Neurons_2008}. Figure \ref{Out_Weight_Mean_Quantile} shows that diffusive homeostasis allows for the emergence of a small group of highly influential neurons, which resembles the findings in \cite{Effenberger_2015}, though the range over which the mean outgoing weights vary is not as prominent. A comparison of statistics generated with shuffled versions of the weight matrices illustrates that above-chance exceptionally strong mean outgoing weights were indeed present. We noted further that the difference between shuffled matrices corresponding to non-diffusive and diffusive homeostasis is in line with our observation from Figure \ref{Weight_Dist}, which indicated a broader distribution of weights for diffusive homeostasis.
+Since we only implemented synaptic normalization for the sum of \emph{incoming} weights, the total or average strength of \emph{outgoing} connections may vary from cell to cell. In a sense, the strength of outgoing connections per neuron can be regarded as a measure of how influential a neuron's activity is with respect to other neurons in the network. Effenberger et al. have shown in computational studies that influential ``driver neurons" form highly active and interconnected subnetworks \cite{Effenberger_2015}, an observation that is backed up by experimental studies \cite{Yassin_Subnetworks_2010,Eckmann_Leader_Neurons_2008}. Figure \ref{Out_Weight_Mean_Quantile} shows that diffusive homeostasis allows for the emergence of a small group of highly influential neurons, which resembles the findings in \cite{Effenberger_2015}, though the range over which the mean outgoing weights vary is not as prominent.
+
+A comparison of statistics generated with shuffled versions of the weight matrices illustrates that above-chance exceptionally strong mean outgoing weights were indeed present. To check for statistical significance, we performed a two-sample Kolmogorov-Smirnov tests between all datasets depicted in Figure \ref{Out_Weight_Mean_Quantile}. This statistical test allows to compare the empirical distribution functions of two sets of random variables by means of . More specifically, the null hypothesis states that both sets share the same underlying probability function. Thus, in our case, there should be a high statistical significance towards the rejection of this hypothesis. Though we did calculate the p-value for all possible pairs of datasets (28 in total), only a number of those were of relevance since we were interested in statistical differences due to diffusive homeostasis. These are listed in Table \ref{Kolmogorov_Mean_Out}. As the values indicate, the statistical significance is very high. Apart from the difference between diffusive and non-diffusive homeostasis, the difference between original and randomly shuffled versions of the weight matrices also appear to be significant. 
+
+\begin{table}
+\begin{tabu}{|l|l|}
+\hline
+\textbf{Combination} & \textbf{p-value} \\ \hline
+D,T,NS vs ND,T,NS & $\rm 4.662 \cdot 10^{-35}$ \\ \hline
+D,NT,NS vs ND,NT,NS & $\rm 6.895 \cdot 10^{-77}$ \\ \hline
+D,T,NS vs D,T,S & $\rm 3.344 \cdot 10^{-44}$ \\ \hline
+D,NT,NS vs D,NT,S & $\rm 1.790 \cdot 10^{-61}$ \\ \hline
+\end{tabu}
+\caption{p-values of the Kolmogorov-Smirnov test calculated for a subset of dataset combinations depicted in Figure \ref{Out_Weight_Mean_Quantile}. The abbreviations are as follows: D: diffusive, T: topology, S: shuffled weights, N: negotiation.}
+\label{Kolmogorov_Mean_Out}
+\end{table}
+
+We noted further that the difference between shuffled matrices corresponding to non-diffusive and diffusive homeostasis is in line with our observation from Figure \ref{Weight_Dist}, which indicated a broader distribution of weights for diffusive homeostasis.
 \begin{figure}
 %%% plot_sum_outgoing_weights_dist.py
 \includegraphics[width=\textwidth]{../../plots/syn_topology/outgoing_weights_distribution.png}
-\caption{Mean of outgoing weights of excitatory neurons in order sorted by magnitude. Dashed lines are means obtained by randomly shuffling synaptic weights. Data was taken from 25 weight matrices per line, representing weights within $\mathrm{1000-1500\,s}$.}
+\caption{Mean of outgoing weights of excitatory neurons in order sorted by magnitude. Dashed lines are means obtained by randomly shuffling synaptic weights. Data was taken from a single weight matrix each, at $\mathrm{t = 1500\,s}$.}
 \label{Out_Weight_Mean_Quantile}
 \end{figure}
 
-Effenberger et al. identified the presence of inhibitory STDP as a necessary mechanism for the development of this feature, in contrast to our model. On a deeper explanatory level, the authors argue that inhibitory STDP is indirectly involved: Though it is known that inhibitory STDP can balance network activity \cite{Vogels_2011}, for some excitatory neurons in the network, presynaptic inhibitory neurons can not fully compensate the above-average firing rate of the postsynaptic neuron. Furthermore, synapses between highly active excitatory presynaptic cells and postsynaptic excitatory neurons with lower activity are known to be subject to long-term potentiation \cite{Sjoestroem_Syn_Plasticity_2001,Feldman_STDP_2012}. These two effects combined then give rise to the strong mean outgoing weights of this subgroup of neurons. With these causal relations in mind, we can argue that diffusive homeostasis effectively embodies a similar functional role as inhibitory STDP in \cite{Effenberger_2015} by allowing for the presence of excitatory cells with above-average activity. We tested this relationship by plotting the mean outgoing weights against the average firing rate, see Figure \ref{Out_Weight_vs_F}. We also tested A strong heterogeneity of firing rates allows for the development of few neurons with comparably strong mean outgoing weights, while the distribution of mean weights resulting from a narrow distribution is limited to a smaller range. We also tested the case of instant diffusion. Though firing rates span across a similar range, mean weights do not reach as high values as in the case of diffusion at a finite rate.
+Effenberger et al. identified the presence of inhibitory STDP as a necessary mechanism for the development of this feature, in contrast to our model. On a deeper explanatory level, the authors argue that inhibitory STDP is indirectly involved: Though it is known that inhibitory STDP can balance network activity \cite{Vogels_2011}, for some excitatory neurons in the network, presynaptic inhibitory neurons can not fully compensate the above-average firing rate of the postsynaptic neuron. Furthermore, synapses from highly active excitatory presynaptic cells to postsynaptic excitatory neurons with lower activity are known to be subject to long-term potentiation \cite{Sjoestroem_Syn_Plasticity_2001,Feldman_STDP_2012}. These two effects combined then give rise to the strong mean outgoing weights of this subgroup of neurons. With these causal relations in mind, we can argue that diffusive homeostasis effectively embodies a similar functional role as inhibitory STDP in \cite{Effenberger_2015} by allowing for the presence of excitatory cells with above-average activity. We tested this relationship by plotting the mean of excitatory outgoing weights, sum of outgoing weights and the out degree against the average firing rate, see Figure \ref{Out_Weight_vs_F}. A strong heterogeneity of firing rates allows for the development of few neurons with comparably strong mean outgoing weights, while the distribution of mean weights resulting from a narrow distribution is limited to a smaller range. Interestingly, the heterogeneity of out weights is most prominent when looking at the total sum. While this should lead to the conclusion that this is the case because an increased firing rate increases both, mean and number of outgoing weights, the latter can not be strictly verified based on Figure \ref{Out_Weight_vs_F} (D). In consequence, we also did not find a strong direct correlation between mean outgoing weights and out degree, as shown in Figure \ref{Mean_Weight_vs_Out_Degree}. Still though, it is interesting to note that diffusive homeostasis, in contrast to the other shown variants, diffusive homeostasis at least has a correlation coefficient of $\rho_{\rm Diff.} =  0.4$, especially in contrast to $\rho_{\rm Inst. Diff.} =  -0.23$, though instant diffusion leads to similarly spread firing rates.
+
+Furthermore, it is interesting to note that we found a roughly linear relationship between mean outgoing weight and firing rate on a logarithmic weight scale, see Figure \ref{Out_Weight_vs_F} (B). Figure \ref{Out_Weight_vs_F} only depicts data from simulations including a distance dependent connection profile, since removing this topology did not result in noticeable differences.
+
 \begin{figure}
 %%% out_weight_vs_f.py
 \includegraphics[width=\textwidth]{../../plots/syn_topology/mean_out_weights_vs_rate.png}
-\caption{Mean of outgoing excitatory weights at $\mathrm{t=1500\,s}$ plotted against mean presynaptic firing rate (averaged over $\mathrm{700-1000\,s}$) in regular (A) and logarithmic space (B). Each plot corresponds to a presynaptic excitatory cell.}
+\includegraphics[width=\textwidth]{../../plots/syn_topology/sum_out_weights_vs_rate.png}
+\includegraphics[width=\textwidth]{../../plots/syn_topology/out_degree_vs_rate.png}
+\caption{A,B: Mean of outgoing excitatory weights at $\mathrm{t=1500\,s}$ plotted against mean presynaptic firing rate (averaged over $\mathrm{700-1000\,s}$) in regular and logarithmic space. Each point corresponds to a presynaptic excitatory cell. C,D: Sum of outgoing excitatory weights, same setting as in (A) and (B). E: Out degree of excitatory neurons, same setting as in (A) and (B).
+}
 \label{Out_Weight_vs_F}
 \end{figure}
-Furthermore, it is interesting to note that we found a roughly linear relationship on a logarithmic weight scale. Figure \ref{Out_Weight_vs_F} only depicts data from simulations including a distance dependent connection profile, since removing this topology did not result in noticeable differences.
+
+\begin{figure}
+%%% out_weight_vs_out_degree.py
+\includegraphics[width=\textwidth]{../../plots/syn_topology/mean_out_vs_out_degree.png}
+\caption{Out degree vs. mean outgoing excitatory weights at $\mathrm{t=1500\,s}$, same dataset as in Figure \ref{Out_Weight_vs_F}. Pearson correlation coefficients were $\rho_{\rm Diff.} =  0.4$, $\rho_{\rm Inst. Diff.} =  -0.23$ and $\rho_{\rm Non-Diff.} =  0.07$.}
+\label{Mean_Weight_vs_Out_Degree}
+\end{figure}
+
+
 \newpage
 \section{Further Analysis of the Firing Rate Distribution}
 The results of section \ref{Fir_Dist_Section} were positive on a preliminary level regarding our goal of achieving a broad and skewed firing rate distribution. Following this, we tried to further gain insight into the actual shape of the resulting distribution. 
