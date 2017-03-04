@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.29)  3 MAR 2017 17:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.29)  4 MAR 2017 01:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1047,50 +1047,50 @@ Package pdftex.def Info: ../../plots/syn_topology/outgoing_weights_distribution
 .png used on input line 743.
 (pdftex.def)             Requested size: 380.69788pt x 228.28203pt.
  [46 <../../plots/syn_topology/outgoing_weights_distribution.png>]
-<../../plots/syn_topology/mean_out_weights_vs_rate.png, id=883, 380.622pt x 281
+<../../plots/syn_topology/mean_out_weights_vs_rate.png, id=885, 380.622pt x 281
 .6121pt>
 File: ../../plots/syn_topology/mean_out_weights_vs_rate.png Graphic file (type 
 png)
  <use ../../plots/syn_topology/mean_out_weights_vs_rate.png>
 Package pdftex.def Info: ../../plots/syn_topology/mean_out_weights_vs_rate.png 
-used on input line 756.
+used on input line 754.
 (pdftex.def)             Requested size: 380.69788pt x 281.68446pt.
 
-<../../plots/syn_topology/sum_out_weights_vs_rate.png, id=884, 380.622pt x 140.
+<../../plots/syn_topology/sum_out_weights_vs_rate.png, id=886, 380.622pt x 140.
 6856pt>
 File: ../../plots/syn_topology/sum_out_weights_vs_rate.png Graphic file (type p
 ng)
  <use ../../plots/syn_topology/sum_out_weights_vs_rate.png>
 Package pdftex.def Info: ../../plots/syn_topology/sum_out_weights_vs_rate.png u
-sed on input line 757.
+sed on input line 755.
 (pdftex.def)             Requested size: 380.69788pt x 140.72173pt.
 
-<../../plots/syn_topology/out_degree_vs_rate.png, id=885, 380.622pt x 140.6856p
+<../../plots/syn_topology/out_degree_vs_rate.png, id=887, 380.622pt x 140.6856p
 t>
 File: ../../plots/syn_topology/out_degree_vs_rate.png Graphic file (type png)
  <use ../../plots/syn_topology/out_degree_vs_rate.png>
 Package pdftex.def Info: ../../plots/syn_topology/out_degree_vs_rate.png used o
-n input line 758.
+n input line 756.
 (pdftex.def)             Requested size: 380.69788pt x 140.72173pt.
 
 
-LaTeX Warning: Float too large for page by 6.89107pt on input line 762.
+LaTeX Warning: Float too large for page by 6.89107pt on input line 760.
 
 
-<../../plots/syn_topology/mean_out_vs_out_degree.png, id=886, 380.622pt x 190.3
+<../../plots/syn_topology/mean_out_vs_out_degree.png, id=888, 380.622pt x 190.3
 11pt>
 File: ../../plots/syn_topology/mean_out_vs_out_degree.png Graphic file (type pn
 g)
  <use ../../plots/syn_topology/mean_out_vs_out_degree.png>
 Package pdftex.def Info: ../../plots/syn_topology/mean_out_vs_out_degree.png us
-ed on input line 766.
+ed on input line 764.
 (pdftex.def)             Requested size: 380.69788pt x 190.35988pt.
  [47] [48 <../../plots/syn_topology/mean_out_weights_vs_rate.png> <../../plots/
 syn_topology/sum_out_weights_vs_rate.png> <../../plots/syn_topology/out_degree_
 vs_rate.png>]
 [49 <../../plots/syn_topology/mean_out_vs_out_degree.png>] [50]
 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha_comb
-.png, id=940, 587.0733pt x 442.5333pt>
+.png, id=942, 380.622pt x 266.4354pt>
 File: ../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha
 _comb.png Graphic file (type png)
 
@@ -1098,26 +1098,26 @@ _comb.png Graphic file (type png)
 comb.png>
 Package pdftex.def Info: ../../plots/rate_threshold_simpl_hip_alpha/rate_thresh
 old_simpl_hip_alpha_comb.png used on input line 820.
-(pdftex.def)             Requested size: 380.69788pt x 286.96797pt.
+(pdftex.def)             Requested size: 380.69788pt x 266.50385pt.
  [51 <../../plots/rate_threshold_simpl_hip_alpha/rate_threshold_simpl_hip_alpha
-_comb.png>] [52] [53]
-<../../plots/Psi_Interact_Approximation.png, id=985, 266.4354pt x 190.311pt>
+_comb.png>] [52] [53] [54]
+<../../plots/Psi_Interact_Approximation.png, id=1002, 266.4354pt x 190.311pt>
 File: ../../plots/Psi_Interact_Approximation.png Graphic file (type png)
 
 <use ../../plots/Psi_Interact_Approximation.png>
 Package pdftex.def Info: ../../plots/Psi_Interact_Approximation.png used on inp
 ut line 920.
 (pdftex.def)             Requested size: 266.48735pt x 190.36568pt.
- [54]
-<../../plots/Boundary_Cond_Sketch.png, id=1006, 377.7312pt x 188.6247pt>
+ [55 <../../plots/Psi_Interact_Approximation.png>]
+<../../plots/Boundary_Cond_Sketch.png, id=1017, 377.7312pt x 188.6247pt>
 File: ../../plots/Boundary_Cond_Sketch.png Graphic file (type png)
 
 <use ../../plots/Boundary_Cond_Sketch.png>
 Package pdftex.def Info: ../../plots/Boundary_Cond_Sketch.png used on input lin
 e 934.
 (pdftex.def)             Requested size: 190.34894pt x 95.05467pt.
- [55 <../../plots/Psi_Interact_Approximation.png>]
-<../../plots/rates_matrix_prediction_vs_sim.png, id=1016, 380.622pt x 228.3732p
+
+<../../plots/rates_matrix_prediction_vs_sim.png, id=1020, 380.622pt x 228.3732p
 t>
 File: ../../plots/rates_matrix_prediction_vs_sim.png Graphic file (type png)
  <use ../../plots/rates_matrix_prediction_vs_sim.png>
@@ -1125,7 +1125,7 @@ Package pdftex.def Info: ../../plots/rates_matrix_prediction_vs_sim.png used on
  input line 960.
 (pdftex.def)             Requested size: 380.69788pt x 228.43187pt.
 
-<../../plots/firing_rate_dists/fir_rate_dist_sim_vs_mat.png, id=1019, 266.4354p
+<../../plots/firing_rate_dists/fir_rate_dist_sim_vs_mat.png, id=1023, 266.4354p
 t x 159.7167pt>
 File: ../../plots/firing_rate_dists/fir_rate_dist_sim_vs_mat.png Graphic file (
 type png)
@@ -1135,7 +1135,7 @@ Package pdftex.def Info: ../../plots/firing_rate_dists/fir_rate_dist_sim_vs_mat
 .png used on input line 968.
 (pdftex.def)             Requested size: 380.69788pt x 228.23474pt.
 
-<../../plots/sim_vs_matrix_solve_corr_vs_D.png, id=1022, 266.4354pt x 159.7167p
+<../../plots/sim_vs_matrix_solve_corr_vs_D.png, id=1026, 266.4354pt x 159.7167p
 t>
 File: ../../plots/sim_vs_matrix_solve_corr_vs_D.png Graphic file (type png)
  <use ../../plots/sim_vs_matrix_solve_corr_vs_D.png>
@@ -1143,7 +1143,7 @@ Package pdftex.def Info: ../../plots/sim_vs_matrix_solve_corr_vs_D.png used on
 input line 977.
 (pdftex.def)             Requested size: 266.48735pt x 159.7626pt.
 
-<../../plots/firing_rate_dists/mat_sim_std_dev_dist.png, id=1026, 190.311pt x 1
+<../../plots/firing_rate_dists/mat_sim_std_dev_dist.png, id=1030, 190.311pt x 1
 90.311pt>
 File: ../../plots/firing_rate_dists/mat_sim_std_dev_dist.png Graphic file (type
  png)
@@ -1152,7 +1152,7 @@ Package pdftex.def Info: ../../plots/firing_rate_dists/mat_sim_std_dev_dist.png
  used on input line 986.
 (pdftex.def)             Requested size: 190.34894pt x 190.35988pt.
 
-<../../plots/firing_rate_dists/mat_sim_skew_dist.png, id=1027, 190.311pt x 190.
+<../../plots/firing_rate_dists/mat_sim_skew_dist.png, id=1031, 190.311pt x 190.
 311pt>
 File: ../../plots/firing_rate_dists/mat_sim_skew_dist.png Graphic file (type pn
 g)
@@ -1166,7 +1166,7 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 984--992
  []
 
 
-<../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png, id=1029, 266.
+<../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png, id=1033, 266.
 4354pt x 159.7167pt>
 File: ../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png Graphic f
 ile (type png)
@@ -1177,10 +1177,11 @@ _dist.png used on input line 999.
 (pdftex.def)             Requested size: 266.48735pt x 159.7626pt.
  [56 <../../plots/Boundary_Cond_Sketch.png>] [57 <../../plots/rates_matrix_pred
 iction_vs_sim.png>] [58 <../../plots/firing_rate_dists/fir_rate_dist_sim_vs_mat
-.png> <../../plots/sim_vs_matrix_solve_corr_vs_D.png>] [59 <../../plots/firing_
-rate_dists/mat_sim_std_dev_dist.png> <../../plots/firing_rate_dists/mat_sim_ske
-w_dist.png>]
-<../../plots/scatter_density_out_weights.png, id=1066, 380.622pt x 228.3732pt>
+.png>]
+[59 <../../plots/sim_vs_matrix_solve_corr_vs_D.png> <../../plots/firing_rate_di
+sts/mat_sim_std_dev_dist.png> <../../plots/firing_rate_dists/mat_sim_skew_dist.
+png>]
+<../../plots/scatter_density_out_weights.png, id=1071, 380.622pt x 228.3732pt>
 File: ../../plots/scatter_density_out_weights.png Graphic file (type png)
 
 <use ../../plots/scatter_density_out_weights.png>
@@ -1188,7 +1189,7 @@ Package pdftex.def Info: ../../plots/scatter_density_out_weights.png used on in
 put line 1019.
 (pdftex.def)             Requested size: 380.69788pt x 228.43187pt.
 
-<../../plots/scatter_density_out_weights_points.png, id=1067, 380.622pt x 190.3
+<../../plots/scatter_density_out_weights_points.png, id=1072, 380.622pt x 190.3
 11pt>
 File: ../../plots/scatter_density_out_weights_points.png Graphic file (type png
 )
@@ -1196,10 +1197,10 @@ File: ../../plots/scatter_density_out_weights_points.png Graphic file (type png
 Package pdftex.def Info: ../../plots/scatter_density_out_weights_points.png use
 d on input line 1021.
 (pdftex.def)             Requested size: 380.69788pt x 190.35988pt.
- [60 <../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png>] [61 <..
-/../plots/scatter_density_out_weights.png> <../../plots/scatter_density_out_wei
-ghts_points.png>] <../../plots/spread_source_illustration.png, id=1084, 380.622
-pt x 190.311pt>
+ [60 <../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png>] [61] [6
+2 <../../plots/scatter_density_out_weights.png> <../../plots/scatter_density_ou
+t_weights_points.png>]
+<../../plots/spread_source_illustration.png, id=1094, 380.622pt x 190.311pt>
 File: ../../plots/spread_source_illustration.png Graphic file (type png)
 
 <use ../../plots/spread_source_illustration.png>
@@ -1207,7 +1208,7 @@ Package pdftex.def Info: ../../plots/spread_source_illustration.png used on inp
 ut line 1033.
 (pdftex.def)             Requested size: 380.69788pt x 190.35988pt.
 
-<../../plots/external_input_switch_spread_source.png, id=1085, 380.622pt x 228.
+<../../plots/external_input_switch_spread_source.png, id=1095, 380.622pt x 228.
 3732pt>
 File: ../../plots/external_input_switch_spread_source.png Graphic file (type pn
 g)
@@ -1215,13 +1216,13 @@ g)
 Package pdftex.def Info: ../../plots/external_input_switch_spread_source.png us
 ed on input line 1035.
 (pdftex.def)             Requested size: 380.69788pt x 228.43187pt.
- [62] [63 <../../plots/spread_source_illustration.png> <../../plots/external_in
-put_switch_spread_source.png>] [64] [65] [66] [67] [68] [69] (./draft.bbl [70
+ [63] [64 <../../plots/spread_source_illustration.png> <../../plots/external_in
+put_switch_spread_source.png>] [65] [66] [67] [68] [69] [70] (./draft.bbl [71
 
-] [71] [72]
-[73] [74])
+] [72] [73]
+[74] [75])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1098.
- [75]
+ [76]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1098.
  (./draft.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1098.
@@ -1232,13 +1233,13 @@ Package rerunfilecheck Info: File `draft.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1098.
  ) 
 Here is how much of TeX's memory you used:
- 9772 strings out of 493304
- 151860 string characters out of 6139871
- 264257 words of memory out of 5000000
- 12704 multiletter control sequences out of 15000+600000
+ 9776 strings out of 493304
+ 151917 string characters out of 6139871
+ 265547 words of memory out of 5000000
+ 12706 multiletter control sequences out of 15000+600000
  11633 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 42i,18n,38p,2194b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,18n,38p,2348b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share
@@ -1263,10 +1264,10 @@ s/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1
 nts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm7.pfb>
-Output written on draft.pdf (80 pages, 4812466 bytes).
+Output written on draft.pdf (81 pages, 4621711 bytes).
 PDF statistics:
- 1351 PDF objects out of 1440 (max. 8388607)
- 1140 compressed objects within 12 object streams
- 325 named destinations out of 1000 (max. 500000)
+ 1362 PDF objects out of 1440 (max. 8388607)
+ 1150 compressed objects within 12 object streams
+ 327 named destinations out of 1000 (max. 500000)
  554 words of extra memory for PDF output out of 10000 (max. 10000000)
 
