@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.29)  4 MAR 2017 01:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.29)  6 MAR 2017 00:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1143,100 +1143,100 @@ Package pdftex.def Info: ../../plots/sim_vs_matrix_solve_corr_vs_D.png used on
 input line 977.
 (pdftex.def)             Requested size: 266.48735pt x 159.7626pt.
 
-<../../plots/firing_rate_dists/mat_sim_std_dev_dist.png, id=1030, 190.311pt x 1
-90.311pt>
-File: ../../plots/firing_rate_dists/mat_sim_std_dev_dist.png Graphic file (type
- png)
- <use ../../plots/firing_rate_dists/mat_sim_std_dev_dist.png>
-Package pdftex.def Info: ../../plots/firing_rate_dists/mat_sim_std_dev_dist.png
- used on input line 986.
+<../../plots/firing_rate_dists/mat_sim_std_dev_dist_new.png, id=1030, 190.311pt
+ x 190.311pt>
+File: ../../plots/firing_rate_dists/mat_sim_std_dev_dist_new.png Graphic file (
+type png)
+ <use ../../plots/firing_rate_dists/mat_sim_std_dev_dist_new.png>
+Package pdftex.def Info: ../../plots/firing_rate_dists/mat_sim_std_dev_dist_new
+.png used on input line 986.
 (pdftex.def)             Requested size: 190.34894pt x 190.35988pt.
 
-<../../plots/firing_rate_dists/mat_sim_skew_dist.png, id=1031, 190.311pt x 190.
-311pt>
-File: ../../plots/firing_rate_dists/mat_sim_skew_dist.png Graphic file (type pn
-g)
- <use ../../plots/firing_rate_dists/mat_sim_skew_dist.png>
-Package pdftex.def Info: ../../plots/firing_rate_dists/mat_sim_skew_dist.png us
-ed on input line 990.
+<../../plots/firing_rate_dists/mat_sim_skew_dist_new.png, id=1031, 190.311pt x 
+190.311pt>
+File: ../../plots/firing_rate_dists/mat_sim_skew_dist_new.png Graphic file (typ
+e png)
+ <use ../../plots/firing_rate_dists/mat_sim_skew_dist_new.png>
+Package pdftex.def Info: ../../plots/firing_rate_dists/mat_sim_skew_dist_new.pn
+g used on input line 990.
 (pdftex.def)             Requested size: 190.34894pt x 190.35988pt.
 
 Overfull \hbox (2.22221pt too wide) in paragraph at lines 984--992
 []$[]$ $[]$ 
  []
 
-
-<../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png, id=1033, 266.
+[56 <../../plots/Boundary_Cond_Sketch.png>] [57 <../../plots/rates_matrix_predi
+ction_vs_sim.png>]
+<../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png, id=1053, 266.
 4354pt x 159.7167pt>
 File: ../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png Graphic f
 ile (type png)
 
 <use ../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png>
 Package pdftex.def Info: ../../plots/firing_rate_dists/regular_grid_firing_rate
-_dist.png used on input line 999.
+_dist.png used on input line 1001.
 (pdftex.def)             Requested size: 266.48735pt x 159.7626pt.
- [56 <../../plots/Boundary_Cond_Sketch.png>] [57 <../../plots/rates_matrix_pred
-iction_vs_sim.png>] [58 <../../plots/firing_rate_dists/fir_rate_dist_sim_vs_mat
-.png>]
-[59 <../../plots/sim_vs_matrix_solve_corr_vs_D.png> <../../plots/firing_rate_di
-sts/mat_sim_std_dev_dist.png> <../../plots/firing_rate_dists/mat_sim_skew_dist.
-png>]
-<../../plots/scatter_density_out_weights.png, id=1071, 380.622pt x 228.3732pt>
+ [58 <../../plots/firing_rate_dists/fir_rate_dist_sim_vs_mat.png>] [59 <../../p
+lots/sim_vs_matrix_solve_corr_vs_D.png> <../../plots/firing_rate_dists/mat_sim_
+std_dev_dist_new.png> <../../plots/firing_rate_dists/mat_sim_skew_dist_new.png>
+]
+<../../plots/scatter_density_out_weights.png, id=1072, 380.622pt x 228.3732pt>
 File: ../../plots/scatter_density_out_weights.png Graphic file (type png)
 
 <use ../../plots/scatter_density_out_weights.png>
 Package pdftex.def Info: ../../plots/scatter_density_out_weights.png used on in
-put line 1019.
+put line 1021.
 (pdftex.def)             Requested size: 380.69788pt x 228.43187pt.
 
-<../../plots/scatter_density_out_weights_points.png, id=1072, 380.622pt x 190.3
+<../../plots/scatter_density_out_weights_points.png, id=1073, 380.622pt x 190.3
 11pt>
 File: ../../plots/scatter_density_out_weights_points.png Graphic file (type png
 )
  <use ../../plots/scatter_density_out_weights_points.png>
 Package pdftex.def Info: ../../plots/scatter_density_out_weights_points.png use
-d on input line 1021.
+d on input line 1023.
 (pdftex.def)             Requested size: 380.69788pt x 190.35988pt.
  [60 <../../plots/firing_rate_dists/regular_grid_firing_rate_dist.png>] [61] [6
 2 <../../plots/scatter_density_out_weights.png> <../../plots/scatter_density_ou
 t_weights_points.png>]
-<../../plots/spread_source_illustration.png, id=1094, 380.622pt x 190.311pt>
+<../../plots/spread_source_illustration.png, id=1098, 380.622pt x 190.311pt>
 File: ../../plots/spread_source_illustration.png Graphic file (type png)
 
 <use ../../plots/spread_source_illustration.png>
 Package pdftex.def Info: ../../plots/spread_source_illustration.png used on inp
-ut line 1033.
+ut line 1035.
 (pdftex.def)             Requested size: 380.69788pt x 190.35988pt.
 
-<../../plots/external_input_switch_spread_source.png, id=1095, 380.622pt x 228.
+<../../plots/external_input_switch_spread_source.png, id=1099, 380.622pt x 228.
 3732pt>
 File: ../../plots/external_input_switch_spread_source.png Graphic file (type pn
 g)
  <use ../../plots/external_input_switch_spread_source.png>
 Package pdftex.def Info: ../../plots/external_input_switch_spread_source.png us
-ed on input line 1035.
+ed on input line 1037.
 (pdftex.def)             Requested size: 380.69788pt x 228.43187pt.
  [63] [64 <../../plots/spread_source_illustration.png> <../../plots/external_in
-put_switch_spread_source.png>] [65] [66] [67] [68] [69] [70] (./draft.bbl [71
+put_switch_spread_source.png>] [65] [66] [67] [68] [69] [70] [71] (./draft.bbl 
+[72
 
-] [72] [73]
-[74] [75])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1098.
- [76]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1098.
+] [73]
+[74] [75] [76])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1104.
+ [77]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1104.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1098.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1098.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1104.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1104.
 
 Package rerunfilecheck Info: File `draft.out' has not changed.
 (rerunfilecheck)             Checksum: DF106C2B8F12DC0960313D89E8122B41;3435.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1098.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1104.
  ) 
 Here is how much of TeX's memory you used:
- 9776 strings out of 493304
- 151917 string characters out of 6139871
- 265547 words of memory out of 5000000
- 12706 multiletter control sequences out of 15000+600000
+ 9782 strings out of 493304
+ 152044 string characters out of 6139871
+ 265439 words of memory out of 5000000
+ 12709 multiletter control sequences out of 15000+600000
  11633 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,18n,38p,2348b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1264,10 +1264,10 @@ s/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1
 nts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm7.pfb>
-Output written on draft.pdf (81 pages, 4621711 bytes).
+Output written on draft.pdf (82 pages, 4647288 bytes).
 PDF statistics:
- 1362 PDF objects out of 1440 (max. 8388607)
- 1150 compressed objects within 12 object streams
- 327 named destinations out of 1000 (max. 500000)
+ 1375 PDF objects out of 1440 (max. 8388607)
+ 1162 compressed objects within 12 object streams
+ 330 named destinations out of 1000 (max. 500000)
  554 words of extra memory for PDF output out of 10000 (max. 10000000)
 

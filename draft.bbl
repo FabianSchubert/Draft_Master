@@ -380,10 +380,30 @@ R.~T. Couto.
   two-dimensional boundless domain.
 \newblock {\em Revista Brasileira de Ensino Física}, 2013.
 
+\bibitem{Philippides_2005}
+A.~Philippides, S.~R. Ott, P.~Husbands, T.~A. Lovick, and
+  M.~O{\textquoteright}Shea.
+\newblock Modeling cooperative volume signaling in a plexus of nitric oxide
+  synthase-expressing neurons.
+\newblock {\em Journal of Neuroscience}, 25(28):6520--6532, 2005.
+
 \bibitem{Stability_Homeostasis_Harnack_2015}
 D.~Harnack, M.~Pelko, A.~Chaillet, Y.~Chitour, and M.~C.~W. van Rossum.
 \newblock Stability of neuronal networks with homeostatic regulation.
 \newblock {\em PLOS Computational Biology}, 2015.
+
+\bibitem{Zenke_2013}
+F.~Zenke, G.~Hennequin, and W.~Gerstner.
+\newblock Synaptic plasticity in neural networks needs homeostasis with a fast
+  rate detector.
+\newblock {\em PLOS Computational Biology}, 9(11):1--14, 11 2013.
+
+\bibitem{Zenke_2017}
+F.~Zenke and W.~Gerstner.
+\newblock Hebbian plasticity requires compensatory processes on multiple
+  timescales.
+\newblock {\em Philosophical Transactions of the Royal Society of London B:
+  Biological Sciences}, 372(1715), 2017.
 
 \bibitem{Vreeswijk1998}
 C.~van Vreeswijk and H.~Sompolinsky.
@@ -401,12 +421,5 @@ C.~Lever, T.~Wills, F.~Cacucci, N.~Burgess, and J.~O'Keefe.
 \newblock Long-term plasticity in hippocampal place-cell representation of
   environmental geometry.
 \newblock {\em Nature}, 2002.
-
-\bibitem{Philippides_2005}
-A.~Philippides, S.~R. Ott, P.~Husbands, T.~A. Lovick, and
-  M.~O{\textquoteright}Shea.
-\newblock Modeling cooperative volume signaling in a plexus of nitric oxide
-  synthase-expressing neurons.
-\newblock {\em Journal of Neuroscience}, 25(28):6520--6532, 2005.
 
 \end{thebibliography}
