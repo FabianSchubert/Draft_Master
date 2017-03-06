@@ -16,26 +16,28 @@
 \BOOKMARK [2][-]{subsection.2.2}{Simulation of Diffusion}{section.2}% 16
 \BOOKMARK [1][-]{section.3}{Results}{}% 17
 \BOOKMARK [2][-]{subsection.3.1}{Activity Analysis}{section.3}% 18
-\BOOKMARK [2][-]{subsection.3.2}{Analysis of Oscillations under Dynamic Feedback}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.3}{Properties of Network Activity}{section.3}% 20
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Spike-Train Statistics}{subsection.3.3}% 21
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Distribution of Firing Rates}{subsection.3.3}% 22
-\BOOKMARK [2][-]{subsection.3.4}{Network Topology}{section.3}% 23
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Excitatory Connection Fraction}{subsection.3.4}% 24
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Distribution of Synaptic Weights}{subsection.3.4}% 25
-\BOOKMARK [3][-]{subsubsection.3.4.3}{Synaptic Lifetimes}{subsection.3.4}% 26
-\BOOKMARK [3][-]{subsubsection.3.4.4}{Mean outgoing Weights}{subsection.3.4}% 27
-\BOOKMARK [1][-]{section.4}{Further Analysis of the Firing Rate Distribution}{}% 28
-\BOOKMARK [2][-]{subsection.4.1}{Review of a Dynamic Mean-Field Model}{section.4}% 29
-\BOOKMARK [2][-]{subsection.4.2}{Equilibrium in the full Diffusive Model}{section.4}% 30
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}{subsection.4.2}% 31
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Low-Density Neighborhoods correlate with strong outgoing Connections}{subsection.4.2}% 32
-\BOOKMARK [2][-]{subsection.4.3}{Spreading of NO-sources extends Encoding of Input Heterogeneity}{section.4}% 33
-\BOOKMARK [1][-]{section.5}{Discussion}{}% 34
-\BOOKMARK [2][-]{subsection.5.1}{Homeostatic Stability}{section.5}% 35
-\BOOKMARK [2][-]{subsection.5.2}{The Firing Rate Distribution}{section.5}% 36
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Modifications of the Homeostatic Model}{subsection.5.2}% 37
-\BOOKMARK [2][-]{subsection.5.3}{Network Topology}{section.5}% 38
-\BOOKMARK [3][-]{subsubsection.5.3.1}{Distribution of Weights}{subsection.5.3}% 39
-\BOOKMARK [3][-]{subsubsection.5.3.2}{Strong Differences in Outgoing Weights}{subsection.5.3}% 40
-\BOOKMARK [1][-]{section.6}{Conclusion and Outlook}{}% 41
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Dynamic Behavior of the Population Activity}{subsection.3.1}% 19
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Predicting Activity in a Simplified Rate-Based Network}{subsection.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.2}{Analysis of Oscillations under Dynamic Feedback}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.3}{Properties of Network Activity}{section.3}% 22
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Spike-Train Statistics}{subsection.3.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Distribution of Firing Rates}{subsection.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.4}{Network Topology}{section.3}% 25
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Excitatory Connection Fraction}{subsection.3.4}% 26
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Distribution of Synaptic Weights}{subsection.3.4}% 27
+\BOOKMARK [3][-]{subsubsection.3.4.3}{Synaptic Lifetimes}{subsection.3.4}% 28
+\BOOKMARK [3][-]{subsubsection.3.4.4}{Mean outgoing Weights}{subsection.3.4}% 29
+\BOOKMARK [1][-]{section.4}{Further Analysis of the Firing Rate Distribution}{}% 30
+\BOOKMARK [2][-]{subsection.4.1}{Review of a Dynamic Mean-Field Model}{section.4}% 31
+\BOOKMARK [2][-]{subsection.4.2}{Equilibrium in the full Diffusive Model}{section.4}% 32
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}{subsection.4.2}% 33
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Low-Density Neighborhoods correlate with strong outgoing Connections}{subsection.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.3}{Spreading of NO-sources extends Encoding of Input Heterogeneity}{section.4}% 35
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 36
+\BOOKMARK [2][-]{subsection.5.1}{Homeostatic Stability}{section.5}% 37
+\BOOKMARK [2][-]{subsection.5.2}{The Firing Rate Distribution}{section.5}% 38
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Modifications of the Homeostatic Model}{subsection.5.2}% 39
+\BOOKMARK [2][-]{subsection.5.3}{Network Topology}{section.5}% 40
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Distribution of Weights}{subsection.5.3}% 41
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Strong Differences in Outgoing Weights}{subsection.5.3}% 42
+\BOOKMARK [1][-]{section.6}{Conclusion and Outlook}{}% 43
