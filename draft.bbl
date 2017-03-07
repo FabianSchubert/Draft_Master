@@ -108,6 +108,13 @@ K.~Mizuseki and G.~Buzsáki.
   and entorhinal cortex.
 \newblock {\em Cell Reports}, 4, 2013.
 
+\bibitem{Hengen_2016}
+K.~B. Hengen, A.~T. Pacheco, J.~N. McGregor, S.~D. Van~Hooser, and G.~G.
+  Turrigiano.
+\newblock Neuronal firing rate homeostasis is inhibited by sleep and promoted
+  by wake.
+\newblock {\em Cell}, 2016.
+
 \bibitem{Turrigiano_2011}
 G.~G. Turrigiano.
 \newblock Too many cooks? intrinsic and synaptic homeostatic mechanisms in
@@ -335,6 +342,23 @@ Y.~Loewenstein, A.~Kuras, and S.~Rumpel.
 A.~Statman, M.~Kaufman, A.~Minerbi, N.~E. Ziv, and N.~Brenner.
 \newblock Synaptic size dynamics as an effectively stochastic process.
 \newblock {\em PLOS Computational Biology}, 10(10):1--17, 10 2014.
+
+\bibitem{Gabaix_1999}
+X.~Gabaix.
+\newblock Zipf's law for cities: An explanation.
+\newblock {\em The Quarterly Journal of Economics}, 114(3):739--767, 1999.
+
+\bibitem{Pascual_2002}
+M.~Pascual, M.~Roy, F.~Guichard, and G.~Flierl.
+\newblock Cluster size distributions: signatures of self-organization in
+  spatial ecologies.
+\newblock {\em Philosophical Transactions of the Royal Society of London B:
+  Biological Sciences}, 2002.
+
+\bibitem{Kagan_2010}
+Yan~Y. Kagan.
+\newblock Earthquake size distribution: Power-law with exponent ?
+\newblock {\em Tectonophysics}, 490(1–2):103 -- 114, 2010.
 
 \bibitem{Roy_1968}
 L.K. Roy and M.T. Wasan.
