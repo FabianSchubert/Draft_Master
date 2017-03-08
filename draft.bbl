@@ -360,6 +360,37 @@ Yan~Y. Kagan.
 \newblock Earthquake size distribution: Power-law with exponent ?
 \newblock {\em Tectonophysics}, 490(1–2):103 -- 114, 2010.
 
+\bibitem{Bauke_2007}
+H.~Bauke.
+\newblock Parameter estimation for power-law distributions by maximum
+  likelihood methods.
+\newblock {\em The European Physical Journal B}, 58(2):167--173, 2007.
+
+\bibitem{Clauset_2009}
+A.~Clauset, C.~S. Rohilla, and M.~E.~J. Newman.
+\newblock Power-law distributions in empirical data.
+\newblock {\em SIAM Review}, 51(4):661--703, 2009.
+
+\bibitem{EncyMath_Max_Like}
+European Mathematical~Society Springer Verlag~GmbH.
+\newblock Maximum-likelihood method. encyclopedia of mathematics.
+\newblock Website.
+\newblock URL:
+  \url{http://www.encyclopediaofmath.org/index.php?title=Maximum-likelihood_method&oldid=39772}.
+  Accessed on 2017-03-08.
+
+\bibitem{Powerlaw_Package}
+J.~Alstott.
+\newblock powerlaw: A python package for analysis of heavy-tailed distributions
+  (version 1.4.1) [computer software].
+\newblock \url{https://pypi.python.org/pypi/powerlaw}, 2017.
+
+\bibitem{Alstott_2014}
+Jeff Alstott, Ed~Bullmore, and Dietmar Plenz.
+\newblock powerlaw: A python package for analysis of heavy-tailed
+  distributions.
+\newblock {\em PLOS ONE}, 9(1):1--11, 01 2014.
+
 \bibitem{Roy_1968}
 L.K. Roy and M.T. Wasan.
 \newblock The first passage time distribution of brownian motion with positive
