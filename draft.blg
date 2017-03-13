@@ -4,45 +4,45 @@ The top-level auxiliary file: draft.aux
 The style file: unsrt.bst
 Database file #1: test_base.bib
 Warning--can't use both author and editor fields in Bear_Exploring_the_Brain
-You've used 85 entries,
+You've used 88 entries,
             1791 wiz_defined-function locations,
-            980 strings with 18231 characters,
-and the built_in function-call counts, 17753 in all, are:
-= -- 1536
-> -- 837
+            996 strings with 18789 characters,
+and the built_in function-call counts, 18185 in all, are:
+= -- 1574
+> -- 849
 < -- 1
-+ -- 314
-- -- 229
-* -- 1242
-:= -- 2947
-add.period$ -- 259
-call.type$ -- 85
-change.case$ -- 78
++ -- 320
+- -- 232
+* -- 1253
+:= -- 3017
+add.period$ -- 270
+call.type$ -- 88
+change.case$ -- 81
 chr.to.int$ -- 0
-cite$ -- 86
-duplicate$ -- 727
-empty$ -- 1741
-format.name$ -- 229
-if$ -- 3872
+cite$ -- 89
+duplicate$ -- 746
+empty$ -- 1796
+format.name$ -- 232
+if$ -- 3972
 int.to.chr$ -- 0
-int.to.str$ -- 85
-missing$ -- 86
-newline$ -- 432
-num.names$ -- 86
-pop$ -- 191
+int.to.str$ -- 88
+missing$ -- 87
+newline$ -- 449
+num.names$ -- 89
+pop$ -- 206
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 276
+skip$ -- 283
 stack$ -- 0
-substring$ -- 1174
-swap$ -- 88
+substring$ -- 1180
+swap$ -- 91
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 151
-width$ -- 87
-write$ -- 911
+while$ -- 155
+width$ -- 90
+write$ -- 944
 (There was 1 warning)
