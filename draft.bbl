@@ -1,7 +1,7 @@
 \begin{thebibliography}{10}
 
 \bibitem{Bear_Exploring_the_Brain}
-Mark~F. Bear, B.~W. Connors, and Michael~A. Paradiso.
+M.~F. Bear, B.~W. Connors, and M.~A. Paradiso.
 \newblock {\em Neuroscience: Exploring the Brain}.
 \newblock Lippincott Williams \& Wilki, 2007.
 
@@ -84,8 +84,7 @@ G.~Marsat and L.~Maler.
 \newblock {\em Journal of Neurophysiology}, 104(5):2543--2555, 2010.
 
 \bibitem{Tripathy_2013}
-Shreejoy~J. Tripathy, Krishnan Padmanabhan, Richard~C. Gerkin, and Nathaniel~N.
-  Urban.
+S.~J. Tripathy, K.~Padmanabhan, R.~C. Gerkin, and N.~N. Urban.
 \newblock Intermediate intrinsic diversity enhances neural population coding.
 \newblock {\em Proceedings of the National Academy of Sciences},
   110(20):8248--8253, 2013.
@@ -208,7 +207,7 @@ C.~Hartmann, A.~Lazar, B.~Nessler, and J.~Triesch.
 \newblock {\em PLOS Computational Biology}, 11(12):1--35, 12 2016.
 
 \bibitem{Briansim}
-Romain Brette, Dan Goodman, and Marcel Stirnberg.
+R.~Brette, D.~Goodman, and M.~Stirnberg.
 \newblock The brian spiking neural network simulator (version 1.0) [computer
   software].
 \newblock \url{http://www.briansimulator.org/}, 2016.
@@ -378,7 +377,7 @@ M.~Pascual, M.~Roy, F.~Guichard, and G.~Flierl.
   Biological Sciences}, 2002.
 
 \bibitem{Kagan_2010}
-Yan~Y. Kagan.
+Y.~Y. Kagan.
 \newblock Earthquake size distribution: Power-law with exponent ?
 \newblock {\em Tectonophysics}, 490(1–2):103 -- 114, 2010.
 
@@ -408,7 +407,7 @@ J.~Alstott.
 \newblock \url{https://pypi.python.org/pypi/powerlaw}, 2017.
 
 \bibitem{Alstott_2014}
-Jeff Alstott, Ed~Bullmore, and Dietmar Plenz.
+J.~Alstott, E.~Bullmore, and D.~Plenz.
 \newblock powerlaw: A python package for analysis of heavy-tailed
   distributions.
 \newblock {\em PLOS ONE}, 9(1):1--11, 01 2014.

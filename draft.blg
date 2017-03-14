@@ -6,7 +6,7 @@ Database file #1: test_base.bib
 Warning--can't use both author and editor fields in Bear_Exploring_the_Brain
 You've used 88 entries,
             1791 wiz_defined-function locations,
-            996 strings with 18789 characters,
+            996 strings with 18742 characters,
 and the built_in function-call counts, 18185 in all, are:
 = -- 1574
 > -- 849
