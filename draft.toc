@@ -1,0 +1,46 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{5}{section.1}
+\contentsline {subsection}{\numberline {1.1}Homeostasis in the Nervous System}{5}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Theory of Control Systems}{5}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Error Signals and Controllers of Neural Homeostasis}{7}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Single-Cell Homeostasis As an Integral Control}{8}{subsubsection.1.1.3}
+\contentsline {subsubsection}{\numberline {1.1.4}The Role of Firing Rate Heterogeneity---a Dichotomy Between\\ Heterogeneity and Control?}{8}{subsubsection.1.1.4}
+\contentsline {subsection}{\numberline {1.2}Diffusive Homeostasis}{10}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Nitric Oxide in the Nervous System}{10}{subsubsection.1.2.1}
+\contentsline {subsection}{\numberline {1.3}Previous Research on the Used Network Model}{11}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Thesis Outline}{11}{subsection.1.4}
+\contentsline {section}{\numberline {2}Methods}{12}{section.2}
+\contentsline {subsection}{\numberline {2.1}Network Simulation}{12}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Neuron Model}{13}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Synaptic Plasticity}{13}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Intrinsic Plasticity}{16}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Modeling of Homeostatic Intrinsic Plasticity}{16}{subsubsection.2.1.4}
+\contentsline {subsection}{\numberline {2.2}Simulation of Diffusion}{18}{subsection.2.2}
+\contentsline {section}{\numberline {3}Results}{21}{section.3}
+\contentsline {subsection}{\numberline {3.1}Activity Analysis}{21}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Dynamic Behavior of the Population Activity}{21}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Predicting Activity in a Simplified Rate-Based Network}{24}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Analysis of Oscillations Under Dynamic Feedback}{27}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Properties of Network Activity}{35}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Spike-Train Statistics}{35}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Distribution of Firing Rates}{39}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Network Topology}{45}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Excitatory Connection Fraction}{45}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Distribution of Synaptic Weights}{48}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Synaptic Lifetimes}{49}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}Mean Outgoing Weights}{53}{subsubsection.3.4.4}
+\contentsline {section}{\numberline {4}Further Analysis of the Firing Rate Distribution}{58}{section.4}
+\contentsline {subsection}{\numberline {4.1}Review of a Dynamic Mean-Field Model}{58}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Equilibrium in the Full Diffusive Model}{61}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Comparison of the Solution of the Random Matrix Equation and the Simulation of the Spiking Network}{65}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Low-Density Neighborhoods Correlate with Strong Outgoing Connections}{69}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Spreading of NO Sources Extends Encoding of Input Heterogeneity}{69}{subsection.4.3}
+\contentsline {section}{\numberline {5}Discussion}{73}{section.5}
+\contentsline {subsection}{\numberline {5.1}Homeostatic Stability}{73}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}The Firing Rate Distribution}{75}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Modifications of the Homeostatic Model}{76}{subsubsection.5.2.1}
+\contentsline {subsection}{\numberline {5.3}Network Topology}{78}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Robustness of Synaptic Weight- and Lifetime Statistics}{78}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Strong Differences in Outgoing Weights}{78}{subsubsection.5.3.2}
+\contentsline {section}{\numberline {6}Conclusion and Outlook}{80}{section.6}
+\contentsline {section}{Appendix \numberline {A}Full Derivation of the Power Spectrum Given in Equation \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {Pow_Spec_Theta_Final}\unskip \@@italiccorr )}}}{88}{Appendix.1.A}

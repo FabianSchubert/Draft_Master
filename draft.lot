@@ -1,0 +1,6 @@
+\select@language {english}
+\contentsline {table}{\numberline {1}{\ignorespaces Parameters of synaptic connections.\relax }}{12}{table.caption.6}
+\contentsline {table}{\numberline {2}{\ignorespaces Parameters of LIF neuron\relax }}{13}{table.caption.7}
+\contentsline {table}{\numberline {3}{\ignorespaces Parameters of homeostatic intrinsic plasticity.\relax }}{18}{table.caption.8}
+\contentsline {table}{\numberline {4}{\ignorespaces Diffusion constants and number of simulations used in Figure \ref {Fir_Rate_Dist_Width_Skewness_vs_D}.\relax }}{43}{table.caption.26}
+\contentsline {table}{\numberline {5}{\ignorespaces p-values of the Kolmogorov-Smirnov test calculated for a subset of dataset combinations depicted in Figure \ref {Out_Weight_Mean_Quantile}}}{54}{table.caption.33}
