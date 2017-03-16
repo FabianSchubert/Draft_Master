@@ -19,10 +19,14 @@
 \usepackage{tabu}
 \usepackage{float}
 \usepackage{upgreek}
-\usepackage[titletoc]{appendix}
+\usepackage[titletoc,title]{appendix}
 \usepackage{afterpage}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+
 \captionsetup[table]{singlelinecheck=false}
 \captionsetup[figure]{singlelinecheck=false}
+
+\renewcommand{\floatpagefraction}{.8}
 
 \author{Fabian Schubert}
 
@@ -184,6 +188,11 @@ short-term plasticity
 \listoftables
 
 \clearpage
+
+\mbox{}
+\thispagestyle{empty}
+
+\newpage
 
 \section{Introduction}
 \subsection{Homeostasis in the Nervous System}
@@ -595,7 +604,7 @@ Combining these results in a set of equations, we found
 \dot{NO}(t) &= -\lambda NO + \frac{ \left( r_{IP} + \alpha \left( V_{t,\rm pop.}(t)-V_{t,0} \right) \right)  N_{\rm exc.}\frac{{Ca^{2+}_{\rm spike}}^3 \tau_{Ca^{2+}} \mathrm{ln} (2)}{3}}{L^2} + \sigma_{NO} \xi(t) \label{2d-sys-homeostasis1}\\
 \dot{V}_{t,\rm pop.}(t) &= \frac{NO-NO_0}{NO_0 \tau_{V_t}}\;. \label{2d-sys-homeostasis2}
 \end{align}
-By mean of the coordinate transformations
+By means of the coordinate transformations
 \begin{align}
 n &\equiv NO-NO_0 \label{simplif_coord_transf1}\\
 \theta &\equiv V_{t,\rm pop.}(t)-V_{t,0} \label{simplif_coord_transf2}
@@ -655,13 +664,15 @@ We further investigated the features of neuronal activity after the elimination 
 
 \subsubsection{Spike-Train Statistics}
 Balanced networks of inhibitory and excitatory populations of spiking LIF-neurons are known to show highly random, uncorrelated spiking behavior under sparse connectivity with a relatively high per-synapse connection strength \cite{Vreeswijk1996,Brunel2000}. This kind of asynchronous irregular state is characterized by a population firing rate showing no regularities over time, while maintaining an overall stable level of activity. This regularity was shown to be achievable in the previous section after slowing down the rate of homeostatic adaption. Interspike intervals should be random on the level of single cells, approximately following the statistics of a Poisson process.   
+
+Figure \ref{ISI_CV_compare} shows the distribution of interspike intervals (ISIs) and the distribution of coefficients of variation ($\mathrm{CV\equiv\sigma/\mu}$) taken over the set of excitatory and inhibitory neurons. However, we restricted the statistics of ISIs to neurons whose mean firing rate fell into a window of a width of $\rm 1\, Hz$ and a certain mean in order to provide comparability between the ISI distributions in the diffusive/non-diffusive case (see legend in Figure \ref{ISI_CV_compare}). An approximately exponential distribution of ISIs was apparently preserved for diffusive homeostasis (represented by straight lines in a log-plot), which is characteristic for Poisson processes \cite[p. 27]{Theor_Neur_Dayan}. For perfect Poisson spiking, the CV should give a value of 1. CVs that are smaller or larger, as seen in Figure \ref{ISI_CV_compare} B/D, indicate a tendency towards greater regularity or bunching, respectively. This observation is presumably due to the statistics of ISIs close to zero: Interestingly, while excitatory neurons had an  under-representation of short ISIs, the opposite was the case for inhibitory neurons. These types of behavior of LIF-models have been shown to depend on the amount of fluctuations of the input the neuron receives: A larger CV of neural input leads to a larger CV of ISIs for the output and an over-representation of small intervals \cite{Ostojic2011}. By the CV of the \emph{input} we mean the ratio between standard deviation and mean of postsynaptic current due to presynaptic spiking events (under the assumption of a stationary mean and variance). This relation between fluctuating input and spiking statistics fitted nicely into our set of network parameters: Inhibitory neurons received stronger recurrent inhibitory input ($\mathrm{-60\,mV}$ in total) compared to excitatory neurons ($\mathrm{-12\,mV}$). This lowered the signal-to-noise ratio for the inputs of inhibitory neurons, leading to the aforementioned statistical differences. Still, we could observe a dominant exponential component for both excitatory and inhibitory neurons.
+
 \begin{figure}
 %%% isi_plot.py
 \includegraphics[width=\textwidth]{../../plots/Spike_Stats/isi_cv_compare.png}
 \caption[Distribution of interspike intervals and of coefficients variation]{A/C: Distribution of interspike intervals of excitatory/inhibitory neurons for diffusive and non-diffusive homeostasis, measured over $\mathrm{1000\,s}$. Only neurons with a mean firing rate in a certain range (see legend) were included into statistics to prevent overlap of different firing rates (except for non-diffusive homeostasis and excitatory neurons, all being very close to 3 Hz). B/D: Distribution of coefficients of variation. Each sample represents the CV of one excitatory/inhibitory neuron.}
 \label{ISI_CV_compare}
 \end{figure}
-Figure \ref{ISI_CV_compare} shows the distribution of interspike intervals (ISIs) and the distribution of coefficients of variation ($\mathrm{CV\equiv\sigma/\mu}$) taken over the set of excitatory and inhibitory neurons. However, we restricted the statistics of ISIs to neurons whose mean firing rate fell into a window of a width of $\rm 1\, Hz$ and a certain mean in order to provide comparability between the ISI distributions in the diffusive/non-diffusive case (see legend in Figure \ref{ISI_CV_compare}). An approximately exponential distribution of ISIs is apparently preserved for diffusive homeostasis (represented by straight lines in a log-plot), which is characteristic for Poisson processes \cite[p. 27]{Theor_Neur_Dayan}. For perfect Poisson spiking, the CV should give a value of 1. CVs that are smaller or larger, as seen in Figure \ref{ISI_CV_compare} B/D, indicate a tendency towards greater regularity or bunching, respectively. This observation is presumably due to the statistics of ISIs close to zero: Interestingly, while excitatory neurons have an  under-representation of short ISIs, the opposite is the case for inhibitory neurons. These types of behavior of LIF-models have been shown to depend on the amount of fluctuations of the input the neuron receives: A larger CV of neural input leads to a larger CV of ISIs for the output and an over-representation of small intervals \cite{Ostojic2011}. By the CV of the \emph{input} we mean the ratio between standard deviation and mean of postsynaptic current due to presynaptic spiking events (under the assumption of a stationary mean and variance). This relation between fluctuating input and spiking statistics fits nicely into our set of network parameters: Inhibitory neurons receive stronger recurrent inhibitory input ($\mathrm{-60\,mV}$ in total) compared to excitatory neurons ($\mathrm{-12\,mV}$). This lowers the signal-to-noise ratio for the inputs of inhibitory neurons, leading to the aforementioned statistical differences. Still, one can observe a dominant exponential component for both excitatory and inhibitory neurons.
 
 We also considered potential correlations across neurons within both populations as an additional possibility of spike-train analysis. To do so, we calculated cross-correlations for all possible neuron pairings within a population, excluding autocorrelations. Figure \ref{Pop_Mean_Cross_Corr} shows the mean cross-correlation taken over all these pairs. Surprisingly, we found a significant increase in correlation across neurons for diffusive homeostasis. 
 \begin{figure}
@@ -718,7 +729,7 @@ Sweeney et al. found that diffusive homeostasis maintains broadness of firing ra
 \label{Fir_Rate_Dist_Width_Skewness_vs_D}
 \end{figure}
 
-\begin{table}
+\begin{table}[h]
 \caption{Diffusion constants and number of simulations used in Figure \ref{Fir_Rate_Dist_Width_Skewness_vs_D}.}
 \begin{center}
 \begin{tabu}{|l|l|}
@@ -892,8 +903,6 @@ It is also interesting to note that we found a roughly linear relationship betwe
 
 Experimental studies have not only considered the presence of neurons with strong influence onto other neurons \cite{Eckmann_Leader_Neurons_2008}, but also found evidence that highly active neurons form subnetworks with an increased connectivity, in the sense that these cells were more likely than average to connect to each other, see \cite{Yassin_Subnetworks_2010}. We tested this in our network by evaluating the connection fraction $\rm CF_{diff.,leader}$ among the top 10\% of excitatory neurons with respect to their average firing rate within $\rm 1000\,s < t < 1500\,s$ and comparing it to the rest of the excitatory population and the same calculation for the non-diffusive case. This returned $\rm CF_{diff.,leader} = 0.1371 \pm 0.0061$, $\rm CF_{diff.,non-leader} = 0.0982 \pm 0.0013$, $\rm CF_{non-diff.,leader} = 0.0954 \pm 0.0044$ and $\rm CF_{non-diff.,non-leader} = 0.0992 \pm 0.0002$. Standard errors were calculated from 5 simulation runs for each homeostatic mechanism, and connectivity matrices were taken from $\rm t = 1500\,s$. This showed that connectivity is indeed increased among the fastest-firing 10\% of the neurons in the case of diffusive homeostasis. Effenberger et al. reported a similar effect, in fact with even more pronounced differences of connectivity \cite{Effenberger_2015}. 
 
-\clearpage
-\afterpage{\null\newpage}
 \clearpage
 
 \section{Further Analysis of the Firing Rate Distribution}
@@ -1146,28 +1155,28 @@ r(\mathbf{x}) = \frac{NO_0}{\rho(\mathbf{x}) \int d^2 x' \psi(|\mathbf{x}'|)} \p
 Combined with the fact that the logarithm of outgoing excitatory weights correlates with excitatory firing rate (see Figure \ref{Out_Weight_vs_F}), this made us draw the conclusion that low density regions should have strong outgoing weights and vice versa. We approximated the local neuron density by means of a a Gaussian kernel with $\mathrm{\sigma = 50\, \upmu m}$ to test this hypothesis. Figure \ref{Inverse_Dens_vs_Sum_Out_Weights} shows the results. Despite a certain amount of randomness, our prediction was indeed verified. 
 \begin{figure}
 %% density_vs_sum_out_weights.py
-\includegraphics[width=\textwidth]{../../plots/scatter_density_out_weights.png}
+\includegraphics[width=\textwidth]{../../plots/scatter_density_out_weights_new.png}
 %% density_vs_sum_out_weights_points.py
-\includegraphics[width=\textwidth]{../../plots/scatter_density_out_weights_points.png}
+\includegraphics[width=\textwidth]{../../plots/scatter_density_out_weights_points_new.png}
 \caption[A/B: Scatter plot of reciprocal local neuron density and decadic logarithm of outgoing excitatory weights. C: Frequency of excitatory weights versus reciprocal neuronal density. D: Decadic logarithm of mean outgoing excitatory weights versus reciprocal neuronal density]{A/B: Scatter plot of \emph{reciprocal} local neuron density (calculated by convolution with a Gaussian kernel with $\mathrm{\sigma = 50\, \upmu m}$) and decadic logarithm of outgoing excitatory weights. Note the spatial correlation in high/low-density regions. C: Frequency of excitatory weights (averaged over $\rm 1200\,s \leq t \leq 1500\,s$) versus reciprocal neuronal density (same estimation method as in (A)). Coefficient of correlation $\rho_{\rm frequ.-dens.} = 0.798$. D: Decadic logarithm of mean outgoing excitatory weights versus reciprocal neuronal density. Coefficient of correlation $\rho_{\rm weight.-dens.} = 0.513$.}
 \label{Inverse_Dens_vs_Sum_Out_Weights}
 \end{figure}
 
 \subsection{Spreading of NO Sources Extends Encoding of Input Heterogeneity}\label{NO_source_spread_section}
-We considered the possibility that a wider spatial spread of each individual NO source---in contrast to the approximate point source used up to this point---could locally decrease distinguishability between neurons since our analytic results revealed that a strong correlation between spatial structure and resulting firing rates is present if diffusive interaction allows a clear distinction between individual neurons and their spatial neighbors. Referring to the results shown in Figure \ref{Ext_Input_Switch}, this modification with respect to the NO influx might allow input heterogeneities to be encoded over a longer period of time without the need to tweak diffusion to unrealistically high values. More specifically, one could potentially observe the distinction of input groups shown in Figure \ref{Ext_Input_Switch} over a longer time scale.  While Sweeney et al. argued that the size of the studied tissue is large compared to the size of individual somata (which, apparently, they claim to be the main source of nitric oxide), Philippides et al. reported that NO is often synthesized in a more delocalized way by means of fine fibers originating from the soma \cite{Philippides_2005}. The diameter of these ``production areas" is on the order of $\mathrm{10-100 \upmu m}$.
+We considered the possibility that a wider spatial spread of each individual NO source---in contrast to the approximate point source used up to this point---could locally decrease distinguishability between neurons since our analytic results revealed that a strong correlation between spatial structure and resulting firing rates is present if diffusive interaction allows a clear distinction between individual neurons and their spatial neighbors. Referring to the results shown in Figure \ref{Ext_Input_Switch}, this modification with respect to the NO influx might allow input heterogeneities to be encoded over a longer period of time without the need to tweak diffusion to unrealistically high values. More specifically, one could potentially observe the distinction of input groups shown in Figure \ref{Ext_Input_Switch} over a longer time scale.  While Sweeney et al. argued that the size of the studied tissue is large compared to the size of individual somata (which, apparently, they claim to be the main source of nitric oxide), Philippides et al. reported that NO is often synthesized in a more delocalized way by means of fine fibers originating from the soma \cite{Philippides_2005}. The diameter of these ``production areas" is on the order of $\mathrm{10-100\, \upmu m}$.
 
 To test our hypothesis, we modified our model such that each neuron released nitric oxide evenly into a circular area with a radius of $\mathrm{50 \, \upmu m}$, centered around the neuron's position. The homeostatic readout was still taken solely from the centering point. Thereafter, we ran the same simulation as for Figure \ref{Ext_Input_Switch}. Comparing both plots, we saw a much greater persistence of distinction between excitatory subgroups, see Figure \ref{External_Input_Switch_Spread_Source}. The time course of activity suggests that this distinction might even be permanent and steady instead of a very slow but transient state.
 \begin{figure}
+\begin{center}
 %% spread_source_illustration.py
-\includegraphics[width=\textwidth]{../../plots/spread_source_illustration.png}
+\includegraphics[width=0.9\textwidth]{../../plots/spread_source_illustration.png}
 %% plot_external_input_switch_activity_spread_source.py
-\includegraphics[width=\textwidth]{../../plots/external_input_switch_spread_source.png}
+\includegraphics[width=0.855\textwidth]{../../plots/external_input_switch_spread_source.png}
 \caption[A/B: Illustration of circular kernels used for NO-insertion, overlay of all 400 neurons and a single example. C: Resulting activity for excitatory subgroups]{A/B: Illustration of circular kernels used for NO-insertion, overlay of all 400 neurons (left) and a single example (right). C: Resulting activity for excitatory subgroups. All settings were kept the same as for Figure \ref{Ext_Input_Switch}.}
+\end{center}
 \label{External_Input_Switch_Spread_Source}
 \end{figure}
 
-\clearpage
-\afterpage{\null\newpage}
 \clearpage
 
 \section{Discussion}
@@ -1225,6 +1234,9 @@ Referring to Figure \ref{Pop_Mean_Cross_Corr}, we can now relate the increment o
 Although theoretical and experimental studies have reported similarly about the presence of exceptionally ``ìnfluential" neurons \cite{Effenberger_2015,Yassin_Subnetworks_2010,Eckmann_Leader_Neurons_2008}, a lack of a clear concept of ``leader neurons" makes comparisons difficult and to be made with care. On the one hand, one could refer to the finding that some neurons are more effective in terms of local spike initiation or bursting \cite{Eckmann_Leader_Neurons_2008}. The presence of stronger outgoing weights for some excitatory neurons and an increment of pre-post spiketime correlations within the excitatory population generally support this finding. Another aspect one could conceptually associate to ``driver neurons" is the presence of subnetworks of highly active neurons with stronger connectivity \cite{Yassin_Subnetworks_2010}. Though we did find evidence that the connection fraction of a subpopulation of fast-spiking neurons was increased, the meaning and implication of this effect on a functional level needs more investigation. As mentioned in Section \ref{Section_Role_Fir_Rate_Het}, it has been argued that the combination of a large group of slowly firing neurons, being subject to stronger neuronal rewiring, and a small group of fast-firing neurons, forming more stable connections, is required to allow the brain to efficiently process and transmit information while being able to undergo longer lasting learning processes, which require plastic changes in the network structure \cite{Dragoi_2003,Buzsaki_2004,Buzsaki_Fir_Rates_2014}. Thus, one might consider testing the performance of learning tasks that had previously been investigated using the SORN and LIF-SORN under diffusive homeostasis. Potentially, this would allow the network to use the number of available nodes in a more efficient way.
 
 As an indirect consequence of spatial structure determining activity (as discussed in Section \ref{Fir_Rate_Dist_Discussion_Section}) we found that neurons with a low-density neighborhood have a higher chance of developing strong outgoing weights. Since this effect is directly linked to the low-density/high-firing-rate relation shown in Figure \ref{Inverse_Dens_vs_Sum_Out_Weights} (C), all previous thoughts regarding plausibility similarly apply to this result: \emph{If} a relationship between density and firing rates existed, we could indeed argue to also expect a relation as shown in Figure \ref{Inverse_Dens_vs_Sum_Out_Weights} (D), since it is known that synapses with above-average firing presynaptic neurons tend to undergo long-term potentiation \cite{Sjoestroem_Syn_Plasticity_2001,Feldman_STDP_2012}.
+\clearpage
+\afterpage{\null\newpage}
+\clearpage
 
 \section{Conclusion and Outlook}\label{Conclusion_Section}
 Our main goal of implementing diffusive homeostasis was to allow a broad distribution of firing rates across the excitatory population of the LIF-SORN, since experimental research has shown this to be a extensively observable phenomenon in the cortex. The implementation of diffusive homeostasis can be regarded as a success with respect to this feature. Furthermore, we did not observe any breakdown of previously studied desirable features of network topology, emerging from the plasticity mechanisms included. 
@@ -1238,19 +1250,23 @@ The implementation of diffusive homeostasis led to an interesting observation re
 With respect to future use and implementation of diffusive homeostasis one might also desire to cover the essential effects in a more simple and abstract formalism. As shown in Section \ref{Mean_Field_Review_Section}, a simple mean field model as presented by Sweeney et al. still carries problems similar to those of single-neuron homeostasis. However, modifications of this model that incorporate our remarks in Section \ref{Possible_Modifications_Section} might be able to recover properties of the full diffusive homeostatic feedback while being more computationally efficient.   
 
 \clearpage
+\afterpage{\null\newpage}
+\clearpage
 
 \bibliography{test_base}
 \bibliographystyle{unsrt}
 
 \clearpage
+\afterpage{\null\newpage}
+\clearpage
 
 \begin{appendices}
 
-\section{Full Derivation of the Power Spectrum Given in Equation \eqref{Pow_Spec_Theta_Final}}\label{Appendix_Power_Spectrum}
+\section{Derivation of the Power Spectrum Given in Equation \eqref{Pow_Spec_Theta_Final}}\label{Appendix_Power_Spectrum}
 Starting with the dynamic equations
 \begin{align}
 \dot{n} &= -\lambda n + \frac{\gamma \alpha N_{\rm exc.}}{L^2}\theta + \sigma_{NO} \xi(t) \label{Appendix_Equation_1}\\
-\dot{\theta} &= \frac{1}{NO_0 \tau_{V_t}} n \label{Appendix_Equation_2}
+\dot{\theta} &= \frac{1}{NO_0 \tau_{V_t}} n \; , \label{Appendix_Equation_2}
 \end{align}
 taking the Fourier transform yields
 \begin{align}
@@ -1273,7 +1289,7 @@ The squared absolute value of this expression is the power spectrum $P_\theta$:
 \begin{equation}
 P_\theta (\omega) = |f_\theta|^2 = \frac{\sigma_{NO}^2}{\omega^2 NO_0^2 \tau_{V_t}^2 \lambda^2 + \left( \omega^2 NO_0 \tau_{V_t} + \frac{\gamma \alpha N_{\rm exc.}}{L^2}\right)^2} \label{Appendix_Equation_8}
 \end{equation}
-Note that since we assumed the noise term $\xi$ to be approximately white and Gaussian noise with unit variance, its power spectrum is $|f_{\xi}|^2 = 1$
+Note that since we assumed the noise term $\xi$ to be approximately white and Gaussian noise with unit variance, its power spectrum is $|f_{\xi}|^2 = 1$.
 
 \end{appendices}
 
