@@ -1,38 +1,38 @@
 \select@language {english}
-\contentsline {figure}{\numberline {1}{\ignorespaces Schematic illustration of a closed loop control}}{9}{figure.caption.5}
-\contentsline {figure}{\numberline {2}{\ignorespaces Example of NO-diffusion with 400 point sources of excitatory neurons.\relax }}{23}{figure.caption.9}
-\contentsline {figure}{\numberline {3}{\ignorespaces Time course of population firing rates, population mean of NO concentration and of excitatory threshold}}{25}{figure.caption.10}
-\contentsline {figure}{\numberline {4}{\ignorespaces Power spectrum of thresholds of excitatory neurons}}{26}{figure.caption.11}
-\contentsline {figure}{\numberline {5}{\ignorespaces Comparison of mean firing rate of a LIF neuron without noise and with noise}}{28}{figure.caption.12}
-\contentsline {figure}{\numberline {6}{\ignorespaces Dynamics of rate-based network model}}{30}{figure.caption.13}
-\contentsline {figure}{\numberline {7}{\ignorespaces Time course of the mean firing rate and the mean firing threshold within the excitatory pool}}{31}{figure.caption.14}
-\contentsline {figure}{\numberline {8}{\ignorespaces Time course of nNOS(t) with Poisson spiking of 3 Hz}}{33}{figure.caption.15}
-\contentsline {figure}{\numberline {9}{\ignorespaces Linear fit of excitatory population activity and mean excitatory threshold}}{35}{figure.caption.16}
-\contentsline {figure}{\numberline {10}{\ignorespaces Power Spectrum of $\mathrm {\delimiter "426830A V_t \delimiter "526930B }$ and analytic predictions}}{37}{figure.caption.17}
-\contentsline {figure}{\numberline {11}{\ignorespaces Maximal height and corresponding frequency of the threshold power spectrum}}{38}{figure.caption.18}
-\contentsline {figure}{\numberline {12}{\ignorespaces Excitatory and inhibitory population rate controlled by diffusive homeostasis}}{39}{figure.caption.19}
-\contentsline {figure}{\numberline {13}{\ignorespaces Distribution of interspike intervals and of coefficients variation}}{40}{figure.caption.20}
-\contentsline {figure}{\numberline {14}{\ignorespaces Mean of cross correlation over all pairs of neurons in the respective neuron group}}{41}{figure.caption.21}
-\contentsline {figure}{\numberline {15}{\ignorespaces Histograms of mean firing rates over the excitatory/inhibitory population}}{42}{figure.caption.22}
-\contentsline {figure}{\numberline {16}{\ignorespaces Relation between variance of the frequency signal and the number of bins}}{44}{figure.caption.23}
-\contentsline {figure}{\numberline {17}{\ignorespaces Excitatory population firing rate of subgroups subject to external Poisson input}}{44}{figure.caption.24}
-\contentsline {figure}{\numberline {18}{\ignorespaces Standard deviation and skewness of firing rate distribution of excitatory neurons}}{45}{figure.caption.25}
-\contentsline {figure}{\numberline {19}{\ignorespaces Distribution of firing rates for instantaneous diffusion}}{46}{figure.caption.27}
-\contentsline {figure}{\numberline {20}{\ignorespaces Connection fractions of recurrent excitatory synapses}}{48}{figure.caption.28}
-\contentsline {figure}{\numberline {21}{\ignorespaces Mean and standard deviation of weight changes between synaptic normalization}}{49}{figure.caption.29}
-\contentsline {figure}{\numberline {22}{\ignorespaces Fraction of bidirectional connections}}{51}{figure.caption.30}
-\contentsline {figure}{\numberline {23}{\ignorespaces Distribution of decadic logarithm of excitatory synaptic weights}}{51}{figure.caption.31}
-\contentsline {figure}{\numberline {24}{\ignorespaces Distribution of lifetimes of recurrent excitatory synaptic connections}}{55}{figure.caption.32}
-\contentsline {figure}{\numberline {25}{\ignorespaces Mean of outgoing weights of excitatory neurons sorted by magnitude}}{57}{figure.caption.34}
-\contentsline {figure}{\numberline {26}{\ignorespaces Mean, sum and outdegree of outgoing excitatory weights plotted against mean presynaptic firing rate}}{58}{figure.caption.35}
-\contentsline {figure}{\numberline {27}{\ignorespaces Outdegree vs. mean outgoing excitatory weights}}{59}{figure.caption.36}
-\contentsline {figure}{\numberline {28}{\ignorespaces Rate and threshold dynamics of excitatory population}}{62}{figure.caption.37}
-\contentsline {figure}{\numberline {29}{\ignorespaces Numerical steady-state solution of Equation \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {simple_NO_dyn_with_diff_equil_helmholtz}\unskip \@@italiccorr )}}}}{66}{figure.caption.38}
-\contentsline {figure}{\numberline {30}{\ignorespaces Sketch of patches of copied (and mirrored) neuron positions}}{66}{figure.caption.39}
-\contentsline {figure}{\numberline {31}{\ignorespaces Measured firing rates versus analytically predicted firing rates}}{68}{figure.caption.40}
-\contentsline {figure}{\numberline {32}{\ignorespaces Distribution of firing rates, full simulation and analytic prediction}}{68}{figure.caption.41}
-\contentsline {figure}{\numberline {33}{\ignorespaces Pearson correlation coefficient of predicted and measured firing rates}}{69}{figure.caption.42}
-\contentsline {figure}{\numberline {34}{\ignorespaces Comparison of distribution of standard deviation and skewness for random-matrix solutions and simulation data}}{70}{figure.caption.43}
-\contentsline {figure}{\numberline {35}{\ignorespaces Distribution of firing rates for a regular square grid}}{70}{figure.caption.44}
-\contentsline {figure}{\numberline {36}{\ignorespaces A/B: Scatter plot of reciprocal local neuron density and decadic logarithm of outgoing excitatory weights. C: Frequency of excitatory weights versus reciprocal neuronal density. D: Decadic logarithm of mean outgoing excitatory weights versus reciprocal neuronal density}}{72}{figure.caption.45}
-\contentsline {figure}{\numberline {37}{\ignorespaces A/B: Illustration of circular kernels used for NO-insertion, overlay of all 400 neurons and a single example. C: Resulting activity for excitatory subgroups}}{73}{figure.caption.46}
+\contentsline {figure}{\numberline {1}{\ignorespaces Schematic illustration of a closed loop control}}{12}{figure.caption.5}
+\contentsline {figure}{\numberline {2}{\ignorespaces Example of NO-diffusion with 400 point sources of excitatory neurons.\relax }}{26}{figure.caption.9}
+\contentsline {figure}{\numberline {3}{\ignorespaces Time course of population firing rates, population mean of NO concentration and of excitatory threshold}}{28}{figure.caption.10}
+\contentsline {figure}{\numberline {4}{\ignorespaces Power spectrum of thresholds of excitatory neurons}}{29}{figure.caption.11}
+\contentsline {figure}{\numberline {5}{\ignorespaces Comparison of mean firing rate of a LIF neuron without noise and with noise}}{31}{figure.caption.12}
+\contentsline {figure}{\numberline {6}{\ignorespaces Dynamics of rate-based network model}}{33}{figure.caption.13}
+\contentsline {figure}{\numberline {7}{\ignorespaces Time course of the mean firing rate and the mean firing threshold within the excitatory pool}}{34}{figure.caption.14}
+\contentsline {figure}{\numberline {8}{\ignorespaces Time course of nNOS(t) with Poisson spiking of 3 Hz}}{36}{figure.caption.15}
+\contentsline {figure}{\numberline {9}{\ignorespaces Linear fit of excitatory population activity and mean excitatory threshold}}{38}{figure.caption.16}
+\contentsline {figure}{\numberline {10}{\ignorespaces Power Spectrum of $\mathrm {\delimiter "426830A V_t \delimiter "526930B }$ and analytic predictions}}{40}{figure.caption.17}
+\contentsline {figure}{\numberline {11}{\ignorespaces Maximal height and corresponding frequency of the threshold power spectrum}}{41}{figure.caption.18}
+\contentsline {figure}{\numberline {12}{\ignorespaces Excitatory and inhibitory population rate controlled by diffusive homeostasis}}{42}{figure.caption.19}
+\contentsline {figure}{\numberline {13}{\ignorespaces Distribution of interspike intervals and of coefficients variation}}{43}{figure.caption.20}
+\contentsline {figure}{\numberline {14}{\ignorespaces Mean of cross correlation over all pairs of neurons in the respective neuron group}}{44}{figure.caption.21}
+\contentsline {figure}{\numberline {15}{\ignorespaces Histograms of mean firing rates over the excitatory/inhibitory population}}{45}{figure.caption.22}
+\contentsline {figure}{\numberline {16}{\ignorespaces Relation between variance of the frequency signal and the number of bins}}{47}{figure.caption.23}
+\contentsline {figure}{\numberline {17}{\ignorespaces Excitatory population firing rate of subgroups subject to external Poisson input}}{47}{figure.caption.24}
+\contentsline {figure}{\numberline {18}{\ignorespaces Standard deviation and skewness of firing rate distribution of excitatory neurons}}{48}{figure.caption.25}
+\contentsline {figure}{\numberline {19}{\ignorespaces Distribution of firing rates for instantaneous diffusion}}{49}{figure.caption.27}
+\contentsline {figure}{\numberline {20}{\ignorespaces Connection fractions of recurrent excitatory synapses}}{51}{figure.caption.28}
+\contentsline {figure}{\numberline {21}{\ignorespaces Mean and standard deviation of weight changes between synaptic normalization}}{52}{figure.caption.29}
+\contentsline {figure}{\numberline {22}{\ignorespaces Fraction of bidirectional connections}}{54}{figure.caption.30}
+\contentsline {figure}{\numberline {23}{\ignorespaces Distribution of decadic logarithm of excitatory synaptic weights}}{54}{figure.caption.31}
+\contentsline {figure}{\numberline {24}{\ignorespaces Distribution of lifetimes of recurrent excitatory synaptic connections}}{58}{figure.caption.32}
+\contentsline {figure}{\numberline {25}{\ignorespaces Mean of outgoing weights of excitatory neurons sorted by magnitude}}{60}{figure.caption.34}
+\contentsline {figure}{\numberline {26}{\ignorespaces Mean, sum and outdegree of outgoing excitatory weights plotted against mean presynaptic firing rate}}{61}{figure.caption.35}
+\contentsline {figure}{\numberline {27}{\ignorespaces Outdegree vs. mean outgoing excitatory weights}}{62}{figure.caption.36}
+\contentsline {figure}{\numberline {28}{\ignorespaces Rate and threshold dynamics of excitatory population}}{65}{figure.caption.37}
+\contentsline {figure}{\numberline {29}{\ignorespaces Numerical steady-state solution of Equation \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {simple_NO_dyn_with_diff_equil_helmholtz}\unskip \@@italiccorr )}}}}{69}{figure.caption.38}
+\contentsline {figure}{\numberline {30}{\ignorespaces Sketch of patches of copied (and mirrored) neuron positions}}{69}{figure.caption.39}
+\contentsline {figure}{\numberline {31}{\ignorespaces Measured firing rates versus analytically predicted firing rates}}{71}{figure.caption.40}
+\contentsline {figure}{\numberline {32}{\ignorespaces Distribution of firing rates, full simulation and analytic prediction}}{71}{figure.caption.41}
+\contentsline {figure}{\numberline {33}{\ignorespaces Pearson correlation coefficient of predicted and measured firing rates}}{72}{figure.caption.42}
+\contentsline {figure}{\numberline {34}{\ignorespaces Comparison of distribution of standard deviation and skewness for random-matrix solutions and simulation data}}{73}{figure.caption.43}
+\contentsline {figure}{\numberline {35}{\ignorespaces Distribution of firing rates for a regular square grid}}{73}{figure.caption.44}
+\contentsline {figure}{\numberline {36}{\ignorespaces A/B: Scatter plot of reciprocal local neuron density and decadic logarithm of outgoing excitatory weights. C: Frequency of excitatory weights versus reciprocal neuronal density. D: Decadic logarithm of mean outgoing excitatory weights versus reciprocal neuronal density}}{75}{figure.caption.45}
+\contentsline {figure}{\numberline {37}{\ignorespaces A/B: Illustration of circular kernels used for NO-insertion, overlay of all 400 neurons and a single example. C: Resulting activity for excitatory subgroups}}{76}{figure.caption.46}
