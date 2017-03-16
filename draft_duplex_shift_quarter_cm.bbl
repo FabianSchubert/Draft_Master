@@ -1,0 +1,527 @@
+\begin{thebibliography}{10}
+
+\bibitem{Sweeney_Paper}
+Y.~Sweeney, J.~H. Kotaleski, and M.~H. Hennig.
+\newblock {A Diffusive Homeostatic Signal Maintains Neural Heterogeneity and
+  Responsiveness in Cortical Networks}.
+\newblock {\em PLoS Computational Biology}, 2015.
+
+\bibitem{Bear_Exploring_the_Brain}
+M.~F. Bear, B.~W. Connors, and M.~A. Paradiso.
+\newblock {\em {Neuroscience: Exploring the Brain}}.
+\newblock Lippincott Williams \& Wilki, 2007.
+
+\bibitem{Wisdom_of_the_Body_Cannon}
+W.~B. Cannon.
+\newblock {\em {The Wisdom of the Body}}.
+\newblock Norton \& Company, 1932.
+
+\bibitem{Homeostasis_Queenan_2012}
+B.~N. Queenan, K.~J. Lee, and D.~T.~S. Pak.
+\newblock {Where Art Thou, Homeo(stasis)? Functional Diversity in Homeostatic
+  Synaptic Plasticity}.
+\newblock {\em Neural Plasticity}, 2012, 2012.
+
+\bibitem{Turrigiano_1994}
+G.~G. Turrigiano, L.~F. Abbott, and E.~Marder.
+\newblock {Activity-dependent changes in the intrinsic properties of cultured
+  neurons}.
+\newblock {\em Science}, 264(5161):974--977, 1994.
+
+\bibitem{Burrone_2003}
+J.~Burrone and V.~N. Murthy.
+\newblock {Synaptic gain control and homeostasis}.
+\newblock {\em Current Opinion in Neurobiology}, 13(5):560 -- 567, 2003.
+
+\bibitem{Desai_2003}
+N.~S. Desai.
+\newblock {Homeostatic plasticity in the CNS: synaptic and intrinsic forms}.
+\newblock {\em Journal of Physiology-Paris}, 97(4–6):391 -- 402, 2003.
+\newblock Neuroscience and Computation.
+
+\bibitem{Syn_Plast_Abbott}
+L.~Abbott and S.~B. Nelson.
+\newblock {Synaptic Plasticity: taming the beast}.
+\newblock {\em Nature Neuroscience}, 2000.
+
+\bibitem{Theor_Neur_Dayan}
+P.~Dayan and L.F. Abbott.
+\newblock {\em {Theoretical Neuroscience}}.
+\newblock MIT Press, 2001.
+
+\bibitem{Cybernetik_Systems_Cruse_2006}
+H.~Cruse.
+\newblock {\em {Neural Networks as Cybernetic Systems}}.
+\newblock Brains, Minds \& Media, 2006.
+
+\bibitem{LeMasson_1993}
+G.~LeMasson, E.~Marder, and L.~F. Abbott.
+\newblock {Activity-dependent regulation of conductances in model neurons}.
+\newblock {\em Science}, 259(5103):1915--1917, 1993.
+
+\bibitem{Burrone_2002}
+J.~Burrone, M.~O'Byrne, and V.~N. Murthy.
+\newblock {Multiple forms of synaptic plasticity triggered by selective
+  supperssion of activity}.
+\newblock {\em Nature}, 2002.
+
+\bibitem{Buzsaki_Fir_Rates_2014}
+G.~Buzsáki and K.~Mizuseki.
+\newblock {The log-dynamic brain: how skewed distributions affect network
+  operations}.
+\newblock {\em Nature Reviews Neuroscience}, 2014.
+
+\bibitem{Wohrer_Fir_Rates_2012}
+A.~Wohrer, M.~D. Humphries, and C.~Machens.
+\newblock {Population-wide distributions of neural activity during perceptual
+  decision-making}.
+\newblock {\em Progress in Neurobiology}, 2012.
+
+\bibitem{Buzsaki_2004}
+G.~Buzsáki, C.~Geisler, D.~A. Henze, and X.-J. Wang.
+\newblock {Interneuron Diversity series: Circuit complexity and axon wiring
+  economy of cortical interneurons}.
+\newblock {\em Trends in Neurosciences}, 27, 2004.
+
+\bibitem{Marsat_2010}
+G.~Marsat and L.~Maler.
+\newblock {Neural Heterogeneity and Efficient Population Codes for
+  Communication Signals}.
+\newblock {\em Journal of Neurophysiology}, 104(5):2543--2555, 2010.
+
+\bibitem{Tripathy_2013}
+S.~J. Tripathy, K.~Padmanabhan, R.~C. Gerkin, and N.~N. Urban.
+\newblock {Intermediate intrinsic diversity enhances neural population coding}.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  110(20):8248--8253, 2013.
+
+\bibitem{Dragoi_2003}
+G.~Dragoi, K.~D. Harris, and G.~Buzsáki.
+\newblock {Place Representation within Hippocampal Networks Is Modified by
+  Long-Term Potentiation}.
+\newblock {\em Neuron}, 39(5):843 -- 853, 2003.
+
+\bibitem{OConnor_2010}
+D.~H. O'Connor, S.~P. Peron, D.~Huber, and K.~Svoboda.
+\newblock {Neural Activity in Barrel Cortex Underlying Vibrissa-Based Object
+  Localization in Mice}.
+\newblock {\em Neuron}, 67, 2010.
+
+\bibitem{Mizuseki_2013}
+K.~Mizuseki and G.~Buzsáki.
+\newblock {Preconfigured, skewed distribution of firing rates in the
+  hippocampus and entorhinal cortex}.
+\newblock {\em Cell Reports}, 4, 2013.
+
+\bibitem{Hengen_2016}
+K.~B. Hengen, A.~T. Pacheco, J.~N. McGregor, S.~D. Van~Hooser, and G.~G.
+  Turrigiano.
+\newblock {Neuronal firing rate homeostasis is inhibited by sleep and promoted
+  by wake}.
+\newblock {\em Cell}, 2016.
+
+\bibitem{Turrigiano_2011}
+G.~G. Turrigiano.
+\newblock {Too Many Cooks? Intrinsic and Synaptic Homeostatic Mechanisms in
+  Cortical Circuit Refinement}.
+\newblock {\em Annual Review of Neuroscience}, 2011.
+
+\bibitem{Marder_2006}
+E.~Marder and J.~Goaillard.
+\newblock {Variability, compensation and homeostasis in neuron and network
+  function}.
+\newblock {\em Nature Reviews Neuroscience}, 2006.
+
+\bibitem{NOS_Mammals}
+R.~G. Knowles and S.~Moncada.
+\newblock {Nitric Oxide Synthases in Mammals}.
+\newblock {\em Biochemical Journal}, 298(Pt 2):249--258, 1994.
+
+\bibitem{Knowles_Ca_nNOS}
+R.~G. Knowles, M.~Palacios, R.~M.~J. Palmer, and S.~Moncada.
+\newblock {Formation of nitric oxide from L-arginine in the central nervous
+  system: a transduction mechanism for stimulation of the soluble guanylate
+  cyclase}.
+\newblock {\em Proceedings of the National Academy of Sciences}, 86:5159--5162,
+  1989.
+
+\bibitem{Steinert_NO}
+J.~Steinert, C.~Kopp-Scheinpflug, C.~Baker, R.~J. Challiss, R.~Mistry,
+  M.~Haustein, S.~J. Griffin, H.~Tong, B.~P. Graham, and I.~D. Forsythe.
+\newblock {Nitric Oxide Is a Volume Transmitter Regulating Postsynaptic
+  Excitability at a Glutamatergic Synapse}.
+\newblock {\em Neuron}, 60(4):642 -- 656, 2008.
+
+\bibitem{Lancaster_1994}
+J.~R. Lancaster.
+\newblock {Simulation of the diffusion and reaction of endogenously produced
+  nitric oxide}.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 91(17):8137--8141, August 1994.
+
+\bibitem{Hille_Ion_Channels}
+B.~Hille.
+\newblock {\em {Ionic Channels of Excitable Membranes}}.
+\newblock Sinauer Associates, 2001.
+
+\bibitem{Steinert_NO_2011}
+J.~Steinert, S.~Robinson, H.~Tong, M.~Haustein, C.~Kopp-Scheinpflug, and
+  I.~Forsythe.
+\newblock {Nitric Oxide is an Activity-Dependent Regulator of Target Neuron
+  Intrinsic Excitability}.
+\newblock {\em Neuron}, 71(2):291--305, 2011.
+
+\bibitem{Pape_NO}
+H.-C. Pape and R.~Mager.
+\newblock {Nitric Oxide Controls Oscillatory Activity in Thalamocortical
+  Neurons}.
+\newblock {\em Neuron}, 9:441--448, 1992.
+
+\bibitem{SORN_Paper}
+D.~Miner and J.~Triesch.
+\newblock {Plasticity-Driven Self-Organization under Topological Constraints
+  Accounts for Non-Random Features of Cortical Synaptic Wiring}.
+\newblock {\em PLoS Computational Biology}, 2016.
+
+\bibitem{Pengsheng_2013}
+P.~Zheng, C.~Dimitrakakis, and J.~Triesch.
+\newblock {Network Self-Organization Explains the Statistics and Dynamics of
+  Synaptic Connection Strength in Cortex}.
+\newblock {\em PLOS Computational Biology}, 2013.
+
+\bibitem{Markram_Connections_1997}
+H.~Markram.
+\newblock {A network of tufted layer 5 pyramidal neurons}.
+\newblock {\em Cerebral Cortex}, 7(6):523--533, 1997.
+
+\bibitem{Song_Connectivity_2005}
+S.~Song, P.~J. Sj\"ostr\"om, M.~Reigl, S.~Nelson, and D.~B. Chklovskii.
+\newblock {Highly Nonrandom Features of Synaptic Connectivity in Local Cortical
+  Circuits}.
+\newblock {\em PLOS Biology}, 3(3), 03 2005.
+
+\bibitem{Hartmann_2016}
+C.~Hartmann, A.~Lazar, B.~Nessler, and J.~Triesch.
+\newblock {Where’s the Noise? Key Features of Spontaneous Activity and Neural
+  Variability Arise through Learning in a Deterministic Network}.
+\newblock {\em PLOS Computational Biology}, 11(12):1--35, 12 2016.
+
+\bibitem{Briansim}
+R.~Brette, D.~Goodman, and M.~Stirnberg.
+\newblock {The Brian spiking neural network simulator (Version 1.0) [Computer
+  Software]}.
+\newblock \url{http://www.briansimulator.org/}, 2016.
+
+\bibitem{Zhang_STDP}
+L.~I. Zhang, H.~W. Tao, C.~E. Holt, W.~A. Harris, and M.~Poo.
+\newblock {A critical window for cooperation and competition among developing
+  retinotectal synapses}.
+\newblock {\em Nature}, 395:37--44, 1998.
+
+\bibitem{Bi_Poo_STDP}
+G.~Bi and M.~Poo.
+\newblock {Synaptic Modifications in Cultured Hippocampal Neurons: Dependence
+  on Spike Timing, Synaptic Strength, and Postsynaptic Cell Type}.
+\newblock {\em The Journal of Neuroscience}, 18(24):10464--10472, 1998.
+
+\bibitem{Froemke_STDP}
+R.~C. Froemke, M.~Poo, and Y.~Dan.
+\newblock {Spike-timing-dependent synaptic plasticity depends on dendritic
+  location}.
+\newblock {\em Nature}, 434(7030):221--225, March 2005.
+
+\bibitem{Markram_STP}
+H.~Markram, Y.~Wang, and M.~Tsodyks.
+\newblock {Differential signaling via the same axon of neocortical pyramidal
+  neurons}.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  95(9):5323--5328, 1998.
+
+\bibitem{Katz_1967}
+B.~Katz and R.~Miledi.
+\newblock {The timing of calcium action during neuromuscular transmission}.
+\newblock {\em The Journal of Physiology}, 189(3):535--544, 1967.
+
+\bibitem{Katz_1968}
+B.~Katz and R.~Miledi.
+\newblock {The role of calcium in neuromuscular facilitation}.
+\newblock {\em The Journal of Physiology}, 195(2):481--492, 1968.
+
+\bibitem{Connors_Gutnick_Spike_Patterns}
+B.~W. Connors and M.~J. Gutnick.
+\newblock {Intrinsic firing patterns of diverse neocortical neurons}.
+\newblock {\em Trends in Neurosciences}, 13(3):99 -- 104, 1990.
+
+\bibitem{Benda_Herz_Spike_Frequ_Adaption}
+J.~Benda and A.~V.~M. Herz.
+\newblock {A Universal Model for Spike-Frequency Adaption}.
+\newblock {\em Neural Computation}, 15(11):2523--2564, 2003.
+
+\bibitem{Desai_IP}
+N.~S. Desai, L.~C. Rutherford, and G.~G. Turrigiano.
+\newblock {Plasticity in the intrinsic Excitability of Cortical Pyramidal
+  Neurons}.
+\newblock {\em Nature Neuroscience}, 2:515--520, 1999.
+
+\bibitem{Izhikevich_Dynsys}
+E.~M. Izhikevich.
+\newblock {\em {Dynamical Systems in Neuroscience — The Geometry of
+  Excitability and Bursting}}.
+\newblock The MIT Press, 2007.
+
+\bibitem{Hill_Equ}
+AV. Hill.
+\newblock {The possible effects of the aggregation of the molecules of
+  haemoglobin on its dissociation curves}.
+\newblock {\em The Journal of Physiology}, 40:iv---vii, 1910.
+
+\bibitem{Philippides_2000}
+A.~Philippides, P.~Husbands, and M.~O{\textquoteright}Shea.
+\newblock {Four-Dimensional Neuronal Signaling by Nitric Oxide: A Computational
+  Analysis}.
+\newblock {\em Journal of Neuroscience}, 20(3):1199--1207, 2000.
+
+\bibitem{Dyn_Sys_Hirsch}
+M.~W. Hirsch and S.~Smale, editors.
+\newblock {\em {Differential Equations, Dynamical Systems, and Linear
+  Algebra}}, volume~60 of {\em Pure and Applied Mathematics}.
+\newblock Elsevier, 1974.
+
+\bibitem{Gerstner_Pop_Act}
+W.~Gerstner.
+\newblock {Time structure of the activity in neural network models}.
+\newblock {\em Phys. Rev. E}, 51:738--758, Jan 1995.
+
+\bibitem{Roxin_Firing_Rate_Distribution}
+A.~Roxin, N.~Brunel, D.~Hansel, G.~Mongillo, and C.~van Vreeswijk.
+\newblock {On the Distribution of Firing Rates in Networks of Cortical
+  Neurons}.
+\newblock {\em Journal of Neuroscience}, 31(45):16217--16226, 2011.
+
+\bibitem{Vreeswijk1996}
+C.~van Vreeswijk and H.~Sompolinsky.
+\newblock {Chaos in neuronal networks with balanced excitatory and inhibitory
+  activity}.
+\newblock {\em Science}, 274:1724--1726, 1996.
+
+\bibitem{Brunel2000}
+N.~Brunel.
+\newblock {Dynamics of sparsely connected networks of excitatory and inhibitory
+  spiking neurons.}
+\newblock {\em J Comput Neurosci}, 8:183--208, 2000.
+
+\bibitem{Ostojic2011}
+S.~Ostojic.
+\newblock {Interspike interval distributions of spiking neurons driven by
+  fluctuating inputs}.
+\newblock {\em Journal of Neurophysiology}, 106(1):361--373, 2011.
+
+\bibitem{EncyMath_t_test}
+European Mathematical~Society Springer Verlag~GmbH.
+\newblock {Student test. M.S. Nikulin (originator). Encyclopedia of
+  Mathematics}.
+\newblock Website.
+\newblock URL:
+  \url{http://www.encyclopediaofmath.org/index.php?title=Student_test&oldid=17068}.
+  Accessed on 2017-03-013.
+
+\bibitem{Welch_1947}
+B.~L. Welch.
+\newblock {The generalization of 'Student's' problem when several different
+  population variances are involved}.
+\newblock {\em Biometrika}, 34(1-2):28, 1947.
+
+\bibitem{EncyMath_sign_level}
+European Mathematical~Society Springer Verlag~GmbH.
+\newblock {Significance level. Encyclopedia of Mathematics}.
+\newblock Website.
+\newblock URL:
+  \url{http://www.encyclopediaofmath.org/index.php?title=Significance_level&oldid=34286}.
+  Accessed on 2017-03-013.
+
+\bibitem{Hoffmann_2017}
+F.~Z. Hoffmann and J.~Triesch.
+\newblock {Non-random network connectivity comes in pairs}.
+\newblock {\em Network Neuroscience}, 2017.
+
+\bibitem{Lisman_Synapses_1993}
+J.~E. Lisman and K.~M. Harris.
+\newblock {Quantal analysis and synaptic anatomy — integrating two views of
+  hippocampal plasticity}.
+\newblock {\em Trends in Neurosciences}, 16(4):141 -- 147, 1993.
+
+\bibitem{Yasumatsu_Synapses_2008}
+N.~Yasumatsu, M.~Matsuzaki, T.~Miyazaki, J.~Noguchi, and H.~Kasai.
+\newblock {Principles of Long-Term Dynamics of Dendritic Spines}.
+\newblock {\em Journal of Neuroscience}, 28(50):13592--13608, 2008.
+
+\bibitem{Loewenstein_Spine_Sizes}
+Y.~Loewenstein, A.~Kuras, and S.~Rumpel.
+\newblock {Multiplicative Dynamics Underlie the Emergence of the Log-Normal
+  Distribution of Spine Sizes in the Neocortex In Vivo}.
+\newblock {\em Journal of Neuroscience}, 31(26):9481--9488, 2011.
+
+\bibitem{Statman_Synapses_2014}
+A.~Statman, M.~Kaufman, A.~Minerbi, N.~E. Ziv, and N.~Brenner.
+\newblock {Synaptic Size Dynamics as an Effectively Stochastic Process}.
+\newblock {\em PLOS Computational Biology}, 10(10):1--17, 10 2014.
+
+\bibitem{Gabaix_1999}
+X.~Gabaix.
+\newblock {Zipf's Law for Cities: An Explanation}.
+\newblock {\em The Quarterly Journal of Economics}, 114(3):739--767, 1999.
+
+\bibitem{Pascual_2002}
+M.~Pascual, M.~Roy, F.~Guichard, and G.~Flierl.
+\newblock {Cluster size distributions: signatures of self-organization in
+  spatial ecologies}.
+\newblock {\em Philosophical Transactions of the Royal Society of London B:
+  Biological Sciences}, 2002.
+
+\bibitem{Kagan_2010}
+Y.~Y. Kagan.
+\newblock {Earthquake size distribution: Power-law with exponent?}
+\newblock {\em Tectonophysics}, 490(1–2):103 -- 114, 2010.
+
+\bibitem{Bauke_2007}
+H.~Bauke.
+\newblock {Parameter estimation for power-law distributions by maximum
+  likelihood methods}.
+\newblock {\em The European Physical Journal B}, 58(2):167--173, 2007.
+
+\bibitem{Clauset_2009}
+A.~Clauset, C.~S. Rohilla, and M.~E.~J. Newman.
+\newblock {Power-Law Distributions in Empirical Data}.
+\newblock {\em SIAM Review}, 51(4):661--703, 2009.
+
+\bibitem{EncyMath_Max_Like}
+European Mathematical~Society Springer Verlag~GmbH.
+\newblock {Maximum-likelihood method. Encyclopedia of Mathematics}.
+\newblock Website.
+\newblock URL:
+  \url{http://www.encyclopediaofmath.org/index.php?title=Maximum-likelihood_method&oldid=39772}.
+  Accessed on 2017-03-08.
+
+\bibitem{Powerlaw_Package}
+J.~Alstott.
+\newblock {powerlaw: A Python Package for Analysis of Heavy-Tailed
+  Distributions (Version 1.4.1) [Computer Software]}.
+\newblock \url{https://pypi.python.org/pypi/powerlaw}, 2017.
+
+\bibitem{Alstott_2014}
+J.~Alstott, E.~Bullmore, and D.~Plenz.
+\newblock {powerlaw: A Python Package for Analysis of Heavy-Tailed
+  Distributions}.
+\newblock {\em PLOS ONE}, 9(1):1--11, 01 2014.
+
+\bibitem{EncyMath_Kolmogorov_Smirnov}
+European Mathematical~Society Springer Verlag~GmbH.
+\newblock {Kolmogorov-Smirnov test. Encyclopedia of Mathematics}.
+\newblock Website.
+\newblock URL:
+  \url{http://www.encyclopediaofmath.org/index.php?title=Kolmogorov-Smirnov_test&oldid=22659}.
+  Accessed on 2017-03-08.
+
+\bibitem{Roy_1968}
+L.K. Roy and M.T. Wasan.
+\newblock {The first passage time distribution of brownian motion with positive
+  drift}.
+\newblock {\em Mathematical Biosciences}, 3:191 -- 204, 1968.
+
+\bibitem{Effenberger_2015}
+F.~Effenberger and J.~Jost.
+\newblock {Self-Organization in Balanced State Networks by STDP and Homeostatic
+  Plasticity}.
+\newblock {\em PLOS Computational Biology}, 2015.
+
+\bibitem{Yassin_Subnetworks_2010}
+L.~Yassin, B.~L. Benedetti, J.-S. Jouhanneau, J.~A. Wen, J.~F. Poulet, and
+  A.~L. Barth.
+\newblock {An Embedded Subnetwork of Highly Active Neurons in the Neocortex}.
+\newblock {\em Neuron}, 68(6):1043 -- 1050, 2010.
+
+\bibitem{Eckmann_Leader_Neurons_2008}
+J.P. Eckmann, S.~Jacobi, S.~Marom, E.~Moses, and C.~Zbinden.
+\newblock {Leader neurons in population bursts of 2D living neural networks}.
+\newblock {\em New Journal of Physics}, 10, 2008.
+
+\bibitem{Vogels_2011}
+T.~P. Vogels, H.~Sprekeler, F.~Zenke, C.~Clopath, and W.~Gerstner.
+\newblock {Inhibitory Plasticity Balances Excitation and Inhibition in Sensory
+  Pathways and Memory Networks}.
+\newblock {\em Science}, 334(6062):1569--1573, 2011.
+
+\bibitem{Sjoestroem_Syn_Plasticity_2001}
+P.~J. Sj\"ostr\"om and G.~G. Turrigiano.
+\newblock {Rate, Timing, and Cooperativity Jointly Determine Cortical Synaptic
+  Plasticity}.
+\newblock {\em Neuron}, 2001.
+
+\bibitem{Feldman_STDP_2012}
+D.~Feldman.
+\newblock {The Spike-Timing Dependence of Plasticity}.
+\newblock {\em Neuron}, 2012.
+
+\bibitem{EncyMath}
+European Mathematical~Society Springer Verlag~GmbH.
+\newblock {Green function. Encyclopedia of Mathematics}.
+\newblock Website.
+\newblock URL:
+  \url{http://www.encyclopediaofmath.org/index.php?title=Green_function&oldid=28208}.
+  Accessed on 2017-03-04.
+
+\bibitem{Helmholtz_Solution_2d}
+R.~T. Couto.
+\newblock {Green's functions for the wave, Helmholtz and Poisson equations in a
+  two-dimensional boundless domain}.
+\newblock {\em Revista Brasileira de Ensino Física}, 2013.
+
+\bibitem{Philippides_2005}
+A.~Philippides, S.~R. Ott, P.~Husbands, T.~A. Lovick, and
+  M.~O{\textquoteright}Shea.
+\newblock {Modeling Cooperative Volume Signaling in a Plexus of Nitric Oxide
+  Synthase-Expressing Neurons}.
+\newblock {\em Journal of Neuroscience}, 25(28):6520--6532, 2005.
+
+\bibitem{Stability_Homeostasis_Harnack_2015}
+D.~Harnack, M.~Pelko, A.~Chaillet, Y.~Chitour, and M.~C.~W. van Rossum.
+\newblock {Stability of Neuronal Networks with Homeostatic Regulation}.
+\newblock {\em PLOS Computational Biology}, 2015.
+
+\bibitem{Zenke_2013}
+F.~Zenke, G.~Hennequin, and W.~Gerstner.
+\newblock {Synaptic Plasticity in Neural Networks Needs Homeostasis with a Fast
+  Rate Detector}.
+\newblock {\em PLOS Computational Biology}, 9(11):1--14, 11 2013.
+
+\bibitem{Zenke_2017}
+F.~Zenke and W.~Gerstner.
+\newblock {Hebbian plasticity requires compensatory processes on multiple
+  timescales}.
+\newblock {\em Philosophical Transactions of the Royal Society of London B:
+  Biological Sciences}, 372(1715), 2017.
+
+\bibitem{Vreeswijk1998}
+C.~van Vreeswijk and H.~Sompolinsky.
+\newblock {Chaotic Balanced State in a Model of Cortical Circuits}.
+\newblock {\em Neural Computation}, 1998.
+
+\bibitem{Koulakov_2009}
+A.~A. Koulakov, T.~Hrom\'{a}dka, and A.~M. Zador.
+\newblock {Correlated Connectivity and the Distribution of Firing Rates in the
+  Neocortex}.
+\newblock {\em The Journal of Neuroscience}, 2009.
+
+\bibitem{Ivenshitz_2010}
+M.~Ivenshitz and M.~Segal.
+\newblock {Neuronal Density Determines Network Connectivity and Spontaneous
+  Activity in Cultured Hippocampus}.
+\newblock {\em Journal of Neurophysiology}, 104(2):1052--1060, 2010.
+
+\bibitem{Lever_Long_Term_Plast_2002}
+C.~Lever, T.~Wills, F.~Cacucci, N.~Burgess, and J.~O'Keefe.
+\newblock {Long-term plasticity in hippocampal place-cell representation of
+  environmental geometry}.
+\newblock {\em Nature}, 2002.
+
+\end{thebibliography}

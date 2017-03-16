@@ -3,7 +3,7 @@
 
 
 @Article{Syn_Plast_Abbott,
-  Title                    = {Synaptic Plasticity: taming the beast},
+  Title                    = {{Synaptic Plasticity: taming the beast}},
   Author                   = {Abbott, L. and Nelson, S. B.},
   Journal                  = {Nature Neuroscience},
   Year                     = {2000},
@@ -13,7 +13,7 @@
 }
 
 @Misc{Powerlaw_Package,
-  Title                    = {powerlaw: A Python Package for Analysis of Heavy-Tailed Distributions (Version 1.4.1) [Computer Software]},
+  Title                    = {{powerlaw: A Python Package for Analysis of Heavy-Tailed Distributions (Version 1.4.1) [Computer Software]}},
 
   Author                   = {Alstott, J.},
   HowPublished             = {\url{https://pypi.python.org/pypi/powerlaw}},
@@ -25,7 +25,7 @@
 }
 
 @Article{Alstott_2014,
-  Title                    = {powerlaw: A Python Package for Analysis of Heavy-Tailed Distributions},
+  Title                    = {{powerlaw: A Python Package for Analysis of Heavy-Tailed Distributions}},
   Author                   = {Alstott, J. AND Bullmore, E. AND Plenz, D.},
   Journal                  = {PLOS ONE},
   Year                     = {2014},
@@ -42,7 +42,7 @@
 }
 
 @Article{Bauke_2007,
-  Title                    = {Parameter estimation for power-law distributions by maximum likelihood methods},
+  Title                    = {{Parameter estimation for power-law distributions by maximum likelihood methods}},
   Author                   = {Bauke, H.},
   Journal                  = {The European Physical Journal B},
   Year                     = {2007},
@@ -57,7 +57,7 @@
 }
 
 @Book{Bear_Exploring_the_Brain,
-  Title                    = {Neuroscience: Exploring the Brain},
+  Title                    = {{Neuroscience: Exploring the Brain}},
   Author                   = {Bear, M. F. and Connors, B. W. and Paradiso, M. A.},
   Editor                   = {Emily Lupash},
   Publisher                = {Lippincott Williams \& Wilki},
@@ -68,7 +68,7 @@
 }
 
 @Article{Benda_Herz_Spike_Frequ_Adaption,
-  Title                    = {A Universal Model for Spike-Frequency Adaption},
+  Title                    = {{A Universal Model for Spike-Frequency Adaption}},
   Author                   = {Benda, J. and Herz, A. V. M.},
   Journal                  = {Neural Computation},
   Year                     = {2003},
@@ -81,7 +81,7 @@
 }
 
 @Article{Bi_Poo_STDP,
-  Title                    = {Synaptic Modifications in Cultured Hippocampal Neurons: Dependence on Spike Timing, Synaptic Strength, and Postsynaptic Cell Type},
+  Title                    = {{Synaptic Modifications in Cultured Hippocampal Neurons: Dependence on Spike Timing, Synaptic Strength, and Postsynaptic Cell Type}},
   Author                   = {Bi, G. and Poo, M.},
   Journal                  = {The Journal of Neuroscience},
   Year                     = {1998},
@@ -95,7 +95,7 @@
 }
 
 @Article{Bredt_Snyder_NO,
-  Title                    = {Isolation of nitric oxide synthetase, a calmodulin-requiring enzyme},
+  Title                    = {{Isolation of nitric oxide synthetase, a calmodulin-requiring enzyme}},
   Author                   = {Bredt, D. S. and Snyder, S. H.},
   Journal                  = {Proceedings of the National Academy of Sciences},
   Year                     = {1990},
@@ -109,7 +109,7 @@
 }
 
 @Misc{Briansim,
-  Title                    = {The Brian spiking neural network simulator (Version 1.0) [Computer Software]},
+  Title                    = {{The Brian spiking neural network simulator (Version 1.0) [Computer Software]}},
 
   Author                   = {Brette, R. and Goodman, D. and Stirnberg, M.},
   HowPublished             = {\url{http://www.briansimulator.org/}},
@@ -121,7 +121,7 @@
 }
 
 @Article{Brunel2000,
-  Title                    = {Dynamics of sparsely connected networks of excitatory and inhibitory spiking neurons.},
+  Title                    = {{Dynamics of sparsely connected networks of excitatory and inhibitory spiking neurons.}},
   Author                   = {Brunel, N.},
   Journal                  = {J Comput Neurosci},
   Year                     = {2000},
@@ -135,7 +135,7 @@
 }
 
 @Article{Burrone_2003,
-  Title                    = {Synaptic gain control and homeostasis},
+  Title                    = {{Synaptic gain control and homeostasis}},
   Author                   = {Burrone, J. and Murthy, V. N.},
   Journal                  = {Current Opinion in Neurobiology },
   Year                     = {2003},
@@ -149,7 +149,7 @@
 }
 
 @Article{Burrone_2002,
-  Title                    = {Multiple forms of synaptic plasticity triggered by selective supperssion of activity},
+  Title                    = {{Multiple forms of synaptic plasticity triggered by selective supperssion of activity}},
   Author                   = {Burrone, J. and O'Byrne, M. and Murthy, V. N.},
   Journal                  = {Nature},
   Year                     = {2002},
@@ -159,7 +159,7 @@
 }
 
 @Article{Buzsaki_2004,
-  Title                    = {Interneuron Diversity series: Circuit complexity and axon wiring economy of cortical interneurons},
+  Title                    = {{Interneuron Diversity series: Circuit complexity and axon wiring economy of cortical interneurons}},
   Author                   = {Buzsáki, G. and Geisler, C. and Henze, D. A. and Wang, X.-J.},
   Journal                  = {Trends in Neurosciences},
   Year                     = {2004},
@@ -170,7 +170,7 @@
 }
 
 @Article{Buzsaki_Fir_Rates_2014,
-  Title                    = {The log-dynamic brain: how skewed distributions affect network operations},
+  Title                    = {{The log-dynamic brain: how skewed distributions affect network operations}},
   Author                   = {Buzsáki, G. and Mizuseki, K.},
   Journal                  = {Nature Reviews Neuroscience},
   Year                     = {2014},
@@ -180,7 +180,7 @@
 }
 
 @Book{Wisdom_of_the_Body_Cannon,
-  Title                    = {The Wisdom of the Body},
+  Title                    = {{The Wisdom of the Body}},
   Author                   = {Cannon, W. B.},
   Publisher                = {Norton \& Company},
   Year                     = {1932},
@@ -190,7 +190,7 @@
 }
 
 @Article{Clauset_2009,
-  Title                    = {Power-Law Distributions in Empirical Data},
+  Title                    = {{Power-Law Distributions in Empirical Data}},
   Author                   = {Clauset, A. and Rohilla, C. S. and Newman, M. E. J.},
   Journal                  = {SIAM Review},
   Year                     = {2009},
@@ -206,7 +206,7 @@
 }
 
 @Article{Connors_Gutnick_Spike_Patterns,
-  Title                    = {Intrinsic firing patterns of diverse neocortical neurons },
+  Title                    = {{Intrinsic firing patterns of diverse neocortical neurons}},
   Author                   = {Connors, B. W. and Gutnick, M. J.},
   Journal                  = {Trends in Neurosciences },
   Year                     = {1990},
@@ -220,7 +220,7 @@
 }
 
 @Article{Helmholtz_Solution_2d,
-  Title                    = {Green's functions for the wave, Helmholtz and Poisson equations in a two-dimensional boundless domain},
+  Title                    = {{Green's functions for the wave, Helmholtz and Poisson equations in a two-dimensional boundless domain}},
   Author                   = {Couto, R. T.},
   Journal                  = {Revista Brasileira de Ensino Física},
   Year                     = {2013},
@@ -230,7 +230,7 @@
 }
 
 @Book{Cybernetik_Systems_Cruse_2006,
-  Title                    = {Neural Networks as Cybernetic Systems},
+  Title                    = {{Neural Networks as Cybernetic Systems}},
   Author                   = {Cruse, H.},
   Publisher                = {Brains, Minds \& Media},
   Year                     = {2006},
@@ -240,7 +240,7 @@
 }
 
 @Book{Theor_Neur_Dayan,
-  Title                    = {Theoretical Neuroscience},
+  Title                    = {{Theoretical Neuroscience}},
   Author                   = {Dayan, P. and Abbott, L.F.},
   Publisher                = {MIT Press},
   Year                     = {2001},
@@ -250,7 +250,7 @@
 }
 
 @Article{Desai_2003,
-  Title                    = {Homeostatic plasticity in the CNS: synaptic and intrinsic forms},
+  Title                    = {{Homeostatic plasticity in the CNS: synaptic and intrinsic forms}},
   Author                   = {Desai, N. S.},
   Journal                  = {Journal of Physiology-Paris },
   Year                     = {2003},
@@ -266,7 +266,7 @@
 }
 
 @Article{Desai_IP,
-  Title                    = {Plasticity in the intrinsic Excitability of Cortical Pyramidal Neurons},
+  Title                    = {{Plasticity in the intrinsic Excitability of Cortical Pyramidal Neurons}},
   Author                   = {Desai, N. S. and Rutherford, L. C. and Turrigiano, G. G.},
   Journal                  = {Nature Neuroscience},
   Year                     = {1999},
@@ -278,7 +278,7 @@
 }
 
 @Article{Dragoi_2003,
-  Title                    = {Place Representation within Hippocampal Networks Is Modified by Long-Term Potentiation},
+  Title                    = {{Place Representation within Hippocampal Networks Is Modified by Long-Term Potentiation}},
   Author                   = {Dragoi, G. and Harris, K. D. and Buzsáki, G.},
   Journal                  = {Neuron },
   Year                     = {2003},
@@ -292,7 +292,7 @@
 }
 
 @Article{Eckmann_Leader_Neurons_2008,
-  Title                    = {Leader neurons in population bursts of 2D living neural networks},
+  Title                    = {{Leader neurons in population bursts of 2D living neural networks}},
   Author                   = {Eckmann, J.P. and Jacobi, S. and Marom, S. and Moses, E. and Zbinden, C.},
   Journal                  = {New Journal of Physics},
   Year                     = {2008},
@@ -304,7 +304,7 @@
 }
 
 @Article{Effenberger_2015,
-  Title                    = {Self-Organization in Balanced State Networks by STDP and Homeostatic Plasticity},
+  Title                    = {{Self-Organization in Balanced State Networks by STDP and Homeostatic Plasticity}},
   Author                   = {Effenberger, F. and Jost, J.},
   Journal                  = {PLOS Computational Biology},
   Year                     = {2015},
@@ -314,7 +314,7 @@
 }
 
 @Article{Feldman_STDP_2012,
-  Title                    = {The Spike-Timing Dependence of Plasticity},
+  Title                    = {{The Spike-Timing Dependence of Plasticity}},
   Author                   = {Feldman, D.},
   Journal                  = {Neuron},
   Year                     = {2012},
@@ -343,7 +343,7 @@
 }
 
 @Article{Gabaix_1999,
-  Title                    = {Zipf's Law for Cities: An Explanation},
+  Title                    = {{Zipf's Law for Cities: An Explanation}},
   Author                   = {Gabaix, X.},
   Journal                  = {The Quarterly Journal of Economics},
   Year                     = {1999},
@@ -358,7 +358,7 @@
 }
 
 @Article{Gerstner_Pop_Act,
-  Title                    = {Time structure of the activity in neural network models},
+  Title                    = {{Time structure of the activity in neural network models}},
   Author                   = {Gerstner, W.},
   Journal                  = {Phys. Rev. E},
   Year                     = {1995},
@@ -375,7 +375,7 @@
 }
 
 @Book{Spiking_Gerstner,
-  Title                    = {Spiking Neuron Models. Single Neurons, Populations, Plasticity.},
+  Title                    = {{Spiking Neuron Models. Single Neurons, Populations, Plasticity.}},
   Author                   = {Gerstner, W. and Kistler, W. M.},
   Publisher                = {Cambridge University Press},
   Year                     = {2002},
@@ -385,7 +385,7 @@
 }
 
 @Article{NOS_Bacteria,
-  Title                    = {NO-mediated Cytoprotection: Instant Adaptation to Oxidative Stress in Bacteria},
+  Title                    = {{NO-mediated Cytoprotection: Instant Adaptation to Oxidative Stress in Bacteria}},
   Author                   = {Gusarov, I. and Nudler, E.},
   Journal                  = {Proceedings of the National Academy of Sciences of the United States of America},
   Year                     = {2005},
@@ -398,7 +398,7 @@
 }
 
 @Article{Stability_Homeostasis_Harnack_2015,
-  Title                    = {Stability of Neuronal Networks with Homeostatic Regulation},
+  Title                    = {{Stability of Neuronal Networks with Homeostatic Regulation}},
   Author                   = {Harnack, D. and Pelko, M. and Chaillet, A. and Chitour, Y. and van Rossum, M. C. W.},
   Journal                  = {PLOS Computational Biology},
   Year                     = {2015},
@@ -408,7 +408,7 @@
 }
 
 @Article{Hartmann_2016,
-  Title                    = {Where’s the Noise? Key Features of Spontaneous Activity and Neural Variability Arise through Learning in a Deterministic Network},
+  Title                    = {{Where’s the Noise? Key Features of Spontaneous Activity and Neural Variability Arise through Learning in a Deterministic Network}},
   Author                   = {Hartmann, C. and Lazar, A. and Nessler, B. and Triesch, J.},
   Journal                  = {PLOS Computational Biology},
   Year                     = {2016},
@@ -425,7 +425,7 @@
 }
 
 @Article{Hengen_2016,
-  Title                    = {Neuronal firing rate homeostasis is inhibited by sleep and promoted by wake.},
+  Title                    = {{Neuronal firing rate homeostasis is inhibited by sleep and promoted by wake}},
   Author                   = {Hengen, K. B. and Pacheco, A. T. and McGregor, J. N. and Van Hooser, S. D. and Turrigiano, G. G.},
   Journal                  = {Cell},
   Year                     = {2016},
@@ -435,7 +435,7 @@
 }
 
 @Article{Hill_Equ,
-  Title                    = {The possible effects of the aggregation of the molecules of haemoglobin on its dissociation curves.},
+  Title                    = {{The possible effects of the aggregation of the molecules of haemoglobin on its dissociation curves}},
   Author                   = {Hill, AV.},
   Journal                  = {The Journal of Physiology},
   Year                     = {1910},
@@ -448,7 +448,7 @@
 }
 
 @Book{Hille_Ion_Channels,
-  Title                    = {Ionic Channels of Excitable Membranes},
+  Title                    = {{Ionic Channels of Excitable Membranes}},
   Author                   = {Hille, B.},
   Publisher                = {Sinauer Associates},
   Year                     = {2001},
@@ -458,7 +458,7 @@
 }
 
 @Article{Hodgkin_Huxley_1952,
-  Title                    = {A quantitative description of membrane current and its application to conduction and excitation in nerve},
+  Title                    = {{A quantitative description of membrane current and its application to conduction and excitation in nerve}},
   Author                   = {Hodgkin, A. L. and Huxley, A. F.},
   Journal                  = {The Journal of Physiology},
   Year                     = {1952},
@@ -474,7 +474,7 @@
 }
 
 @Article{Hoffmann_2017,
-  Title                    = {Non-random network connectivity comes in pairs},
+  Title                    = {{Non-random network connectivity comes in pairs}},
   Author                   = {Hoffmann, F. Z. and Triesch, J.},
   Journal                  = {Network Neuroscience},
   Year                     = {2017},
@@ -484,7 +484,7 @@
 }
 
 @Article{Ivenshitz_2010,
-  Title                    = {Neuronal Density Determines Network Connectivity and Spontaneous Activity in Cultured Hippocampus},
+  Title                    = {{Neuronal Density Determines Network Connectivity and Spontaneous Activity in Cultured Hippocampus}},
   Author                   = {Ivenshitz, M. and Segal, M.},
   Journal                  = {Journal of Neurophysiology},
   Year                     = {2010},
@@ -501,7 +501,7 @@
 }
 
 @Book{Izhikevich_Dynsys,
-  Title                    = {Dynamical Systems in Neuroscience - The Geometry of Excitability and Bursting},
+  Title                    = {{Dynamical Systems in Neuroscience — The Geometry of Excitability and Bursting}},
   Author                   = {Izhikevich, E. M.},
   Publisher                = {The MIT Press},
   Year                     = {2007},
@@ -511,7 +511,7 @@
 }
 
 @Article{Kagan_2010,
-  Title                    = {Earthquake size distribution: Power-law with exponent ? },
+  Title                    = {{Earthquake size distribution: Power-law with exponent?}},
   Author                   = {Kagan, Y. Y.},
   Journal                  = {Tectonophysics},
   Year                     = {2010},
@@ -526,7 +526,7 @@
 }
 
 @Article{Katz_1968,
-  Title                    = {The role of calcium in neuromuscular facilitation},
+  Title                    = {{The role of calcium in neuromuscular facilitation}},
   Author                   = {Katz, B. and Miledi, R.},
   Journal                  = {The Journal of Physiology},
   Year                     = {1968},
@@ -540,7 +540,7 @@
 }
 
 @Article{Katz_1967,
-  Title                    = {The timing of calcium action during neuromuscular transmission},
+  Title                    = {{The timing of calcium action during neuromuscular transmission}},
   Author                   = {Katz, B. and Miledi, R.},
   Journal                  = {The Journal of Physiology},
   Year                     = {1967},
@@ -554,7 +554,7 @@
 }
 
 @Article{NOS_Mammals,
-  Title                    = {Nitrix Oxide Synthases in Mammals},
+  Title                    = {{Nitrix Oxide Synthases in Mammals}},
   Author                   = {Knowles, R. G. and Moncada, S.},
   Journal                  = {Biochemical Journal},
   Year                     = {1994},
@@ -566,7 +566,7 @@
 }
 
 @Article{Knowles_Ca_nNOS,
-  Title                    = {Formation of nitric oxide from L-arginine in the central nervous system: a transduction mechanism for stimulation of the soluble guanylate cyclase},
+  Title                    = {{Formation of nitric oxide from L-arginine in the central nervous system: a transduction mechanism for stimulation of the soluble guanylate cyclase}},
   Author                   = {Knowles, R. G. and Palacios, M. and Palmer, R. M. J. and Moncada, S.},
   Journal                  = {Proceedings of the National Academy of Sciences},
   Year                     = {1989},
@@ -578,7 +578,7 @@
 }
 
 @Article{Koulakov_2009,
-  Title                    = {Correlated Connectivity and the Distribution of Firing Rates in the Neocortex},
+  Title                    = {{Correlated Connectivity and the Distribution of Firing Rates in the Neocortex}},
   Author                   = {Koulakov, A. A. and Hrom\'{a}dka, T. and Zador, A. M.},
   Journal                  = {The Journal of Neuroscience},
   Year                     = {2009},
@@ -588,7 +588,7 @@
 }
 
 @Article{Lancaster_1994,
-  Title                    = {Simulation of the diffusion and reaction of endogenously produced nitric oxide.},
+  Title                    = {{Simulation of the diffusion and reaction of endogenously produced nitric oxide}},
   Author                   = {Lancaster, J. R.},
   Journal                  = {Proceedings of the National Academy of Sciences of the United States of America},
   Year                     = {1994},
@@ -605,7 +605,7 @@
 }
 
 @Article{Lazar_2009,
-  Title                    = {SORN: a self-organizing recurrent neural network},
+  Title                    = {{SORN: a self-organizing recurrent neural network}},
   Author                   = {Lazar, A. and Pipa, G. and Triesch, J.},
   Journal                  = {Frontiers in Computational Neuroscience},
   Year                     = {2009},
@@ -616,7 +616,7 @@
 }
 
 @Article{LeMasson_1993,
-  Title                    = {Activity-dependent regulation of conductances in model neurons},
+  Title                    = {{Activity-dependent regulation of conductances in model neurons}},
   Author                   = {LeMasson, G. and Marder, E. and Abbott, L. F.},
   Journal                  = {Science},
   Year                     = {1993},
@@ -633,7 +633,7 @@
 }
 
 @Article{Lever_Long_Term_Plast_2002,
-  Title                    = {Long-term plasticity in hippocampal place-cell representation of environmental geometry},
+  Title                    = {{Long-term plasticity in hippocampal place-cell representation of environmental geometry}},
   Author                   = {Lever, C. and Wills, T. and Cacucci, F. and Burgess, N. and O'Keefe, J.},
   Journal                  = {Nature},
   Year                     = {2002},
@@ -643,7 +643,7 @@
 }
 
 @Article{Lisman_Synapses_1993,
-  Title                    = {Quantal analysis and synaptic anatomy — integrating two views of hippocampal plasticity },
+  Title                    = {{Quantal analysis and synaptic anatomy — integrating two views of hippocampal plasticity}},
   Author                   = {Lisman, J. E. and Harris, K. M.},
   Journal                  = {Trends in Neurosciences },
   Year                     = {1993},
@@ -657,7 +657,7 @@
 }
 
 @Article{Loewenstein_Spine_Sizes,
-  Title                    = {Multiplicative Dynamics Underlie the Emergence of the Log-Normal Distribution of Spine Sizes in the Neocortex In Vivo},
+  Title                    = {{Multiplicative Dynamics Underlie the Emergence of the Log-Normal Distribution of Spine Sizes in the Neocortex In Vivo}},
   Author                   = {Loewenstein, Y. and Kuras, A. and Rumpel, S.},
   Journal                  = {Journal of Neuroscience},
   Year                     = {2011},
@@ -674,7 +674,7 @@
 }
 
 @Article{Marder_2006,
-  Title                    = {Variability, compensation and homeostasis in neuron and network function},
+  Title                    = {{Variability, compensation and homeostasis in neuron and network function}},
   Author                   = {Marder, E. and Goaillard, J.},
   Journal                  = {Nature Reviews Neuroscience},
   Year                     = {2006},
@@ -684,7 +684,7 @@
 }
 
 @Article{Markram_Connections_1997,
-  Title                    = {A network of tufted layer 5 pyramidal neurons.},
+  Title                    = {{A network of tufted layer 5 pyramidal neurons}},
   Author                   = {Markram, H.},
   Journal                  = {Cerebral Cortex},
   Year                     = {1997},
@@ -699,7 +699,7 @@
 }
 
 @Article{Markram_STP,
-  Title                    = {Differential signaling via the same axon of neocortical pyramidal neurons},
+  Title                    = {{Differential signaling via the same axon of neocortical pyramidal neurons}},
   Author                   = {Markram, H. and Wang, Y. and Tsodyks, M.},
   Journal                  = {Proceedings of the National Academy of Sciences},
   Year                     = {1998},
@@ -713,7 +713,7 @@
 }
 
 @Article{Marsat_2010,
-  Title                    = {Neural Heterogeneity and Efficient Population Codes for Communication Signals},
+  Title                    = {{Neural Heterogeneity and Efficient Population Codes for Communication Signals}},
   Author                   = {Marsat, G. and Maler, L.},
   Journal                  = {Journal of Neurophysiology},
   Year                     = {2010},
@@ -730,7 +730,7 @@
 }
 
 @Article{SORN_Paper,
-  Title                    = {Plasticity-Driven Self-Organization under Topological Constraints Accounts for Non-Random Features of Cortical Synaptic Wiring.},
+  Title                    = {{Plasticity-Driven Self-Organization under Topological Constraints Accounts for Non-Random Features of Cortical Synaptic Wiring}},
   Author                   = {Miner, D. and Triesch, J.},
   Journal                  = {PLoS Computational Biology},
   Year                     = {2016},
@@ -740,7 +740,7 @@
 }
 
 @Article{Mizuseki_2013,
-  Title                    = {Preconfigured, skewed distribution of firing rates in the hippocampus and entorhinal cortex},
+  Title                    = {{Preconfigured, skewed distribution of firing rates in the hippocampus and entorhinal cortex}},
   Author                   = {Mizuseki, K. and Buzsáki, G.},
   Journal                  = {Cell Reports},
   Year                     = {2013},
@@ -748,7 +748,7 @@
 }
 
 @Article{Naude_2013,
-  Title                    = {Effects of Cellular Homeostatic Intrinsic Plasticity on Dynamical and Computational Properties of Biological Recurrent Neural Networks},
+  Title                    = {{Effects of Cellular Homeostatic Intrinsic Plasticity on Dynamical and Computational Properties of Biological Recurrent Neural Networks}},
   Author                   = {Naud{\'e}, J. and Cessac, B. and Berry, H. and Delord, B.},
   Journal                  = {Journal of Neuroscience},
   Year                     = {2013},
@@ -758,7 +758,7 @@
 }
 
 @Article{OConnor_2010,
-  Title                    = {Neural Activity in Barrel Cortex Underlying Vibrissa-Based Object Localization in Mice},
+  Title                    = {{Neural Activity in Barrel Cortex Underlying Vibrissa-Based Object Localization in Mice}},
   Author                   = {O'Connor, D. H. and Peron, S. P. and Huber, D. and Svoboda, K.},
   Journal                  = {Neuron},
   Year                     = {2010},
@@ -769,7 +769,7 @@
 }
 
 @Article{Ostojic2011,
-  Title                    = {Interspike interval distributions of spiking neurons driven by fluctuating inputs},
+  Title                    = {{Interspike interval distributions of spiking neurons driven by fluctuating inputs}},
   Author                   = {Ostojic, S.},
   Journal                  = {Journal of Neurophysiology},
   Year                     = {2011},
@@ -786,7 +786,7 @@
 }
 
 @Article{Pape_NO,
-  Title                    = {Nitric Oxide Controls Oscillatory Activity in Thalamocortical Neurons},
+  Title                    = {{Nitric Oxide Controls Oscillatory Activity in Thalamocortical Neurons}},
   Author                   = {Pape, H.-C. and Mager, R.},
   Journal                  = {Neuron},
   Year                     = {1992},
@@ -798,7 +798,7 @@
 }
 
 @Article{Pascual_2002,
-  Title                    = {Cluster size distributions: signatures of self-organization in spatial ecologies.},
+  Title                    = {{Cluster size distributions: signatures of self-organization in spatial ecologies}},
   Author                   = {Pascual, M. and Roy, M. and Guichard, F. and Flierl, G.},
   Journal                  = {Philosophical Transactions of the Royal Society of London B: Biological Sciences},
   Year                     = {2002},
@@ -808,7 +808,7 @@
 }
 
 @Article{Philippides_2000,
-  Title                    = {Four-Dimensional Neuronal Signaling by Nitric Oxide: A Computational Analysis},
+  Title                    = {{Four-Dimensional Neuronal Signaling by Nitric Oxide: A Computational Analysis}},
   Author                   = {Philippides, A. and Husbands, P. and O{\textquoteright}Shea, M.},
   Journal                  = {Journal of Neuroscience},
   Year                     = {2000},
@@ -824,7 +824,7 @@
 }
 
 @Article{Philippides_2005,
-  Title                    = {Modeling Cooperative Volume Signaling in a Plexus of Nitric Oxide Synthase-Expressing Neurons},
+  Title                    = {{Modeling Cooperative Volume Signaling in a Plexus of Nitric Oxide Synthase-Expressing Neurons}},
   Author                   = {Philippides, A. and Ott, S. R. and Husbands, P. and Lovick, T. A. and O{\textquoteright}Shea, M.},
   Journal                  = {Journal of Neuroscience},
   Year                     = {2005},
@@ -852,7 +852,7 @@
 }
 
 @Article{Roxin_Firing_Rate_Distribution,
-  Title                    = {On the Distribution of Firing Rates in Networks of Cortical Neurons},
+  Title                    = {{On the Distribution of Firing Rates in Networks of Cortical Neurons}},
   Author                   = {Roxin, A. and Brunel, N. and Hansel, D. and Mongillo, G. and van Vreeswijk, C.},
   Journal                  = {Journal of Neuroscience},
   Year                     = {2011},
@@ -871,7 +871,7 @@
 }
 
 @Article{Roy_1968,
-  Title                    = {The first passage time distribution of brownian motion with positive drift},
+  Title                    = {{The first passage time distribution of brownian motion with positive drift}},
   Author                   = {L.K. Roy and M.T. Wasan},
   Journal                  = {Mathematical Biosciences},
   Year                     = {1968},
@@ -884,7 +884,7 @@
 }
 
 @Article{Sawilowsky_1992,
-  Title                    = {A more realistic look at the robustness and Type II errorprobabilities of the Test to departures from population normality},
+  Title                    = {{A more realistic look at the robustness and Type II errorprobabilities of the Test to departures from population normality}},
   Author                   = {Sawilowsky, S.},
   Journal                  = {Psychological Bulletin},
   Year                     = {1992},
@@ -894,7 +894,7 @@
 }
 
 @Article{Siegert_First_Passage_Time,
-  Title                    = {On the First Passage Time Probability Problem},
+  Title                    = {{On the First Passage Time Probability Problem}},
   Author                   = {Siegert, A. J. F.},
   Journal                  = {Phys. Rev.},
   Year                     = {1951},
@@ -911,7 +911,7 @@
 }
 
 @Article{Sjoestroem_Syn_Plasticity_2001,
-  Title                    = {Rate, Timing, and Cooperativity Jointly Determine Cortical Synaptic Plasticity},
+  Title                    = {{Rate, Timing, and Cooperativity Jointly Determine Cortical Synaptic Plasticity}},
   Author                   = {Sj\"ostr\"om, P. J. and Turrigiano, G. G.},
   Journal                  = {Neuron},
   Year                     = {2001},
@@ -921,7 +921,7 @@
 }
 
 @Article{STDP,
-  Title                    = {Competitive Hebbian learning through spike-timing-dependent synaptic plasticity},
+  Title                    = {{Competitive Hebbian learning through spike-timing-dependent synaptic plasticity}},
   Author                   = {Song, S. and Miller, K. D. and Abbott, L. F.},
   Journal                  = {Nature Neuroscience},
   Year                     = {2000},
@@ -931,7 +931,7 @@
 }
 
 @Article{Song_Connectivity_2005,
-  Title                    = {Highly Nonrandom Features of Synaptic Connectivity in Local Cortical Circuits},
+  Title                    = {{Highly Nonrandom Features of Synaptic Connectivity in Local Cortical Circuits}},
   Author                   = {Song, S. and Sj\"ostr\"om, P. J. and Reigl, M. and Nelson, S. and Chklovskii, D. B.},
   Journal                  = {PLOS Biology},
   Year                     = {2005},
@@ -947,7 +947,7 @@
 }
 
 @Misc{EncyMath,
-  Title                    = {Green function. Encyclopedia of Mathematics},
+  Title                    = {{Green function. Encyclopedia of Mathematics}},
 
   Author                   = {Springer Verlag GmbH, European Mathematical Society},
   HowPublished             = {Website},
@@ -955,7 +955,7 @@
 }
 
 @Misc{EncyMath_Kolmogorov_Smirnov,
-  Title                    = {Kolmogorov-Smirnov test. Encyclopedia of Mathematics},
+  Title                    = {{Kolmogorov-Smirnov test. Encyclopedia of Mathematics}},
 
   Author                   = {Springer Verlag GmbH, European Mathematical Society},
   HowPublished             = {Website},
@@ -963,7 +963,7 @@
 }
 
 @Misc{EncyMath_Max_Like,
-  Title                    = {Maximum-likelihood method. Encyclopedia of Mathematics},
+  Title                    = {{Maximum-likelihood method. Encyclopedia of Mathematics}},
 
   Author                   = {Springer Verlag GmbH, European Mathematical Society},
   HowPublished             = {Website},
@@ -971,7 +971,7 @@
 }
 
 @Misc{EncyMath_sign_level,
-  Title                    = {Significance level. Encyclopedia of Mathematics},
+  Title                    = {{Significance level. Encyclopedia of Mathematics}},
 
   Author                   = {Springer Verlag GmbH, European Mathematical Society},
   HowPublished             = {Website},
@@ -979,7 +979,7 @@
 }
 
 @Misc{EncyMath_t_test,
-  Title                    = {Student test. M.S. Nikulin (originator). Encyclopedia of Mathematics},
+  Title                    = {{Student test. M.S. Nikulin (originator). Encyclopedia of Mathematics}},
 
   Author                   = {Springer Verlag GmbH, European Mathematical Society},
   HowPublished             = {Website},
@@ -987,7 +987,7 @@
 }
 
 @Article{Statman_Synapses_2014,
-  Title                    = {Synaptic Size Dynamics as an Effectively Stochastic Process},
+  Title                    = {{Synaptic Size Dynamics as an Effectively Stochastic Process}},
   Author                   = {Statman, A. and Kaufman, M. and Minerbi, A. and Ziv, N. E. and Brenner, N.},
   Journal                  = {PLOS Computational Biology},
   Year                     = {2014},
@@ -1004,7 +1004,7 @@
 }
 
 @Article{Steinert_NO,
-  Title                    = {Nitric Oxide Is a Volume Transmitter Regulating Postsynaptic Excitability at a Glutamatergic Synapse},
+  Title                    = {{Nitric Oxide Is a Volume Transmitter Regulating Postsynaptic Excitability at a Glutamatergic Synapse}},
   Author                   = {Steinert, J. and Kopp-Scheinpflug, C. and Baker, C. and Challiss, R. J. and Mistry, R. and Haustein, M. and Griffin, S. J. and Tong, H. and Graham, B. P. and Forsythe, I. D.},
   Journal                  = {Neuron},
   Year                     = {2008},
@@ -1018,7 +1018,7 @@
 }
 
 @Article{Steinert_NO_2011,
-  Title                    = {Nitric Oxide is an Activity-Dependent Regulator of Target Neuron Intrinsic Excitability},
+  Title                    = {{Nitric Oxide is an Activity-Dependent Regulator of Target Neuron Intrinsic Excitability}},
   Author                   = {Steinert, J. and Robinson, S. and Tong, H. and Haustein, M. and Kopp-Scheinpflug, C. and Forsythe, I.},
   Journal                  = {Neuron},
   Year                     = {2011},
@@ -1031,7 +1031,7 @@
 }
 
 @Article{Sweeney_Paper,
-  Title                    = {A Diffusive Homeostatic Signal Maintains Neural Heterogeneity and Responsiveness in Cortical Networks},
+  Title                    = {{A Diffusive Homeostatic Signal Maintains Neural Heterogeneity and Responsiveness in Cortical Networks}},
   Author                   = {Sweeney, Y. and Kotaleski, J. H. and Hennig, M. H.},
   Journal                  = {PLoS Computational Biology},
   Year                     = {2015},
@@ -1041,7 +1041,7 @@
 }
 
 @Article{Tripathy_2013,
-  Title                    = {Intermediate intrinsic diversity enhances neural population coding},
+  Title                    = {{Intermediate intrinsic diversity enhances neural population coding}},
   Author                   = {Tripathy, S. J. and Padmanabhan, K. and Gerkin, R. C. and Urban, N. N.},
   Journal                  = {Proceedings of the National Academy of Sciences},
   Year                     = {2013},
@@ -1056,7 +1056,7 @@
 }
 
 @Article{Turrigiano_2011,
-  Title                    = {Too Many Cooks? Intrinsic and Synaptic Homeostatic Mechanisms in Cortical Circuit Refinement},
+  Title                    = {{Too Many Cooks? Intrinsic and Synaptic Homeostatic Mechanisms in Cortical Circuit Refinement}},
   Author                   = {Turrigiano, G. G.},
   Journal                  = {Annual Review of Neuroscience},
   Year                     = {2011},
@@ -1066,7 +1066,7 @@
 }
 
 @Article{Turrigiano_1994,
-  Title                    = {Activity-dependent changes in the intrinsic properties of cultured neurons},
+  Title                    = {{Activity-dependent changes in the intrinsic properties of cultured neurons}},
   Author                   = {Turrigiano, G. G. and Abbott, L. F. and Marder, E.},
   Journal                  = {Science},
   Year                     = {1994},
@@ -1083,7 +1083,7 @@
 }
 
 @Article{Vogels_2011,
-  Title                    = {Inhibitory Plasticity Balances Excitation and Inhibition in Sensory Pathways and Memory Networks},
+  Title                    = {{Inhibitory Plasticity Balances Excitation and Inhibition in Sensory Pathways and Memory Networks}},
   Author                   = {Vogels, T. P. and Sprekeler, H. and Zenke, F. and Clopath, C. and Gerstner, W.},
   Journal                  = {Science},
   Year                     = {2011},
@@ -1100,7 +1100,7 @@
 }
 
 @Article{Vreeswijk1998,
-  Title                    = {Chaotic Balanced State in a Model of Cortical Circuits},
+  Title                    = {{Chaotic Balanced State in a Model of Cortical Circuits}},
   Author                   = {van Vreeswijk, C. and Sompolinsky, H.},
   Journal                  = {Neural Computation},
   Year                     = {1998},
@@ -1110,7 +1110,7 @@
 }
 
 @Article{Vreeswijk1996,
-  Title                    = {Chaos in neuronal networks with balanced excitatory and inhibitory activity.},
+  Title                    = {{Chaos in neuronal networks with balanced excitatory and inhibitory activity}},
   Author                   = {van Vreeswijk, C. and Sompolinsky, H.},
   Journal                  = {Science},
   Year                     = {1996},
@@ -1123,7 +1123,7 @@
 }
 
 @Article{Welch_1947,
-  Title                    = {The generalization of 'Student's' problem when several different population variances are involved},
+  Title                    = {{The generalization of 'Student's' problem when several different population variances are involved}},
   Author                   = {Welch, B. L.},
   Journal                  = {Biometrika},
   Year                     = {1947},
@@ -1137,7 +1137,7 @@
 }
 
 @Article{Wohrer_Fir_Rates_2012,
-  Title                    = {Population-wide distributions of neural activity during perceptual decision-making},
+  Title                    = {{Population-wide distributions of neural activity during perceptual decision-making}},
   Author                   = {Wohrer, A. and Humphries, M. D. and Machens, C.},
   Journal                  = {Progress in Neurobiology},
   Year                     = {2012},
@@ -1147,7 +1147,7 @@
 }
 
 @Article{Yassin_Subnetworks_2010,
-  Title                    = {An Embedded Subnetwork of Highly Active Neurons in the Neocortex},
+  Title                    = {{An Embedded Subnetwork of Highly Active Neurons in the Neocortex}},
   Author                   = {Yassin, L. and Benedetti, B. L. and Jouhanneau, J.-S. and Wen, J. A. and Poulet, J. F. and Barth, A. L.},
   Journal                  = {Neuron },
   Year                     = {2010},
@@ -1161,7 +1161,7 @@
 }
 
 @Article{Yasumatsu_Synapses_2008,
-  Title                    = {Principles of Long-Term Dynamics of Dendritic Spines},
+  Title                    = {{Principles of Long-Term Dynamics of Dendritic Spines}},
   Author                   = {Yasumatsu, N. and Matsuzaki, M. and Miyazaki, T. and Noguchi, J. and Kasai, H.},
   Journal                  = {Journal of Neuroscience},
   Year                     = {2008},
@@ -1178,7 +1178,7 @@
 }
 
 @Article{Zenke_2017,
-  Title                    = {Hebbian plasticity requires compensatory processes on multiple timescales},
+  Title                    = {{Hebbian plasticity requires compensatory processes on multiple timescales}},
   Author                   = {Zenke, F. and Gerstner, W.},
   Journal                  = {Philosophical Transactions of the Royal Society of London B: Biological Sciences},
   Year                     = {2017},
@@ -1194,7 +1194,7 @@
 }
 
 @Article{Zenke_2013,
-  Title                    = {Synaptic Plasticity in Neural Networks Needs Homeostasis with a Fast Rate Detector},
+  Title                    = {{Synaptic Plasticity in Neural Networks Needs Homeostasis with a Fast Rate Detector}},
   Author                   = {Zenke, F. AND Hennequin, G. AND Gerstner, W.},
   Journal                  = {PLOS Computational Biology},
   Year                     = {2013},
@@ -1211,7 +1211,7 @@
 }
 
 @Article{Zhang_STDP,
-  Title                    = {A critical window for cooperation and competition among developing retinotectal synapses},
+  Title                    = {{A critical window for cooperation and competition among developing retinotectal synapses}},
   Author                   = {Zhang, L. I. and Tao, H. W. and Holt, C. E. and Harris, W. A. and Poo, M.},
   Journal                  = {Nature},
   Year                     = {1998},
@@ -1223,7 +1223,7 @@
 }
 
 @Article{Pengsheng_2013,
-  Title                    = {Network Self-Organization Explains the Statistics and Dynamics of Synaptic Connection Strength in Cortex},
+  Title                    = {{Network Self-Organization Explains the Statistics and Dynamics of Synaptic Connection Strength in Cortex}},
   Author                   = {Zheng, P. and Dimitrakakis, C. and Triesch, J.},
   Journal                  = {PLOS Computational Biology},
   Year                     = {2013},
@@ -1233,7 +1233,7 @@
 }
 
 @Book{Dyn_Sys_Hirsch,
-  Title                    = {Differential Equations, Dynamical Systems, and Linear Algebra},
+  Title                    = {{Differential Equations, Dynamical Systems, and Linear Algebra}},
   Editor                   = {Hirsch, M. W. and Smale, S.},
   Publisher                = {Elsevier},
   Year                     = {1974},
